@@ -1,0 +1,24 @@
+title: Careful Digital
+
+columns:
+  - width: 1/1
+    sections:
+      info:
+        type: info
+        label: info
+        text:
+          Welcome to the Careful Digital content management system.  Add Pages and Guides from the panels below.
+      pages:
+        label: Pages
+        type: pages
+        layout: cards
+        templates:
+          - default
+  - width: 1/2
+    sections:
+      stories:
+        label: Guides
+        type: pages
+        layout: cards
+        templates:
+          - guides

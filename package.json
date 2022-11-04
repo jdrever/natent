@@ -1,0 +1,22 @@
+{
+  "name": "biolearn",
+  "version": "1.0.0",
+  "description": "Biolearn CMS/website",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass scss/custom.scss src/assets/css/custom.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdrever/biolearn.git"
+  },
+  "author": "Careful Digital",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdrever/biolearn/issues"
+  },
+  "homepage": "https://github.com/jdrever/biolearn#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.2"
+  }
+}

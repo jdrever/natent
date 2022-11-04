@@ -1,0 +1,4 @@
+<!DOCTYPE xml PUBLIC "SOMETHING" "https://malicious.com/something.dtd">
+<xml>
+  <p>Hello</p>
+</xml>
