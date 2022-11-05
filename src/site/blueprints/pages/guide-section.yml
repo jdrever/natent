@@ -1,4 +1,4 @@
-title: Home Page
+title: Guide Section
 
 columns:
   main:
@@ -7,15 +7,16 @@ columns:
       fields:
         type: fields
         fields:
-          text:
-            type: textarea
+          mainContent:
+            label: Main Content
+            type: layout
             size: huge
   sidebar:
     width: 1/3
     sections:
       pages:
+        label: Sub-Sections
         type: pages
-        template: default
-      files:
-        type: files
+        template: guide-section
+
 

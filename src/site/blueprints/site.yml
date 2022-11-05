@@ -14,11 +14,12 @@ columns:
         layout: cards
         templates:
           - default
-  - width: 1/2
+          - guides-home
+  - width: 2/2
     sections:
       stories:
         label: Guides
         type: pages
         layout: cards
         templates:
-          - guides
+          - guide
