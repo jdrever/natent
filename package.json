@@ -1,7 +1,7 @@
 {
-  "name": "biolearn",
+  "name": "carefuldigital",
   "version": "1.0.0",
-  "description": "Biolearn CMS/website",
+  "description": "Careful Digital CMS/website",
   "main": "index.js",
   "scripts": {
     "build": "sass scss/custom.scss src/assets/css/custom.css"
@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/jdrever/biolearn/issues"
   },
-  "homepage": "https://github.com/jdrever/biolearn#readme",
+  "homepage": "https://careful.digital",
   "dependencies": {
     "bootstrap": "^5.2.2"
   }

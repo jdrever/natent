@@ -1,0 +1,35 @@
+title: Resource Area
+
+columns:
+  main:
+    width: 1/2
+    sections:
+      fields:
+        type: fields
+        fields:
+          description:
+            type: textarea
+          image:
+            label: Image
+            type: files
+            query: page.images
+          status:
+            type: select
+            options:
+              - Discovery
+              - Alpha
+              - Beta
+              - Live
+          mainContent:
+            label: Main Content
+            type: blocks
+            size: huge
+  sidebar:
+    width: 1/2
+    sections:
+      pages:
+        label: Resources
+        type: pages
+        template: resource
+
+

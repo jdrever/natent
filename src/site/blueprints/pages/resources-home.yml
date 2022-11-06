@@ -1,4 +1,4 @@
-title: Guides Home
+title: Resources Home
 
 columns:
   main:
@@ -8,14 +8,15 @@ columns:
         type: fields
         fields:
           mainContent:
+            label: Main Content
             type: blocks
             size: huge
   sidebar:
     width: 1/2
     sections:
       pages:
-        label: Guides
+        label: Resource Areas
         type: pages
-        template: guide
+        template: resource-area
 
 

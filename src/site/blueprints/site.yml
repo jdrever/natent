@@ -15,4 +15,5 @@ columns:
         templates:
           - home
           - guides-home
+          - resources-home
 
