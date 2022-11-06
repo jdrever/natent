@@ -1,5 +1,5 @@
 <?php snippet('header') ?>
-<h1><?=$page->title()?></h1>
 <?php snippet('show-blocks') ?>
-<?php snippet('guide-navigation') ?>
+<?php snippet('tag-cloud') ?>
+<?php snippet('show-blog-posts') ?>
 <?php snippet('footer') ?>

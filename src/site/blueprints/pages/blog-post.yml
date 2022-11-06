@@ -1,12 +1,15 @@
-title: Resource
+title: Blog Post
 
 columns:
   main:
-    width: 3/3
+    width: 2/3
     sections:
       fields:
         type: fields
         fields:
+          openingContent:
+            label: Opening Content
+            type: textarea
           mainContent:
             label: Main Content
             type: blocks
@@ -33,3 +36,15 @@ columns:
                 fieldsets:
                   - code
                   - markdown
+  sidebar:
+    width: 1/3
+    sections:
+      meta-data:
+        type: fields
+        fields:
+          publishedDate:
+            label: Published published
+            type: date
+          tags:
+            label: Tags
+            type: tags

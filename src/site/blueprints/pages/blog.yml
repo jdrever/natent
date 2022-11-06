@@ -1,0 +1,22 @@
+title: Blog
+
+columns:
+  main:
+    width: 1/2
+    sections:
+      fields:
+        type: fields
+        fields:
+          mainContent:
+            label: Main Content
+            type: blocks
+            size: huge
+  sidebar:
+    width: 1/2
+    sections:
+      pages:
+        label: Blog Posts
+        type: pages
+        template: blog-post
+
+
