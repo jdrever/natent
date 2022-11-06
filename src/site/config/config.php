@@ -2,10 +2,10 @@
 
 return [
     'debug'  => true,
-    'panel' => true,
     'panel' =>
     [
-        'css' => 'assets/css/panel.css',
+      'install' => true,
+      'css' => 'assets/css/panel.css',
     ]
 
 ];
