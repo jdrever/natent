@@ -2,7 +2,7 @@ Title: Introduce Yourself
 
 ----
 
-Maincontent: [{"attrs":[],"columns":[{"blocks":[{"content":{"text":"<p>The first activity, if you are comfortable doing so, is to introduce yourself to the other guide participants.<\/p><p>In your message, please briefly describe your intention for the guide. What is is you are hoping to learn about or to change? <\/p>"},"id":"a36c55ef-db8b-4eaa-b0b4-a136f04e65bb","isHidden":false,"type":"text"}],"id":"43d14067-b989-437c-be14-945673dc06ef","width":"1\/1"}],"id":"1816902a-2049-4e4e-bf31-b1a73d241042"}]
+Maincontent: [{"attrs":[],"columns":[{"blocks":[{"content":{"activitytitle":"Say hello","activitycontent":"The first activity, if you are comfortable doing so, is to introduce yourself to the other guide participants.\n\nIn your message, please briefly describe your intention for the guide. What is is you are hoping to learn about or to change?"},"id":"96a45184-7d8a-4611-960a-454453682068","isHidden":false,"type":"activity"}],"id":"43d14067-b989-437c-be14-945673dc06ef","width":"1\/1"}],"id":"1816902a-2049-4e4e-bf31-b1a73d241042"}]
 
 ----
 

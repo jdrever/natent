@@ -1,0 +1,8 @@
+icon: bolt
+fields:
+  activityTitle:
+    label: Title
+    type: textarea
+  activityContent:
+    label: Content
+    type: textarea

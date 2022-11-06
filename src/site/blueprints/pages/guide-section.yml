@@ -11,6 +11,28 @@ columns:
             label: Main Content
             type: layout
             size: huge
+            fieldsets:
+              text:
+                label: Text
+                type: group
+                fieldsets:
+                  - heading
+                  - text
+                  - list
+                  - activity
+              media:
+                label: Media
+                type: group
+                fieldsets:
+                  - image
+                  - video
+              code:
+                label: Code
+                type: group
+                open: false
+                fieldsets:
+                  - code
+                  - markdown
   sidebar:
     width: 1/3
     sections:
