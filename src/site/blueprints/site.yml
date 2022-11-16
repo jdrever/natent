@@ -14,7 +14,7 @@ columns:
         layout: cards
         templates:
           - home
-          - guides-home
-          - resources-home
-          - blog
+          - for-teachers
+          - for-students
+          - contact
 

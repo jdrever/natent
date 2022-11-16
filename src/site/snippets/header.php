@@ -534,7 +534,7 @@
       </button>
       <div class="site-logo d-flex align-items-center col-md-3 mb-2 mb-md-0 text-decoration-none">
         <a href="/" class="d-flex align-items-center text-decoration-none">
-          <img class="img-fluid m-1" src="/images/natent-logo.svg" width="50"/>
+          <img class="img-fluid m-1" src="<?=url('/assets/images/natent-logo.svg')?>" width="50"/>
           Natural
           <br>
           Entrepreneurs

@@ -1,0 +1,19 @@
+title: For Students
+columns:
+  main:
+    width: 1/2
+    sections:
+      fields:
+        type: fields
+        fields:
+          mainContent:
+            type: blocks
+            size: huge
+  sidebar:
+    width: 1/2
+    sections:
+      pages:
+        label: Sub-Pages
+        type: pages
+        template: default
+
