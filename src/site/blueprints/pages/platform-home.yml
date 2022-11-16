@@ -1,7 +1,7 @@
 title: Platform Home
 columns:
   main:
-    width: 1/1
+    width: 2/3
     sections:
       fields:
         type: fields
@@ -9,4 +9,10 @@ columns:
           mainContent:
             type: blocks
             size: huge
-
+  sidebar:
+    width: 1/3
+    sections:
+      pages:
+        label: Phases
+        type: pages
+        template: guide

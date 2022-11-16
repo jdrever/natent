@@ -1,0 +1,21 @@
+Title: Define
+
+----
+
+Description: 
+
+----
+
+Image: 
+
+----
+
+Status: 
+
+----
+
+Maincontent: [{"content":{"text":"<p><strong>In this Phase, you will create a Team and select a Challenge to work on. You will then think about your chosen Challenge Topic in relation to the needs and opportunities in your local area. Together, you will develop a strong focus and understanding of what you wish to achieve and how you can begin to look to nature for some of the solutions.<\/strong><\/p>"},"id":"1596d9fe-c849-4ae0-8b03-cba42958802a","isHidden":false,"type":"text"},{"content":{"text":"<ul><li>Form a Team and select a Challenge Topic.<\/li><li>Define the Context for your chosen Challenge Topic.<\/li><li>Identify the Functions your Design Solution needs to deliver.<\/li><li>Develop Research Questions which nature can 'answer'.<\/li><\/ul>"},"id":"344b6eb8-5b5e-4d0e-9a52-4c09ac24f707","isHidden":false,"type":"list"}]
+
+----
+
+Uuid: vGhxaHIx0KphTl2J

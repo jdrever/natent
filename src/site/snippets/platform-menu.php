@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-dark mx-3">
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li>
-        <a href="/platform/" class="nav-link px-2 text-white">HOME</a>
+        <a href="/platform/" class="nav-link px-2 text-white">LEARNING JOURNEY</a>
       </li>
       <li>
         <a href="/team-page/" class="nav-link px-2 text-white"><i class="bi bi-person-heart"></i> TEAM PAGE</a>

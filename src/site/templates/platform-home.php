@@ -1,51 +1,174 @@
 <?php snippet('header') ?>
 <?php snippet('platform-menu') ?>
-<div class="container-fluid my-4 mx-auto" style="width: 80%;">
-  <h1>Contact Us</h1>
-  <p class="lead">
-    You want to implement the Natural Entrepreneurs process and platform at your school? Interested in adapting the programme to higher or primary education with us?
-  </p>
-  <form action="#">
-    <fieldset>
-      <p class="required">All fields are required.</p>
-      <ol class="list-unstyled">
-        <li class="mb-3">
-          <label for="name" class="form-label">Name:</label>
-          <input type="text"
-                 name="name"
-                 required="required"
-                 aria-required="true"
-                 class="form-control">
-        </li>
-        <li class="mb-3">
-          <label for="name" class="form-label">School:</label>
-          <input type="text"
-                 name="school"
-                 required="required"
-                 aria-required="true"
-                 class="form-control">
-        </li>
-        <li class="mb-3">
-          <label for="name" class="form-label">Message:</label>
-          <textarea class="form-control"></textarea>
-        </li>
-        <li class="mb-3">
-          <label for="email" class="form-label">Email:</label>
-          <input type="email"
-                 name="email"
-                 required="required"
-                 aria-required="true"
-                 class="form-control">
-        </li>
-        <li class="submit-buttons">
-          <input type="hidden"
-                 id="subject"
-                 name="subject"
-                 value="Biomimicry Day Registration from Biolearn website">
-          <input type="submit" value="Send" class="btn btn-lg btn-outline-secondary">
-        </li>
-      </ol>
-    </fieldset>
-  </form>
+<style>
+  figcaption.figure-caption {
+    font-size: 1.2em;
+  }
+</style>
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>The Phases</h2>
+      <p>Work through each Phase in order.</p>
+      <a href="/platform/define/" class="btn btn-primary m-2">GET STARTED →</a>
+      <a href="/platform/define/">
+        <figure class="figure">
+          <figcaption class="figure-caption">
+            1. Define
+          </figcaption>
+          <img class="figure-img img-fluid rounded"
+               src="/assets/images/define.png"
+               alt="'Dragonfly' by Rhubarble is marked with CC BY-NC 2.0. To view the terms, visit https://creativecommons.org/licenses/by-nc/2.0/?ref=openverse">
+        </figure>
+      </a>
+      <br>
+      <a href="#">
+        <figure class="figure">
+          <figcaption class="figure-caption">
+            2. Discover
+          </figcaption>
+          <img class="figure-img img-fluid rounded"
+               src="/assets/images/discover.jpeg"
+               alt="'Bracket Fungi.(Basidiomycotina)' by Bernard Spragg is marked with CC0 1.0.">
+        </figure>
+      </a>
+      <br>
+      <a href="#">
+        <figure class="figure">
+          <figcaption class="figure-caption">
+            3. Create
+          </figcaption>
+          <img class="figure-img img-fluid rounded"
+               src="/assets/images/create.jpeg"
+               alt="'Nature bird' by @Doug88888 is marked with CC BY-NC-SA 2.0. To view the terms, visit https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=openverse">
+        </figure>
+      </a>
+      <br>
+      <a href="#">
+        <figure class="figure">
+          <figcaption class="figure-caption">
+            4. Communicate
+          </figcaption>
+          <img class="figure-img img-fluid rounded"
+               src="/assets/images/communicate.jpeg"
+               alt="'Oregano Orejon' by tatadbb is marked with CC BY-SA 2.0. To view the terms, visit https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse">
+        </figure>
+      </a>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button class="btn btn-primary btn-sm m-2"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseImageCredits"
+                aria-expanded="false"
+                aria-controls="collapseImageCredits">
+          See Image Credits
+        </button>
+        <div class="collapse" id="collapseImageCredits">
+          <p>
+            <small>
+              <b>Define:</b>
+              'Dragonfly' by Rhubarble is marked with CC BY-NC 2.0. To view the terms, visit https://creativecommons.org/licenses/by-nc/2.0/?ref=openverse
+              <b>Discover:</b>
+              'Bracket Fungi.(Basidiomycotina)' by Bernard Spragg is marked with CC0 1.0.
+              <b>Create:</b>
+              'Nature bird' by @Doug88888 is marked with CC BY-NC-SA 2.0. To view the terms, visit https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=openverse
+              <b>Communications:</b>
+              'Oregano Orejon' by tatadbb is marked with CC BY-SA 2.0. To view the terms, visit https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <h2>Collaboration Points</h2>
+      <p class="h1">
+        <i class="bi bi-star"></i> 220
+      </p>
+      <p>
+        You earn collaboration points by completing Phases, adding resources to the Creative Commons and appreciating and commenting on other teams
+      </p>
+      <div class="container">
+        <div class="row">
+          <div class="col bg-light d-none d-lg-block">
+            <h5>Latest Comments</h5>
+            <p class="p-1 m-0 border">
+              <small>
+                <i class="bi bi-chat-fill"></i>
+                on your Commons Resource by
+                <a href="/other-team-page/?teamId=91">BioBoly</a>
+                <br>
+                <i class="bi bi-quote"></i>
+                <i>Very helpful website</i>
+                <i class="bi bi-three-dots"></i>
+              </small>
+            </p>
+            <p class="p-1 m-0 border">
+              <small>
+                <i class="bi bi-chat-fill"></i>
+                on your Commons Resource by
+                <a href="/other-team-page/?teamId=78">PedaCol1</a>
+                <br>
+                <i class="bi bi-quote"></i>
+                <i>I liked so much the </i>
+                <i class="bi bi-three-dots"></i>
+              </small>
+            </p>
+            <p class="p-1 m-0 border">
+              <small>
+                <i class="bi bi-chat-fill"></i>
+                on your Commons Resource by
+                <a href="/other-team-page/?teamId=78">PedaCol1</a>
+                <br>
+                <i class="bi bi-quote"></i>
+                <i>It’s very helpfull</i>
+                <i class="bi bi-three-dots"></i>
+              </small>
+            </p>
+            <a href="https://natent.eu/en/view-all-comments-received/">View all Comments received</a>
+          </div>
+          <div class="col bg-light d-none d-lg-block">
+            <h5>Latest Appreciations</h5>
+            <p class="p-1 m-0 border">
+              <small>
+                <i class="bi bi-stars"></i>
+                of your Team Challenge by
+                <a href="/other-team-page/?teamId=117">Eichhörnchen</a>
+              </small>
+            </p>
+            <p class="p-1 m-0 border">
+              <small>
+                <i class="bi bi-stars"></i>
+                of your Commons Resource by
+                <a href="/other-team-page/?teamId=65">Refkoll 1</a>
+              </small>
+            </p>
+            <p class="p-1 m-0 border">
+              <small>
+                <i class="bi bi-stars"></i>
+                of your Function by
+                <a href="/other-team-page/?teamId=78">PedaCol1</a>
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+      <br>
+      <h2>Have a look around!</h2>
+      <p>You can always get back to your current Phase by clicking on the RESUME YOUR LEARNING button</p>
+      <h3>
+        <i class="bi bi-person-heart"></i>TEAM PAGE
+      </h3>
+      <p>View how your team is getting on</p>
+      <h3>
+        <i class="bi bi-search-heart"></i>OTHER TEAMS
+      </h3>
+      <p>Browse other teams pages to get ideas and appreciate their work</p>
+      <h3>
+        <i class="bi bi-cc-circle-fill"></i>CREATIVE COMMONS
+      </h3>
+      <p>Find useful resources</p>
+    </div>
+  </div>
 </div>
+
 <?php snippet('footer') ?>

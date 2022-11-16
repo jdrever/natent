@@ -1,4 +1,6 @@
 <?php snippet('header') ?>
+<?php snippet('platform-menu') ?>
+<?php snippet('breadcrumb') ?>
 <div class="container-fluid mt-4 mx-auto" style="width: 80%;">
     <main>
       <h1><?=$page->title()?></h1>
