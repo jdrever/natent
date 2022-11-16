@@ -1,6 +1,49 @@
-$dark: darkred;
-$primary: black;
-$headings-color: darkred;
-$font-family-base: "Open Sans", sans-serif;
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1140px,
+);
+
+$primary: #0d1070;
+$dark: #133f62;
+$info: #0e7172;
+
+$font-family-base: "Lexend", system-ui, -apple-system, "Segoe UI", Roboto,
+  "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+.site-logo {
+  line-height: 1.2rem;
+}
+
+.navbar ul {
+  font-size: .9rem;
+  line-height: 1rem;
+}
+
+.shrinkwrap > h1, .shrinkwrap > h2 {
+	line-height: 1.5em;
+}
+
+.shrinkwrap > h1 {
+	margin-bottom: 0em;
+}
+
+.shrinkwrap > h2 {
+	font-size: 1.5rem;
+	line-height: 1.6em
+}
+
+.shrinkwrap > h1 > span, .shrinkwrap > h2 > span {
+	display: inline;
+  padding: 0.15rem 0.25rem;
+  background-color: rgba($color: #000, $alpha: 0.5);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
