@@ -1,9 +1,0 @@
-Title: Checking Your Emails
-
-----
-
-Maincontent: [{"attrs":[],"columns":[{"blocks":[{"content":{"level":"h2","text":"<strong>KEY IDEA:\u00a0<\/strong>We are looking at using technology in an every day way"},"id":"557f5515-295e-4d3a-9d7d-9e360b392a98","isHidden":false,"type":"heading"}],"id":"f8fe00fd-4564-4d75-b4d3-9552d1ac152f","width":"1\/1"}],"id":"cf84a0a8-2f32-4fe9-9b97-c2ac969e3c03"},{"attrs":[],"columns":[{"blocks":[{"content":{"text":"<p>We'll be looking at how we check emails and browse the web to gather information. \u00a0We won't be doing anything fancy. \u00a0We will just be exploring some small changes to the way we approach some everyday tasks.<\/p>"},"id":"dad0e143-bce9-4666-a515-d0c9141cf1a2","isHidden":false,"type":"text"}],"id":"26e83424-db86-4abb-afef-1e1c651a5fcd","width":"1\/1"}],"id":"3071a5b3-a235-4a9d-b3fa-8e8bf0da63f3"}]
-
-----
-
-Uuid: rN1bVwnn0RATExUo

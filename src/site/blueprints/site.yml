@@ -1,4 +1,4 @@
-title: Careful Digital
+title: NatEnt Platform
 
 columns:
   - width: 1/1
@@ -7,7 +7,7 @@ columns:
         type: info
         label: info
         text:
-          Welcome to the Careful Digital content management system.  Add and edit Pages from the panel below.
+          Welcome to the NatEnt Platform content management system.  Add and edit Pages from the panel below.
       pages:
         label: Pages
         type: pages

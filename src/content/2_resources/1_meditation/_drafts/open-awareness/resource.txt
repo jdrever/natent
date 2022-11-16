@@ -1,9 +1,0 @@
-Title: Open Awareness
-
-----
-
-Maincontent: [{"content":{"text":"<p>The purpose of an Open Awareness meditation is to bring spaciousness in the mind to whatever is happening around you. It leads to a vivid perception of the world, and helps build an ability to be ok with uncertainty.<\/p>"},"id":"51f2fada-d4e1-427a-9df6-0f89ff8b1e3b","isHidden":false,"type":"text"},{"content":{"level":"h2","text":"<strong>An example of an Open Awarenness meditation<\/strong>"},"id":"d5f01697-50ea-4c4c-a7f2-0b5fbadb3be8","isHidden":false,"type":"heading"},{"content":{"text":"<p>The instructions for an open awareness meditation are simple: sit and remain uninvolved with whatever is happening.<\/p><p>This can be easy for some people, and deceptively difficult for others.<\/p><p>If you already have some experience in Focused Awareness, the steps in <u><a href=\"https:\/\/commons.careful.digital\/commons\/meditation\/from-focused-to-open-awareness\/\" rel=\"noopener noreferrer\">Moving from Focused to Open Awareness<\/a><\/u> may help you.<\/p>"},"id":"3e4cb599-08cd-4ecd-9765-29f821303ec7","isHidden":false,"type":"text"}]
-
-----
-
-Uuid: DfmJY4kCJdTNVsab

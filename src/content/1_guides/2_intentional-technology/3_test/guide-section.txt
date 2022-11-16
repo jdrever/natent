@@ -1,9 +1,0 @@
-Title: Test
-
-----
-
-Maincontent: [{"attrs":[],"columns":[{"blocks":[{"content":{"activitytitle":"Test","activitycontent":"Dasdasdasdasdasd"},"id":"0faea83f-5097-4905-86cd-a965b3036687","isHidden":false,"type":"activity"}],"id":"95882816-f9ff-4912-abbb-eaf01c94a5db","width":"1\/1"}],"id":"a88b8ffb-5e47-482a-ad2d-fdf2334e56c9"}]
-
-----
-
-Uuid: zz3WNXKzHd7lMylV

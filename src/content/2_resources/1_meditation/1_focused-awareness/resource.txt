@@ -1,9 +1,0 @@
-Title: Focused Awareness
-
-----
-
-Maincontent: [{"attrs":[],"columns":[{"blocks":[{"content":{"text":"<p>The purpose of a Focused Awareness meditation is to calm the mind by cultivating the steady awareness of an object - for example the breath.<\/p>"},"id":"31711bc0-1038-4a21-9f6e-de680d404cf3","isHidden":false,"type":"text"},{"content":{"level":"h2","text":"<strong>An example of a simple Focused Awareness meditation<\/strong>"},"id":"d6aaf3bd-d686-4232-84bd-db152d6e501d","isHidden":false,"type":"heading"}],"id":"078073c6-1835-4356-8a29-4d37847d45ab","width":"1\/1"}],"id":"e26e702e-d831-48d6-8712-ad2497c9a8f5"},{"attrs":[],"columns":[{"blocks":[{"content":{"text":"<ul><li>Focus attention on the breath<\/li><li>Count each breath, up to ten, then start again at one<\/li><li>If your attention wanders, gently bring it back to the breath<\/li><\/ul>"},"id":"3367a3cc-5b36-4794-85f4-758504163a37","isHidden":false,"type":"list"}],"id":"6f58992a-efaa-4bbc-9ab4-8638ecf5bc38","width":"1\/1"}],"id":"9f6fb01a-f2f3-4a69-8862-75ce8f0bfed4"},{"attrs":[],"columns":[{"blocks":[{"content":{"level":"h2","text":"<strong>How to develop your Focused Awareness meditations<\/strong>"},"id":"b85fc77f-1838-41ae-91b4-89d6c0245af1","isHidden":false,"type":"heading"},{"content":{"text":"<ul><li>Focused Awareness on loving kindness<\/li><li><u><a href=\"https:\/\/commons.careful.digital\/commons\/meditation\/jhanas\/\" rel=\"noopener noreferrer\">Focused Awareness on Pleasure in the Body<\/a><\/u><\/li><li>Developing an <u><a href=\"https:\/\/commons.careful.digital\/commons\/meditation\/open-awareness\/\" rel=\"noopener noreferrer\">Open Awareness<\/a><\/u><\/li><\/ul>"},"id":"0f3c935e-d3b4-4fc5-a1f8-54ba81b04581","isHidden":false,"type":"list"}],"id":"3031ac1c-1835-46f1-a329-fcfc0bfe2dac","width":"1\/1"}],"id":"6583dc0a-4127-4093-9c80-f809aa08241a"}]
-
-----
-
-Uuid: F5pqhhkOPxBDo6qB
