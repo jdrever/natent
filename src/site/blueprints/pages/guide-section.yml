@@ -39,6 +39,8 @@ columns:
       pages:
         label: Sub-Sections
         type: pages
-        template: guide-section
+        template:
+         - guide-section
+         - task-team-profile
 
 
