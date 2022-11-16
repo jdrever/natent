@@ -12,7 +12,7 @@
   <p></p>
 </div>
 <div class="container bg-light p-3">
-  <form class="form-inline" method="post" action="https://natent.eu/en/collab-controller/"
+  <form class="form-inline" method="post" action="<?= $page->url() ?>"
     enctype="multipart/form-data">
     <input type="hidden" name="point" id="point" value="Profile">
     <label for="school-info" class="m-1">Tell us about your Team (don't share your names!):</label>
@@ -117,7 +117,7 @@
       </div>
     </div>
     <br>
-    <a href="/sdgs/" class="btn btn-primary float-end">SHARE YOUR PROFILE &#8594;</a>
+    <input type="submit" class="btn btn-primary float-end" value="SHARE YOUR PROFILE &#8594;">
   </form>
 </div>
 <?php snippet('show-blocks') ?>
