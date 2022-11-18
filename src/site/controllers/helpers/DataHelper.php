@@ -2,6 +2,10 @@
 use \PDO;
 use PDOException;
 
+define("DB_NAME", "natent");
+define("DB_HOST", "db");
+define("DB_USER", "natent");
+define("DB_PASSWORD", "T1a$66s3RGsX");
 class DataHelper
 {
     private const DSN = 'mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=utf8mb4';
@@ -28,12 +32,16 @@ class DataHelper
                 $pdo->prepare($sql)->execute([$team['id'], $descripton,$skills,$wpUserId,$approvalDetails->approvedDate,$approvalDetails->approvedBy]);
                 $result->wasSuccessful=true;
                 $pdo->commit();
+                echo("worked?");
             }
         }
         catch (\PDOException $e)
         {
-             $result=self::getResultForException($result,$e); 
-             $pdo->rollBack();
+            echo(self::DSN);
+            echo(var_dump($e));
+             //$result=self::getResultForException($result,$e); 
+             //echo($result);
+             //$pdo->rollBack();
         }
         return $result;
     } 

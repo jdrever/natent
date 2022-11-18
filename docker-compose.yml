@@ -12,12 +12,36 @@ services:
       - ./src/:/var/www/html/
       - ./logs/nginx:/var/log/nginx/
   php:
-    image: php:fpm-alpine
+    build:
+      context: php/
     networks:
       - internal
     volumes:
       - ./src/:/var/www/html/
       - ./logs/php.log:/var/log/fpm-php.www.log
+  db:
+    # We use a mariadb image which supports both amd64 & arm64 architecture
+    image: mariadb:10.6.4-focal
+    # If you really want to use MySQL, uncomment the following line
+    #image: mysql:8.0.27
+    command: '--default-authentication-plugin=mysql_native_password'
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=kM50d_fHf$JB
+      - MYSQL_DATABASE=natent
+      - MYSQL_USER=natent
+      - MYSQL_PASSWORD=T1a$66s3RGsX
+    ports: 
+      - "3306:3306"
+    expose:
+      - 3306
+    networks:
+      - internal
+    entrypoint: mysqld_safe --skip-grant-tables --user=mysql
 networks:
   internal:
     driver: bridge
+volumes:
+  db_data:
