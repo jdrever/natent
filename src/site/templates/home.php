@@ -1,5 +1,4 @@
 <?php snippet('header') ?>
-<?php phpinfo() ?>
 <div class="pt-4 px-2 text-center bg-image"
      style="background-image: url('/assets/images/hero-image.jpg'); background-repeat: no-repeat; background-size:cover; height: 300px; ">
   <div class="col-lg-8 mx-auto mask mt-0">
