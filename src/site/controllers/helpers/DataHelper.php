@@ -32,7 +32,6 @@ class DataHelper
                 $pdo->prepare($sql)->execute([$team['id'], $descripton,$skills,$wpUserId,$approvalDetails->approvedDate,$approvalDetails->approvedBy]);
                 $result->wasSuccessful=true;
                 $pdo->commit();
-                echo("worked?");
             }
         }
         catch (\PDOException $e)

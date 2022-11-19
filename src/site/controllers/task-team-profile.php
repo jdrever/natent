@@ -9,7 +9,10 @@ return function($kirby, $pages, $page) {
         $skills = '';
         if (isset($_POST['skills'])) $skills = implode(',', $_POST['skills']);
         $result=helpers\DataHelper::updateTeamProfile(1, 'TEST', $description, $skills);
-        echo(var_dump($result));
         $pointsToAdd = 20;
+
+        if ($page = $page->next()){
+            return $page->go();
+          }
     };
 };
