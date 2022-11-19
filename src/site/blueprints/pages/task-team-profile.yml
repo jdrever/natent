@@ -1,4 +1,5 @@
 title: "Task: Team Profile"
+icon: bolt
 columns:
   main:
     width: 1/1

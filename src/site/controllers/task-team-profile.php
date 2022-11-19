@@ -4,6 +4,7 @@ include 'helpers/DataHelper.php';
 use carefulcollab\helpers as helpers;
 
 return function($kirby, $pages, $page) {
+    $taskButton="SHARE YOUR PROFILE";
     if($kirby->request()->is('POST')) {
         $description = htmlspecialchars($_POST['description']);
         $skills = '';
@@ -15,4 +16,8 @@ return function($kirby, $pages, $page) {
             return $page->go();
           }
     };
+
+    return [
+        'taskButton' => $taskButton
+    ];
 };

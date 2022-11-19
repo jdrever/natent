@@ -1,8 +1,10 @@
 <?php snippet('header') ?>
 <?php snippet('platform-menu') ?>
 <?php snippet('breadcrumb') ?>
-<h1><?=$page->title()?></h1>
-<div class="entry-content-page">
+<?php snippet('open-platform-content') ?>
+<?php snippet('show-blocks') ?>
+
+
   <p>This is your first introduction to communicating with others on the platform.</p>
   <p>Here are simple ground rules:</p>
   <ul class="has-background" style="background-color:#f2e1d3">
@@ -10,7 +12,6 @@
     <li>Don&#8217;t use anyone&#8217;s full name &#8211; respect their privacy and your own.</li>
   </ul>
   <p></p>
-</div>
 <div class="container bg-light p-3">
   <form class="form-inline" method="post" action="<?= $page->url() ?>"
     enctype="multipart/form-data">
@@ -117,9 +118,8 @@
       </div>
     </div>
     <br>
-    <input type="submit" class="btn btn-primary float-end" value="SHARE YOUR PROFILE &#8594;">
+    <?php snippet('guide-navigation', ['taskButton' =>$taskButton]) ?>
   </form>
 </div>
-<?php snippet('show-blocks') ?>
-<?php snippet('guide-navigation') ?>
+<?php snippet('close-platform-content') ?>
 <?php snippet('footer') ?>

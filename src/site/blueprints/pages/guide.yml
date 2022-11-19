@@ -30,6 +30,8 @@ columns:
       pages:
         label: Sections
         type: pages
-        template: guide-section
-
+        template:
+          - guide-section
+          - guide-section-header
+          - task-team-profile
 
