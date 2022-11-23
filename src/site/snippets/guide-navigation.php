@@ -1,27 +1,31 @@
 <?php 
 
-if ($page->hasPrev())
+
+$collection = $kirby->collection("guides-content");
+if ($page->prev($collection))
 {
-  $previousLinkTitle=$page->prev()->title();
-  $previousLinkUrl=$page->prev()->url();
+  $previousLinkTitle=$page->prev($collection)->title();
+  $previousLinkUrl=$page->prev($collection)->url();
 }
-elseif ($page->hasParent())
+elseif ($page->parent($collection))
 {
-  $previousLinkTitle=$page->parent()->title();
-  $previousLinkUrl=$page->parent()->url();
+  $previousLinkTitle=$page->parent($collection)->title();
+  $previousLinkUrl=$page->parent($collection)->url();
 }
 
 if(!isset($taskButton))
 {
-  if ($page->hasChildren())
+
+  if ($next = $page->children($collection)->first())
   {
-    $nextLinkTitle=$page->children()->first()->title();
-    $nextLinkUrl=$page->children()->first()->url();
+    $nextLinkTitle=$page->children($collection)->first()->title();
+    $nextLinkUrl=$page->children($collection)->first()->url();
   }
-  elseif ($page->hasNext())
+
+  if ($next = $page->next($collection)) 
   {
-    $nextLinkTitle=$page->next()->title();
-    $nextLinkUrl=$page->next()->url();
+    $nextLinkTitle=$page->next($collection)->title();
+    $nextLinkUrl=$page->next($collection)->url();
   }
 }
 ?>
