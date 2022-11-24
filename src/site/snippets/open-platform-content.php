@@ -1,11 +1,17 @@
+<?php
+$currentGuide=$page->parents()->filterBy('template', 'guide')->first();
+?>
+
 <div class="container">
   <div class="row">
     <div class="col-12" d-none d-lg-block>
-      <h1 class="fw-bold"><?=$page->title()?></h1>
+
     </div>
   </div>
   <div class="row">
     <div class="col-md-4">
+      <?php if ($currentGuide) ?>
+      <h3><?=$currentGuide->title() ?></h3>
       <?php if($image = $page->image()): ?>
       <div>
         <img class="img-fluid rounded" src="<?= $image->url() ?>" alt="" width="250" height="250">
@@ -20,6 +26,7 @@
       <?php snippet('show-guide-contents', ['contents'=>$page->siblings()]) ?>
     </div>
     <div class="col">
+      <h1 class="fw-bold"><?=$page->title()?></h1>
       <p class="has-medium-font-size lh-sm"><strong>
           <?=$page->description()?></p>
       </strong>

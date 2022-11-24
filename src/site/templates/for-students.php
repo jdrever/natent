@@ -4,7 +4,7 @@
   <h2>The new way of learning about sustainability</h2>
 </div>
 <div class="bg-dark text-light p-4 mt-2"
-     style="background-image: url('/images/SDGs.png'); background-repeat: no-repeat;background-size:cover;">
+     style="background-image: url('/assets/images/SDGs.png'); background-repeat: no-repeat;background-size:cover;">
   <div class="mask p-5" style="background-color: rgba(0, 0, 0, 0.6);">
     <h2>Why change the world as a Natural Entrepreneur?</h2>
     <ul style="font-size:2em;">
