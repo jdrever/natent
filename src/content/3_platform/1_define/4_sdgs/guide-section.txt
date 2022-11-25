@@ -2,7 +2,7 @@ Title: Introduction to Sustainable Development Goals
 
 ----
 
-Maincontent: [{"attrs":[],"columns":[{"blocks":[{"content":{"text":"<p>Some content<\/p>"},"id":"f09d720e-1865-4190-be5a-ea24d1150054","isHidden":false,"type":"text"}],"id":"0d5525d0-2439-4b5e-a4ed-e483ede17320","width":"1\/1"}],"id":"f61ecbf1-0139-4f1e-ab8d-7e4a54618bfd"}]
+Maincontent: [{"attrs":[],"columns":[{"blocks":[{"content":{"text":"<p><strong>In this Section, you will start to think about the Challenge you will work on together as a Team. Your Challenge Topic will be linked to a Sustainable Development Goal.<\/strong><\/p>"},"id":"f09d720e-1865-4190-be5a-ea24d1150054","isHidden":false,"type":"text"}],"id":"0d5525d0-2439-4b5e-a4ed-e483ede17320","width":"1\/1"}],"id":"f61ecbf1-0139-4f1e-ab8d-7e4a54618bfd"},{"attrs":[],"columns":[{"blocks":[{"content":{"location":"kirby","image":["file:\/\/KbiWbSga39mOcjvN"],"src":"","alt":"","caption":"","link":"","ratio":"","crop":"false"},"id":"169c5d1f-0669-43b0-9dfe-ee187d98b6ff","isHidden":false,"type":"image"}],"id":"516dc3fa-adcb-4ec9-affc-ebf1b940e816","width":"1\/1"}],"id":"b32bb60e-83a3-4ffb-95c6-63e262007548"}]
 
 ----
 
