@@ -1,6 +1,6 @@
 <?php
 Kirby::plugin(
-  'careful-commons/activity-block',
+  'careful-digital/guides',
   [
     'blueprints' => [
       'blocks/activity' => __DIR__ . '/blueprints/blocks/activity.yml',
