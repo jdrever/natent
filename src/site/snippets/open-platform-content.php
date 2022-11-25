@@ -9,12 +9,12 @@ $currentGuide=$page->parents()->filterBy('template', 'guide')->first();
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <?php if ($currentGuide) ?>
       <h3><?=$currentGuide->title() ?></h3>
       <?php if($image = $page->image()): ?>
       <div>
-        <img class="img-fluid rounded" src="<?= $image->url() ?>" alt="" width="250" height="250">
+        <!--<img class="img-fluid rounded" src="<?= $image->url() ?>" alt="" width="250" height="250"-->
       </div>
       <?php endif ?>
       <div class="progress mt-1 mb-4" style="height:30px;">
@@ -26,7 +26,7 @@ $currentGuide=$page->parents()->filterBy('template', 'guide')->first();
       <?php snippet('show-guide-contents', ['contents'=>$page->siblings()]) ?>
     </div>
     <div class="col">
-      <h1 class="fw-bold"><?=$page->title()?></h1>
+      <h1 class="fw-bold"><i class="bi bi-journal-text"></i><?=$page->title()?></h1>
       <p class="has-medium-font-size lh-sm"><strong>
           <?=$page->description()?></p>
       </strong>

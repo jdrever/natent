@@ -1,0 +1,10 @@
+{
+    "require": {
+        "hananils/kirby-colors": "^1.7"
+    },
+    "config": {
+        "allow-plugins": {
+            "getkirby/composer-installer": true
+        }
+    }
+}

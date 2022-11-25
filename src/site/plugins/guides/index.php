@@ -4,9 +4,11 @@ Kirby::plugin(
   [
     'blueprints' => [
       'blocks/activity' => __DIR__ . '/blueprints/blocks/activity.yml',
+      'blocks/image' => __DIR__ . '/blueprints/blocks/image.yml',
+      'blocks/heading' => __DIR__ . '/blueprints/blocks/heading.yml',
     ],
     'snippets' => [
-      'blocks/activity' => __DIR__ . '/snippets/blocks/activity.php',
+      'blocks/image' => __DIR__ . '/snippets/blocks/image.php',
     ],
   ]
 );
