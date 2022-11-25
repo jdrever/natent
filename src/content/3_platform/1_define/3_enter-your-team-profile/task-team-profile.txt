@@ -1,9 +1,0 @@
-Title: Enter your Team Profile
-
-----
-
-Uuid: w7QwmWT6KzJGRXIO
-
-----
-
-Maincontent: 

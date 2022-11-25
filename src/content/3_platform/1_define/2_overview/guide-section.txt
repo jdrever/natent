@@ -1,9 +1,0 @@
-Title: Overview
-
-----
-
-Maincontent: [{"attrs":[],"columns":[{"blocks":[{"content":{"text":"<p>Below you can see each step of the Natural Entrepreneurs learning journey which you are following. The learning journey we\u2019re following is designed to guide you step-by-step through a design process inspired by nature.<\/p>"},"id":"a9f4f8c4-ba09-4bd5-8ea8-54fa879a0205","isHidden":false,"type":"text"},{"content":{"url":"https:\/\/www.youtube.com\/embed\/yze8C0YUOFg?feature=oembed","caption":"Overview of the Natural Entrepeneurs Learning Journey"},"id":"e47da17e-23b9-41e7-9ba8-369fd9e459eb","isHidden":false,"type":"video"}],"id":"668223c9-6600-40ff-b012-0ed40218e0c5","width":"1\/1"}],"id":"5b800ac9-b873-4c22-bd9d-80429c5d99d5"},{"attrs":[],"columns":[{"blocks":[{"content":{"text":"<p>As you continue through this process, you will see your progress on the left-hand side. You can see an overview of the entire design process below. We\u2019ll be guiding you though this, with activities for you to try out as a Team, as well as providing collaboration tasks for you to complete.<\/p><p>If you have suggestions on how we can make this process even better, please do let your teacher know.<\/p>"},"id":"57e21d8d-17d8-418a-b077-96b3667f0e70","isHidden":false,"type":"text"}],"id":"2380711f-973c-43a9-a8bb-c81d92fe464b","width":"1\/1"}],"id":"6fc6ff69-b499-44e3-9474-288a6bf63447"}]
-
-----
-
-Uuid: y7CXLeibGxuwjMGh
