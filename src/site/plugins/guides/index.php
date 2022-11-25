@@ -9,6 +9,7 @@ Kirby::plugin(
     ],
     'snippets' => [
       'blocks/image' => __DIR__ . '/snippets/blocks/image.php',
+      'blocks/heading' => __DIR__ . '/snippets/blocks/heading.php',
     ],
   ]
 );
