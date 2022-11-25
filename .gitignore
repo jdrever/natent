@@ -1,5 +1,6 @@
 /logs/*
 .DS_Store
 node_modules/
+/src/content/*
 /src/vendor
 /src/kirby
