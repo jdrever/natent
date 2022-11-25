@@ -1,1 +1,0 @@
-Hello <?= $item->method() ?>

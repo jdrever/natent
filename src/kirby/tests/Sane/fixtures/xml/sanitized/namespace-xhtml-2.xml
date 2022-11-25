@@ -1,9 +1,0 @@
-<html>
-  <head>
-    <title>This is very malicious</title>
-  </head>
-
-  <body>
-    <script>alert(1)</script>
-  </body>
-</html>

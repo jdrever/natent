@@ -24,7 +24,7 @@ fields:
     placeholder: field.blocks.heading.placeholder
   backgroundColour:
     label: Background Colour
-    type: text
+    type: colors
     width: 1/2
   isCentred:
     label: Centre Heading?

@@ -23,7 +23,8 @@
   },
   "require": {
     "php": ">=8.0.0 <8.2.0",
-    "getkirby/cms": "^3.8"
+    "getkirby/cms": "^3.8",
+    "hananils/kirby-colors": "^1.7"
   },
   "config": {
     "allow-plugins": {
