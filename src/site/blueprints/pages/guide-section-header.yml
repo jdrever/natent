@@ -1,5 +1,15 @@
 title: Guide Section Header
 icon: divider
-
 options:
   url: false
+columns:
+  info:
+    width:  1/1
+    sections:
+      info:
+        type: info
+        text: This is a Section Header. There are no fields you need to fill in to make this work.
+
+
+
+
