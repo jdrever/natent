@@ -2,6 +2,7 @@
 
 return [
     'debug'  => true,
+    'languages' =>true,
     'panel' =>
     [
       'install' => true,
