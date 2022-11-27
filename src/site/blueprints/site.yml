@@ -18,4 +18,8 @@ columns:
           - for-students
           - contact
           - platform-home
-
+      countries:
+        label: Pages
+        type: pages
+        templates:
+          - country
