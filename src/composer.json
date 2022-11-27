@@ -24,7 +24,8 @@
   "require": {
     "php": ">=8.0.0 <8.2.0",
     "getkirby/cms": "^3.8",
-    "hananils/kirby-colors": "^1.7"
+    "hananils/kirby-colors": "^1.7",
+    "rasteiner/k3-trevor-view": "^0.2.4"
   },
   "config": {
     "allow-plugins": {

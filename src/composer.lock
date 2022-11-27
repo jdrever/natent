@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "090a2084726dc2a555fd87ad6d8030c3",
+    "content-hash": "f71e89022a403207f6b7590538f8c1c6",
     "packages": [
         {
             "name": "claviska/simpleimage",
@@ -695,6 +695,42 @@
                 "source": "https://github.com/php-fig/log/tree/3.0.0"
             },
             "time": "2021-07-14T16:46:02+00:00"
+        },
+        {
+            "name": "rasteiner/k3-trevor-view",
+            "version": "0.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rasteiner-dist/k3-trevor-view.git",
+                "reference": "5233b8786029a03dfc66bda591bbc411f39e56f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rasteiner-dist/k3-trevor-view/zipball/5233b8786029a03dfc66bda591bbc411f39e56f6",
+                "reference": "5233b8786029a03dfc66bda591bbc411f39e56f6",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/cms": ">=3.6",
+                "getkirby/composer-installer": "^1.1"
+            },
+            "type": "kirby-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Steiner",
+                    "email": "roman@toastlab.ch"
+                }
+            ],
+            "description": "Kirby 3 Plugin to edit your language translation variables from the Panel",
+            "support": {
+                "issues": "https://github.com/rasteiner-dist/k3-trevor-view/issues",
+                "source": "https://github.com/rasteiner-dist/k3-trevor-view/tree/0.2.4"
+            },
+            "time": "2022-05-04T07:57:53+00:00"
         },
         {
             "name": "symfony/polyfill-intl-idn",
