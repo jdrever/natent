@@ -19,6 +19,7 @@ columns:
                   - heading
                   - text
                   - list
+                  - quote
                   - activity
               media:
                 label: Media

@@ -31,9 +31,6 @@ columns:
             query: site.index.filterBy('template', 'country')
   sidebar:
     width: 1/2
-
-      template:
-        -country
     sections:
       pages:
         label: Sections
