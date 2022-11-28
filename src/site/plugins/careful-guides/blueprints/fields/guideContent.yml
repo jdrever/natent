@@ -1,0 +1,35 @@
+# Fields can be defined in their own field blueprints
+# and reused across multiple blueprints
+# This field is used in the album.yml and note.yml blueprints
+# See http://getkirby.com/docs/guide/blueprints/extending-blueprints#reusing-and-extending-single-fields
+type: layout
+label: Guide Content
+size: huge
+fieldsets:
+  text:
+    label: Text
+    type: group
+    fieldsets:
+      - heading
+      - text
+      - list
+      - quote
+      - activity
+  media:
+    label: Media
+    type: group
+    fieldsets:
+      - image
+      - video
+  code:
+    label: Code
+    type: group
+    open: false
+    fieldsets:
+      - code
+      - markdown
+settings:
+  fields:
+    backgroundColour:
+      label: Background Colour
+      type: colors
