@@ -24,8 +24,16 @@ columns:
             label: Main Content
             type: blocks
             size: huge
+          countries:
+            label: Countries
+            type: pages
+            subpages: false
+            query: site.index.filterBy('template', 'country')
   sidebar:
     width: 1/2
+
+      template:
+        -country
     sections:
       pages:
         label: Sections

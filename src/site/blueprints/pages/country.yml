@@ -6,7 +6,11 @@ columns:
       fields:
         type: fields
         fields:
-          flag:
-            type: blocks
-            size: huge
+          language:
+            type: select
+            options:
+              type: query
+              query: kirby.languages
+              text: "{{ item.name }}"
+              value: "{{ item.code }}"
 

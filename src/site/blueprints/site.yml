@@ -19,7 +19,7 @@ columns:
           - contact
           - platform-home
       countries:
-        label: Pages
+        label: Countries
         type: pages
         templates:
           - country

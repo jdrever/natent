@@ -1,82 +1,119 @@
-panel.plugin("careful-digital/guides", {
-  blocks: {
-    activity: `
-      <div class="container-fluid rounded m-1 p-2 bg-light">
-        <div v-if="content.activitytitle">
-          <h2 class="text-dark display-6"><i class="bi bi-heart-pulse"></i>&nbsp;ACTIVITY:&nbsp;{{ content.activitytitle }}</h2>
-        </div>
-
-        <div v-if="content.activitycontent">
-          {{ content.activitycontent }}
-        <div>
-      </div>
-    `
-  },
-  heading: `
-    <template>
-	<div :data-level="content.level" class="k-block-type-heading-input">
-		<k-writer
-			ref="input"
-			:inline="true"
-			:marks="textField.marks"
-			:placeholder="textField.placeholder"
-			:value="content.text"
-			@input="update({ text: $event })"
-		/>
-    TEST
-	</div>
-</template>
-
-<script>
-/**
- * @displayName BlockTypeHeading
- * @internal
- */
-export default {
-	computed: {
-		textField() {
-			return this.field("text", {
-				marks: true
-			});
-		}
-	},
-	methods: {
-		focus() {
-			this.$refs.input.focus();
-		}
-	}
-};
-</script>
-
-<style>
-.k-block-type-heading-input {
-	line-height: 1.25em;
-	font-weight: var(--font-bold);
-}
-.k-block-type-heading-input[data-level="h1"] {
-	font-size: var(--text-3xl);
-	line-height: 1.125em;
-}
-.k-block-type-heading-input[data-level="h2"] {
-	font-size: var(--text-2xl);
-}
-.k-block-type-heading-input[data-level="h3"] {
-	font-size: var(--text-xl);
-}
-.k-block-type-heading-input[data-level="h4"] {
-	font-size: var(--text-lg);
-}
-.k-block-type-heading-input[data-level="h5"] {
-	line-height: 1.5em;
-	font-size: var(--text-base);
-}
-.k-block-type-heading-input[data-level="h6"] {
-	line-height: 1.5em;
-	font-size: var(--text-sm);
-}
-.k-block-type-heading-input .ProseMirror strong {
-	font-weight: 700;
-}
-</style>
-`
-});
+(function() {
+  "use strict";
+  const Heading_vue_vue_type_style_index_0_lang = "";
+  function normalizeComponent(scriptExports, render, staticRenderFns, functionalTemplate, injectStyles, scopeId, moduleIdentifier, shadowMode) {
+    var options = typeof scriptExports === "function" ? scriptExports.options : scriptExports;
+    if (render) {
+      options.render = render;
+      options.staticRenderFns = staticRenderFns;
+      options._compiled = true;
+    }
+    if (functionalTemplate) {
+      options.functional = true;
+    }
+    if (scopeId) {
+      options._scopeId = "data-v-" + scopeId;
+    }
+    var hook;
+    if (moduleIdentifier) {
+      hook = function(context) {
+        context = context || this.$vnode && this.$vnode.ssrContext || this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext;
+        if (!context && typeof __VUE_SSR_CONTEXT__ !== "undefined") {
+          context = __VUE_SSR_CONTEXT__;
+        }
+        if (injectStyles) {
+          injectStyles.call(this, context);
+        }
+        if (context && context._registeredComponents) {
+          context._registeredComponents.add(moduleIdentifier);
+        }
+      };
+      options._ssrRegister = hook;
+    } else if (injectStyles) {
+      hook = shadowMode ? function() {
+        injectStyles.call(
+          this,
+          (options.functional ? this.parent : this).$root.$options.shadowRoot
+        );
+      } : injectStyles;
+    }
+    if (hook) {
+      if (options.functional) {
+        options._injectStyles = hook;
+        var originalRender = options.render;
+        options.render = function renderWithStyleInjection(h, context) {
+          hook.call(context);
+          return originalRender(h, context);
+        };
+      } else {
+        var existing = options.beforeCreate;
+        options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+      }
+    }
+    return {
+      exports: scriptExports,
+      options
+    };
+  }
+  const _sfc_main$1 = {
+    computed: {
+      textField() {
+        return this.field("text", {
+          marks: true
+        });
+      }
+    },
+    methods: {
+      focus() {
+        this.$refs.input.focus();
+      }
+    }
+  };
+  var _sfc_render$1 = function render() {
+    var _vm = this, _c = _vm._self._c;
+    return _c("div", { staticClass: "k-block-type-heading-input", attrs: { "data-level": _vm.content.level } }, [_c("k-writer", { ref: "input", attrs: { "inline": true, "marks": _vm.textField.marks, "placeholder": _vm.textField.placeholder, "value": _vm.content.text }, on: { "input": function($event) {
+      return _vm.update({ text: $event });
+    } } })], 1);
+  };
+  var _sfc_staticRenderFns$1 = [];
+  _sfc_render$1._withStripped = true;
+  var __component__$1 = /* @__PURE__ */ normalizeComponent(
+    _sfc_main$1,
+    _sfc_render$1,
+    _sfc_staticRenderFns$1,
+    false,
+    null,
+    null,
+    null,
+    null
+  );
+  __component__$1.options.__file = "/Users/jamesdrever/Websites/natent-v2/src/site/plugins/careful-guides/src/components/Heading.vue";
+  const Heading = __component__$1.exports;
+  const Activity_vue_vue_type_style_index_0_lang = "";
+  const _sfc_main = {};
+  var _sfc_render = function render() {
+    var _vm = this, _c = _vm._self._c;
+    _vm._self._setupProxy;
+    return _c("div", { staticClass: "container-fluid rounded m-1 p-2 bg-light" }, [_vm.content.activitytitle ? _c("div", [_c("h2", { staticClass: "text-dark display-6" }, [_c("i", { staticClass: "bi bi-heart-pulse" }), _vm._v("\xA0ACTIVITY:\xA0" + _vm._s(_vm.content.activitytitle))])]) : _vm._e(), _vm.content.activitycontent ? _c("div", [_vm._v(" " + _vm._s(_vm.content.activitycontent) + " ")]) : _vm._e()]);
+  };
+  var _sfc_staticRenderFns = [];
+  _sfc_render._withStripped = true;
+  var __component__ = /* @__PURE__ */ normalizeComponent(
+    _sfc_main,
+    _sfc_render,
+    _sfc_staticRenderFns,
+    false,
+    null,
+    null,
+    null,
+    null
+  );
+  __component__.options.__file = "/Users/jamesdrever/Websites/natent-v2/src/site/plugins/careful-guides/src/components/Activity.vue";
+  const Activity = __component__.exports;
+  panel.plugin("careful-digital/guides", {
+    blocks: {
+      activity: Activity,
+      heading: Heading
+    }
+  });
+})();
