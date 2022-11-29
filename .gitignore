@@ -4,3 +4,5 @@ node_modules/
 /src/content/*
 /src/vendor
 /src/kirby
+/src/site/plugins/k3-trevor-view
+/src/site/plugins/kirby-colors
