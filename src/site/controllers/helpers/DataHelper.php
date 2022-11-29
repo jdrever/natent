@@ -11,7 +11,7 @@ class DataHelper
     private const DSN = 'mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=utf8mb4';
 
     
-    public static function updateTeamProfile($wpUserId, $name, $descripton,$skills)
+    public static function updateTeamProfile($wpUserId, $descripton,$skills)
     {
         $result=new DataResult();
 

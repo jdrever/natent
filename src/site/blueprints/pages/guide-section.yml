@@ -17,5 +17,6 @@ columns:
         template:
          - guide-section
          - task-team-profile
+         - task-select-topic
 
 

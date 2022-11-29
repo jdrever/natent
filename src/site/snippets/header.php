@@ -23,7 +23,7 @@
           });
       }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
     <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel='stylesheet'
@@ -87,27 +87,8 @@
             <a href="/contact/" class="nav-link px-2">Contact Us</a>
           </li>
         </ul>
-        <div class="col-md-3 text-end">
-          <select name="lang_choice_1" id="lang_choice_1">
-            <option value="de">
-              Deutsch
-            </option>
-            <option value="lv">
-              Latviešu valoda
-            </option>
-            <option value="ro">
-              Română
-            </option>
-            <option value="nl">
-              Nederlands
-            </option>
-            <option value="en" selected='selected'>
-              English
-            </option>
-            <option value="hu">
-              Magyar
-            </option>
-          </select>
+        <div class="col-md-3">
+        <?php snippet('language-switcher'); ?> 
         </div>
       </div>
     </div>
