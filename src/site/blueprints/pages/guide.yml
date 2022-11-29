@@ -39,4 +39,5 @@ columns:
           - guide-section
           - guide-section-header
           - task-team-profile
+          - task-select-topic
 

@@ -23,16 +23,22 @@ return function($kirby, $pages, $page)
     {
         $userId='1';
         $areas=helpers\DataHelper::getAreasWithAvailableChallenges($userId);
+
+        $currentLang=$kirby->language()->code();
     
         $imageFileEnding=".png";
-        if (pll_current_language()=='lv')
+        if ($currentLang=='lv')
             $imageFileEnding='-lv.jpg';
-        if (pll_current_language()=='nl')
+        if ($currentLang=='nl')
             $imageFileEnding='-nl.png';
-        if (pll_current_language()=='de')
+        if ($currentLang=='de')
             $imageFileEnding='-de.jpg';
-        if (pll_current_language()=='ro')
+        if ($currentLang=='ro')
             $imageFileEnding='-ro.png';
-    }
-    ;
+
+        return [
+            'areas' => $areas,
+            'imageFileEnding' => $imageFileEnding
+        ];
+    };
 };
