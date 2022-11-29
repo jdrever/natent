@@ -3,6 +3,8 @@
 <?php snippet('breadcrumb') ?>
 <?php snippet('open-platform-content') ?>
 <?php snippet('show-blocks') ?>
+
+<?php if ($showTopics) : ?>
 <div class="album py-5 bg-light">
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -17,7 +19,7 @@ foreach ($areas as $area) : ?>
             <p class="card-text"><strong><?=trim($area['name'])?></strong><br /><?=trim($area['description'])?></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="<?=$challengePage ?>/?areaId=<?=$area['id'] ?>"
+                <a href="#/?topicId=<?=$area['id'] ?>"
                   class="btn btn-sm btn-primary float-end"><?=$page->selectTopicButton()?> &#8594;</a>
               </div>
             </div>
@@ -28,6 +30,12 @@ foreach ($areas as $area) : ?>
     </div>
   </div>
 </div>
+<?php endif ?>
+<?php if ($showTopics) : ?>
+
+  
+<?php endif ?>
+
 
 <?php snippet('close-platform-content') ?>
 <?php snippet('footer') ?>

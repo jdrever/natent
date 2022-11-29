@@ -5,7 +5,7 @@ use carefulcollab\helpers as helpers;
 
 return function($kirby, $pages, $page) 
 {
-
+    
 
     if($kirby->request()->is('POST')) 
     {
@@ -18,6 +18,12 @@ return function($kirby, $pages, $page)
         if ($page = $page->next()){
             return $page->go();
           }
+    }
+    else if ($kirby->request()->get('topicId'))
+    {
+        return [
+            'showChallenges' => true
+        ]
     }
     else
     {
@@ -37,6 +43,7 @@ return function($kirby, $pages, $page)
             $imageFileEnding='-ro.png';
 
         return [
+            'showTopics' => true,
             'areas' => $areas,
             'imageFileEnding' => $imageFileEnding
         ];
