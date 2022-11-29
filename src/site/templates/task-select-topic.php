@@ -32,13 +32,6 @@ foreach ($areas as $area) : ?>
 </div>
 <?php endif ?>
 <?php if ($showTopics) : ?>
-  <?php 
-$challenges=helpers\DataHelper::getChallengesInArea($wpUserId, $areaId);
-$bespokeChallenge='';
-if ($team['bespoke_challenge']==1)
-    $bespokeChallenge=$team['challenge'];
-?>
-
 
 <h3><?=pll__("List of Challenges for")?> <?=pll__($area['name'])?></h3>
 <?php 
@@ -97,7 +90,7 @@ else
 <br>
 <h3><?=pll__("Teams Working on this Topic")?></h3>
 <?php 
-$teams = helpers\DataHelper::getTeamsByAreaId($areaId);
+
 
 if ($teams)
 {

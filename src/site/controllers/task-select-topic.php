@@ -5,7 +5,7 @@ use carefulcollab\helpers as helpers;
 
 return function($kirby, $pages, $page) 
 {
-    
+    $userId="1";
 
     if($kirby->request()->is('POST')) 
     {
@@ -21,9 +21,20 @@ return function($kirby, $pages, $page)
     }
     else if ($kirby->request()->get('topicId'))
     {
+        $topicId=$_GET['topicId'];
+        $topic=helpers\DataHelper::getAreaToInvestigate($topicId);
+        $challenges=helpers\DataHelper::getChallengesInArea($userId, $topicId);
+        $bespokeChallenge='';
+        if ($team['bespoke_challenge']==1) $bespokeChallenge=$team['challenge'];
+
+        $teams = helpers\DataHelper::getTeamsByAreaId($topicId);
+
         return [
+            'topic' => $topic,
+            'challenges' => $challenges,
+            'teams' => $teams,
             'showChallenges' => true
-        ]
+        ];
     }
     else
     {
