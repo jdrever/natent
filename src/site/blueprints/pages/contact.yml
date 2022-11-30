@@ -6,7 +6,5 @@ columns:
       fields:
         type: fields
         fields:
-          mainContent:
-            type: blocks
-            size: huge
+          mainContent: fields/mainContent
 

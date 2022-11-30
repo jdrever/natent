@@ -7,10 +7,7 @@ columns:
       fields:
         type: fields
         fields:
-          mainContent:
-            label: Main Content
-            type: blocks
-            size: huge
+          mainContent: fields/mainContent
   sidebar:
     width: 1/2
     sections:
