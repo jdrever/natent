@@ -36,11 +36,8 @@ class DataHelper
         }
         catch (\PDOException $e)
         {
-            echo(self::DSN);
-            echo(var_dump($e));
-             //$result=self::getResultForException($result,$e); 
-             //echo($result);
-             //$pdo->rollBack();
+             $result=self::getResultForException($result,$e); 
+             $pdo->rollBack();
         }
         return $result;
     } 

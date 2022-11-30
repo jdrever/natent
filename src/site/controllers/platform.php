@@ -3,9 +3,11 @@ include 'helpers/DataHelper.php';
 
 use carefulcollab\helpers as helpers;
 
-return function($kirby, $pages, $page) {
+return function($kirby, $pages, $page) 
+{
     $userId=1;
     $team=helpers\DataHelper::getTeamByWPUserId($userId);
-    return [ 'userId' => $userId, 'team' => $team ];
+    $status=$kirby->request()->get('status') ? $kirby->request()->get('status') : '';
+    return [ 'userId' => $userId, 'team' => $team, 'status' =>$status ];
 }
 ?>

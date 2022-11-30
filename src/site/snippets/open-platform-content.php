@@ -1,7 +1,7 @@
 <?php
 $currentGuide=$page->parents()->filterBy('template', 'guide')->first();
 ?>
-
+<?php snippet('show-status') ?>
 <div class="container">
   <div class="row">
     <div class="col-12" d-none d-lg-block>

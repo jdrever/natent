@@ -1,7 +1,7 @@
 <?php
 use carefulcollab\helpers as helpers;
 return function($kirby, $pages, $page) {
-    # Grab the data from the default controller
+
     $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby'));
     $team=$platform['team'];
 
@@ -12,20 +12,26 @@ return function($kirby, $pages, $page) {
         $skills = '';
         if (isset($_POST['skills'])) $skills = implode(',', $_POST['skills']);
         $result=helpers\DataHelper::updateTeamProfile($team['user_id'], $description, $skills);
-        $pointsToAdd = 20;
 
-        if ($page = $page->next()){
-            return [ 'nextPage' => $page->go(['query' => ['status' => 'ok', 'points' =>$pointsToAdd ]])];
+        if ($result->wasSuccessful)
+        {
+            $pointsToAdd = 20;
+            if ($page = $page->next())
+            {
+                return [ 'nextPage' => $page->go(['query' => ['status' => 'ok', 'points' =>$pointsToAdd ]])];
+            }
+        }
+        else
+        {
+            return [ 'status' =>'err','message' => 'It did not work' ];
         }
     }
     else
     {
         $skills=helpers\DataHelper::getSkillsets();
-        return [
-            'description' => $team['description'],
+        return A::merge($platform, [
             'skills' => $skills,
-            'teamSkills' =>$team['skills'],
             'showForm' => true
-        ];
+        ]);
     }
 };
