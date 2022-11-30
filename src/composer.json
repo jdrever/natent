@@ -29,8 +29,7 @@
   },
   "config": {
     "allow-plugins": {
-      "getkirby/composer-installer": true,
-      "composer/installers": false
+      "getkirby/composer-installer": true
     },
     "optimize-autoloader": true
   },
@@ -39,7 +38,7 @@
       "Composer\\Config::disableProcessTimeout",
       "@php -S localhost:8000 kirby/router.php"
     ],
-    "post-install-cmd": [
+    "post-update-cmd": [
       "cp -a vendor/timoetting/kirby-color site/plugins/"]
   }
 }
