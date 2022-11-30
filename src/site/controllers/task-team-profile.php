@@ -15,10 +15,8 @@ return function($kirby, $pages, $page) {
         $pointsToAdd = 20;
 
         if ($page = $page->next()){
-            return $page->go([
-                'status' => 'ok'
-            ]);
-          }
+            return [ 'nextPage' => $page->go(['query' => ['status' => 'ok', 'points' =>$pointsToAdd ]])];
+        }
     }
     else
     {
@@ -26,7 +24,8 @@ return function($kirby, $pages, $page) {
         return [
             'description' => $team['description'],
             'skills' => $skills,
-            'teamSkills' =>$team['skills']
+            'teamSkills' =>$team['skills'],
+            'showForm' => true
         ];
     }
 };
