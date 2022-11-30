@@ -8,9 +8,8 @@ return function($kirby, $pages, $page, $site) {
     
     if($kirby->request()->is('POST')) 
     {
-        $description = htmlspecialchars($_POST['description']);
-        $skills = '';
-        if (isset($_POST['skills'])) $skills = implode(',', $_POST['skills']);
+        $description = htmlspecialchars(get('description'));
+        $skills = implode(',', get('skills',''));
         $result=helpers\DataHelper::updateTeamProfile($team['id'], $description, $skills);
 
         return $kirby->controller('result' , compact('page', 'site', 'result'));

@@ -4,10 +4,11 @@ return function($page, $site,  $result)
     if ($result->wasSuccessful)
     {
         $pointsToAdd = 20;
-        if ($page = $page->next())
+        if ($nextPage = $page->next())
         {
-            $page->go(['query' => ['status' => 'ok', 'points' =>$pointsToAdd ]]);
+            $nextPage->go(['query' => ['status' => 'ok', 'points' =>$pointsToAdd ]]);
         }
+        $page->go(['query' => ['status' => 'ok', 'points' =>$pointsToAdd ]]);
     }
     else
     {

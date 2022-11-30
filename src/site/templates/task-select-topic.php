@@ -8,9 +8,7 @@
 <div class="album py-5 bg-light">
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <?php 
-$challengePage="#";
-foreach ($areas as $area) : ?>
+      <?php foreach ($areas as $area) : ?>
       <div class="col">
         <div class="card shadow-sm">
           <img class="img-fluid" src="<?=url('/assets/images/SDGs/' . $area['id'] . $imageFileEnding) ?>"
@@ -32,62 +30,50 @@ foreach ($areas as $area) : ?>
 </div>
 <?php endif ?>
 <?php if ($showChallenges) : ?>
-<h3><?=t("List of Challenges for")?> <?=t($area['name'])?></h3>
-<?php 
-if ($challenges)
-{
-  foreach ($challenges as $challenge) 
-  { ?>
+<h3><?=$page->listOfChallengesHeading()?> <?=t($topic['name'])?></h3>
+<?php if ($challenges) : ?>
+  <?php foreach ($challenges as $challenge) : ?>
 <div class="container bg-light m-1">
     <div class="card shadow-sm">
         <div class="card-body">
             <h4 class="card-text"><?=$challenge['name']?></h4>
             <p><?=$challenge['description']?></p>
 
-<?php 
-if (isset($challenge['further_information']))
-{
-?>
+    <?php if (isset($challenge['further_information'])) :?>
             <p><?=$challenge['further_information']?></p>
-<?php
-}
-?>
+    <?php endif  ?>
 
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                    <form action="<?= $collaborationPointPage?>" method="post">
-                        <input type="hidden" id="point" name="point" value="<?=$collaborationPointType?>">
-                        <input type="hidden" id="areaId" name="areaId" value="<?=$areaId ?>">
+                    <form action="<?= $page->url()?>" method="post">
+                        <input type="hidden" id="topicId" name="topicId" value="<?=$topic['id'] ?>">
                         <input type="hidden" id="challengeId" name="challengeId" value="<?=$challenge['id']?>">
-                        <input type="submit" class="btn btn-primary float-end" value="<?=t("SELECT THIS CHALLENGE")?> &#8594;">
+                        <input type="submit" class="btn btn-primary float-end" value="<?=$page->selectChallengeButton()?>  &#8594;">
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<?php 
-  }
-}
-else
-{
-  echo("<p>" . t("There are not any set Challenges for this topic yet") . ".</p>");
-} 
+  <?php endforeach ?>
+<? 
+else :
 ?>
+<p><?=$page->noChallengesText() ?></p>
+<?php endif ?>
 
-<h4><?=t("Create your own Challenge for")?> <?=t($area['name'])?></h4>
-<p><?=t("If you would prefer to create your own Challenge, enter it in the box below")?>:</p>
+<h4><?=$page->createChallengeHeading()?> <?=t($topic['name'])?></h4>
+<p><?=$page->createChallengeText()?>:</p>
 
-<form class="form-inline" method="post" action="<?= $collaborationPointPage?>">
-    <input type="hidden" name="point" id="point" value="<?=$collaborationPointType?>">
-    <input type="hidden" name="areaId" id="areaId" value="<?=$areaId ?>">
-    <label for="school-info" class="m-1"><?=t("Enter your challenge")?>:</label>
+<form class="form-inline" method="post" action="<?= $page->url()?>">
+    <input type="hidden" name="topicId" id="topicId" value="<?=$topic['id'] ?>">
+    <label for="bespokeChallenge" class="m-1"><?=$page->enterChallengeLabel()?>:</label>
     <textarea class="form-control m-1" aria-label="With textarea" id="bespokeChallenge"
         name="bespokeChallenge"><?=htmlspecialchars($bespokeChallenge) ?></textarea>
-    <input type="submit" class="btn btn-primary float-end" value="<?=t("UPLOAD YOUR OWN CHALLENGE")?> &#8594;">
+    <input type="submit" class="btn btn-primary float-end" value="<?=$page->createChallengeButton()?> &#8594;">
 </form>
 <br>
-<h3><?=t("Teams Working on this Topic")?></h3>
+<h3><?=$page->teamsTopicHeading()?></h3>
 <?php 
 
 
@@ -110,8 +96,8 @@ if ($teams)
   ?>
     <tr>
         <td><a href="<?=$otherTeamPage . '/?teamId=' . $team['id']?>"><?=$team['name']?></a></td>
-        <td><?=t($team['area'])?></td>
-        <td><?=t($team['challenge'])?></td>
+        <td><?=t($team['area'], $team['area'])?></td>
+        <td><?=t($team['challenge'], $team['challenge'])?></td>
         <td><?=$team['points']?></td>
     </tr>
 
@@ -124,7 +110,7 @@ if ($teams)
 else
 {
 ?>
-<p><?=t("There are no other teams working on this Topic at the moment - so you could be the first!")?></p>
+<p><?=$page->noOtherTeams()?></p>
 <?php
 }
 ?>

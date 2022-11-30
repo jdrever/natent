@@ -12,3 +12,40 @@ columns:
             type: text
             label: 'SELECT THIS TOPIC' button
             default: SELECT THIS TOPIC
+          selectChallengeButton:
+            type: text
+            label: 'SELECT THIS CHALLENGE' button
+            default: SELECT THIS CHALLENGE
+          listOfChallengesHeading:
+            type: text
+            label: 'List of Challenges for ...' heading
+            default: List of Challenges for
+          noChallengesText:
+            type: text
+            label: 'There are not any set Challenges for this topic yet' text
+            default: There are not any set Challenges for this topic yet
+          createChallengeHeading:
+            type: text
+            label: 'Create your own Challenge for ...' heading
+            default: Create your own Challenge for
+          createChallengeText:
+            type: text
+            label: 'If you would prefer to create your own Challenge, enter it in the box below' text
+            default: If you would prefer to create your own Challenge, enter it in the box below
+          enterChallengeLabel:
+            type: text
+            label: 'Enter your challenge' label
+            default: Enter your challenge
+          createChallengeButton:
+            type: text
+            label: 'CREATE YOUR CHALLENGE' button
+            default: CREATE YOUR CHALLENGE
+          teamsTopicHeading:
+            type: text
+            label: 'Teams Working on this Topic' heading
+            default: Teams Working on this Topic
+          noOtherTeamsText:
+            type: text
+            label: 'There are no other teams working on this Topic at the moment - so you could be the first!' text
+            default: There are no other teams working on this Topic at the moment - so you could be the first!
+

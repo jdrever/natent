@@ -7,7 +7,9 @@ return [
   'locale' => 'en_US',
   'name' => 'English',
   'translations' => [
-    'Home' => 'Home',
-    'About' => 'About'
+    'Team Name' => 'Team Name',
+    'Topic' => 'Topic',
+    'Challenge' => 'Challenge',
+    'Points' => 'Points',
   ] 
 ];

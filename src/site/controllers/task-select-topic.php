@@ -1,20 +1,24 @@
 <?php
-include 'helpers/DataHelper.php';
-
 use carefulcollab\helpers as helpers;
 
-return function($kirby, $pages, $page) 
+return function($kirby, $pages, $page, $site) 
 {
     $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby'));
     $team=$platform['team'];
 
     if($kirby->request()->is('POST')) 
     {
-        //to do
+        $focusId = get('focusId');
+        $bespokeChallenge = htmlspecialchars(get('bespokeChallenge',''));
+        $challengeId = get('challengeId');
+        $result=helpers\DataHelper::updateTeamChallenge($team['user_id'], $focusId, $challengeId,$bespokeChallenge); 
+
+        return $kirby->controller('result' , compact('page', 'site', 'result'));
+
     }
-    else if ($kirby->request()->get('topicId'))
+    else if (get('topicId'))
     {
-        $topicId=$_GET['topicId'];
+        $topicId=get('topicId');
         $topic=helpers\DataHelper::getAreaToInvestigate($topicId);
         $challenges=helpers\DataHelper::getChallengesInArea($team['user_id'], $topicId);
         $bespokeChallenge='';
@@ -28,6 +32,7 @@ return function($kirby, $pages, $page)
             'teams' => $teams,
             'showTopics' => false,
             'showChallenges' => true,
+            'bespokeChallenge' => $bespokeChallenge,
         ];
     }
     else
