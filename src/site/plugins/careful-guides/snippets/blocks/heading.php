@@ -8,10 +8,6 @@ if ($block->isCentred()->isNotEmpty())
     $div='class="mx-auto d-block"';
   }
 }
-if ($block->backgroundColour()->isNotEmpty())
-{
-    $div.=' style="padding:0.7em 1em; background-color:'.$block->backgroundColour().'"';
-}
 ?>
 <?php if (!$div=="") : ?>
 <div <?=$div ?>>

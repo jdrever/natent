@@ -24,12 +24,13 @@
   "require": {
     "php": ">=8.0.0 <8.2.0",
     "getkirby/cms": "^3.8",
-    "hananils/kirby-colors": "^1.7",
-    "rasteiner/k3-trevor-view": "^0.2.4"
+    "rasteiner/k3-trevor-view": "^0.2.4",
+    "timoetting/kirby-color": "^1.0"
   },
   "config": {
     "allow-plugins": {
-      "getkirby/composer-installer": true
+      "getkirby/composer-installer": true,
+      "composer/installers": false
     },
     "optimize-autoloader": true
   },
@@ -37,6 +38,8 @@
     "start": [
       "Composer\\Config::disableProcessTimeout",
       "@php -S localhost:8000 kirby/router.php"
-    ]
+    ],
+    "post-install-cmd": [
+      "cp -a vendor/timoetting/kirby-color site/plugins/"]
   }
 }
