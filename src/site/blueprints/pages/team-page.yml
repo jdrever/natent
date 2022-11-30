@@ -1,0 +1,10 @@
+title: Team Page
+columns:
+  main:
+    width: 1/1
+    sections:
+      fields:
+        type: fields
+        fields:
+          mainContent: fields/mainContent
+
