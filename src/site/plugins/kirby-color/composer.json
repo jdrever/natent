@@ -1,0 +1,24 @@
+{
+  "name": "timoetting/kirby-color",
+  "type": "plugin",
+  "version": "1.0.4",
+  "description": "Kirby-Color is a color picker plugin for Kirby CMS v3.",
+  "license": "MIT",
+  "autoload": {
+    "files": [
+      "config.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Tim Ötting",
+      "email": "no@email.com"
+    }
+  ],
+  "require-dev": {},
+  "scripts": {
+    "build": "composer update --ignore-platform-reqs; composer dumpautoload -o;",
+    "zip": "rm kirby-color.zip; composer update --ignore-platform-reqs; composer dumpautoload -o; zip -r kirby-color.zip . -x *.git*; composer dumpautoload -o;"
+  },
+  "minimum-stability": "beta"
+}
