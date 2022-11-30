@@ -21,10 +21,6 @@ fields:
     inline: true
     width: 5/6
     placeholder: field.blocks.heading.placeholder
-  backgroundColour:
-    label: Background Colour
-    type: colors
-    width: 1/2
   isCentred:
     label: Centre Heading?
     type: toggle

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f71e89022a403207f6b7590538f8c1c6",
+    "content-hash": "afe71946c8b350459f4da3e4726e2013",
     "packages": [
         {
             "name": "claviska/simpleimage",
@@ -353,46 +353,6 @@
                 }
             ],
             "time": "2020-12-28T12:54:39+00:00"
-        },
-        {
-            "name": "hananils/kirby-colors",
-            "version": "1.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hananils/kirby-colors.git",
-                "reference": "6b49acf525cdd987e6063de7ee33f4035a2d5824"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/hananils/kirby-colors/zipball/6b49acf525cdd987e6063de7ee33f4035a2d5824",
-                "reference": "6b49acf525cdd987e6063de7ee33f4035a2d5824",
-                "shasum": ""
-            },
-            "require": {
-                "getkirby/composer-installer": "^1.2"
-            },
-            "type": "kirby-plugin",
-            "autoload": {
-                "psr-4": {
-                    "Hananils\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "hana+nils · Büro für Gestaltung",
-                    "email": "buero@hananils.de"
-                }
-            ],
-            "description": "A color field for Kirby 3",
-            "support": {
-                "issues": "https://github.com/hananils/kirby-colors/issues/",
-                "source": "https://github.com/hananils/kirby-colors/tree/1.7.0"
-            },
-            "time": "2022-11-11T11:15:13+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
@@ -985,6 +945,49 @@
                 }
             ],
             "time": "2022-05-24T11:49:31+00:00"
+        },
+        {
+            "name": "timoetting/kirby-color",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TimOetting/kirby-color.git",
+                "reference": "20e47c38be14779fb403a28683f923b4ca284dd8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TimOetting/kirby-color/zipball/20e47c38be14779fb403a28683f923b4ca284dd8",
+                "reference": "20e47c38be14779fb403a28683f923b4ca284dd8",
+                "shasum": ""
+            },
+            "type": "plugin",
+            "autoload": {
+                "files": [
+                    "config.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Ötting",
+                    "email": "no@email.com"
+                }
+            ],
+            "description": "Kirby-Color is a color picker plugin for Kirby CMS v3.",
+            "support": {
+                "issues": "https://github.com/TimOetting/kirby-color/issues",
+                "source": "https://github.com/TimOetting/kirby-color/tree/v1.0.4"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/TimOetting/10",
+                    "type": "custom"
+                }
+            ],
+            "time": "2020-11-25T00:38:46+00:00"
         }
     ],
     "packages-dev": [],

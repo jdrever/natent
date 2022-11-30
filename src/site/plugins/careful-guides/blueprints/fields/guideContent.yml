@@ -39,4 +39,11 @@ settings:
   fields:
     backgroundColour:
       label: Background Colour
-      type: colors
+      type: color
+      default: "#"
+      presets: # (optional)
+        - "#C1F4FA" # Heading 1
+        - "#CAF38C" # Heading 2
+        - "#FACB9F" # Heading 3
+        - "#FAF69E" # Highlighted text 1
+        - "#EFDAF3" # Highlighted text 2

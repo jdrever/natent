@@ -47,3 +47,18 @@ $font-family-base: "Lexend", system-ui, -apple-system, "Segoe UI", Roboto,
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
+
+.has-background > p {
+  padding: 1.25em 2.375em;
+  margin-bottom: 0;
+}
+
+.has-background > h1, 
+.has-background > h2, 
+.has-background > h3,
+.has-background > h4,
+.has-background > h5,
+.has-background > h6 {
+  padding: 0.7em 1em;
+  margin-bottom: 0;
+}
