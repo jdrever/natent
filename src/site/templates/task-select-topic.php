@@ -19,7 +19,7 @@ foreach ($areas as $area) : ?>
             <p class="card-text"><strong><?=trim($area['name'])?></strong><br /><?=trim($area['description'])?></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="#/?topicId=<?=$area['id'] ?>"
+                <a href="<?=$page->url()?>?topicId=<?=$area['id'] ?>"
                   class="btn btn-sm btn-primary float-end"><?=$page->selectTopicButton()?> &#8594;</a>
               </div>
             </div>
@@ -31,9 +31,8 @@ foreach ($areas as $area) : ?>
   </div>
 </div>
 <?php endif ?>
-<?php if ($showTopics) : ?>
-
-<h3><?=pll__("List of Challenges for")?> <?=pll__($area['name'])?></h3>
+<?php if ($showChallenges) : ?>
+<h3><?=t("List of Challenges for")?> <?=t($area['name'])?></h3>
 <?php 
 if ($challenges)
 {
@@ -60,7 +59,7 @@ if (isset($challenge['further_information']))
                         <input type="hidden" id="point" name="point" value="<?=$collaborationPointType?>">
                         <input type="hidden" id="areaId" name="areaId" value="<?=$areaId ?>">
                         <input type="hidden" id="challengeId" name="challengeId" value="<?=$challenge['id']?>">
-                        <input type="submit" class="btn btn-primary float-end" value="<?=pll__("SELECT THIS CHALLENGE")?> &#8594;">
+                        <input type="submit" class="btn btn-primary float-end" value="<?=t("SELECT THIS CHALLENGE")?> &#8594;">
                     </form>
                 </div>
             </div>
@@ -72,23 +71,23 @@ if (isset($challenge['further_information']))
 }
 else
 {
-  echo("<p>" . pll__("There are not any set Challenges for this topic yet") . ".</p>");
+  echo("<p>" . t("There are not any set Challenges for this topic yet") . ".</p>");
 } 
 ?>
 
-<h4><?=pll__("Create your own Challenge for")?> <?=pll__($area['name'])?></h4>
-<p><?=pll__("If you would prefer to create your own Challenge, enter it in the box below")?>:</p>
+<h4><?=t("Create your own Challenge for")?> <?=t($area['name'])?></h4>
+<p><?=t("If you would prefer to create your own Challenge, enter it in the box below")?>:</p>
 
 <form class="form-inline" method="post" action="<?= $collaborationPointPage?>">
     <input type="hidden" name="point" id="point" value="<?=$collaborationPointType?>">
     <input type="hidden" name="areaId" id="areaId" value="<?=$areaId ?>">
-    <label for="school-info" class="m-1"><?=pll__("Enter your challenge")?>:</label>
+    <label for="school-info" class="m-1"><?=t("Enter your challenge")?>:</label>
     <textarea class="form-control m-1" aria-label="With textarea" id="bespokeChallenge"
         name="bespokeChallenge"><?=htmlspecialchars($bespokeChallenge) ?></textarea>
-    <input type="submit" class="btn btn-primary float-end" value="<?=pll__("UPLOAD YOUR OWN CHALLENGE")?> &#8594;">
+    <input type="submit" class="btn btn-primary float-end" value="<?=t("UPLOAD YOUR OWN CHALLENGE")?> &#8594;">
 </form>
 <br>
-<h3><?=pll__("Teams Working on this Topic")?></h3>
+<h3><?=t("Teams Working on this Topic")?></h3>
 <?php 
 
 
@@ -97,22 +96,22 @@ if ($teams)
 ?>
 <table class="table table-success table-striped">
     <tr>
-        <th><?=pll__("Team Name")?></th>
-        <th><?=pll__("Topic")?></th>
-        <th><?=pll__("Challenge")?></th>
-        <th><?=pll__("Points")?></th>
+        <th><?=t("Team Name")?></th>
+        <th><?=t("Topic")?></th>
+        <th><?=t("Challenge")?></th>
+        <th><?=t("Points")?></th>
     </tr>
 
     <?php  
-  $otherTeamPage=getTranslatedPageByTitle("Other Team Page");
+  $otherTeamPage=url("other-teams");
 
   foreach($teams as $team)
   {
   ?>
     <tr>
-        <td><a href="<?=get_permalink($otherTeamPage) . '/?teamId=' . $team['id']?>"><?=$team['name']?></a></td>
-        <td><?=pll__($team['area'])?></td>
-        <td><?=pll__($team['challenge'])?></td>
+        <td><a href="<?=$otherTeamPage . '/?teamId=' . $team['id']?>"><?=$team['name']?></a></td>
+        <td><?=t($team['area'])?></td>
+        <td><?=t($team['challenge'])?></td>
         <td><?=$team['points']?></td>
     </tr>
 
@@ -125,7 +124,7 @@ if ($teams)
 else
 {
 ?>
-<p><?=pll__("There are no other teams working on this Topic at the moment - so you could be the first!")?></p>
+<p><?=t("There are no other teams working on this Topic at the moment - so you could be the first!")?></p>
 <?php
 }
 ?>

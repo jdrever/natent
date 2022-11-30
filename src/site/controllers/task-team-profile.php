@@ -11,22 +11,9 @@ return function($kirby, $pages, $page, $site) {
         $description = htmlspecialchars($_POST['description']);
         $skills = '';
         if (isset($_POST['skills'])) $skills = implode(',', $_POST['skills']);
-        $result=helpers\DataHelper::updateTeamProfile(404, $description, $skills);
+        $result=helpers\DataHelper::updateTeamProfile($team['id'], $description, $skills);
 
-        if ($result->wasSuccessful)
-        {
-            $pointsToAdd = 20;
-            if ($page = $page->next())
-            {
-                $page->go(['query' => ['status' => 'ok', 'points' =>$pointsToAdd ]]);
-            }
-        }
-        else
-        {
-            //return $platform;
-            if ($page=$site->find('error'))
-                $page->go([ 'query' => ['errorMessage' => isset($result->errorMessage) ? $result->errorMessage : 'No error message returned']]);
-        }
+        return $kirby->controller('result' , compact('page', 'site', 'result'));
     }
     else
     {

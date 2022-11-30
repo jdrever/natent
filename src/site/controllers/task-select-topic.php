@@ -5,25 +5,18 @@ use carefulcollab\helpers as helpers;
 
 return function($kirby, $pages, $page) 
 {
-    $userId="1";
+    $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby'));
+    $team=$platform['team'];
 
     if($kirby->request()->is('POST')) 
     {
-        $description = htmlspecialchars($_POST['description']);
-        $skills = '';
-        if (isset($_POST['skills'])) $skills = implode(',', $_POST['skills']);
-        $result=helpers\DataHelper::updateTeamProfile(1, $description, $skills);
-        $pointsToAdd = 20;
-
-        if ($page = $page->next()){
-            return $page->go();
-          }
+        //to do
     }
     else if ($kirby->request()->get('topicId'))
     {
         $topicId=$_GET['topicId'];
         $topic=helpers\DataHelper::getAreaToInvestigate($topicId);
-        $challenges=helpers\DataHelper::getChallengesInArea($userId, $topicId);
+        $challenges=helpers\DataHelper::getChallengesInArea($team['user_id'], $topicId);
         $bespokeChallenge='';
         if ($team['bespoke_challenge']==1) $bespokeChallenge=$team['challenge'];
 
@@ -33,13 +26,13 @@ return function($kirby, $pages, $page)
             'topic' => $topic,
             'challenges' => $challenges,
             'teams' => $teams,
-            'showChallenges' => true
+            'showTopics' => false,
+            'showChallenges' => true,
         ];
     }
     else
     {
-        $userId='1';
-        $areas=helpers\DataHelper::getAreasWithAvailableChallenges($userId);
+        $areas=helpers\DataHelper::getAreasWithAvailableChallenges($team['user_id']);
 
         $currentLang=$kirby->language()->code();
     
@@ -55,6 +48,7 @@ return function($kirby, $pages, $page)
 
         return [
             'showTopics' => true,
+            'showChallenges' => false,
             'areas' => $areas,
             'imageFileEnding' => $imageFileEnding
         ];
