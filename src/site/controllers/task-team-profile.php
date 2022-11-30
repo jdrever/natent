@@ -1,6 +1,6 @@
 <?php
 use carefulcollab\helpers as helpers;
-return function($kirby, $pages, $page) {
+return function($kirby, $pages, $page, $site) {
 
     $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby'));
     $team=$platform['team'];
@@ -11,19 +11,21 @@ return function($kirby, $pages, $page) {
         $description = htmlspecialchars($_POST['description']);
         $skills = '';
         if (isset($_POST['skills'])) $skills = implode(',', $_POST['skills']);
-        $result=helpers\DataHelper::updateTeamProfile($team['user_id'], $description, $skills);
+        $result=helpers\DataHelper::updateTeamProfile(404, $description, $skills);
 
         if ($result->wasSuccessful)
         {
             $pointsToAdd = 20;
             if ($page = $page->next())
             {
-                return [ 'nextPage' => $page->go(['query' => ['status' => 'ok', 'points' =>$pointsToAdd ]])];
+                $page->go(['query' => ['status' => 'ok', 'points' =>$pointsToAdd ]]);
             }
         }
         else
         {
-            return [ 'status' =>'err','message' => 'It did not work' ];
+            //return $platform;
+            if ($page=$site->find('error'))
+                $page->go([ 'query' => ['errorMessage' => isset($result->errorMessage) ? $result->errorMessage : 'No error message returned']]);
         }
     }
     else

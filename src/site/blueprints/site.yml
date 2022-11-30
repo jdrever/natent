@@ -18,6 +18,7 @@ columns:
           - for-students
           - contact
           - platform-home
+          - error
       countries:
         label: Countries
         type: pages
