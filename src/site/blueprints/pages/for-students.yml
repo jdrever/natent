@@ -4,9 +4,7 @@ columns:
     width: 1/2
     sections:
       fields:
-        type: fields
-        fields:
-          mainContent: fields/mainContent
+        extends: sections/core-fields
   sidebar:
     width: 1/2
     sections:

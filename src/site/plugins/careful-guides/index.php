@@ -6,7 +6,8 @@ Kirby::plugin(
       'blocks/activity' => __DIR__ . '/blueprints/blocks/activity.yml',
       'blocks/image' => __DIR__ . '/blueprints/blocks/image.yml',
       'blocks/heading' => __DIR__ . '/blueprints/blocks/heading.yml',
-      'fields/guideContent' => __DIR__ . '/blueprints/fields/guideContent.yml'
+      'fields/guideContent' => __DIR__ . '/blueprints/fields/guideContent.yml',
+      'fields/mainContent' => __DIR__ . '/blueprints/fields/mainContent.yml'
     ],
     'snippets' => [
       'blocks/image' => __DIR__ . '/snippets/blocks/image.php',

@@ -51,11 +51,11 @@ return function($kirby, $pages, $page, $site)
         if ($currentLang=='ro')
             $imageFileEnding='-ro.png';
 
-        return [
+        return A::merge($platform,[
             'showTopics' => true,
             'showChallenges' => false,
             'areas' => $areas,
             'imageFileEnding' => $imageFileEnding
-        ];
+        ]);
     };
 };

@@ -1,0 +1,6 @@
+type: fields
+fields:
+  pageTitle:
+    label: Page Title
+    type: text
+  mainContent: fields/mainContent
