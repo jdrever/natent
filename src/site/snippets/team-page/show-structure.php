@@ -12,7 +12,7 @@
         <div class="feature col p-3 m-2 bg-light border border-secondary">
             <h3><?=t("Topic and Challenge selected")?></h3>
             <?php snippet('team-page/challenge') ?>
-            <?php snippet('team-page/statement') ?>
+            <?php snippet('team-page/context') ?>
         </div>
     </div>
     <div class="row g-1">
@@ -24,7 +24,7 @@
     <div class="row g-1">
         <div class="feature col p-3 m-2 bg-light  border border-secondary">
             <h3><?=t("Design Solution")?></h3>
-            <?php snippet('team-page/create') ?>
+            <?php snippet('team-page/design') ?>
         </div>
         <div class="feature col p-3 m-2 bg-light  border border-secondary">
             <h3><?=t("Measure")?></h3>
@@ -33,7 +33,7 @@
     </div>
     <div class="row g-1">
         <div class="feature col p-3 m-2 bg-light  border border-secondary">
-            <?php snippet('team-page/business-canvas') ?>
+            <?php snippet('team-page/pitch-video') ?>
         </div>
     </div>
     <div class="row g-1">

@@ -11,9 +11,9 @@
           <br><i class="bi bi-quote"></i><i><?=substr($comment['comment'],0,20)?></i><i
             class="bi bi-three-dots"></i></small></p>
     <?php endforeach ?>
-      <?php $commentsPage=url("/view-all-comments"); ?>
+      <?php $commentsPage=$site->find("/view-all-comments"); ?>
     <?php if ($commentsPage) : ?>
-      <a href="<?=$commentsPage?>"><?=get_post($commentsPage)->post_title?></a>
+      <a href="<?= $commentsPage->url()?>"><?=($commentsPage->pageTitle()->isNotEmpty()) ? $commentsPage->pageTitle() : $commentsPage->title() ?></a>
     <?php endif ?>
   <?php else : ?>
       <p><?=t("You don't have any comments yet")?>.</p>

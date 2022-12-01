@@ -7,4 +7,19 @@ columns:
         type: fields
         fields:
           mainContent: fields/mainContent
+        editProfileButton:
+          label: Edit Profile Button
+          type: text
+        editChallengeButton:
+          label: Edit Challenge Button
+          type: text
+        editContextButton:
+          label: Edit Context Button
+          type: text
+        editDesignButton:
+          label: Edit Context Button
+          type: text
+        editMeasureButton:
+          label: Edit Measure Button
+          type: text
 
