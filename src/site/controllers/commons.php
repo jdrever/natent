@@ -6,54 +6,88 @@ return function($kirby, $pages, $page, $site)
     $team=$platform['team'];
     $userId=$team['user_id'];
 
-    $countryFilter= $_COOKIE["NETeamsCountry"] ?? "All";
+    $countryFilter= $_COOKIE["NECommonsCountry"] ?? "All";
     if (isset($_GET['countryId'])) 
     { 
         $countryFilter=$_GET['countryId'];
-        setcookie("NETeamsCountry", $countryFilter);
+        setcookie("NECommonsCountry", $countryFilter);
     }
-    
+
     if ($countryFilter==="All")
         $showAsOutlineAllCountries="";
     else 
         $showAsOutlineAllCountries="outline-";
-    
-    $skillsetFilter=$_COOKIE["NETeamsSkillset"] ?? "All";
-    if (isset($_GET['skillsetName'])) 
+
+    $collaborationPointFilter=$_COOKIE["NECommonsPoint"] ?? "All";
+    if (isset($_GET['collaborationPointType'])) 
     { 
-        $skillsetFilter=$_GET['skillsetName'];
-        setcookie("NETeamsSkillset", $skillsetFilter);
+        $collaborationPointFilter=$_GET['collaborationPointType']; 
+        setcookie("NECommonsPoint", $collaborationPointFilter);
     }
-    
-    if ($skillsetFilter==="All")
-        $showAsOutlineAllSkillsets="";
-    else 
-        $showAsOutlineAllSkillsets="outline-";
-    
-    $areaFilter= $_COOKIE["NETeamsArea"] ?? "All";
-    if (isset($_GET['areaId'])) 
+
+    $phaseTypeFilter=$_COOKIE["NECommonsPhase"] ?? "All";
+    if (isset($_GET['phaseType'])) 
     { 
-        $areaFilter=$_GET['areaId'];
-        setcookie("NETeamsArea", $areaFilter);
+        $phaseTypeFilter=$_GET['phaseType'];
+        setcookie("NECommonsPhase", $phaseTypeFilter);
+
+        if (isset($_COOKIE["NECommonsPhase"])&&$phaseTypeFilter!=$_COOKIE["NECommonsPhase"])
+        {
+            $collaborationPointFilter="All";
+            setcookie("NECommonsPoint", $collaborationPointFilter);
+        }
     }
-    
-    if ($areaFilter==="All")
-        $showAsOutlineAllAreas="";
+
+    if ($phaseTypeFilter==="All")
+    {
+        $showAsOutlineAllPhases="";
+    }
     else 
-        $showAsOutlineAllAreas="outline-";
+        $showAsOutlineAllPhases="outline-";
 
-    $areas=helpers\DataHelper::getAreasWithAvailableChallenges($userId);
-    $countries = helpers\DataHelper::getCountries();
-    $skillsets = helpers\DataHelper::getSkillsets();
+    if ($phaseTypeFilter==="General" or empty($phaseTypeFilter))
+    {
+        $showAsOutlineGeneralPhase="";
+        $phaseTypeFilter="General";
+    }
+    else 
+        $showAsOutlineGeneralPhase="outline-";  
 
-    $otherTeams = helpers\DataHelper::getTeamsOrderByPoints($areaFilter, $countryFilter, $skillsetFilter);
+    $recommendedFilter=$_COOKIE["NERecommended"] ?? "All";
+    if (isset($_GET['resources'])) 
+    { 
+        $recommendedFilter=$_GET['resources'];
+        setcookie("NERecommended", $recommendedFilter);
+    }
+
+    $showRecommendedResourcesAsOutline="outline-";
+    $showAllResourcesAsOutline="";
+
+    if ($recommendedFilter==="All")
+    {
+        $showRecommendedResourcesAsOutline="outline-";
+        $showAllResourcesAsOutline="";   
+    }
+    else
+    {
+        $showRecommendedResourcesAsOutline="";
+        $showAllResourcesAsOutline="outline-";
+    }
+
+    $phases = helpers\DataHelper::getPhasesByCountryId($team['country_id']);
+
+    $phaseTypeFilterSet=false;
+
+    $resources = helpers\DataHelper::getResourcesFromCommons($userId,$phaseTypeFilter,$collaborationPointFilter, $countryFilter, $recommendedFilter);
 
 
-    return A::merge($platform, compact('areas',
-        'countries','skillsets', 'otherTeams', 
-        'showAsOutlineAllAreas', 'areaFilter', 
-        'showAsOutlineAllCountries', 'countryFilter',
-        'showAsOutlineAllSkillsets', 'skillsetFilter'));
+
+
+
+    return A::merge($platform, compact('resources', 'phases', 'countryFilter', 'showAsOutlineAllCountries', 
+        'collaborationPointFilter', 'phaseTypeFilter',
+        'phaseTypeFilter', 'showAsOutlineAllPhases', 'showAsOutlineGeneralPhase', 
+        'recommendedFilter', 'showRecommendedResourcesAsOutline', 'showAllResourcesAsOutline', 'phaseTypeFilterSet'));
 
     
 };

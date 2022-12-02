@@ -11,18 +11,24 @@ columns:
           filterTopicsLabel:
             label: 'Filter by Topics' label
             type: text
+            default: Filter by Topics
           allTopicsLink:
             label: 'All Topics' link
             type: text
+            default: All Topics
           filterCountriesLabel:
             label: 'Filter by Countries' label
             type: text
+            default: Filter by Countries
           allCountriesLink:
             label: 'All Countries' link
             type: text
+            default: All Countries
           filterSkillsetsLabel:
             label: 'Filter by Skillsets' label
             type: text
+            default: Filter by Skillsets
           allSkillsetsLink:
             label: 'All Skillsets' link
             type: text
+            default: All Skillsets

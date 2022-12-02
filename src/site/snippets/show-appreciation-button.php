@@ -1,5 +1,8 @@
 
-<?php snippet('show-appreciations', ['appreciations'=>$profileAppreciations]) ?>
+
+<?php 
+if (!isset($appreciations)) $appreciations='';
+snippet('show-appreciations', compact('appreciations', 'contentType','contentId')) ?>
 <form class="form-inline" method="post" action="$collaborationPointPage">
     <input type="hidden" name="point" id="point" value="Appreciate">
     <input type="hidden" name="contentType" id="contentType" value="<?=$contentType?>">

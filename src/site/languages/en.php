@@ -30,7 +30,10 @@ return [
         'Design' => 'Design',
         'Not yet uploaded' => 'Not yet uploaded',
         'Describe how and if your final design solution has met your context' => 'Describe how/if your final Design Solution has met your Statement of Intent, and which Nature\'s Unifying Patterns have helped you',
-        'Pitch Video' => 'Pitch Video'
+        'Pitch Video' => 'Pitch Video',
+        'Translate to English' => 'Translate to English',
+        'Recommend' => 'Recommend',
+        'Remove Recommendation' => 'Remove Recommendation',
 
     ],
     'url' => NULL

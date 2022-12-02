@@ -21,6 +21,7 @@ columns:
           - team-page
           - other-team-page
           - other-teams
+          - commons
           - error
       countries:
         label: Countries

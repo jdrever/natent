@@ -1,4 +1,4 @@
-title: Other Teams
+title: Commons
 columns:
   main:
     width: 1/1
@@ -8,21 +8,46 @@ columns:
       additional:
         type: fields
         fields:
-          filterTopicsLabel:
-            label: 'Filter by Topics' label
+          filterPhasesLabel:
+            label: 'Filter by Phases' label
             type: text
-          allTopicsLink:
-            label: 'All Topics' link
+            default: Filter by Phases
+          generalLink:
+            label: 'General' link
             type: text
+            default: General
+          allPhasesLink:
+            label: 'All Phases' link
+            type: text
+            default: All Phases
+          filterCollaborationPointsLabel:
+            label: 'Filter by Collaboration Points' label
+            type: text
+            default: Filter by Collaboration Points
+          allCollaborationPointsLink:
+            label: 'All Collaboration Points' link
+            type: text
+            default: All Collaboration Points
           filterCountriesLabel:
             label: 'Filter by Countries' label
             type: text
+            default: Filter by Countries
           allCountriesLink:
             label: 'All Countries' link
             type: text
-          filterSkillsetsLabel:
-            label: 'Filter by Skillsets' label
+          filterRecommendationLabel:
+            label: 'Filter by Recommendation' label
             type: text
-          allSkillsetsLink:
-            label: 'All Skillsets' link
+            default: Filter by Recommendation
+          allResourcesLink:
+            label: 'All Resources' link
             type: text
+            default: All Resources
+          recommendedResourcesLink:
+            label: 'Recommended Resources' link
+            type: text
+            default: Resources recommended by the Natural Entrepreneurs project
+          noResourcesText:
+            label: 'There are currently no resources' text
+            type: text
+            default: There are currently no resources that match your criteria
