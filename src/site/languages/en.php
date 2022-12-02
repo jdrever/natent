@@ -35,7 +35,7 @@ return [
         'Translate to English' => 'Translate to English',
         'Recommend' => 'Recommend',
         'Remove Recommendation' => 'Remove Recommendation',
-
-    ],
+        
+],
     'url' => NULL
 ];
