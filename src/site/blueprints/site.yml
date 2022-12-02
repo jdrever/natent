@@ -19,6 +19,7 @@ columns:
           - contact
           - platform-home
           - team-page
+          - other-team-page
           - error
       countries:
         label: Countries

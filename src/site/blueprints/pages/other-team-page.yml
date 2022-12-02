@@ -1,0 +1,8 @@
+title: Other Team Page
+columns:
+  main:
+    width: 1/1
+    sections:
+      fields:
+        extends: sections/core-fields
+
