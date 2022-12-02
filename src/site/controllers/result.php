@@ -3,12 +3,11 @@ return function($page, $site,  $result)
 {
     if ($result->wasSuccessful)
     {
-        $pointsToAdd = 20;
         if ($nextPage = $page->next())
         {
-            $nextPage->go(['query' => ['_taskStatus' => 'ok', 'points' =>$pointsToAdd ]]);
+            $nextPage->go(['query' => ['_taskStatus' => 'ok', 'points' =>$result->pointsAdded ]]);
         }
-        $page->go(['query' => ['_taskStatus' => 'ok', 'points' =>$pointsToAdd ]]);
+        $page->go(['query' => ['_taskStatus' => 'ok', 'points' =>$result->pointsAdded ]]);
     }
     else
     {

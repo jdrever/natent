@@ -623,6 +623,7 @@ class DataHelper
             $stmt->execute([$contentId]);
             $otherTeam=$stmt->fetch();
             self::addPointsToTeam($otherTeam['team_id'],20,$pdo);
+            $result->pointsAddedOtherTeam=20;
 
             $approvalDetails=self::getApprovalDetails($wpUserId,$team['role']);
 
@@ -658,6 +659,7 @@ class DataHelper
             if (!$team['id']==$otherTeam['team_id'])
             {
                 self::addPointsToTeam($otherTeam['team_id'],15,$pdo);
+                $result->pointsAddedOtherTeam=15;
                 //add 5 points to the team who is appreciating the content (if they haven't already done so)
                 $stmt=$pdo->prepare("SELECT id FROM cc_appreciations WHERE content_type=? AND content_id=?");
                 $stmt->execute([$contentType,$contentId]);
@@ -1849,6 +1851,7 @@ class DataResult
     public $wasSuccessful;
     public $errorMessage;
     public $pointsAdded;
+    public $pointsAddedOtherTeam;
 }
 
 

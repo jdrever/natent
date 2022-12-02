@@ -17,7 +17,7 @@ return function($kirby, $pages, $page, $site)
       $result=helpers\DataHelper::addComment($userId, $contentType, $contentId, $comment);
       if ($result->wasSuccessful==true)
       {
-        Response::go(getRedirectUrl($callingPage, '_commentStatus=ok&points=' . $result->pointsAdded));
+        Response::go(getRedirectUrl($callingPage, '_commentStatus=ok&points=' . $result->pointsAdded . '&pointsOther=' . $result->pointsAddedOtherTeam));
       }
     }
     if ($collaborationPointType == 'Appreciate')
@@ -27,7 +27,7 @@ return function($kirby, $pages, $page, $site)
       $result=helpers\DataHelper::addAppreciation($userId, $contentType, $contentId);
       if ($result->wasSuccessful==true)
       {
-        Response::go(getRedirectUrl($callingPage, '_appreciationStatus=ok&points=' . $result->pointsAdded));
+        Response::go(getRedirectUrl($callingPage, '_appreciationStatus=ok&points=' . '&pointsOther=' . $result->pointsAddedOtherTeam));
       }
     }
   
