@@ -1,6 +1,7 @@
 <?php
 //TODO: add proper url
 $otherTeamPage="";
+if (!isset($contentId)) $contentId="";
 if (count($comments)>0) :
 ?>
   <button class="btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseComments<?=$contentId?>" aria-expanded="false" aria-controls="collapseComments<?=$contentId?>">

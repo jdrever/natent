@@ -1,4 +1,4 @@
-<h1 class="pb-2 border-bottom"><?= $viewedTeam['name'] ?></h1>
+<h1 class="pb-2 border-bottom"><i class="bi bi-person-heart"></i> <?= $viewedTeam['name'] ?></h1>
 <div class="container-fluid">
     <div class="row p-3">
         <?php

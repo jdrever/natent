@@ -13,6 +13,7 @@ return [
         'Topic' => 'Topic',
         'Challenge' => 'Challenge',
         'Points' => 'Points',
+        'Progress' => 'Progress',
         'Topic and Challenge selected' => 'Topic and Challenge selected',
         'Latest Comments' => 'Latest Comments',
         'View all Comments received' => 'View all Comments received',

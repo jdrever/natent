@@ -20,6 +20,7 @@ columns:
           - platform-home
           - team-page
           - other-team-page
+          - other-teams
           - error
       countries:
         label: Countries

@@ -1,0 +1,28 @@
+title: Other Teams
+columns:
+  main:
+    width: 1/1
+    sections:
+      fields:
+        extends: sections/core-fields
+      additional:
+        type: fields
+        fields:
+          filterTopicsLabel:
+            label: 'Filter by Topics' label
+            type: text
+          allTopicsLink:
+            label: 'All Topics' link
+            type: text
+          filterCountriesLabel:
+            label: 'Filter by Countries' label
+            type: text
+          allCountriesLink:
+            label: 'All Countries' link
+            type: text
+          filterSkillsetsLabel:
+            label: 'Filter by Skillsets' label
+            type: text
+          allSkillsetsLink:
+            label: 'All Skillsets' link
+            type: text

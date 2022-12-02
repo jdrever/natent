@@ -8,7 +8,7 @@
         <a href="/team-page/" class="nav-link px-2 text-white"><i class="bi bi-person-heart"></i> TEAM PAGE</a>
       </li>
       <li>
-        <a href="#" class="nav-link px-2 text-white"><i class="bi bi-search-heart"></i>OTHER TEAMS</a>
+        <a href="/other-teams/" class="nav-link px-2 text-white"><i class="bi bi-search-heart"></i>OTHER TEAMS</a>
       </li>
       <li>
         <a href="/commons/" class="nav-link px-2 text-white"><i class="bi bi-cc-circle-fill"></i>CREATIVE COMMONS</a>
