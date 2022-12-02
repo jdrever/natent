@@ -16,7 +16,7 @@ if ($userRole!='ADMIN'&&$userRole!="GLOBAL") return;
     <input type="hidden" name="recommend" id="recommend" value="$recommend">
     <div class="d-flex align-items-end justify-content-end">
       <div>
-          <button type="submit" class="btn btn-outline-primary btn-outline btn-sm"><i class="bi bi-hand-thumbs-up-fill"></i>$recommendButtonText</button>
+          <button type="submit" class="btn btn-outline-primary btn-outline btn-sm"><i class="bi bi-hand-thumbs-up-fill"></i><?=t($recommendButtonText,$recommendButtonText)?></button>
       </div>
     </div>
 </form>
