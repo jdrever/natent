@@ -6,9 +6,9 @@ return function($page, $site,  $result)
         $pointsToAdd = 20;
         if ($nextPage = $page->next())
         {
-            $nextPage->go(['query' => ['status' => 'ok', 'points' =>$pointsToAdd ]]);
+            $nextPage->go(['query' => ['_taskStatus' => 'ok', 'points' =>$pointsToAdd ]]);
         }
-        $page->go(['query' => ['status' => 'ok', 'points' =>$pointsToAdd ]]);
+        $page->go(['query' => ['_taskStatus' => 'ok', 'points' =>$pointsToAdd ]]);
     }
     else
     {

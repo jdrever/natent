@@ -8,10 +8,11 @@ $profilePage="";
 
 
 <?php if ($editTeam): ?>
-  <?php snippet('show-appreciations', ['appreciations'=>$profileAppreciations]) ?>
-  <?php snippet('show-comments',['comments'=>$profileComments]) ?>
+  <?php snippet('show-appreciations', ['contentType'=>'Team Profile', 'contentId'=>$viewedTeam['profile_id']]) ?>
+  <?php snippet('show-comments',['contentType'=>'Team Profile', 'contentId'=>$viewedTeam['profile_id']]) ?>
 <a href="<?= $profilePage ?>" class="btn btn-outline-primary"><?=$page->editProfileButton()?></a>
 <?php else: ?>
-  <?php snippet('show-appreciation-button',['appreciations'=>$profileAppreciations, 'contentType'=>'Team Profile', 'contentId'=>$viewedTeam['profile_id']]) ?>
-  <?php snippet('show-comment-box', ['comments'=>$profileComments, 'contentType'=>'Team Profile', 'contentId'=>$viewedTeam['profile_id']]) ?>
+  <?php snippet('show-appreciation-button',['contentType'=>'Team Profile', 'contentId'=>$viewedTeam['profile_id']]) ?>
+  <?php snippet('show-comment-box', ['contentType'=>'Team Profile', 'contentId'=>$viewedTeam['profile_id']]) ?>
 <?php endif ?>
+

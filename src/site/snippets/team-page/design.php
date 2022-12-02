@@ -22,12 +22,12 @@ if ($editTeam) :
     if (isset($viewedTeam['design_idea_you_tube_id'])||isset($viewedTeam['design_idea_file'])) :
 ?>
       <a href="<?= $designPage?>" class="btn btn-outline-primary"><?=$page->editDesignButton()?></a>
-      <?php snippet('show-appreciations', ['appreciations'=>$designAppreciations]) ?>
-      <?php snippet('show-comments',['comments'=>$designComments]) ?>
+      <?php snippet('show-appreciations', ['contentType'=>'Design Idea', 'contentId'=>$viewedTeam['team_design_idea_id']]) ?>
+      <?php snippet('show-comments',['contentType'=>'Design Idea', 'contentId'=>$viewedTeam['team_design_idea_id']]) ?>
 
 <?php endif;
 else :
 ?>
-     <?php snippet('show-appreciation-button',['appreciations'=>$designAppreciations, 'contentType'=>'Design Idea', 'contentId'=>$viewedTeam['team_design_idea_id']]) ?>
-     <?php snippet('show-comment-box', ['comments'=>$designComments, 'contentType'=>'Design Idea', 'contentId'=>$viewedTeam['team_design_idea_id']])?>
+     <?php snippet('show-appreciation-button',['contentType'=>'Design Idea', 'contentId'=>$viewedTeam['team_design_idea_id']]) ?>
+     <?php snippet('show-comment-box', ['contentType'=>'Design Idea', 'contentId'=>$viewedTeam['team_design_idea_id']])?>
 <?php endif ?>

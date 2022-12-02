@@ -13,9 +13,9 @@ if (isset($viewedTeam['pitch_video_you_tube_id'])&&!empty($viewedTeam['pitch_vid
 <?php endif;
 if ($editTeam) : ?>
 <a href="<?= $pitchVideoPage ?>" class="btn btn-outline-primary"><?=t("EDIT PITCH VIDEO")?></a>
-  <?php snippet('show-appreciations', ['appreciations'=>$pitchAppreciations]) ?>
-  <?php snippet('show-comments',['comments'=>$challengeComments]) ?>
+  <?php snippet('show-appreciations', ['contentType'=>'Business Canvas', 'contentId'=> $viewedTeam['team_business_canvas_id']]) ?>
+  <?php snippet('show-comments',['contentType'=>'Business Canvas', 'contentId'=> $viewedTeam['team_business_canvas_id']]) ?>
 <?php else : ?>
-  <?php snippet('show-appreciation-button',['appreciations'=>$pitchAppreciations, 'contentType'=>'Business Canvas', 'contentId'=> $viewedTeam['team_business_canvas_id']]) ?>
-  <?php snippet('show-comment-box', ['comments'=>$profileComments, 'contentType'=>'Business Canvas','contentId'=> $viewedTeam['team_business_canvas_id']])?>
+  <?php snippet('show-appreciation-button',['contentType'=>'Business Canvas', 'contentId'=> $viewedTeam['team_business_canvas_id']]) ?>
+  <?php snippet('show-comment-box', ['contentType'=>'Business Canvas','contentId'=> $viewedTeam['team_business_canvas_id']])?>
 <?php endif ?>

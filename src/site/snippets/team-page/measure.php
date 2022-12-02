@@ -7,10 +7,10 @@ $measurePage="";
 <?php snippet('show-translatable-content', ['content'=>$viewedTeam['recommendations'], 'showButton'=> !$editTeam ]) ?>
   <?php if ($editTeam) :?>
   <a href="<?= $measurePage ?>" class="btn btn-outline-primary"><?=$page->editMeasureButton()?></a>
-  <?php snippet('show-appreciations', ['appreciations'=>$measureAppreciations]) ?>
-  <?php snippet('show-comments',['comments'=>$measureComments]) ?>
+  <?php snippet('show-appreciations', ['contentType'=>'Measures', 'contentId'=>$viewedTeam['team_measures_id']]) ?>
+  <?php snippet('show-comments',['contentType'=>'Measures', 'contentId'=>$viewedTeam['team_measures_id']]) ?>
   <?php else : ?>
-  <?php snippet('show-appreciation-button',['appreciations'=>$measureAppreciations, 'contentType'=>'Measures', 'contentId'=>$viewedTeam['team_measures_id']]) ?>
-  <?php snippet('show-comment-box', ['comments'=>$measureComments, 'contentType'=>'Measures', 'contentId'=>$viewedTeam['team_measures_id']])?>
+  <?php snippet('show-appreciation-button',['contentType'=>'Measures', 'contentId'=>$viewedTeam['team_measures_id']]) ?>
+  <?php snippet('show-comment-box', ['contentType'=>'Measures', 'contentId'=>$viewedTeam['team_measures_id']])?>
   <?php endif; 
 endif ?>

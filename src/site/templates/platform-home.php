@@ -1,5 +1,6 @@
 <?php snippet('header') ?>
 <?php snippet('platform-menu') ?>
+<?php snippet('show-status') ?>
 <style>
   figcaption.figure-caption {
     font-size: 1.2em;

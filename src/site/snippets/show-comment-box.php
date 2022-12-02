@@ -1,7 +1,7 @@
 <?php 
 if (!isset($comments)) $comments='';
 snippet('show-comments', compact('comments','contentType','contentId' )) ?>
-<form class="form-inline" method="post" action="$collaborationPointPage">
+<form class="form-inline" method="post" action="/collab-controller">
     <input type="hidden" name="point" id="point" value="Comment">
     <input type="hidden" name="contentType" id="contentType" value="<?=$contentType?>">
     <input type="hidden" name="contentId" id="contentId" value="<?=$contentId?>">

@@ -10,11 +10,12 @@ $areaPage="";
 
 
 <?php if ($editTeam) : ?>
-  <?php snippet('show-appreciations', ['appreciations'=>$challengeAppreciations]) ?>
-  <?php snippet('show-comments',['comments'=>$challengeComments]) ?>
+  <?php snippet('show-appreciations', ['contentType'=>'Team Challenge', 'contentId'=>$viewedTeam['team_challenge_id']]) ?>
+  <?php snippet('show-comments',['contentType'=>'Team Challenge', 'contentId'=>$viewedTeam['team_challenge_id']]) ?>
 <a href="<?= $areaPage ?>" class="btn btn-outline-primary"><?=$page->editChallengeButton()?></a>
 
 <?php else: ?>
-  <?php snippet('show-appreciation-button',['appreciations'=>$profileAppreciations, 'contentType'=>'Team Challenge', 'contentId'=>$viewedTeam['team_challenge_id']]) ?>
-  <?php snippet('show-comment-box', ['comments'=>$profileComments, 'contentType'=>'Team Challenge', 'contentId'=>$viewedTeam['team_challenge_id']]) ?>
+  <?php snippet('show-appreciation-button',['contentType'=>'Team Challenge', 'contentId'=>$viewedTeam['team_challenge_id']]) ?>
+  <?php snippet('show-comment-box', ['contentType'=>'Team Challenge', 'contentId'=>$viewedTeam['team_challenge_id']]) ?>
 <?php endif ?>
+
