@@ -1,14 +1,16 @@
 <?php namespace carefulcollab\helpers;
 use \PDO;
 use PDOException;
+use DBConfig;
 
-define("DB_NAME", "natent");
-define("DB_HOST", "db");
-define("DB_USER", "natent");
-define("DB_PASSWORD", "T1a$66s3RGsX");
+require_once("DBConnect.php");
+
 class DataHelper
 {
-    private const DSN = 'mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=utf8mb4';
+
+    private const DSN = 'mysql:host='.DBConfig::DB_HOST.';dbname='.DBConfig::DB_NAME.';charset=utf8mb4';
+    private const DB_USER = DBConfig::DB_USER;
+    private const DB_PASSWORD = DBConfig::DB_PASSWORD;
 
     
     public static function updateTeamProfile($wpUserId, $descripton,$skills)
@@ -178,7 +180,7 @@ class DataHelper
     
     public static function getAreasToInvestigate()
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN, self::DB_USER, self::DB_PASSWORD);
         return $pdo->query("SELECT id,name,description FROM cc_areas")->fetchAll();        
     }
 
@@ -193,7 +195,7 @@ class DataHelper
 
     public static function getAreaToInvestigate($areaId)
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt= $pdo->prepare("SELECT id,name,description FROM cc_areas WHERE id=?");
         $stmt->execute([$areaId]);
         return $stmt->fetch();         
@@ -210,7 +212,7 @@ class DataHelper
 
     public static function getNUPs()
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt= $pdo->prepare("SELECT title,description FROM cc_NUPs ORDER BY id");
         $stmt->execute();
         return $stmt->fetchAll();         
@@ -252,7 +254,7 @@ class DataHelper
     {
         $addApproved="";
         if ($approvedOnly===true) $addApproved="_approved";
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT id,function_number, name, biologized_question FROM cc_all_functions" .$addApproved. " WHERE team_id=? AND challenge_id=?");
         $stmt->execute([$teamId,$challengeId]); 
         $functions = $stmt->fetchAll();
@@ -369,7 +371,7 @@ class DataHelper
 
     public static function getDesignPrincipleByFunctionId($functionId)
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT name FROM cc_team_design_principles WHERE function_id=?");        
         $stmt->execute([$functionId]); 
         $designPrinciple = $stmt->fetch();
@@ -581,7 +583,7 @@ class DataHelper
 
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if ($team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -757,7 +759,7 @@ class DataHelper
     public static function getPhaseByCountryId($phaseType, $countryId)
     {
 
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT * FROM cc_phases WHERE country_id=? AND phase_type=?");        
         $stmt->execute([$countryId,$phaseType]); 
         $phase = $stmt->fetch();
@@ -778,7 +780,7 @@ class DataHelper
     public static function getPhasesByCountryId($countryId)
     {
 
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT ccp.*, ccps.id AS phase_number, ccps.image_attribution FROM cc_phases ccp JOIN cc_phase_structure ccps ON ccp.phase_type=ccps.phase_type WHERE ccp.country_id=? ORDER BY ccps.id");        
         $stmt->execute([$countryId]); 
         $phases = $stmt->fetchAll();
@@ -788,7 +790,7 @@ class DataHelper
     public static function getPhaseByWpPostId($wpPostId)
     {
 
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT ccp.*, ccps.id AS phase_number, ccps.image_attribution FROM cc_phases ccp JOIN cc_phase_structure ccps ON ccp.phase_type=ccps.phase_type WHERE wp_post_id=?");        
         $stmt->execute([$wpPostId]); 
         $phases = $stmt->fetch();
@@ -813,7 +815,7 @@ class DataHelper
     public static function getSkillsets()
     {
 
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT * FROM cc_skill_sets");        
         $stmt->execute(); 
         $skillSets = $stmt->fetchAll();
@@ -822,7 +824,7 @@ class DataHelper
 
     public static function getCollaborationPointStructure()
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT * FROM cc_collaboration_point_structure ORDER BY id");        
         $stmt->execute(); 
         $collaborationPoints = $stmt->fetchAll();
@@ -842,7 +844,7 @@ class DataHelper
     public static function getCollaborationPointByName($collaborationPointName)
     {
 
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT * FROM cc_collaboration_points WHERE name=?");        
         $stmt->execute([$collaborationPointName]); 
         $collaborationPoint = $stmt->fetch();
@@ -852,7 +854,7 @@ class DataHelper
     public static function getCollaborationPointByTypeAndCountry($collaborationPointType,$countryId)
     {
 
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT ccp.id, ccp.phase_type,ccp.collaboration_point_type,ccps.name,ccp.display_in_section FROM cc_collaboration_points ccp JOIN cc_collaboration_point_structure ccps ON ccp.phase_type=ccps.phase_type AND ccp.collaboration_point_type=ccps.collaboration_point_type WHERE ccp.collaboration_point_type=? AND country_id=?");        
         $stmt->execute([$collaborationPointType,$countryId]); 
         $collaborationPoint = $stmt->fetch();
@@ -861,7 +863,7 @@ class DataHelper
 
     public static function getFurtherCollaborationPointForSameLesson($collaborationPointId)
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT ccp.display_in_section, ccps.id AS structure_id FROM cc_collaboration_points ccp JOIN cc_collaboration_point_structure ccps ON ccp.phase_type=ccps.phase_type AND ccp.collaboration_point_type=ccps.collaboration_point_type WHERE ccp.id=?");        
         $stmt->execute([$collaborationPointId]); 
         $collaborationPoint = $stmt->fetch();
@@ -889,7 +891,7 @@ class DataHelper
         $result=new DataResult();
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -916,7 +918,7 @@ class DataHelper
         $result=new DataResult();
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -980,7 +982,7 @@ class DataHelper
 
     public static function getReviewPointByPhaseTypeAndCountry($collaborationPointType,$phaseType,$countryId)
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT * FROM cc_collaboration_points WHERE collaboration_point_type=? AND phase_type=? AND country_id=?");        
         $stmt->execute([$collaborationPointType,$phaseType, $countryId]); 
         $reviewPoint = $stmt->fetch();
@@ -990,7 +992,7 @@ class DataHelper
     public static function getExitReviewPointByCountry($countryId)
     {
 
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT * FROM cc_collaboration_points WHERE collaboration_point_type='EXIT' AND country_id=?");        
         $stmt->execute([$countryId]); 
         $reviewPoint = $stmt->fetch();
@@ -1000,7 +1002,7 @@ class DataHelper
     public static function getPhaseReviewQuestionsByPhaseType($phaseType)
     {
 
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT * FROM cc_phase_review_questions WHERE phase_type=? ORDER BY order_number_within_phase");        
         $stmt->execute([$phaseType]); 
         $questions = $stmt->fetchAll();
@@ -1045,7 +1047,7 @@ class DataHelper
 
     public static function getGlossary()
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT * FROM cc_glossary");        
         $stmt->execute(); 
         $glossary = $stmt->fetchAll();
@@ -1054,7 +1056,7 @@ class DataHelper
 
     public static function getGlossaryById($glossaryId)
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT * FROM cc_glossary WHERE id=?");
         $stmt->execute([$glossaryId]);      
         $glossary= $stmt->fetchAll();
@@ -1064,7 +1066,7 @@ class DataHelper
 
     public static function getModerationQueue($wpUserId)
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $team=self::getTeamByWPUserId($wpUserId);
         $stmt = $pdo->prepare("SELECT * FROM cc_moderation_queue WHERE location_id=? ORDER BY created_date");       
         $stmt->execute([$team['location_id']]); 
@@ -1074,7 +1076,7 @@ class DataHelper
 
     public static function getModerationContent($contentType, $contentId)
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $tableToSelect=self::getTableNameForContentType($contentType,$pdo);
         $stmt = $pdo->prepare("SELECT * FROM " . $tableToSelect ." WHERE id=?");       
         $stmt->execute([$contentId]); 
@@ -1088,7 +1090,7 @@ class DataHelper
         $result=new DataResult();
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $pdo->beginTransaction();
             $team=self::getTeamByWPUserId($wpUserId);
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -1130,7 +1132,7 @@ class DataHelper
         $result=new DataResult();
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
             {
@@ -1160,7 +1162,7 @@ class DataHelper
         $result=new DataResult();
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
             {
@@ -1211,7 +1213,7 @@ class DataHelper
 
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if ($team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -1240,7 +1242,7 @@ class DataHelper
 
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if ($team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -1269,7 +1271,7 @@ class DataHelper
 
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if (self::hasChallengeBeenUsed($challengeId))
@@ -1305,7 +1307,7 @@ class DataHelper
 
     public static function getCountries()
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $stmt = $pdo->prepare("SELECT * FROM cc_countries");
         $stmt->execute(); 
         $countries = $stmt->fetchAll();
@@ -1318,7 +1320,7 @@ class DataHelper
 
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if ($team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -1348,7 +1350,7 @@ class DataHelper
 
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if ($team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -1377,7 +1379,7 @@ class DataHelper
 
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $pdo->beginTransaction();
             $team=self::getTeamByWPUserId($wpUserId);
 
@@ -1411,7 +1413,7 @@ class DataHelper
 
     public static function getLocationsByCountry($wpUserId)
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $team=self::getTeamByWPUserId($wpUserId);
 
         if ($team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -1435,7 +1437,7 @@ class DataHelper
 
     public static function getTeamsByRole($wpUserId)
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $team=self::getTeamByWPUserId($wpUserId);
 
         if ($team['role']=='TEACHER')
@@ -1465,7 +1467,7 @@ class DataHelper
 
     public static function getTeamsByLocation($wpUserId)
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $team=self::getTeamByWPUserId($wpUserId);
         $stmt = $pdo->prepare("SELECT * FROM cc_teams WHERE location_id=? AND (removed=0 OR removed is null)");       
         $stmt->execute([$team['location_id']]); 
@@ -1479,7 +1481,7 @@ class DataHelper
 
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -1508,7 +1510,7 @@ class DataHelper
 
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -1537,7 +1539,7 @@ class DataHelper
 
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -1565,7 +1567,7 @@ class DataHelper
         $result=new DataResult();
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -1613,7 +1615,7 @@ class DataHelper
         $result=new DataResult();
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -1645,7 +1647,7 @@ class DataHelper
         $result=new DataResult();
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -1673,7 +1675,7 @@ class DataHelper
 
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -1702,7 +1704,7 @@ class DataHelper
 
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
@@ -1727,7 +1729,7 @@ class DataHelper
 
     public static function getUsersByLocation($wpUserId, $role)
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $team=self::getTeamByWPUserId($wpUserId);
         $stmt = $pdo->prepare
             ("SELECT cu.id, wu.id as wp_user_id, wu.user_nicename as user_name, cu.team_id ,ct.name as team_name FROM cc_users cu 
@@ -1741,7 +1743,7 @@ class DataHelper
 
     public static function getTeachersByLocation($wpUserId)
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
         $team=self::getTeamByWPUserId($wpUserId);
         $stmt = $pdo->prepare
             ("SELECT cu.id, wu.id as wp_user_id, wu.user_nicename as user_name, cu.team_id ,ct.name as team_name FROM cc_users cu 
@@ -1759,7 +1761,7 @@ class DataHelper
 
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             $sql=("INSERT INTO cc_team_feedback (team_id,yes_or_no, created_date, created_by) VALUES (?,?,now(),?)");       
@@ -1780,7 +1782,7 @@ class DataHelper
 
         try
         {
-            $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+            $pdo = new PDO(self::DSN, self::DB_USER, self::DB_PASSWORD);
             $team=self::getTeamByWPUserId($wpUserId);
 
             $sql=("INSERT INTO cc_team_feedback (team_id,feedback, created_date, created_by) VALUES (?,?,now(),?)");       
@@ -1805,7 +1807,7 @@ class DataHelper
 
     private static function getPDOConnection()
     {
-        $pdo = new PDO(self::DSN, DB_USER, DB_PASSWORD);
+        $pdo = new PDO(self::DSN, self::DB_USER, self::DB_PASSWORD);
         $pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
         return $pdo;
     }
