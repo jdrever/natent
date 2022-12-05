@@ -28,3 +28,15 @@
 	font-weight: 700;
 }
 
+
+.k-block-type-file-wrapper {
+    display: block;
+    background-color: #efefef;
+    padding: 1em;
+    border-radius: 2px;
+}
+.k-block-type-file-wrapper p {
+    margin-bottom: 0.2em;
+    color: #777777;
+    font-size: 14px;
+}
