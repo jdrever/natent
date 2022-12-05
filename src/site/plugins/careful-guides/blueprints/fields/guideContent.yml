@@ -28,6 +28,7 @@ fieldsets:
     fieldsets:
       - image
       - video
+      - file
   code:
     label: Code
     type: group
