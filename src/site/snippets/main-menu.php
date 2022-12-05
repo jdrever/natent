@@ -1,68 +1,47 @@
-<header>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
+      <a href="/"
+         class="navbar-brand d-flex align-items-center text-decoration-none lh-sm">
+        <img class="img-fluid m-1" src="/assets/images/natent-logo.min.svg" width="50"/>
+        Natural
+        <br>
+        Entrepreneurs
+      </a>
       <button class="navbar-toggler"
               type="button"
-              data-mdb-toggle="collapse"
-              data-mdb-target="#navbarExample01"
-              aria-controls="navbarExample01"
+              data-bs-toggle="collapse"
+              data-bs-target="#navBar"
+              aria-controls="navBar"
               aria-expanded="false"
               aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
+        <span class="navbar-toggler-icon" style="font-size:.8em"></span><span class="px-1" style="font-size: .8em;">Menu</span>
       </button>
-      <div class="site-logo d-flex align-items-center col-md-3 mb-2 mb-md-0 text-decoration-none">
-        <a href="/" class="d-flex align-items-center text-decoration-none">
-          <img class="img-fluid m-1" src="/images/natent-logo.svg" width="50"/>
-          Natural
-          <br>
-          Entrepreneurs
-        </a>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarExample01">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li>
-            <a href="/" class="nav-link px-2">Home</a>
+      <div class="collapse navbar-collapse" id="navBar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a href="/" class="nav-link active px-2">Home</a>
           </li>
-          <li>
+          <li class="nav-item">
             <a href="#" class="nav-link px-2">About the Project</a>
           </li>
-          <li>
+          <li class="nav-item">
             <a href="/for-teachers/" class="nav-link px-2">For Teachers</a>
           </li>
-          <li>
+          <li class="nav-item">
             <a href="/for-students/" class="nav-link px-2">For Students</a>
           </li>
-          <li>
+          <li class="nav-item">
             <a href="/platform/" class="nav-link px-2">The Platform</a>
           </li>
-          <li>
+          <li class="nav-item">
             <a href="/contact/" class="nav-link px-2">Contact Us</a>
           </li>
         </ul>
-        <div class="col-md-3 text-end">
-          <select name="lang_choice_1" id="lang_choice_1">
-            <option value="de">
-              Deutsch
-            </option>
-            <option value="lv">
-              Latviešu valoda
-            </option>
-            <option value="ro">
-              Română
-            </option>
-            <option value="nl">
-              Nederlands
-            </option>
-            <option value="en" selected='selected'>
-              English
-            </option>
-            <option value="hu">
-              Magyar
-            </option>
-          </select>
+        <div class="col-md-3 text-end-md px-2">
+          <?php snippet('language-switcher'); ?> 
         </div>
       </div>
     </div>
   </nav>
-</header>
+ 
