@@ -23,7 +23,7 @@
           });
       }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel='stylesheet'
@@ -44,54 +44,7 @@
     <meta name='robots' content='max-image-preview:large'/>
   </head>
   <body style="background-color: #F8F5F4;">
-
   <header>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-      <button class="navbar-toggler"
-              type="button"
-              data-mdb-toggle="collapse"
-              data-mdb-target="#navbarExample01"
-              aria-controls="navbarExample01"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="site-logo d-flex align-items-center col-md-3 mb-2 mb-md-0 text-decoration-none">
-        <a href="/" class="d-flex align-items-center text-decoration-none">
-          <img class="img-fluid m-1" src="<?=url('/assets/images/natent-logo.svg')?>" width="50"/>
-          Natural
-          <br>
-          Entrepreneurs
-        </a>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarExample01">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li>
-            <a href="/" class="nav-link px-2">Home</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link px-2">About the Project</a>
-          </li>
-          <li>
-            <a href="/for-teachers/" class="nav-link px-2">For Teachers</a>
-          </li>
-          <li>
-            <a href="/for-students/" class="nav-link px-2">For Students</a>
-          </li>
-          <li>
-            <a href="/platform/" class="nav-link px-2">The Platform</a>
-          </li>
-          <li>
-            <a href="/contact/" class="nav-link px-2">Contact Us</a>
-          </li>
-        </ul>
-        <div class="col-md-3">
-        <?php snippet('language-switcher'); ?> 
-        </div>
-      </div>
-    </div>
-  </nav>
-</header>
+        <?php snippet('main-menu'); ?> 
+  </header>
 

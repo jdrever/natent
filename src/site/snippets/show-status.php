@@ -15,7 +15,16 @@
     Thankyou for adding your appreciation!
     <?php endif ?>
   </h2>
+
+
   <p class="lead">
+
+<?php if ($pointsAdded>0) : ?>
+  <i class="bi bi-star"></i>Your team has gained <strong><?=$pointsAdded ?></strong> points and now has a total of <strong><?=$team['points']?></strong> points. 
+<?php endif ?>
+<?php if ($pointsAddedOtherTeam>0) : ?>
+  <i class="bi bi-star"></i>The team you engaged with gained <strong><?=$pointsAddedOtherTeam ?></strong> points. 
+<?php endif ?>
   <?php if ($status==='task-ok') : ?>
     Your Team Page will have been updated. Other teams will be able to see what you've been working on, and you can
     check out other teams to get inspiration.

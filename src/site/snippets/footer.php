@@ -1,19 +1,23 @@
-<footer class="col-lg-8 px-2 mx-auto text-muted border-top border-3">
-  <div class="pt-1">
+<footer class="container text-muted border-top mt-2 pt-3 border-2">
+  <div class="lh-1">
     <p>
       <a href="#">Back to top</a>
     </p>
-    <p>&copy; The Natural Entrepreneurs project, 2022</p>
     <p>
-      <img style="width: 213px;
-                  height: 47px;"
+      <small>&copy; The Natural Entrepreneurs project, 2022</small>
+    </p>
+    <p>
+      <img width="213px"
+           height="47px"
            src="https://natent.eu/wp-content/themes/carefulcollab/images/eu-erasmus-logo.jpg"
            alt="With the support of the Erasmus+ programme of the European Union"/>
     </p>
-    <p>
-      The European Commission support for the production of this website does not constitute an endorsement of the
-      contents which reflects the views only of the authors, and the Commission cannot be held responsible for any
-      use which may be made of the information contained therein.
+    <p class="col-8">
+      <small>
+        The European Commission support for the production of this website does not constitute an endorsement of the
+        contents which reflects the views only of the authors, and the Commission cannot be held responsible for any
+        use which may be made of the information contained therein.
+      </small>
     </p>
   </div>
   <section class="logo-list">
@@ -65,6 +69,5 @@
     </div>
   </section>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -11,6 +11,8 @@ return function($kirby, $pages, $page)
     $status=$kirby->request()->get('_commentStatus') ? 'comment-ok' : $status;
     $status=$kirby->request()->get('_appreciationStatus') ? 'appreciation-ok' : $status;
 
-    return [ 'userId' => $userId, 'team' => $team, 'status' =>$status, 'userRole' => $team['role'] ];
+    $pointsAdded=$kirby->request()->get('points') ? $kirby->request()->get('points') : 0;
+    $pointsAddedOtherTeam=$kirby->request()->get('pointsOther') ? $kirby->request()->get('pointsOther') : 0;
+    return [ 'userId' => $userId, 'team' => $team, 'status' =>$status, 'userRole' => $team['role'], 'pointsAdded' => $pointsAdded, 'pointsAddedOtherTeam' =>$pointsAddedOtherTeam ];
 }
 ?>

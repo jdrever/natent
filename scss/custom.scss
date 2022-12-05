@@ -1,16 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 $container-max-widths: (
   sm: 540px,
   md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1140px,
+  lg: 900px,
+  xl: 900px,
+  xxl: 900px,
 );
 
 $primary: #0d1070;
 $dark: #133f62;
 $info: #0e7172;
+
+$small-font-size: 0.75em;
 
 $font-family-base: "Lexend", system-ui, -apple-system, "Segoe UI", Roboto,
   "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
@@ -23,42 +25,45 @@ $font-family-base: "Lexend", system-ui, -apple-system, "Segoe UI", Roboto,
 }
 
 .navbar ul {
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1rem;
 }
 
-.shrinkwrap > h1, .shrinkwrap > h2 {
-	line-height: 1.5em;
+.navbar-nav > li:hover {
+  background-color: $gray-200;
+  border-radius: $border-radius-sm;
+}
+
+.shrinkwrap > h1,
+.shrinkwrap > h2 {
+  line-height: 1.5em;
 }
 
 .shrinkwrap > h1 {
-	margin-bottom: 0em;
+  margin-bottom: 0em;
 }
 
 .shrinkwrap > h2 {
-	font-size: 1.5rem;
-	line-height: 1.6em
+  font-size: 1.5rem;
+  line-height: 1.6em;
 }
 
-.shrinkwrap > h1 > span, .shrinkwrap > h2 > span {
-	display: inline;
+.shrinkwrap ul {
+  margin-bottom: 0;
+}
+.shrinkwrap li {
+  margin-bottom: 0.25em;
+}
+.shrinkwrap li:last-of-type {
+  margin-bottom: 0;
+}
+
+.shrinkwrap > h1 > span,
+.shrinkwrap > h2 > span,
+.shrinkwrap > ul > li > span {
+  display: inline;
   padding: 0.15rem 0.25rem;
-  background-color: rgba($color: #000, $alpha: 0.5);
+  background-color: rgba($color: #000, $alpha: 0.75);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-}
-
-.has-background > p {
-  padding: 1.25em 2.375em;
-  margin-bottom: 0;
-}
-
-.has-background > h1, 
-.has-background > h2, 
-.has-background > h3,
-.has-background > h4,
-.has-background > h5,
-.has-background > h6 {
-  padding: 0.7em 1em;
-  margin-bottom: 0;
 }
