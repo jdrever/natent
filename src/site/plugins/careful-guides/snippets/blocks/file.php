@@ -1,6 +1,4 @@
-<?php /** @var \Kirby\Cms\Block $block */ 
-$div="";
-?>
+<?php /** @var \Kirby\Cms\Block $block */ ?>
 
 <style>
 .file-block {
@@ -26,8 +24,8 @@ $div="";
 <div class="file-block">
     <?php if($file = $block->file()->toFile()): ?>
         <a href="<?= $file->url()?>" target="_blank"><?=$block->label() != "" ? $block->label() : $file->filename()?></a>
-        <a class="download-button" href="<?= $file->url()?>" download><?=I18n::translate("field.blocks.file.download")?> </a>
+        <a class="download-button" href="<?= $file->url()?>" target="_blank"><?=t("View")?> </a>
     <?php else: ?>
-        <p><?=I18n::translate("field.blocks.file.nofile")?></p>
+        <p><?=t("No file")?></p>
     <?php endif?>
 </div>

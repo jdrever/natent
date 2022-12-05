@@ -36,11 +36,11 @@ return [
         'Recommend' => 'Recommend',
         'Remove Recommendation' => 'Remove Recommendation',
 
-        'field.blocks.file.name' => 'File',
-        'field.blocks.file.label' => 'Label',
-        'field.blocks.file.placeholder' => 'Leave blank to use file name',
-        'field.blocks.file.download' => 'Download',
-        'field.blocks.file.nofile' => 'No file'
+        'File' => 'File',
+        'Label' => 'Label',
+        'Leave blank to use file name' => 'Leave blank to use file name',
+        'View' => 'View',
+        'No file' => 'No file'
     ],
     'url' => NULL
 ];

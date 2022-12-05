@@ -1,14 +1,14 @@
-name: field.blocks.file.name
+name: File
 icon: file
 preview: file
 fields:
   file:
-    label: field.blocks.file.name
+    label: File
     type: files
     multiple: false
   label:
-    label: field.blocks.file.label
+    label: Label
     type: writer
     inline: true
     width: 5/6
-    placeholder: field.blocks.file.placeholder
+    placeholder: Leave blank to use file name
