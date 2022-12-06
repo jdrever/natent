@@ -1,7 +1,7 @@
 <?php snippet('header') ?>
 <div class="container my-4">
   <h1>About the Project</h1>
-  <p>We know tomorrow will be different from today. We know the future will require new skills, new knowledge and new ways of doing things. And it will also need old wisdom.</p>
+  <p class="lead">We know tomorrow will be different from today. We know the future will require new skills, new knowledge and new ways of doing things. And it will also need old wisdom.</p>
   <p>Nature has sustained itself for 3.8 billion years. Nature looks complex, yet behind this complexity lie simple principles which enables life to adapt and thrive.</p>
   <p>Biomimicry is the study of these principles &#8211; nature’s operating system. These principles applied to human design can have a transformational impact. Until the Wright brothers observed how turkey vultures fly in crosswinds, they could not solve the challenge of keeping planes upright on a windy day. Without turkey vultures there might be no planes and no easy international travel.</p>
   <p>Become a Natural Entrepreneur. Learn how to harness the wisdom of nature to build the future of tomorrow.</p>
@@ -30,5 +30,8 @@
   </ul>
   <p>Biomimicry is a growing field &#8211; companies large and small are using it to hone their services, improve design and reduce the environmental impact of their products. The potential of biomimicry as the foundation for designing our future offers opportunities for business, society and everyone. Natural Entrepreneurs allows students to engage with this process and learn how to actively participate in the development of a green economy.</p>
   <p>Would you like to introduce biomimicry into your school? To learn more please get in touch.</p>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a href="/contact/" class="btn btn-primary p-3"><i class="bi bi-arrow-right-circle-fill"></i> Get in touch</a>
+  </div>
 </div>
 <?php snippet('footer') ?>
