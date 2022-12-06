@@ -1,5 +1,5 @@
 <?php snippet('header') ?>
-<div class="container-fluid my-4 mx-auto" style="width: 80%;">
+<div class="container my-4">
   <h1>Contact Us</h1>
   <p class="lead">
     You want to implement the Natural Entrepreneurs process and platform at your school? Interested in adapting the programme to higher or primary education with us?
