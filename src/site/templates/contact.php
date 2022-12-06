@@ -41,10 +41,14 @@
                  id="subject"
                  name="subject"
                  value="Biomimicry Day Registration from Biolearn website">
-          <input type="submit" value="Send" class="btn btn-lg btn-outline-secondary">
+        
+          
         </li>
       </ol>
     </fieldset>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <input type="submit" value="Send" class="btn btn-primary p-3">
+  </div>
   </form>
 </div>
 <?php snippet('footer') ?>
