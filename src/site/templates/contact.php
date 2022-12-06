@@ -1,5 +1,5 @@
 <?php snippet('header') ?>
-<div class="container-fluid my-4 mx-auto" style="width: 80%;">
+<div class="container my-4">
   <h1>Contact Us</h1>
   <p class="lead">
     You want to implement the Natural Entrepreneurs process and platform at your school? Interested in adapting the programme to higher or primary education with us?
@@ -41,10 +41,14 @@
                  id="subject"
                  name="subject"
                  value="Biomimicry Day Registration from Biolearn website">
-          <input type="submit" value="Send" class="btn btn-lg btn-outline-secondary">
+        
+          
         </li>
       </ol>
     </fieldset>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <input type="submit" value="Send" class="btn btn-primary p-3">
+  </div>
   </form>
 </div>
 <?php snippet('footer') ?>

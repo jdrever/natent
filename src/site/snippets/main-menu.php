@@ -23,7 +23,7 @@
             <a href="/" class="nav-link active px-2">Home</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link px-2">About the Project</a>
+            <a href="/about/" class="nav-link px-2">About the Project</a>
           </li>
           <li class="nav-item">
             <a href="/for-teachers/" class="nav-link px-2">For Teachers</a>

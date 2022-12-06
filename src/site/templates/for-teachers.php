@@ -1,5 +1,5 @@
 <?php snippet('header') ?>
-<div class="container-fluid mt-4 mx-auto" style="width: 80%;">
+<div class="container my-4">
   <main>
     <h1>For Teachers</h1>
     <h2>

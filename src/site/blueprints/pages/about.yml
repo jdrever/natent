@@ -1,0 +1,15 @@
+title: About
+columns:
+  main:
+    width: 1/2
+    sections:
+      fields:
+        extends: sections/core-fields
+  sidebar:
+    width: 1/2
+    sections:
+      pages:
+        label: Sub-Pages
+        type: pages
+        template: default
+
