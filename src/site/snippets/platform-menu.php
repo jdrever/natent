@@ -13,6 +13,15 @@
       <li>
         <a href="/commons/" class="nav-link px-2 text-white"><i class="bi bi-cc-circle-fill"></i>CREATIVE COMMONS</a>
       </li>
+      <?php if ($user = $kirby->user()): ?>
+      <li>
+        <a href="<?= url('logout') ?> " class="nav-link px-2 text-white"><i class="bi bi-door-closed-fill"></i>LOGOUT</a>
+      </li>
+      <?php else: ?>
+      <li>
+        <a href="/login/" class="nav-link px-2 text-white"><i class="bi bi-door-open-fill"></i>LOGIN</a>
+      </li>
+      <?php endif ?>
     </ul>
   </nav>
 </header>
