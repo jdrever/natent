@@ -11,7 +11,6 @@ columns:
       pages:
         label: Pages
         type: pages
-        layout: cards
         templates:
           - home
           - about
