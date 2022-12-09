@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "afe71946c8b350459f4da3e4726e2013",
+    "content-hash": "e6d4bb7bc613420f302fc3ecac2e8d74",
     "packages": [
         {
             "name": "claviska/simpleimage",
@@ -527,6 +527,48 @@
                 "source": "https://github.com/michelf/php-smartypants/tree/1.8.1"
             },
             "time": "2016-12-13T01:01:17+00:00"
+        },
+        {
+            "name": "mullema/k3-image-clip",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mullema/k3-image-clip.git",
+                "reference": "66e5c2147fd6736f48878aaed6eef9ffe08cdd21"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mullema/k3-image-clip/zipball/66e5c2147fd6736f48878aaed6eef9ffe08cdd21",
+                "reference": "66e5c2147fd6736f48878aaed6eef9ffe08cdd21",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.2"
+            },
+            "conflict": {
+                "getkirby/cms": "<3.6"
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "installer-name": "k3-image-clip"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Müller",
+                    "email": "moeli@moeli.com",
+                    "homepage": "https://getkirby.com/plugins/mullema"
+                }
+            ],
+            "description": "Visual image clip for Kirby 3",
+            "support": {
+                "issues": "https://github.com/mullema/k3-image-clip/issues",
+                "source": "https://github.com/mullema/k3-image-clip/tree/3.2.0"
+            },
+            "time": "2022-11-05T10:49:35+00:00"
         },
         {
             "name": "phpmailer/phpmailer",

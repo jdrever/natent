@@ -23,6 +23,11 @@ columns:
           - other-teams
           - commons
           - error
+      phases:
+        label: Phase Types
+        type: pages
+        templates:
+          - phase
       countries:
         label: Countries
         type: pages

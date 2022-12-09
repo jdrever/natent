@@ -13,6 +13,8 @@ return function($kirby, $pages, $page)
 
     $pointsAdded=$kirby->request()->get('points') ? $kirby->request()->get('points') : 0;
     $pointsAddedOtherTeam=$kirby->request()->get('pointsOther') ? $kirby->request()->get('pointsOther') : 0;
+    //echo(var_dump($team));
+    //die();
     return [ 'userId' => $userId, 'team' => $team, 'status' =>$status, 'userRole' => $team['role'], 'pointsAdded' => $pointsAdded, 'pointsAddedOtherTeam' =>$pointsAddedOtherTeam ];
 }
 ?>

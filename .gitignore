@@ -6,4 +6,5 @@ node_modules/
 /src/kirby
 /src/site/plugins/k3-trevor-view
 /src/site/plugins/kirby-color
+/src/site/plugins/k3-image-clip
 /src/site/controllers/helpers/DBConnect.php

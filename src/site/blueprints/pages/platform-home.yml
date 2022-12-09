@@ -7,6 +7,9 @@ columns:
         type: fields
         fields:
           mainContent: fields/mainContent
+          collaborationContent:
+            label: Collaboration Content
+            type: layout
   sidebar:
     width: 1/3
     sections:

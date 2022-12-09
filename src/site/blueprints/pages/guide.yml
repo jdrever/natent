@@ -21,11 +21,18 @@ columns:
               - Beta
               - Live
           mainContent: fields/guideContent
+          phase:
+            label: Phase Type
+            type: select
+            options:
+              type: query
+              query: site.index.filterBy('template', 'phase')
           countries:
             label: Countries
-            type: pages
-            subpages: false
-            query: site.index.filterBy('template', 'country')
+            type: multiselect
+            options:
+              type: query
+              query: site.index.filterBy('template', 'country')
   sidebar:
     width: 1/2
     sections:
