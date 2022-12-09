@@ -39,7 +39,12 @@ return [
         'Label' => 'Label',
         'Leave blank to use file name' => 'Leave blank to use file name',
         'View' => 'View',
-        'No file' => 'No file'
+        'No file' => 'No file',
+        'FUNCTION' => 'FUNCTION',
+        'RESEARCH QUESTION' => 'RESEARCH QUESTION',
+        'EDIT RESEARCH QUESTIONS' => 'EDIT RESEARCH QUESTIONS',
+        'EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES' => 'EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES',
+
     ],
     'url' => NULL
 ];
