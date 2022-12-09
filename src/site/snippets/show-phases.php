@@ -1,6 +1,7 @@
 <?php 
-$phaseNumber=1;
+use carefulcollab\helpers as helpers;
 
+$phaseNumber=1;
 $width=300;
 $height=200;
 
@@ -18,7 +19,7 @@ $height=200;
       <a href="<?=$countryPhase->url()?>" class="btn btn-primary m-2"><?=t('GET STARTED', 'GET STARTED')?> →</a>
         <?php endif ?>
       <a href="<?=$countryPhase->url()?>">   
-        <figure class="figure">
+        <figure class="figure m-0">
           <figcaption class="figure-caption">
             <?=$phaseNumber?>. <?=$countryPhase->title()?>
           </figcaption>
@@ -36,7 +37,14 @@ $height=200;
             <?php endif ?>
         </figure>
       </a>
-      <br>
+<?php
+      $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($team['id'],$phase->title());
+      $phaseCompletion = $phaseCompletionInfo['percent_complete'];
+?>
+                <div class="progress">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: <?= $phaseCompletion ?>%;" aria-valuenow="<?= $phaseCompletion ?>" aria-valuemin="0" aria-valuemax="100">
+                        <?= $phaseCompletion ?>%</div>
+                </div>
 <?php
     endif;
   endif;  
