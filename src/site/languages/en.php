@@ -35,11 +35,28 @@ return [
         'Translate to English' => 'Translate to English',
         'Recommend' => 'Recommend',
         'Remove Recommendation' => 'Remove Recommendation',
+        // File Upload Block
         'File' => 'File',
         'Label' => 'Label',
         'Leave blank to use file name' => 'Leave blank to use file name',
         'View' => 'View',
-        'No file' => 'No file'
+        'No file' => 'No file',
+        // Team page link snippet
+        'Your team\'s selected Topic' => 'Your team\'s selected Topic',
+        'Your team\'s selected Challenge' => 'Your team\'s selected Challenge',
+        'You can see full details on your Team Page' => 'You can see full details on your Team Page',
+        'Not yet selected' => 'Not yet selected',
+        // Todo - teamArea translations?
+        // Add to commons form snippet
+        'Add to The Commons' => 'Add to The Commons',
+        'Have any resources helped you with this stage of the process? Share them with other Teams by adding them to The Commons.' => 'Have any resources helped you with this stage of the process? Share them with other Teams by adding them to The Commons.',
+        'Resource' => 'Resource',
+        'What is the title of your resource?' => 'What is the title of your resource?',
+        'Give a description of your resource' => 'Give a description of your resource',
+        'Enter the website location for your resource (if one exists)' => 'Enter the website location for your resource (if one exists)',
+        'Upload a document (optional - image or PDF only)' => 'Upload a document (optional - image or PDF only)',
+        'Add More Resources' => 'Add More Resources',
+        'SHARE YOUR CONTEXT AND RESOURCES' => 'SHARE YOUR CONTEXT AND RESOURCES',
     ],
     'url' => NULL
 ];
