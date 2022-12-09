@@ -2,7 +2,7 @@
 use carefulcollab\helpers as helpers;
 
 return function($kirby, $pages, $page) {
-    $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby'));
+    $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site'));
     $team=$platform['team'];
 
     $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($team['id'],$page->phase());
