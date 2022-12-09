@@ -15,6 +15,7 @@ columns:
             query: page.images
           status:
             type: select
+            translate: false
             options:
               - Discovery
               - Alpha
@@ -24,12 +25,14 @@ columns:
           phase:
             label: Phase Type
             type: select
+            translate: false
             options:
               type: query
               query: site.index.filterBy('template', 'phase')
           countries:
             label: Countries
             type: multiselect
+            translate: false
             options:
               type: query
               query: site.index.filterBy('template', 'country')
