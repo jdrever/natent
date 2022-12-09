@@ -1,0 +1,10 @@
+title: Default File
+
+fields:
+  title:
+    label: Title
+    type: text
+
+  alt:
+    label: Alt Text
+    type: text

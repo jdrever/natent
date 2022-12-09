@@ -9,81 +9,14 @@
 <div class="container mt-2">
   <div class="row">
     <div class="col-sm-4">
-      <h2>The Phases</h2>
-      <p>Work through each Phase in order.</p>
-      <a href="/platform/define/" class="btn btn-primary m-2">GET STARTED →</a>
-      <a href="/platform/define/">
-        <figure class="figure">
-          <figcaption class="figure-caption">
-            1. Define
-          </figcaption>
-          <img class="figure-img img-fluid rounded" src="/assets/images/define.png"
-            alt="'Dragonfly' by Rhubarble is marked with CC BY-NC 2.0. To view the terms, visit https://creativecommons.org/licenses/by-nc/2.0/?ref=openverse">
-        </figure>
-      </a>
-      <br>
-      <a href="#">
-        <figure class="figure">
-          <figcaption class="figure-caption">
-            2. Discover
-          </figcaption>
-          <img class="figure-img img-fluid rounded" src="/assets/images/discover.jpeg"
-            alt="'Bracket Fungi.(Basidiomycotina)' by Bernard Spragg is marked with CC0 1.0.">
-        </figure>
-      </a>
-      <br>
-      <a href="#">
-        <figure class="figure">
-          <figcaption class="figure-caption">
-            3. Create
-          </figcaption>
-          <img class="figure-img img-fluid rounded" src="/assets/images/create.jpeg"
-            alt="'Nature bird' by @Doug88888 is marked with CC BY-NC-SA 2.0. To view the terms, visit https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=openverse">
-        </figure>
-      </a>
-      <br>
-      <a href="#">
-        <figure class="figure">
-          <figcaption class="figure-caption">
-            4. Communicate
-          </figcaption>
-          <img class="figure-img img-fluid rounded" src="/assets/images/communicate.jpeg"
-            alt="'Oregano Orejon' by tatadbb is marked with CC BY-SA 2.0. To view the terms, visit https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse">
-        </figure>
-      </a>
-      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <button class="btn btn-primary btn-sm m-2" type="button" data-bs-toggle="collapse"
-          data-bs-target="#collapseImageCredits" aria-expanded="false" aria-controls="collapseImageCredits">
-          See Image Credits
-        </button>
-        <div class="collapse" id="collapseImageCredits">
-          <p>
-            <small>
-              <b>Define:</b>
-              'Dragonfly' by Rhubarble is marked with CC BY-NC 2.0. To view the terms, visit
-              https://creativecommons.org/licenses/by-nc/2.0/?ref=openverse
-              <b>Discover:</b>
-              'Bracket Fungi.(Basidiomycotina)' by Bernard Spragg is marked with CC0 1.0.
-              <b>Create:</b>
-              'Nature bird' by @Doug88888 is marked with CC BY-NC-SA 2.0. To view the terms, visit
-              https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=openverse
-              <b>Communications:</b>
-              'Oregano Orejon' by tatadbb is marked with CC BY-SA 2.0. To view the terms, visit
-              https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse
-            </small>
-          </p>
-        </div>
-      </div>
+<?php snippet('show-phases') ?>
     </div>
     <div class="col-sm-8">
       <h2>Collaboration Points</h2>
       <p class="h1">
         <i class="bi bi-star"></i> 220
       </p>
-      <p>
-        You earn collaboration points by completing Phases, adding resources to the Creative Commons and appreciating
-        and commenting on other teams
-      </p>
+      <?php snippet('show-blocks',['fieldName' => 'collaborationContent'])?>
       <div class="accordion accordion-flush" id="accordionCommentsAppreciations">
         <div class="accordion-item">
           <h2 class="accordion-comments" id="headingComments">
