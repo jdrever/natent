@@ -151,13 +151,13 @@ if ($resources)
             { 
                 $resourceUrl=str_replace("https://","",$resource['url']);
         ?>
-        <p><b><?=t("Website Link")?>: </b> <a href="https://<?=$resourceUrl ?>" target="_blank"><?=$resourceUrl?></a></p>
+        <p><b><?=t("Website Link", "Website Link")?>: </b> <a href="https://<?=$resourceUrl ?>" target="_blank"><?=$resourceUrl?></a></p>
         <?php 
             }
             if (!empty($resource['file_upload_url'])) 
             { 
          ?>       
-        <p><b><?=t("Uploaded File")?>: </b><p>
+        <p><b><?=t("Uploaded File","Uploaded File")?>: </b><p>
         <?= snippet('show-file', [ 'fileUrl'=>$resource['file_upload_url'],'altText'=>$resource['title']]);?>
         <?php  
         } ?>
@@ -172,7 +172,7 @@ if ($resources)
 else
 {
 ?>
-    <div class="alert alert-info" role="alert"><?=$page->noResourcesText()?>.</div>
+    <div class="alert alert-info" role="alert"><?=t("There are currently no resources for this team")?>.</div>
     <?php        
     }
 ?>

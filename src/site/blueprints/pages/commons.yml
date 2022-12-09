@@ -47,7 +47,3 @@ columns:
             label: 'Recommended Resources' link
             type: text
             default: Resources recommended by the Natural Entrepreneurs project
-          noResourcesText:
-            label: 'There are currently no resources' text
-            type: text
-            default: There are currently no resources that match your criteria

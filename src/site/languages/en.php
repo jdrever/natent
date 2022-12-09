@@ -50,6 +50,10 @@ return [
         'EDIT DESIGN' => 'EDIT DESIGN',
         'EDIT MEASURE' => 'EDIT MEASURE',
         'EDIT PITCH VIDEO' => 'EDIT PITCH VIDEO',
+        'Commons Resources shared by' => 'Commons Resources shared by',
+        'Website Link'=>'Website Link',
+        'Uploaded File'=>'Uploaded File',
+        'There are currently no resources for this team'=> 'There are currently no resources for this team',
     ],
     'url' => NULL
 ];
