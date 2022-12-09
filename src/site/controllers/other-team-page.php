@@ -8,7 +8,7 @@ return function($kirby, $pages, $page, $site)
         $viewedTeam = helpers\DataHelper::getTeamByTeamId(get('teamId'));
         $editTeam=false;        
     }
-    return $kirby->controller('team', compact('platform', 'viewedTeam', 'editTeam'));
+    return $kirby->controller('team', compact('platform', 'site', 'viewedTeam', 'editTeam'));
 
     
 };

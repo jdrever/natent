@@ -1,22 +1,25 @@
 <?php
 use carefulcollab\helpers as helpers;
-return function($platform, $viewedTeam, $editTeam) 
+return function($platform, $site, $viewedTeam, $editTeam) 
 {
     $userId=$platform['userId'];
     $phaseCompletion=[];
 
-
-    $phases = helpers\DataHelper::getPhasesByCountryId($viewedTeam['country_id']);
+    $phases=$site->index()->filterBy('template','phase');
 
     $latestComments=($editTeam) ? helpers\DataHelper::getLatestComments($userId) : [];
     $latestAppreciations=($editTeam) ? helpers\DataHelper::getLatestAppreciations($userId) : [];
     
     foreach ($phases as $nextPhase)
     {
-        $phase[0] = $nextPhase['phase_title'];
-        $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($viewedTeam['id'],$nextPhase['phase_type']);
-        $phase[1] = $phaseCompletionInfo['percent_complete'];
-        $phaseCompletion[]=$phase;
+        $pagesInPhase=$site->index()->filterBy('template', 'guide')->filterBy('phase', strtolower($nextPhase->title()));
+        if ($pageInPhase=$pagesInPhase->first())
+        {
+            $phase[0] = $pageInPhase->title();
+            $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($viewedTeam['id'],$nextPhase->title());
+            $phase[1] = $phaseCompletionInfo['percent_complete'];
+            $phaseCompletion[]=$phase;
+        }
     }
     $skills=helpers\DataHelper::getSkillsets();
 

@@ -14,9 +14,9 @@
         <img class="img-fluid rounded" src="<?= $image->url() ?>" alt="" width="250" height="250">
         <?php endif ?>
         <div class="progress mt-1 mb-4" style="height:30px;">
-          <div class="progress-bar bg-primary" role="progressbar" style="width: 50%;" aria-valuenow="50"
+          <div class="progress-bar bg-primary" role="progressbar" style="width: <?=$phaseCompletion?>%;" aria-valuenow="<?=$phaseCompletion?>"
             aria-valuemin="0" aria-valuemax="100">
-            50%
+            <?=$phaseCompletion?>%
           </div>
         </div>
       </div>
