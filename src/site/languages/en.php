@@ -40,11 +40,16 @@ return [
         'Leave blank to use file name' => 'Leave blank to use file name',
         'View' => 'View',
         'No file' => 'No file',
+        'EDIT TOPIC AND CHALLENGE'=> 'EDIT TOPIC AND CHALLENGE',
         'FUNCTION' => 'FUNCTION',
         'RESEARCH QUESTION' => 'RESEARCH QUESTION',
         'EDIT RESEARCH QUESTIONS' => 'EDIT RESEARCH QUESTIONS',
         'EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES' => 'EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES',
-
+        'EDIT TEAM PROFILE' => 'EDIT TEAM PROFILE',
+        'EDIT CONTEXT' => 'EDIT CONTEXT',
+        'EDIT DESIGN' => 'EDIT DESIGN',
+        'EDIT MEASURE' => 'EDIT MEASURE',
+        'EDIT PITCH VIDEO' => 'EDIT PITCH VIDEO',
     ],
     'url' => NULL
 ];

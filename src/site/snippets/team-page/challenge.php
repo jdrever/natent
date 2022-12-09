@@ -12,7 +12,7 @@ $areaPage="";
 <?php if ($editTeam) : ?>
   <?php snippet('show-appreciations', ['contentType'=>'Team Challenge', 'contentId'=>$viewedTeam['team_challenge_id']]) ?>
   <?php snippet('show-comments',['contentType'=>'Team Challenge', 'contentId'=>$viewedTeam['team_challenge_id']]) ?>
-<a href="<?= $areaPage ?>" class="btn btn-outline-primary"><?=$page->editChallengeButton()?></a>
+<a href="<?= $areaPage ?>" class="btn btn-outline-primary"><?=t('EDIT TOPIC AND CHALLENGE','EDIT TOPIC AND CHALLENGE')?></a>
 
 <?php else: ?>
   <?php snippet('show-appreciation-button',['contentType'=>'Team Challenge', 'contentId'=>$viewedTeam['team_challenge_id']]) ?>

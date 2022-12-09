@@ -11,7 +11,7 @@ if ($editTeam) :
       snippet('show-appreciations', ['contentType'=>'Challenge Definition', 'contentId'=>$viewedTeam['team_challenge_definition_id']]);
       snippet('show-comments',['contentType'=>'Challenge Definition', 'contentId'=>$viewedTeam['team_challenge_definition_id']]);
 ?>
-    <a href="<?= $contextPage ?>" class="btn btn-outline-primary"><?=$page->editContextButton()?></a>
+    <a href="<?= $contextPage ?>" class="btn btn-outline-primary"><?=t('EDIT CONTEXT')?></a>
     <?php else :
       snippet('show-appreciation-button',['contentType'=>'Challenge Definition', 'contentId'=>$viewedTeam['team_challenge_definition_id']]);
       snippet('show-comment-box', ['contentType'=>'Challenge Definition', 'contentId'=>$viewedTeam['team_challenge_definition_id']]);
