@@ -1,16 +1,24 @@
 title: Login
 icon: 🔐
-
-fields:
-  alert:
-    label: Alert text
-    type: text
-  username:
-    label: Label for username
-    type: text
-  password:
-    label: Label for password
-    type: text
-  button:
-    label: Button text
-    type: text
+columns:
+  main:
+    width: 2/3
+    sections:
+      fields:
+        extends: sections/core-fields
+  sidebar:
+    width: 1/3
+    type: fields
+    fields:
+      alert:
+        label: Alert text
+        type: text
+      username:
+        label: Label for username
+        type: text
+      password:
+        label: Label for password
+        type: text
+      button:
+        label: Button text
+        type: text
