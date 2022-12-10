@@ -14,9 +14,12 @@ if ($resources)
         if (!($phaseTitle==$nextPhaseTitle))
         {
             $nextPhase=cchelpers\DataHelper::getPhaseTitle($userId,$nextPhaseTitle);
+            if ($nextPhase)
+            {
 ?>
     <h4><?=$nextPhase['phase_title'] ?></h4>
     <?php
+            }
             $phaseTitle=$resource['phase_title'];
         }
         $nextCollaborationPointName=$resource['collaboration_point_name'];

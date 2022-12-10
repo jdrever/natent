@@ -1,9 +1,13 @@
 <?php
 use carefulcollab\helpers as helpers;
+use carefulcollab\helpers\CollaborationPoint;
+
 return function($platform, $site, $viewedTeam, $editTeam) 
 {
     $userId=$platform['userId'];
     $phaseCompletion=[];
+
+    $collaborationPoints=[];
 
     $phases=$site->index()->filterBy('template','phase');
 
@@ -19,7 +23,14 @@ return function($platform, $site, $viewedTeam, $editTeam)
             $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($viewedTeam['id'],$nextPhase->title());
             $phase[1] = $phaseCompletionInfo['percent_complete'];
             $phaseCompletion[]=$phase;
+
+            $pointsInPhase=$pageInPhase->index()->filterBy('template','^=', 'task');
+            foreach ($pointsInPhase as $point)
+            {
+                $collaborationPoints[]=$point;
+            }
         }
+        
     }
     $skills=helpers\DataHelper::getSkillsets();
 
@@ -28,6 +39,7 @@ return function($platform, $site, $viewedTeam, $editTeam)
         'viewedTeam',
         'editTeam', 
         'phaseCompletion', 
+        'collaborationPoints',
         'latestComments',
         'latestAppreciations',
         'skills'));

@@ -1,10 +1,6 @@
 <?php
 use carefulcollab\helpers as helpers;
 
-//TODO: do proper urls
-$functionsPage="";
-$strategiesPage="";
-
 $functions = helpers\DataHelper::getFunctionsByTeamAndChallengeId($viewedTeam['id'], $viewedTeam['challenge_id'], !$editTeam);
 foreach ($functions as $function)
 {
@@ -54,8 +50,12 @@ foreach ($functions as $function)
         if (isset($viewedTeam['area']))
         {
 ?>
-    <a href="<?= $functionsPage?>" class="btn btn-outline-primary"><?=t("EDIT RESEARCH QUESTIONS","EDIT RESEARCH QUESTIONS")?></a>
+    <?php if ($researchPageUrl=getCollabUrl($collaborationPoints, 'task-research')) :?>
+    <a href="<?= $researchPageUrl?>" class="btn btn-outline-primary"><?=t("EDIT RESEARCH QUESTIONS","EDIT RESEARCH QUESTIONS")?></a>
+    </php endif ?>
+    <?php if ($strategiesPageUrl=getCollabUrl($collaborationPoints, 'task-strategies')) :?>    
     <a href="<?= $strategiesPage?>" class="btn btn-outline-primary"><?=t("EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES","EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES")?></a>
+    </php endif ?>
 <?php
         }
     }

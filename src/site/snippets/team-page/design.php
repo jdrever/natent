@@ -1,7 +1,3 @@
-<?php
-//TODO: get proper url
-$designPage="";
-?>
 <h4><?=t("Design")?></h4>
 <?php
 if ((isset($viewedTeam['design_idea_file']))&&!empty($viewedTeam['design_idea_file'])) :
@@ -20,12 +16,13 @@ if (isset($viewedTeam['design_idea_you_tube_id'])&&!empty($viewedTeam['design_id
 <?php endif;
 if ($editTeam) :
     if (isset($viewedTeam['design_idea_you_tube_id'])||isset($viewedTeam['design_idea_file'])) :
-?>
-      <a href="<?= $designPage?>" class="btn btn-outline-primary"><?=t('EDIT DESIGN','EDIT DESIGN')?></a>
+        if ($designPageUrl=getCollabUrl($collaborationPoints, 'task-design')) :?>
+      <a href="<?= $designPagUrl?>" class="btn btn-outline-primary"><?=t('EDIT DESIGN','EDIT DESIGN')?></a>
+        <?php endif ?>
       <?php snippet('show-appreciations', ['contentType'=>'Design Idea', 'contentId'=>$viewedTeam['team_design_idea_id']]) ?>
       <?php snippet('show-comments',['contentType'=>'Design Idea', 'contentId'=>$viewedTeam['team_design_idea_id']]) ?>
 
-<?php endif;
+    <?php endif;
 else :
 ?>
      <?php snippet('show-appreciation-button',['contentType'=>'Design Idea', 'contentId'=>$viewedTeam['team_design_idea_id']]) ?>

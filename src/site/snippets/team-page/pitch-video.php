@@ -1,7 +1,3 @@
-<?php
-//TODO: update to proper url
-$pitchVideoPage="";
-?>
 <h3><?=t("Pitch Video")?></h3>
 <?php
 if (isset($viewedTeam['pitch_video_you_tube_id'])&&!empty($viewedTeam['pitch_video_you_tube_id'])) :
@@ -12,7 +8,9 @@ if (isset($viewedTeam['pitch_video_you_tube_id'])&&!empty($viewedTeam['pitch_vid
     <p><?=t("Not yet uploaded")?>.</p>
 <?php endif;
 if ($editTeam) : ?>
-<a href="<?= $pitchVideoPage ?>" class="btn btn-outline-primary"><?=t("EDIT PITCH VIDEO")?></a>
+  <?php if ($pitchPageUrl=getCollabUrl($collaborationPoints, 'task-pitch')) :?>
+<a href="<?= $pitchPageUrl ?>" class="btn btn-outline-primary"><?=t("EDIT PITCH VIDEO")?></a>
+  <?php endif ?>
   <?php snippet('show-appreciations', ['contentType'=>'Business Canvas', 'contentId'=> $viewedTeam['team_business_canvas_id']]) ?>
   <?php snippet('show-comments',['contentType'=>'Business Canvas', 'contentId'=> $viewedTeam['team_business_canvas_id']]) ?>
 <?php else : ?>

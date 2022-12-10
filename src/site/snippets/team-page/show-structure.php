@@ -1,3 +1,20 @@
+<?php
+
+function getCollabUrl($collaborationPoints,$template)
+{
+    $collabPage= array_filter($collaborationPoints, 
+        function ($point) use ($template)
+        {
+            return ($point->template()==$template);
+        }
+    );
+    if ($collabPage[0]) return $collabPage[0]->url();
+    return false;
+}
+
+?>
+
+
 <div class="container my-4">
     <?php snippet('team-page/phase-completion') ?>
  <?php if ($editTeam) :?>  
