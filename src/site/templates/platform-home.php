@@ -6,11 +6,13 @@
     font-size: 1.2em;
   }
 </style>
+<?php $phasesCol=$userLoggedIn ? 4 : 12 ?>
 <div class="container mt-2">
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-<?=$phasesCol?>">
 <?php snippet('show-phases') ?>
     </div>
+<?php if ($userLoggedIn) : ?>
     <div class="col-sm-8">
       <h2>Collaboration Points</h2>
       <p class="h1">
@@ -34,6 +36,7 @@
       </h3>
       <p>Find useful resources</p>
     </div>
+    <?php endif ?>
   </div>
 </div>
 <?php snippet('footer') ?>
