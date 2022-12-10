@@ -20,7 +20,7 @@ foreach ($functions as $function)
 ?>
 
         <tr>
-            <th class="bg-info"><?=t("RESEARCH QUESTION", "RESEARCH QUESTION")?>: <?= $researchQuestion ?>
+            <th class="bg-info text-white"><?=t("RESEARCH QUESTION", "RESEARCH QUESTION")?>: <?= $researchQuestion ?>
                 <?php snippet('show-translatable-content', ['content'=>"RESEARCH QUESTION: " . $researchQuestion, 'showButton'=>!$editTeam,'showContent'=>false]) ?>
             </th>
         </tr>
@@ -50,12 +50,12 @@ foreach ($functions as $function)
         if (isset($viewedTeam['area']))
         {
 ?>
-    <?php if ($researchPageUrl=getCollabUrl($collaborationPoints, 'task-research')) :?>
+            <?php if ($researchPageUrl=getCollabUrl($collaborationPoints, 'task-research')) :?>
     <a href="<?= $researchPageUrl?>" class="btn btn-outline-primary"><?=t("EDIT RESEARCH QUESTIONS","EDIT RESEARCH QUESTIONS")?></a>
-    </php endif ?>
-    <?php if ($strategiesPageUrl=getCollabUrl($collaborationPoints, 'task-strategies')) :?>    
+            <?php endif ?>
+            <?php if ($strategiesPageUrl=getCollabUrl($collaborationPoints, 'task-strategies')) :?>    
     <a href="<?= $strategiesPage?>" class="btn btn-outline-primary"><?=t("EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES","EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES")?></a>
-    </php endif ?>
+            <?php endif ?>
 <?php
         }
     }

@@ -8,7 +8,10 @@ function getCollabUrl($collaborationPoints,$template)
             return ($point->template()==$template);
         }
     );
-    if ($collabPage[0]) return $collabPage[0]->url();
+    if (count($collabPage)>0) 
+    {  
+        $firstKey = array_key_first($collabPage);
+        return $collabPage[$firstKey]->url(); }
     return false;
 }
 
