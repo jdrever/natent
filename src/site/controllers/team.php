@@ -1,6 +1,5 @@
 <?php
 use carefulcollab\helpers as helpers;
-use carefulcollab\helpers\CollaborationPoint;
 
 return function($platform, $site, $viewedTeam, $editTeam) 
 {
