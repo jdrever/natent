@@ -1,0 +1,16 @@
+title: Sub-Page
+columns:
+  - width: 2/3
+    sections:
+      mainContent: sections/core-fields
+  - width: 1/3
+    sections:
+      info-description:
+        type: info
+        text: This is the Description which is displayed on the parent page
+      description:
+        type: fields
+        fields:
+          description:
+            label: Description
+            type: textarea
