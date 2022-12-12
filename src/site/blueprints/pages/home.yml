@@ -1,0 +1,19 @@
+title: Home Page
+
+columns:
+  main:
+    width: 2/3
+    sections:
+      hero: sections/hero
+      mainContent: sections/core-fields
+      additionalFields:
+        type: fields
+        fields:
+          getStartedHeader:
+            label: 'Get Started' header
+            type: text
+
+
+
+
+

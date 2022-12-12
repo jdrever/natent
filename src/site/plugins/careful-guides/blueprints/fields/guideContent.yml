@@ -18,6 +18,7 @@ fieldsets:
     type: group
     fieldsets:
       - heading
+      - lead-text
       - text
       - list
       - quote

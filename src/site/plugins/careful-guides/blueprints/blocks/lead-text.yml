@@ -1,0 +1,7 @@
+icon: headline
+name: Lead Text
+fields:
+  leadText:
+    label: Lead Text
+    type: text
+

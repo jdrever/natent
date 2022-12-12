@@ -1,9 +1,5 @@
 <?php snippet('header') ?>
-<div class="container my-4 mx-auto">
-  <h1 class="fw-bold mb-0"></h1>
-  <h2 class="h4 fw-normal"></h2>
-</div>
-<div class="container-fluid bg-dark text-light p-4 mt-2"
+<div class="container-fluid bg-dark text-light p-4"
   style="background-image: url('/assets/images/SDGs.png'); background-repeat: no-repeat;background-size:cover; height:250px;">
   <div class="col-lg-8 mx-auto mask mt-0">
     <div class="shrinkwrap text-start text-white">

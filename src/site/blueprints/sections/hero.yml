@@ -1,0 +1,12 @@
+
+label: Hero Section
+type: fields
+fields:
+  heroHeader:
+    label: Hero Header
+    type: text
+  heroContent:
+    label: Hero Content (please keep to 250 characters)
+    type: textarea
+    validate:
+      maxLength: 250

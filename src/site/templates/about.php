@@ -1,7 +1,6 @@
 <?php snippet('header') ?>
+<?php snippet('show-simple-hero')?>
 <div class="container my-4">
-  <h1>About the Project</h1>
-  <p class="lead">We know tomorrow will be different from today. We know the future will require new skills, new knowledge and new ways of doing things. And it will also need old wisdom.</p>
   <p>Nature has sustained itself for 3.8 billion years. Nature looks complex, yet behind this complexity lie simple principles which enables life to adapt and thrive.</p>
   <p>Biomimicry is the study of these principles &#8211; nature’s operating system. These principles applied to human design can have a transformational impact. Until the Wright brothers observed how turkey vultures fly in crosswinds, they could not solve the challenge of keeping planes upright on a windy day. Without turkey vultures there might be no planes and no easy international travel.</p>
   <p>Become a Natural Entrepreneur. Learn how to harness the wisdom of nature to build the future of tomorrow.</p>
