@@ -1,15 +1,15 @@
 title: For Teachers
 columns:
   main:
-    width: 1/2
+    width: 2/3
     sections:
-      fields:
-        extends: sections/core-fields
+      hero: sections/hero
+      mainContent: sections/core-fields
   sidebar:
-    width: 1/2
+    width: 1/3
     sections:
       pages:
         label: Sub-Pages
         type: pages
-        template: default
+        template: sub-page
 
