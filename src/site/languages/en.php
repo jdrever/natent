@@ -19,8 +19,8 @@ return [
         'Comment' => 'Comment',
         'View all Comments received' => 'View all Comments received',
         'You don\'t have any comments yet' => 'You don\'t have any comments yet',
-        'See Comments' => 'See Comments',
-        'Latest Appreciations' => 'Latest Appreciations',
+        'See Latest Comments' => 'See Latest Comments',
+        'See Latest Appreciations' => 'See Latest Appreciations',
         'See Appreciations' => 'See Appreciations',
         'Appreciate' => 'Appreciate',
         'You don\'t have any appreciations yet' => 'You don\'t have any appreciations yet',
@@ -41,6 +41,21 @@ return [
         'Leave blank to use file name' => 'Leave blank to use file name',
         'View' => 'View',
         'No file' => 'No file',
+        'EDIT TOPIC AND CHALLENGE'=> 'EDIT TOPIC AND CHALLENGE',
+        'FUNCTION' => 'FUNCTION',
+        'RESEARCH QUESTION' => 'RESEARCH QUESTION',
+        'EDIT RESEARCH QUESTIONS' => 'EDIT RESEARCH QUESTIONS',
+        'EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES' => 'EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES',
+        'EDIT TEAM PROFILE' => 'EDIT TEAM PROFILE',
+        'EDIT CONTEXT' => 'EDIT CONTEXT',
+        'EDIT DESIGN' => 'EDIT DESIGN',
+        'EDIT MEASURE' => 'EDIT MEASURE',
+        'EDIT PITCH VIDEO' => 'EDIT PITCH VIDEO',
+        'Commons Resources shared by' => 'Commons Resources shared by',
+        'Website Link'=>'Website Link',
+        'Uploaded File'=>'Uploaded File',
+        'There are currently no resources for this team'=> 'There are currently no resources for this team',
+
         // Team page link snippet
         'Your team\'s selected Topic' => 'Your team\'s selected Topic',
         'Your team\'s selected Challenge' => 'Your team\'s selected Challenge',
@@ -57,6 +72,7 @@ return [
         'Upload a document (optional - image or PDF only)' => 'Upload a document (optional - image or PDF only)',
         'Add More Resources' => 'Add More Resources',
         'SHARE YOUR CONTEXT AND RESOURCES' => 'SHARE YOUR CONTEXT AND RESOURCES',
+
     ],
     'url' => NULL
 ];

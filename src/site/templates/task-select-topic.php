@@ -83,10 +83,10 @@ if ($teams)
 ?>
 <table class="table table-success table-striped">
     <tr>
-        <th><?=t("Team Name")?></th>
-        <th><?=t("Topic")?></th>
-        <th><?=t("Challenge")?></th>
-        <th><?=t("Points")?></th>
+        <th><?=t("Team Name","Team Name")?></th>
+        <th><?=t("Topic","Topic")?></th>
+        <th><?=t("Challenge","Challenge")?></th>
+        <th><?=t("Points","Points")?></th>
     </tr>
 
     <?php  

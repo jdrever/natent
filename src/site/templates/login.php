@@ -8,14 +8,18 @@
   <div class="alert"><?= $page->alert()->html() ?></div>
   <?php endif ?>
 
+  <?php if ($nextPageUrl) : ?>
+  <a class="btn btn-primary p-3" href="<?= $nextPageUrl ?>">NEXT<i class="bi bi-arrow-right"></i></a>
+  <?php endif ?>
     <form method="post" action="<?= $page->url() ?>">
+        <input type="hidden" name="currentPageUrl" id="currentPageUrl" value="<?=get('currentPageUrl')?>">
       <fieldset>
           <p class="required"><?=$page->requiredFieldsLabel()?></p>
           <ol class="list-unstyled">
               <li class="mb-3">
                   <label for="email" class="form-label"><?= $page->username()->html() ?>:
               </label>
-                  <input type="text" name="email" required="required" aria-required="true" class="form-control" value="<?= get('email') ? esc(get('email'), 'attr') : '' ?>">
+                  <input type="text" name="login" required="required" aria-required="true" class="form-control" value="<?= get('email') ? esc(get('email'), 'attr') : '' ?>">
               </li>
               <li class="mb-3">
                   <label for="password" class="form-label">

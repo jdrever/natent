@@ -5,6 +5,8 @@ $phaseNumber=1;
 $width=300;
 $height=200;
 
+$phaseCol=$userLoggedIn ? 1 : 2;
+
 ?>
 <h2>The Phases</h2>
       Country: <?php snippet('country-switcher') ?>
@@ -14,10 +16,13 @@ $height=200;
     $pagesInPhase=$page->children()->filterBy('phase', strtolower($phase->title()));
     if ($pagesInPhase):
       $countryPhase=$pagesInPhase->filterBy('countries', '*=', str_replace(" ","-",strtolower($country)))->first();
-      if ($countryPhase) :
-        if ($phaseNumber==1) : ?>
+      if ($countryPhase) : ?>
+        <?php if ($phaseNumber==1) : ?>
       <a href="<?=$countryPhase->url()?>" class="btn btn-primary m-2"><?=t('GET STARTED', 'GET STARTED')?> →</a>
+      <div class="container">
+        <div class="row row-cols-<?=$phaseCol?>">
         <?php endif ?>
+        <div class="col">
       <a href="<?=$countryPhase->url()?>">   
         <figure class="figure m-0">
           <figcaption class="figure-caption">
@@ -45,12 +50,15 @@ $height=200;
                     <div class="progress-bar bg-primary" role="progressbar" style="width: <?= $phaseCompletion ?>%;" aria-valuenow="<?= $phaseCompletion ?>" aria-valuemin="0" aria-valuemax="100">
                         <?= $phaseCompletion ?>%</div>
                 </div>
+            </div>
 <?php
     endif;
   endif;  
   $phaseNumber++; 
 endforeach; 
 ?>
+          </div>
+      </div>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <button class="btn btn-primary btn-sm m-2" type="button" data-bs-toggle="collapse"
           data-bs-target="#collapseImageCredits" aria-expanded="false" aria-controls="collapseImageCredits">

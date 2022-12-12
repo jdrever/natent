@@ -568,7 +568,7 @@ class DataHelper
     public static function getResourcesFromCommonsByTeamId($teamId, $approvedOnly)
     {
         $pdo=self::getPDOConnection();
-        $addDpproved="";
+        $addApproved="";
         if ($approvedOnly)
             $addApproved=" AND approved_date IS NOT null";
         $stmt = $pdo->prepare("SELECT * FROM cc_all_commons_resources WHERE team_id=? ".$addApproved. " AND rejected_date IS null ORDER BY phase_order, collaboration_order");        
@@ -1892,6 +1892,7 @@ class CommonsResource
     public $url;
     public $fileUploadURL;
 }
+
 
 
 

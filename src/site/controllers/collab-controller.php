@@ -3,7 +3,7 @@ use carefulcollab\helpers as helpers;
 
 return function($kirby, $pages, $page, $site) 
 {
-    $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby'));
+    $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site'));
     $userId=$platform['userId'];
     $callingPage=$_SERVER['HTTP_REFERER'];
 

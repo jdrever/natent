@@ -14,18 +14,31 @@ return function ($kirby) {
 
     // try to log the user in with the provided credentials
     try {
-      $kirby->auth()->login(get('email'), get('password'));
+      $kirby->auth()->login(get('login'), get('password'));
+
 
       // redirect to the homepage if the login was successful
-      go('/');
+
+      if (get('currentPageUrl')) 
+      {
+        go(get('currentPageUrl'));
+      }
+      else
+      {
+        go('/');
+      }
     } catch (Exception $e) {
       $error = true;
+      echo(var_dump($e));
+      die();
     }
 
   }
 
   return [
-    'error' => $error
+    'error' => $error,
+    'nextPageUrl' => get('nextPageUrl'),
+    'userLoggedIn' => false
   ];
 
 };

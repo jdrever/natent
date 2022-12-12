@@ -31,10 +31,10 @@
     <p><a href="<?=$page->url() ?>?countryId=All"
         class="btn btn-sm btn-<?=$showAsOutlineAllCountries ?>primary"><?=$page->allCountriesLink()?></a>
       <?php
-    foreach ($countries as $country)
+    foreach ($countries as $eachCountry)
     {
-        $countryName=$country['name'];
-        $countryId=$country['id'];
+        $countryName=$eachCountry['name'];
+        $countryId=$eachCountry['id'];
         if (($countryFilter==$countryId))
         {
             $showAsOutline="";
@@ -88,7 +88,7 @@ $otherTeamPage=$site->find('other-team-page');
 
 foreach($otherTeams as $otherTeam)
 {
-    $phases = helpers\DataHelper::getPhasesByCountryId($otherTeam['country_id']);
+    //$phases = helpers\DataHelper::getPhasesByCountryId($otherTeam['country_id']);
 ?>
 
     <tr>
@@ -101,22 +101,27 @@ foreach($otherTeams as $otherTeam)
         <div class="container-fluid">
           <div class="row p-3">
             <?php
-foreach ($phases as $phase)
-{
-    $phaseTitle=$phase['phase_title'];
-    $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($otherTeam['id'],$phase['phase_type']);
-    $phaseCompletion=$phaseCompletionInfo['percent_complete'];
+foreach ($phases as $phase) :
+  $pagesInPhase=$site->index()->filterBy('phase', strtolower($phase->title()));
+  if ($pagesInPhase):
+    $countryPhase=$pagesInPhase->filterBy('countries', '*=', str_replace(" ","-",strtolower($country)))->first();
+    if ($countryPhase) :
+      $phaseTitle=$countryPhase->title();
+      $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($otherTeam['id'],$phase->title());
+      $phaseCompletion=$phaseCompletionInfo['percent_complete'];
 ?>
-            <div class="col">
-              <h5><?=$phaseTitle ?></h5>
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: <?= $phaseCompletion ?>%;"
-                  aria-valuenow="<?= $phaseCompletion ?>" aria-valuemin="0" aria-valuemax="100">
-                  <?= $phaseCompletion ?>%</div>
-              </div>
+          <div class="col">
+            <h5><?=$phaseTitle ?></h5>
+            <div class="progress">
+              <div class="progress-bar bg-info" role="progressbar" style="width: <?= $phaseCompletion ?>%;"
+                aria-valuenow="<?= $phaseCompletion ?>" aria-valuemin="0" aria-valuemax="100">
+                <?= $phaseCompletion ?>%</div>
             </div>
-            <?php
-}
+          </div>
+          <?php
+    endif;
+  endif;
+endforeach;
 ?>
           </div>
       </td>

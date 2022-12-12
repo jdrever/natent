@@ -2,7 +2,9 @@
 use carefulcollab\helpers as helpers;
 return function($kirby, $pages, $page, $site) 
 {
-    $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby'));
+    $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site'));
+    //echo(var_dump($platform));
+    //die();
     $team=$platform['team'];
     $userId=$team['user_id'];
 
@@ -48,12 +50,14 @@ return function($kirby, $pages, $page, $site)
 
     $otherTeams = helpers\DataHelper::getTeamsOrderByPoints($areaFilter, $countryFilter, $skillsetFilter);
 
+    $phases=$site->index()->filterBy('template','phase');
+
 
     return A::merge($platform, compact('areas',
         'countries','skillsets', 'otherTeams', 
         'showAsOutlineAllAreas', 'areaFilter', 
         'showAsOutlineAllCountries', 'countryFilter',
-        'showAsOutlineAllSkillsets', 'skillsetFilter'));
+        'showAsOutlineAllSkillsets', 'skillsetFilter', 'phases'));
 
     
 };

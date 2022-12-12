@@ -22,6 +22,7 @@ columns:
           - other-team-page
           - other-teams
           - commons
+          - login
           - error
       phases:
         label: Phase Types
