@@ -17,8 +17,12 @@
   <div class="container mx-auto" style="width:60%;">
     <h3 class="text-center fw-bold mt-4"><?=$page->getStartedHeader()?></h3>
     <p class="d-flex flex-row justify-content-center mb-3">
+<?php if ($forTeachers) : ?>
       <a href="<?=$forTeachers->url()?>" class="btn btn-primary flex-fill me-2"><?=$forTeachers->title()?></a>
+<?php endif;
+if ($forStudents) : ?>
       <a href="<?=$forStudents->url()?>" class="btn btn-secondary flex-fill ms-2"><?=$forStudents->title()?></a>
+<?php endif ?>
     </p>
   </div>
 </div>
