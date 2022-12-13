@@ -6,6 +6,7 @@ return function($kirby, $pages, $page, $site)
     $requiresLogin=true;
     $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site','requiresLogin'));
     $team=$platform['team'];
+    $country=$platform['country'];
 
     if($kirby->request()->is('POST')) 
     {
@@ -14,7 +15,7 @@ return function($kirby, $pages, $page, $site)
         $challengeId = get('challengeId');
         $result=helpers\DataHelper::updateTeamChallenge($team['user_id'], $focusId, $challengeId,$bespokeChallenge); 
 
-        return $kirby->controller('result' , compact('page', 'site', 'result'));
+        return $kirby->controller('result' , compact('page', 'site', 'result','country'));
 
     }
     else if (get('topicId'))
