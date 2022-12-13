@@ -72,7 +72,6 @@ return [
         'Upload a document (optional - image or PDF only)' => 'Upload a document (optional - image or PDF only)',
         'Add More Resources' => 'Add More Resources',
         'SHARE YOUR CONTEXT AND RESOURCES' => 'SHARE YOUR CONTEXT AND RESOURCES',
-
     ],
     'url' => NULL
 ];
