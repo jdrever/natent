@@ -1,11 +1,20 @@
 <?php
-return function($page, $site,  $result) 
+return function($page, $site,  $result, $country) 
 {
     if ($result->wasSuccessful)
     {
-        if ($nextPage = $page->next())
+        $collection=$site->find('platform')->index()->filterBy('template','!=','guide-section-header')->filter(function ($p) use ($country)
         {
-            $nextPage->go(['query' => ['_taskStatus' => 'ok', 'points' =>$result->pointsAdded ]]);
+            return (($p->template()!='guide')||($p->template()=='guide'&&(str_contains($p->countries(),strtolower($country)))));
+        });
+
+        if ($next = $page->children($collection)->filterBy('template','!=','guide-section-header')->first())
+        {
+            $next->go(['query' => ['_taskStatus' => 'ok', 'points' =>$result->pointsAdded ]]);
+        }
+        else if ($next = $page->next($collection)) 
+        {
+            $next->go(['query' => ['_taskStatus' => 'ok', 'points' =>$result->pointsAdded ]] );
         }
         $page->go(['query' => ['_taskStatus' => 'ok', 'points' =>$result->pointsAdded ]]);
     }

@@ -1,8 +1,9 @@
 <?php 
 $collection = $kirby->collection("guides-content")->filter(function ($p) use ($country)
 {
-    return (($p->template()!='guide')||($p->template()=='guide'&&$p->country()==$country));
+    return (($p->template()!='guide')||($p->template()=='guide'&&(str_contains($p->countries(),strtolower($country)))));
 });
+
 
 if ($page->prev($collection))
 {
@@ -14,20 +15,18 @@ elseif ($page->parent($collection))
   $previousLinkTitle=$page->parent($collection)->title();
   $previousLinkUrl=$page->parent($collection)->url();
 }
-
 if(!isset($taskButton))
 {
 
-  if ($next = $page->children($collection)->first())
+  if ($next = $page->children($collection)->filterBy('template','!=','guide-section-header')->first())
   {
-    $nextLinkTitle=$page->children($collection)->first()->title();
-    $nextLinkUrl=$page->children($collection)->first()->url();
+    $nextLinkTitle=$next->title();
+    $nextLinkUrl=$next->url();
   }
-
-  if ($next = $page->next($collection)) 
+  else if ($next = $page->next($collection)) 
   {
-    $nextLinkTitle=$page->next($collection)->title();
-    $nextLinkUrl=$page->next($collection)->url();
+    $nextLinkTitle=$next->title();
+    $nextLinkUrl=$next->url();
   }
 }
 ?>

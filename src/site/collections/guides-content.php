@@ -1,5 +1,5 @@
 <?php
 
-return function ($site, $country) {
-    return $site->index()->listed()->filterBy('template','!=','guide-section-header');
+return function ($site) {
+    return $site->find('platform')->index()->filterBy('template','!=','guide-section-header');
 };
