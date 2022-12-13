@@ -1,7 +1,9 @@
 <?php 
+$collection = $kirby->collection("guides-content")->filter(function ($p) use ($country)
+{
+    return (($p->template()!='guide')||($p->template()=='guide'&&$p->country()==$country));
+});
 
-
-$collection = $kirby->collection("guides-content");
 if ($page->prev($collection))
 {
   $previousLinkTitle=$page->prev($collection)->title();

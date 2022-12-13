@@ -27,14 +27,14 @@ return function($kirby, $pages, $page, $site)
 
         $teams = helpers\DataHelper::getTeamsByAreaId($topicId);
 
-        return [
+        return A::merge($platform, [
             'topic' => $topic,
             'challenges' => $challenges,
             'teams' => $teams,
             'showTopics' => false,
             'showChallenges' => true,
             'bespokeChallenge' => $bespokeChallenge,
-        ];
+        ]);
     }
     else
     {
