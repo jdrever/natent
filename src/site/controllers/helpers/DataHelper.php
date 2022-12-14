@@ -1,9 +1,17 @@
 <?php namespace carefulcollab\helpers;
+
+require_once("vendor/autoload.php");
+
 use \PDO;
 use PDOException;
 use DBConfig;
 
 require_once("DBConnect.php");
+
+use Aws\S3\S3Client;
+use Aws\Exception\AwsException;
+
+require_once("S3ClientConfig.php");
 
 class DataHelper
 {
@@ -1893,7 +1901,82 @@ class CommonsResource
     public $fileUploadURL;
 }
 
+class FileHelper
+{
 
+    public static function uploadFiletoS3($formInputName)
+    {
+        $result=new FileResult();
 
+        if(empty($_FILES[$formInputName]['name']))
+        {
+            $result->wasSuccessful=true;
+            $result->fileURL="";
+            return $result;        
+        }
 
+        $s3Client = new S3Client([
+            'version' => S3ClientConfig::VERSION,
+            'region'  => S3ClientConfig::REGION,
+            'endpoint' => S3ClientConfig::ENDPOINT, 
+            'credentials' => S3ClientConfig::CREDENTIALS
+            ]);
+
+        // Check if file was uploaded without errors
+
+        if($_FILES[$formInputName]["error"] == 0)
+        {
+            $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png", "pdf" => "application/pdf");
+            $fileName = $_FILES[$formInputName]["name"];
+            $fileType = $_FILES[$formInputName]["type"];
+            $fileSize = $_FILES[$formInputName]["size"];
+            // Validate file extension
+            $ext = pathinfo($fileName, PATHINFO_EXTENSION);
+            if(!array_key_exists($ext, $allowed))
+            {
+                $result->errorMessage="The file you shared is not in a valid file format (pdf, jpg, gif or png).";
+                $result->wasSuccessful=false;
+                return $result;
+            }
+            // Validate file size - 10MB maximum
+            $maxsize = 10 * 1024 * 1024;
+            if($fileSize > $maxsize) 
+            {
+                $result->errorMessage="The file you shared is larger than the allowed limit (10mb).";
+                $result->wasSuccessful=false;
+                return $result;
+            }      
+
+            $bucket = 'NatEnt';
+            $key = rand(0,9999999) . $fileName;
+
+            try 
+            {
+                $s3Result = $s3Client->putObject([
+                'Bucket' => $bucket,
+                'Key'    => $key,
+                'SourceFile'   => $_FILES[$formInputName]["tmp_name"]
+                ]);
+            } 
+            catch (AwsException $e) 
+            {
+                $result->errorMessage="There was an error uploading the file: " . $e->getMessage();
+                $result->wasSuccessful=false;
+                return $result;
+            }
+            $result->fileURL=$s3Result->get('ObjectURL');
+            $result->wasSuccessful=true;
+            return $result;
+        }
+        $result->errorMessage="There was an error uploading the file: ";
+        $result->wasSuccessful=false;
+        return $result;
+    }
+}
+class FileResult
+{
+    public $wasSuccessful;
+    public $errorMessage;
+    public $fileURL;
+}
 
