@@ -2,9 +2,9 @@
 use carefulcollab\helpers as helpers;
 return function($kirby, $pages, $page, $site) 
 {
-    $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site'));
-    //echo(var_dump($platform));
-    //die();
+    $requiresLogin=true;
+    $isNonLearningJourneyPage=true;
+    $platform = $kirby->controller('platform' , compact('kirby', 'pages', 'page', 'site', 'requiresLogin', 'isNonLearningJourneyPage'));
     $team=$platform['team'];
     $userId=$team['user_id'];
 

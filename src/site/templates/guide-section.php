@@ -3,6 +3,7 @@
 <?php snippet('breadcrumb') ?>
 <?php snippet('open-platform-content') ?>
 <?php snippet('show-blocks') ?>
-<?php snippet('guide-navigation') ?>
+
+<?php snippet('guide-navigation', compact('country')) ?>
 <?php snippet('close-platform-content') ?>
 <?php snippet('footer') ?>

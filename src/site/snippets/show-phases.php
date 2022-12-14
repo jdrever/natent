@@ -18,7 +18,11 @@ $phaseCol=$userLoggedIn ? 1 : 2;
       $countryPhase=$pagesInPhase->filterBy('countries', '*=', str_replace(" ","-",strtolower($country)))->first();
       if ($countryPhase) : ?>
         <?php if ($phaseNumber==1) : ?>
-      <a href="<?=$countryPhase->url()?>" class="btn btn-primary m-2"><?=t('GET STARTED', 'GET STARTED')?> →</a>
+          <?php if (Cookie::exists('resumePage')) : ?>
+        <a href="<?=Cookie::get('resumePage')?>" class="btn btn-primary m-2"><?=t('RESUME','RESUME')?> <i class="bi bi-arrow-right"></i></a>  
+          <?php else : ?>
+        <a href="<?=$countryPhase->url()?>" class="btn btn-primary m-2"><?=t('GET STARTED', 'GET STARTED')?> →</a>
+        <?php endif ?>
       <div class="container">
         <div class="row row-cols-<?=$phaseCol?>">
         <?php endif ?>

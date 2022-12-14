@@ -4,6 +4,7 @@ return function($kirby, $pages, $page, $site) {
     $requiresLogin=true;
     $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site','requiresLogin'));
     $team=$platform['team'];
+    $country=$platform['country'];
 
     if($kirby->request()->is('POST')) 
     {
@@ -11,7 +12,7 @@ return function($kirby, $pages, $page, $site) {
 
         $result = helpers\DataHelper::updateTeamWithStatementAndContext($team['user_id'], "", $context);
 
-        return $kirby->controller('result' , compact('page', 'site', 'result'));
+        return $kirby->controller('result' , compact('page', 'site', 'result', 'country'));
     }
     else
     {

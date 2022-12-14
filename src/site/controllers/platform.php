@@ -3,7 +3,7 @@ include 'helpers/DataHelper.php';
 
 use carefulcollab\helpers as helpers;
 
-return function($kirby, $pages, $page, $site, $requiresLogin =false) 
+return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearningJourneyPage =false) 
 {
     if ($requiresLogin&&!$kirby->user())
     {
@@ -35,8 +35,9 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false)
         $language=$kirby->language()->code();    
         $country=$countries->findBy('language', $language)->title();
     }
+    if (!$isNonLearningJourneyPage) Cookie::set("resumePage",$_SERVER['REQUEST_URI']);
 
-
-    return [ 'userId' => $userId, 'userLoggedIn' => $userLoggedIn, 'team' => $team, 'status' =>$status, 'userRole' => $team['role'], 'pointsAdded' => $pointsAdded, 'pointsAddedOtherTeam' =>$pointsAddedOtherTeam, 'country'=>$country, 'countries'=>$countries ];
+    //TODO: switch this to use compact(..)
+    return [ 'userId' => $userId, 'userLoggedIn' => $userLoggedIn, 'team' => $team, 'status' =>$status, 'userRole' => $team['role'], 'pointsAdded' => $pointsAdded, 'pointsAddedOtherTeam' =>$pointsAddedOtherTeam, 'country'=>$country, 'countries'=>$countries, 'isNonLearningJourneyPage'=>$isNonLearningJourneyPage ];
 }
 ?>

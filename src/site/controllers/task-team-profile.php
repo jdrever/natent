@@ -4,7 +4,7 @@ return function($kirby, $pages, $page, $site) {
     $requiresLogin=true;
     $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site','requiresLogin'));
     $team=$platform['team'];
-
+    $country=$platform['country'];
     
     if($kirby->request()->is('POST')) 
     {
@@ -12,7 +12,7 @@ return function($kirby, $pages, $page, $site) {
         $skills = implode(',', get('skills',''));
         $result=helpers\DataHelper::updateTeamProfile($team['user_id'], $description, $skills);
 
-        return $kirby->controller('result' , compact('page', 'site', 'result'));
+        return $kirby->controller('result' , compact('page', 'site', 'result','country'));
     }
     else
     {

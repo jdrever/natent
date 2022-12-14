@@ -4,7 +4,7 @@
       <li>
         <a href="/platform/" class="nav-link px-2 text-white">LEARNING JOURNEY</a>
       </li>
-      <?if ($userLoggedIn) :?>
+      <?php if ($userLoggedIn) :?>
       <li>
         <a href="/team-page/" class="nav-link px-2 text-white"><i class="bi bi-person-heart"></i> TEAM PAGE</a>
       </li>
@@ -23,5 +23,6 @@
       </li>
       <?php endif ?>
     </ul>
+    <?php snippet('show-resume-button') ?>
   </nav>
 </header>
