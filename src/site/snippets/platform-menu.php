@@ -23,5 +23,6 @@
       </li>
       <?php endif ?>
     </ul>
+    <?php snippet('show-resume-button') ?>
   </nav>
 </header>
