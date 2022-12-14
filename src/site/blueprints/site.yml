@@ -21,6 +21,7 @@ columns:
           - team-page
           - other-team-page
           - other-teams
+          - example-team-page
           - commons
           - login
           - error

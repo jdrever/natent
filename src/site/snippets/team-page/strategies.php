@@ -2,6 +2,7 @@
 use carefulcollab\helpers as helpers;
 
 $functions = helpers\DataHelper::getFunctionsByTeamAndChallengeId($viewedTeam['id'], $viewedTeam['challenge_id'], !$editTeam);
+echo(var_dump($functions));
 foreach ($functions as $function)
 {
     $researchQuestion=$function['biologized_question'];
@@ -43,12 +44,14 @@ foreach ($functions as $function)
         ?>
     </table>
 <?php
-    if ($editTeam)
+    if (!$hideCollaboration) 
     {
+        if ($editTeam)
+        {
         snippet('show-appreciations', ['contentType'=>'Function', 'contentId'=>$function['id']]);
         snippet('show-comments',['contentType'=>'Function','contentId'=>$function['id']]);
-        if (isset($viewedTeam['area']))
-        {
+            if (isset($viewedTeam['area']))
+            {
 ?>
             <?php if ($researchPageUrl=getCollabUrl($collaborationPoints, 'task-research')) :?>
     <a href="<?= $researchPageUrl?>" class="btn btn-outline-primary"><?=t("EDIT RESEARCH QUESTIONS","EDIT RESEARCH QUESTIONS")?></a>
@@ -57,14 +60,15 @@ foreach ($functions as $function)
     <a href="<?= $strategiesPage?>" class="btn btn-outline-primary"><?=t("EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES","EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES")?></a>
             <?php endif ?>
 <?php
+            }
         }
-    }
-    else
-    {
+        else
+        {
 ?>
     <?php snippet('show-appreciation-button',['contentType'=>'Function', 'contentId'=>$function['id']]) ?>
     <?php snippet('show-comment-box', ['contentType'=>'Function', 'contentId'=>$function['id']]) ?>
 <?php
+        }
     }
 }
 ?>

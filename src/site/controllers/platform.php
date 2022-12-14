@@ -29,15 +29,31 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     if (Cookie::exists('country'))
     {
         $country=Cookie::get('country');
+        $countryPage=$countries->findBy('title',$country);       
     }
     else
     {
         $language=$kirby->language()->code();    
-        $country=$countries->findBy('language', $language)->title();
+        $countryPage=$countries->findBy('language', $language);
+        
     }
+    $country=$countryPage->title();
+    $exampleTeam=$countryPage->exampleTeam()->toInt();
+    
     if (!$isNonLearningJourneyPage) Cookie::set("resumePage",$_SERVER['REQUEST_URI']);
 
     //TODO: switch this to use compact(..)
-    return [ 'userId' => $userId, 'userLoggedIn' => $userLoggedIn, 'team' => $team, 'status' =>$status, 'userRole' => $team['role'], 'pointsAdded' => $pointsAdded, 'pointsAddedOtherTeam' =>$pointsAddedOtherTeam, 'country'=>$country, 'countries'=>$countries, 'isNonLearningJourneyPage'=>$isNonLearningJourneyPage ];
+    return [ 
+        'userId' => $userId, 
+        'userLoggedIn' => $userLoggedIn, 
+        'team' => $team, 'status' =>$status, 
+        'userRole' => $team['role'], 
+        'pointsAdded' => $pointsAdded, 
+        'pointsAddedOtherTeam' =>$pointsAddedOtherTeam, 
+        'country'=>$country, 
+        'countries'=>$countries, 
+        'exampleTeam'=>$exampleTeam,
+        'isNonLearningJourneyPage'=>$isNonLearningJourneyPage 
+    ];
 }
 ?>

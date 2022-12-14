@@ -9,7 +9,10 @@
   <?php endif ?>
 
   <?php if ($nextPageUrl) : ?>
-  <a class="btn btn-primary p-3" href="<?= $nextPageUrl ?>">NEXT<i class="bi bi-arrow-right"></i></a>
+    <div class="alert alert-warning" role="alert">
+        This page requires a login to the Platform.  Please either login below or skip to the next page.
+        <a class="btn btn-primary p-3" href="<?= $nextPageUrl ?>">SKIP<i class="bi bi-arrow-right"></i></a>
+    </div>
   <?php endif ?>
     <form method="post" action="<?= $page->url() ?>">
         <input type="hidden" name="currentPageUrl" id="currentPageUrl" value="<?=get('currentPageUrl')?>">

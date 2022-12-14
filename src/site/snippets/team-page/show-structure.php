@@ -59,9 +59,11 @@ function getCollabUrl($collaborationPoints,$template)
             <?php snippet('team-page/pitch-video') ?>
         </div>
     </div>
+    <?php if (!$hideCollaboration) : ?>
     <div class="row g-1">
         <div class="feature col p-3 m-2 bg-light  border border-secondary">
         <?php snippet('team-page/commons-resources') ?>
         </div>
     </div>
+    <?php endif ?>
 </div>

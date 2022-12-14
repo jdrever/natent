@@ -18,6 +18,11 @@
         <a href="<?= url('logout') ?> " class="nav-link px-2 text-white"><i class="bi bi-door-closed-fill"></i>LOGOUT</a>
       </li>
       <?php else: ?>
+        <?php if (isset($exampleTeam)) : ?>
+          <li>
+        <a href="<?= url('example-team') ?> " class="nav-link px-2 text-white"><i class="bi bi-person-heart"></i>EXAMPLE TEAM PAGE</a>
+      </li>        
+        <?php endif ?>
       <li>
         <a href="/login/" class="nav-link px-2 text-white"><i class="bi bi-door-open-fill"></i>LOGIN</a>
       </li>

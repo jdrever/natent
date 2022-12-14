@@ -38,7 +38,8 @@ return function ($kirby) {
   return [
     'error' => $error,
     'nextPageUrl' => get('nextPageUrl'),
-    'userLoggedIn' => false
+    'userLoggedIn' => false,
+    'isNonLearningJourneyPage' =>true,
   ];
 
 };

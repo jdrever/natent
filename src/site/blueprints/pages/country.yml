@@ -13,4 +13,7 @@ columns:
               query: kirby.languages
               text: "{{ item.name }}"
               value: "{{ item.code }}"
+          exampleTeam:
+            type: number
+            label: The number of the Example Team
 

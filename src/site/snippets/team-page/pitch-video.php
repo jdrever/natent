@@ -7,13 +7,15 @@ if (isset($viewedTeam['pitch_video_you_tube_id'])&&!empty($viewedTeam['pitch_vid
 <?php else : ?>
     <p><?=t("Not yet uploaded")?>.</p>
 <?php endif;
-if ($editTeam) : ?>
-  <?php if ($pitchPageUrl=getCollabUrl($collaborationPoints, 'task-pitch')) :?>
+if (!$hideCollaboration) :
+  if ($editTeam) : ?>
+    <?php if ($pitchPageUrl=getCollabUrl($collaborationPoints, 'task-pitch')) :?>
 <a href="<?= $pitchPageUrl ?>" class="btn btn-outline-primary"><?=t("EDIT PITCH VIDEO")?></a>
-  <?php endif ?>
+    <?php endif ?>
   <?php snippet('show-appreciations', ['contentType'=>'Business Canvas', 'contentId'=> $viewedTeam['team_business_canvas_id']]) ?>
   <?php snippet('show-comments',['contentType'=>'Business Canvas', 'contentId'=> $viewedTeam['team_business_canvas_id']]) ?>
-<?php else : ?>
+  <?php else : ?>
   <?php snippet('show-appreciation-button',['contentType'=>'Business Canvas', 'contentId'=> $viewedTeam['team_business_canvas_id']]) ?>
   <?php snippet('show-comment-box', ['contentType'=>'Business Canvas','contentId'=> $viewedTeam['team_business_canvas_id']])?>
+  <?php endif ?>
 <?php endif ?>

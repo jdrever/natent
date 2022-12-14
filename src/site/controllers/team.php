@@ -1,7 +1,7 @@
 <?php
 use carefulcollab\helpers as helpers;
 
-return function($platform, $site, $viewedTeam, $editTeam) 
+return function($platform, $site, $viewedTeam, $editTeam, $hideCollaboration=false) 
 {
     $userId=$platform['userId'];
     $phaseCompletion=[];
@@ -37,6 +37,7 @@ return function($platform, $site, $viewedTeam, $editTeam)
     return A::merge($platform, compact(
         'viewedTeam',
         'editTeam', 
+        'hideCollaboration',
         'phaseCompletion', 
         'collaborationPoints',
         'latestComments',
