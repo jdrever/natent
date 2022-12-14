@@ -1,0 +1,22 @@
+title: "Task: Measure"
+icon: bolt
+columns:
+  main:
+    width: 1/1
+    sections:
+      fields:
+        type: fields
+        fields:
+          mainContent: fields/guideContent
+          measureDescriptionLabel:
+            type: text
+            label: 'Describe how/if your final Design Solution has addressed the Context and Needs you identified, and which Nature's Unifying Patterns have helped you:' label
+            default: "Describe how/if your final Design Solution has addressed the Context and Needs you identified, and which Nature's Unifying Patterns have helped you:"
+          shareRecommendationsButton:
+            type: text
+            label: 'SHARE YOUR RECOMMENDATIONS' button
+            default: SHARE YOUR RECOMMENDATIONS
+          needToSelectChallengeLabel:
+            type: text
+            label: 'You need to select your challenge before you complete this Task' label
+            default: "You need to select your challenge before you complete this Task"

@@ -60,14 +60,13 @@ else
 {
  ?> 
 
-<div class="alert alert-danger" role="alert"><?=$page->needToSelectChallenge()?></div> 
+<div class="alert alert-danger" role="alert"><?=$page->needToSelectChallengeLabel()?></div> 
 
 <?php
 }
 ?>
 
 <br>
-    
 
 </div>
 <?php snippet('close-platform-content') ?>
