@@ -2,7 +2,9 @@
 use carefulcollab\helpers as helpers;
 return function($kirby, $pages, $page, $site) 
 {
-    $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site'));
+    $requiresLogin=false;
+    $isNonLearningJourneyPage=true;
+    $platform = $kirby->controller('platform' , compact('kirby', 'pages', 'page', 'site', 'requiresLogin', 'isNonLearningJourneyPage'));
     $userId=$platform['userId'];
     $phases=$site->index()->filterBy('template','phase');
     $latestComments=helpers\DataHelper::getLatestComments($userId);
