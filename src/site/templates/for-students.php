@@ -4,41 +4,16 @@
   <div class="col-lg-8 mx-auto mask mt-0">
     <div class="shrinkwrap text-start text-white">
       <h1>
-        <span>For Students</span>
+        <span><?=$page->heroHeader()?></span>
       </h1>
       <h2>
-        <span>The new way of learning about sustainability</span>
+        <span><?=$page->heroContent()?></span>
       </h2>
     </div>
   </div>
 </div>
-<div class="container mt-4">
-  <main>
-
-    <h2 class="fs-3">
-      <span>Why change the world as a Natural Entrepreneur?</span>
-    </h2>
-    <ul class="list-unstyled fs-5">
-      <li>
-        <span><i class="bi bi-arrow-right"></i> You work on a school project while solving real-world problems.</span>
-      </li>
-      <li>
-        <span><i class="bi bi-arrow-right"></i> You build your future skills and career opportunities.</span>
-      </li>
-      <li>
-        <span><i class="bi bi-arrow-right"></i> You co-operate with your class mates and hundreds of teams throughout
-          Europe.</span>
-      </li>
-    </ul>
-
-    <p>If you already have a login:</p>
-    <p>
-      <a href="/platform/" class="btn btn-primary p-3"><i class="bi bi-arrow-right-circle-fill"></i> Start using the
-        Platform</a>
-    </p>
-    <p>
-      If you'd like to get involved, get your teacher to <a href="/contact/">contact the project</a>.
-    </p>
-  </main>
+<div class="container my-4">
+<?php snippet ('show-blocks') ?>
+<?php snippet('show-sub-pages') ?>
 </div>
 <?php snippet('footer') ?>
