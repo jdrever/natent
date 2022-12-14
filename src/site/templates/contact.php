@@ -1,5 +1,6 @@
 <?php snippet('header') ?>
 <div class="container my-4">
+<?php snippet ('show-blocks') ?>
   <form action="#">
     <fieldset>
       <p class="required"><?=$page->allFieldsText()?>.</p>
