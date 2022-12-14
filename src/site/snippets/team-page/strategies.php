@@ -2,7 +2,7 @@
 use carefulcollab\helpers as helpers;
 
 $functions = helpers\DataHelper::getFunctionsByTeamAndChallengeId($viewedTeam['id'], $viewedTeam['challenge_id'], !$editTeam);
-echo(var_dump($functions));
+
 foreach ($functions as $function)
 {
     $researchQuestion=$function['biologized_question'];
