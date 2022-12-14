@@ -10,12 +10,15 @@
 {
 ?>
   <form class="form-inline" method="post" action="<?=$page->url()?>" enctype="multipart/form-data">
+        <label for="form-check"><?=$page->pitchVideoDescriptionLabel()?>:</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="https-addon">https://</span>
+            </div>
+            <input class="form-control" type="text" id="pitchVideoUrl" name="pitchVideoUrl" aria-describedby="https-addon" value="<?=$team['pitch_video_url']?>">
+        </div> 
         
-        <label for="recommendations" class="m-1"><?=$page->measureDescriptionLabel()?>:</label>
-        <textarea class="form-control m-1" aria-label="With textarea" rows="8" id="recommendations"
-        name="recommendations"><?=str_replace("<br>","\r\n", $team['recommendations'])?></textarea>
-
-        <?php snippet('guide-navigation', ['taskButton' =>$page->shareRecommendationsButton()]) ?>
+        <?php snippet('guide-navigation', ['taskButton' =>$page->uploadPitchVideoButton()]) ?>
     </form>
 
     <?php

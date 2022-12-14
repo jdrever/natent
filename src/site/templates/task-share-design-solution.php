@@ -60,7 +60,7 @@ else
 {
  ?> 
 
-<div class="alert alert-danger" role="alert"><?=$page->needToSelectChallengeLabel()?></div> 
+<div class="alert alert-danger" role="alert"><?=t("You need to select your challenge before you complete this Task")?></div> 
 
 <?php
 }

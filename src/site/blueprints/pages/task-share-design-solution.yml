@@ -24,7 +24,3 @@ columns:
             type: text
             label: 'SHARE YOUR DESIGN SOLUTION' button
             default: SHARE YOUR DESIGN SOLUTION
-          needToSelectChallengeLabel:
-            type: text
-            label: 'You need to select your challenge before you complete this Task' label
-            default: "You need to select your challenge before you complete this Task"

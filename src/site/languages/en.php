@@ -73,6 +73,8 @@ return [
         'Upload a document (optional - image or PDF only)' => 'Upload a document (optional - image or PDF only)',
         'Add More Resources' => 'Add More Resources',
         'SHARE YOUR CONTEXT AND RESOURCES' => 'SHARE YOUR CONTEXT AND RESOURCES',
+        // Common to many tasks
+        'You need to select your challenge before you complete this Task' => 'You need to select your challenge before you complete this Task',
     ],
     'url' => NULL
 ];
