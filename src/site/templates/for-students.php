@@ -13,11 +13,11 @@
   </div>
 </div>
 <div class="container my-4">
-  <?=$page->platformText()->kt()?>
+<?php snippet ('show-blocks') ?>
+  <?=$page->loginText()->kt()?>
   <p><a href="<?=url('platform')?>" class="btn btn-primary p-3"><i class="bi bi-arrow-right-circle-fill"></i> <?=$page->platformButton()?></a></p>
   <?=$page->contactText()->kt()?>
   <p><a href="<?=url('contact')?>" class="btn btn-link"><i class="bi bi-arrow-right-circle-fill"></i> <?=$page->contactButton()?></a></p>
-<?php snippet ('show-blocks') ?>
 <?php snippet('show-sub-pages') ?>
 </div>
 <?php snippet('footer') ?>
