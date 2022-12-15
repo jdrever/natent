@@ -14,6 +14,11 @@
       <li>
         <a href="/commons/" class="nav-link px-2 text-white"><i class="bi bi-cc-circle-fill"></i>CREATIVE COMMONS</a>
       </li>
+        <?php if ($userRole=="TEACHER"||$userRole=="ADMIN"||$userRole=="GLOBAL") : ?>
+          <li>
+        <a href="<?= url('admin') ?> " class="nav-link px-2 text-white"><i class="bi bi-door-closed-fill"></i>ADMINISTRATION</a>
+      </li>
+        <?php endif ?>
       <li>
         <a href="<?= url('logout') ?> " class="nav-link px-2 text-white"><i class="bi bi-door-closed-fill"></i>LOGOUT</a>
       </li>

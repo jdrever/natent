@@ -76,6 +76,24 @@ return [
         'SHARE YOUR CONTEXT AND RESOURCES' => 'SHARE YOUR CONTEXT AND RESOURCES',
         // Common to many tasks
         'You need to select your challenge before you complete this Task' => 'You need to select your challenge before you complete this Task',
+        //ADMIN
+        //Challenges
+        'Enter the new Challenge name' => 'Enter the new Challenge name',
+        'Enter a description' => 'Enter a description',
+        'Enter further information (displayed as second paragraph)' => 'Enter further information (displayed as second paragraph)',
+        'Select a Topic for the new Challenge' => 'Select a Topic for the new Challenge',
+        'ADD MORE TOPICS' => 'ADD MORE TOPICS',
+        'Select another Topic for the new Challenge' => 'Select another Topic for the new Challenge',
+        'ADD NEW CHALLENGE' => 'ADD NEW CHALLENGE',
+        'Edit an existing Challenge' => 'Edit an existing Challenge',
+        'REMOVE CHALLENGE' => 'REMOVE CHALLENGE',
+        'Name' => 'Name',
+        'Description' => 'Description',
+        'Further information' => 'Further information',
+        'Select a Topic' => 'Select a Topic',
+        'EDIT MORE TOPICS' => 'EDIT MORE TOPICS',
+        'Select another Topic' => 'Select another Topic',
+        'Adding a New Challenge for' => 'Adding a New Challenge for',
     ],
     'url' => NULL
 ];

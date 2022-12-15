@@ -1,4 +1,6 @@
 <?php
+
+$buttonText=isset($buttonText) ? $buttonText : 'READ MORE';
 $subPages=$page->children()->filter(function ($child) {
   return $child->translation(kirby()->language()->code())->exists();
 });
@@ -11,7 +13,7 @@ if (count($subPages)>0) :
     <div class="feature col">
       <h3 class="fs-2"><?= $subPage->translatedTitle()->isEmpty() ? $subPage->title()->html() : $subPage->translatedTitle()->html() ?></h3>
       <p><?= $subPage->description()->html() ?></p>
-      <p><a href="<?= $subPage->url() ?>" class="btn btn-sm btn-outline-secondary"><?=t('READ MORE','READ MORE')?></a></p>
+      <p><a href="<?= $subPage->url() ?>" class="btn btn-sm btn-outline-secondary"><?=t($buttonText,$buttonText)?></a></p>
     </div>
     <?php endforeach ?>
   </div>
