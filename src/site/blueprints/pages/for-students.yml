@@ -19,7 +19,7 @@ columns:
       contactText:
         label: Contact text
         type: textarea
-      platformButton:
+      contactButton:
         label: 'CONTACT THE PROJECT' button
         type: text
         default: CONTACT THE PROJECT
