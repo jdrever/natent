@@ -76,6 +76,7 @@ return [
         'SHARE YOUR CONTEXT AND RESOURCES' => 'SHARE YOUR CONTEXT AND RESOURCES',
         // Common to many tasks
         'You need to select your challenge before you complete this Task' => 'You need to select your challenge before you complete this Task',
+        'You need to enter your functions before you enter your strategies' => 'You need to enter your functions before you enter your strategies',
         //ADMIN
         //Challenges
         'Enter the new Challenge name' => 'Enter the new Challenge name',
