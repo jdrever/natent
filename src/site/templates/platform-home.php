@@ -22,19 +22,19 @@
       <?php snippet('team-page/latest-comments')?>
       <br>
       <h2><?=$page->lookAroundHeader()?></h2>
-      <p><?=$page->lookAroundContent()?></p>
+      <p><?=$page->lookAroundContent()->kt()?></p>
       <h3>
         <a href="<?=$teamPage->url()?>"><i class="bi bi-person-heart"></i><?=$teamPage->title()?></a>
       </h3>
-      <p><?=$page->teamPageContent()?></p>
+      <p><?=$page->teamPageContent()->kt()?></p>
       <h3>
         <a href="<?=$otherTeamsPage->url()?>"><i class="bi bi-search-heart"></i><?=$otherTeamsPage->title()?></a>
       </h3>
-      <p><?=$page->otherTeamsPageContent()?></p>
+      <p><?=$page->otherTeamsPageContent()->kt()?></p>
       <h3>
       <a href="<?=$commonsPage->url()?>"><i class="bi bi-cc-circle-fill"></i><?=$commonsPage->title()?>
       </h3>
-      <p><?=$page->commonsPageContent()?></p>
+      <p><?=$page->commonsPageContent()->kt()?></p>
     </div>
     <?php endif ?>
   </div>
