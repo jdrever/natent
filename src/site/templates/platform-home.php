@@ -14,27 +14,27 @@
     </div>
 <?php if ($userLoggedIn) : ?>
     <div class="col-sm-8">
-      <h2>Collaboration Points</h2>
+      <h2><?=t('Collaboration Points','Collaboration Points')?></h2>
       <p class="h1">
         <i class="bi bi-star"></i> 220
       </p>
       <?php snippet('show-blocks',['fieldName' => 'collaborationContent'])?>
       <?php snippet('team-page/latest-comments')?>
       <br>
-      <h2>Have a look around!</h2>
-      <p>You can always get back to your current Phase by clicking on the RESUME YOUR LEARNING button</p>
+      <h2><?=$page->lookAroundHeader()?></h2>
+      <p><?=$page->lookAroundContent()?></p>
       <h3>
-        <i class="bi bi-person-heart"></i>TEAM PAGE
+        <a href="<?=$teamPage->url()?>"><i class="bi bi-person-heart"></i><?=$teamPage->title()?></a>
       </h3>
-      <p>View how your team is getting on</p>
+      <p><?=$page->teamPageContent()?></p>
       <h3>
-        <i class="bi bi-search-heart"></i>OTHER TEAMS
+        <a href="<?=$otherTeamsPage->url()?>"><i class="bi bi-search-heart"></i><?=$otherTeamsPage->title()?></a>
       </h3>
-      <p>Browse other teams pages to get ideas and appreciate their work</p>
+      <p><?=$page->otherTeamsPageContent()?></p>
       <h3>
-        <i class="bi bi-cc-circle-fill"></i>CREATIVE COMMONS
+      <a href="<?=$commonsPage->url()?>"><i class="bi bi-cc-circle-fill"></i><?=$commonsPage->title()?>
       </h3>
-      <p>Find useful resources</p>
+      <p><?=$page->commonsPageContent()?></p>
     </div>
     <?php endif ?>
   </div>

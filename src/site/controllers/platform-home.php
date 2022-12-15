@@ -9,5 +9,9 @@ return function($kirby, $pages, $page, $site)
     $phases=$site->index()->filterBy('template','phase');
     $latestComments=helpers\DataHelper::getLatestComments($userId);
     $latestAppreciations=helpers\DataHelper::getLatestAppreciations($userId);
-    return A::merge($platform,compact('phases','latestComments','latestAppreciations'));    
+
+    $teamPage=$page->siblings()->find('team-page');
+    $otherTeamsPage=$page->siblings()->find('other-teams');
+    $commonsPage=$page->siblings()->find('commons');
+    return A::merge($platform,compact('phases','latestComments','latestAppreciations','teamPage','otherTeamsPage', 'commonsPage'));    
 };

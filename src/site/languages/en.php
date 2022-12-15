@@ -14,6 +14,7 @@ return [
         'Challenge' => 'Challenge',
         'Points' => 'Points',
         'Progress' => 'Progress',
+        'Collaboration Points' => 'Collaboration Points', 
         'RESUME YOUR LEARING JOURNEY' => 'RESUME YOUR LEARING JOURNEY',
         'Topic and Challenge selected' => 'Topic and Challenge selected',
         'See Comments' => 'See Comments',

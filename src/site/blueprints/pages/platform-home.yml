@@ -10,6 +10,26 @@ columns:
           collaborationContent:
             label: Collaboration Content
             type: layout
+          lookAroundHeader:
+            label: 'Have a look around' header
+            type: text
+            default: Have a look around!
+          lookAroundContent:
+            label: 'Have a look around' content
+            type: textarea
+            default: You can always get back to your current Phase by clicking on the RESUME YOUR LEARNING button
+          teamPageContent:
+            label: Team Page content
+            type: textarea
+            default: View how your team is getting on
+          otherTeamsPageContent:
+            label: Other Teams Page content
+            type: textarea
+            default: Browse other teams pages to get ideas and appreciate their work
+          commonsPageContent:
+            label: Commons Page content
+            type: textarea
+            default: Find useful resources
   sidebar:
     width: 1/3
     sections:
