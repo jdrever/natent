@@ -24,6 +24,7 @@ columns:
           - example-team-page
           - commons
           - login
+          - admin
           - error
       phases:
         label: Phase Types
