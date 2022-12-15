@@ -5,6 +5,24 @@ columns:
     sections:
       hero: sections/hero
       mainContent: sections/core-fields
+  additional:
+    type: fields
+    fields:
+      loginText:
+        label: Login text
+        type: textarea
+        default: If you already have a login
+      platformButton:
+        label: 'START USING THE PLATFORM' button
+        type: text
+        default: START USING THE PLATFORM
+      contactText:
+        label: Contact text
+        type: textarea
+      platformButton:
+        label: 'CONTACT THE PROJECT' button
+        type: text
+        default: CONTACT THE PROJECT
   sidebar:
     width: 1/2
     sections:
