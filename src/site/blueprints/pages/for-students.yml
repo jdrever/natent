@@ -1,30 +1,30 @@
 title: For Students
 columns:
   main:
-    width: 1/2
+    width: 2/3
     sections:
       hero: sections/hero
       mainContent: sections/core-fields
-  additional:
-    type: fields
-    fields:
-      loginText:
-        label: Login text
-        type: textarea
-        default: If you already have a login
-      platformButton:
-        label: 'START USING THE PLATFORM' button
-        type: text
-        default: START USING THE PLATFORM
-      contactText:
-        label: Contact text
-        type: textarea
-      contactButton:
-        label: 'CONTACT THE PROJECT' button
-        type: text
-        default: CONTACT THE PROJECT
+      additional:
+        type: fields
+        fields:
+          loginText:
+            label: Login text
+            type: textarea
+            default: If you already have a login
+          platformButton:
+            label: 'START USING THE PLATFORM' button
+            type: text
+            default: START USING THE PLATFORM
+          contactText:
+            label: Contact text
+            type: textarea
+          contactButton:
+            label: 'CONTACT THE PROJECT' button
+            type: text
+            default: CONTACT THE PROJECT
   sidebar:
-    width: 1/2
+    width: 1/3
     sections:
       pages:
         label: Sub-Pages
