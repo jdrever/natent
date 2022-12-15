@@ -10,8 +10,8 @@ columns:
           mainContent: fields/guideContent
           pitchVideoDescriptionLabel:
             type: text
-            label: ' Upload your pitch video to your YouTube channel and share the link here:' label
-            default: " Upload your pitch video to your YouTube channel and share the link here: "
+            label: 'Upload your pitch video to your YouTube channel and share the link here:' label
+            default: "Upload your pitch video to your YouTube channel and share the link here:"
           uploadPitchVideoButton:
             type: text
             label: 'SHARE YOUR RECOMMENDATIONS' button
