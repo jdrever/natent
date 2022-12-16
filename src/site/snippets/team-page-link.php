@@ -1,6 +1,4 @@
 <?php
-//$teamPage = getTranslatedPageByTitle("Your Team Page");
-
 $teamArea = $team['area'];
 if (empty($teamArea)) $teamArea = t("Not yet selected");
 
@@ -14,5 +12,5 @@ if (empty($teamChallenge)) $teamChallenge = t("Not yet selected");
     <br/>
     <strong><?=t("Your team's selected Challenge")?>: </strong> <?=$teamChallenge?>
   </p>
-  <p><a href="<?/*php echo (get_permalink($teamPage))*/?>"><?= t("You can see full details on your Team Page") ?></a></p>
+  <p><a href=<?=url("/team-page/")?>><?= t("You can see full details on your Team Page") ?></a></p>
 </div>

@@ -10,10 +10,10 @@ return function($kirby, $pages, $page, $site)
 
     if($kirby->request()->is('POST')) 
     {
-        $focusId = get('focusId');
+        $topicId = get('topicId');
         $bespokeChallenge = htmlspecialchars(get('bespokeChallenge',''));
         $challengeId = get('challengeId');
-        $result=helpers\DataHelper::updateTeamChallenge($team['user_id'], $focusId, $challengeId,$bespokeChallenge); 
+        $result=helpers\DataHelper::updateTeamChallenge($team['user_id'], $topicId, $challengeId,$bespokeChallenge); 
 
         return $kirby->controller('result' , compact('page', 'site', 'result','country'));
 
