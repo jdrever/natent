@@ -1,0 +1,8 @@
+title: Challenges
+
+sections:
+  areas:
+    label: Challenges
+    type: pages
+    info: "{{ page.user }}"
+    template: challenge

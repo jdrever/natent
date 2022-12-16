@@ -31,8 +31,10 @@ columns:
         type: pages
         templates:
           - phase
-      countries:
-        label: Countries
+      settings:
+        label: Settings
         type: pages
         templates:
-          - country
+          - countries
+          - areas
+          - challenges

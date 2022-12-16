@@ -1,19 +1,21 @@
 title: Country
-columns:
-  main:
-    width: 1/1
-    sections:
-      fields:
-        type: fields
-        fields:
-          language:
-            type: select
-            options:
-              type: query
-              query: kirby.languages
-              text: "{{ item.name }}"
-              value: "{{ item.code }}"
-          exampleTeam:
-            type: number
-            label: The number of the Example Team
+
+options:
+  changeStatus: false
+  changeSlug: false
+
+fields:
+  countryId:
+    type: text
+    disabled: true
+  language:
+    type: select
+    options:
+      type: query
+      query: kirby.languages
+      text: "{{ item.name }}"
+      value: "{{ item.code }}"
+  example_team_id:
+    type: number
+    label: The number of the Example Team
 

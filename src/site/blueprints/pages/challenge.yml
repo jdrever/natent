@@ -1,0 +1,15 @@
+title: Challenge
+
+options:
+  changeStatus: false
+  changeSlug: false
+
+fields:
+  challengeId:
+    type: text
+    disabled: true
+  description:
+    type: text
+  further_information:
+    type: text
+

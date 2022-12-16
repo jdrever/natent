@@ -1,0 +1,8 @@
+title: Countries
+
+sections:
+  countries:
+    label: Countries
+    type: pages
+    info: "{{ page.user }}"
+    template: country

@@ -41,6 +41,6 @@ return [
   
         }
       ]
-    ]
-
+      ],
+      'db' => require_once 'dbconfig.php'
 ];

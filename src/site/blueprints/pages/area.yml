@@ -1,0 +1,13 @@
+title: Area
+
+options:
+  changeStatus: false
+  changeSlug: false
+
+fields:
+  areaId:
+    type: text
+    disabled: true
+  description:
+    type: text
+
