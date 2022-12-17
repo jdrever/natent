@@ -11844,7 +11844,8 @@ textarea.form-control-lg {
 }
 
 div.has-background {
-  padding: 1em;
+  padding: 2em;
+  margin-bottom: 2em;
 }
 
 /*# sourceMappingURL=custom.css.map */
