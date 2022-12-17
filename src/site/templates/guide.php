@@ -9,9 +9,11 @@
   </div>
   <div class="row">
     <div class="col-md-4">
-      <?php if($image = $page->image()): ?>
+      //TODO: what to do with images?
+      <?php if($image = $page->image()&&false): ?>
       <div>
         <img class="img-fluid rounded" src="<?= $image->url() ?>" alt="" width="250" height="250">
+      </div>
         <?php endif ?>
         <div class="progress mt-1 mb-4" style="height:30px;">
           <div class="progress-bar bg-primary" role="progressbar" style="width: <?=$phaseCompletion?>%;" aria-valuenow="<?=$phaseCompletion?>"
