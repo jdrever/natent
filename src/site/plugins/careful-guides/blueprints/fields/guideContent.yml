@@ -21,6 +21,7 @@ fieldsets:
       - lead-text
       - text
       - list
+      - line
       - quote
       - activity
   media:
