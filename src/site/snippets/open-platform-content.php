@@ -1,6 +1,6 @@
 <?php
 $currentGuide=$page->parents()->filterBy('template', 'guide')->first();
-if (isset($icon)) $icon="journal-text";
+if (!isset($icon)) $icon="journal-text";
 ?>
 <div class="container mt-3">
   <div class="row">
