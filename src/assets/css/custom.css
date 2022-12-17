@@ -11843,4 +11843,8 @@ textarea.form-control-lg {
   box-decoration-break: clone;
 }
 
+div.has-background {
+  padding: 1em;
+}
+
 /*# sourceMappingURL=custom.css.map */
