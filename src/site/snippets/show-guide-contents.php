@@ -14,6 +14,12 @@ if(!isset($contents)) $contents=$page->children()->listed();
      <?=$section->title()?>
   </a>
   <?php endif ?>
+  <?php if ($section->blueprint()->name()=='pages/guide-activity') : ?>
+    <a href="<?=$section->url()?>" class="list-group-item">
+    <i class="bi bi-activity"></i>
+     <?=$section->title()?>
+  </a>
+  <?php endif ?>
   <?php if (str_starts_with($section->blueprint()->name(),'pages/task')) : ?>
     <a href="<?=$section->url()?>" class="list-group-item">
     <i class="bi bi-list-check"></i>
