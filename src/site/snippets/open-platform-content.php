@@ -1,5 +1,6 @@
 <?php
 $currentGuide=$page->parents()->filterBy('template', 'guide')->first();
+if (isset($icon)) $icon="journal-text";
 ?>
 <div class="container mt-3">
   <div class="row">
@@ -25,7 +26,7 @@ $currentGuide=$page->parents()->filterBy('template', 'guide')->first();
       <?php snippet('show-guide-contents', ['contents'=>$page->siblings()]) ?>
     </div>
     <div class="col">
-      <h1 class="fw-bold"><i class="bi bi-journal-text"></i><?=$page->title()?></h1>
+      <h1 class="fw-bold"><i class="bi bi-<?=$icon?>"></i><?=$page->title()?></h1>
       <p class="has-medium-font-size lh-sm"><strong>
           <?=$page->description()?></p>
       </strong>

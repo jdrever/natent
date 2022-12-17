@@ -44,6 +44,7 @@ columns:
         type: pages
         template:
           - guide-section
+          - guide-activity
           - guide-section-header
           - task-team-profile
           - task-select-topic
