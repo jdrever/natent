@@ -1,7 +1,7 @@
 title: NatEnt Platform
 
 columns:
-  - width: 1/1
+  - width: 2/3
     sections:
       info:
         type: info
@@ -26,11 +26,8 @@ columns:
           - login
           - admin
           - error
-      phases:
-        label: Phase Types
-        type: pages
-        templates:
-          - phase
+  - width: 1/3
+    sections:
       settings:
         label: Settings
         type: pages
@@ -38,3 +35,9 @@ columns:
           - countries
           - areas
           - challenges
+      phases:
+        label: Phase Types
+        type: pages
+        templates:
+          - phase
+

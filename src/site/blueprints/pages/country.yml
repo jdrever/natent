@@ -5,9 +5,8 @@ options:
   changeSlug: false
 
 fields:
-  countryId:
+  id:
     type: text
-    disabled: true
   language:
     type: select
     options:

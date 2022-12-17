@@ -1,7 +1,7 @@
 title: Challenges
 
 sections:
-  areas:
+  challenges:
     label: Challenges
     type: pages
     info: "{{ page.user }}"

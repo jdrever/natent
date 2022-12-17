@@ -5,9 +5,12 @@ options:
   changeSlug: false
 
 fields:
-  areaId:
+  id:
     type: text
+    label: Area Id
     disabled: true
+  translatedTitle:
+    type: text
   description:
     type: text
 

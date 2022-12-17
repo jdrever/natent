@@ -9,3 +9,4 @@ node_modules/
 /src/site/plugins/k3-image-clip
 /src/site/controllers/helpers/DBConnect.php
 /src/site/controllers/helpers/S3ClientConfig.php
+/src/site/config/dbconfig.php

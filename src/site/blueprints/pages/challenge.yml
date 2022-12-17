@@ -5,11 +5,45 @@ options:
   changeSlug: false
 
 fields:
-  challengeId:
+  id:
     type: text
+    label: Challenge Id (DO NOT AMEND)
     disabled: true
   description:
     type: text
   further_information:
-    type: text
+    type: textarea
+    label: Further Information
+  area_id:
+    type: select
+    label: Area Id
+    options:
+      type: query
+      query: site.index.filterBy('template', 'area')
+      text: "{{ item.title }}"
+      value: "{{ item.content.id }}"
+  area_id2:
+    type: select
+    label: Area Id (2)
+    options:
+      type: query
+      query: site.index.filterBy('template', 'area')
+      text: "{{ item.title }}"
+      value: "{{ item.content.id }}"
+  area_id3:
+    type: select
+    label: Area Id (3)
+    options:
+      type: query
+      query: site.index.filterBy('template', 'area')
+      text: "{{ item.title }}"
+      value: "{{ item.content.id }}"
+  country_id:
+    type: select
+    label: Country
+    options:
+      type: query
+      query: site.index.filterBy('template', 'country')
+      text: "{{ item.title }}"
+      value: "{{ item.content.id }}"
 

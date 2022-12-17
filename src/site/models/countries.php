@@ -14,7 +14,7 @@ class CountriesPage extends Kirby\Cms\Page
                 'model'    => 'country',  
                 'num' =>   $country->id(),      
                 'content' => [
-                    'countryId' => $country->id(),
+                    'id' => $country->id(),
                     'title'    => $country->name() ?? 'New Country',
                     'language' => $country->language(),
                     'example_team_id' => $country->example_team_id,
