@@ -9,8 +9,10 @@
   </div>
   <div class="row">
     <div class="col-md-4">
+      
+      <?php 
       //TODO: what to do with images?
-      <?php if($image = $page->image()&&false): ?>
+      if($image = $page->image()&&false): ?>
       <div>
         <img class="img-fluid rounded" src="<?= $image->url() ?>" alt="" width="250" height="250">
       </div>
