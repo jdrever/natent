@@ -10,6 +10,7 @@ Kirby::plugin(
       'blocks/gallery' => __DIR__ . '/blueprints/blocks/gallery.yml',
       'blocks/heading' => __DIR__ . '/blueprints/blocks/heading.yml',
       'blocks/file' => __DIR__ . '/blueprints/blocks/file.yml',
+      'blocks/google-slide' => __DIR__ . '/blueprints/blocks/google-slide.yml',
       'fields/guideContent' => __DIR__ . '/blueprints/fields/guideContent.yml',
       'fields/mainContent' => __DIR__ . '/blueprints/fields/mainContent.yml',
       'fields/backgroundColour' => __DIR__ . '/blueprints/fields/backgroundColour.yml',
@@ -22,6 +23,7 @@ Kirby::plugin(
       'blocks/text' => __DIR__ . '/snippets/blocks/text.php',
       'blocks/lead-text' => __DIR__ . '/snippets/blocks/lead-text.php',
       'blocks/quote' => __DIR__ . '/snippets/blocks/quote.php',
+      'blocks/google-slide' => __DIR__ . '/snippets/blocks/google-slide.php',
     ]
   ]
 );

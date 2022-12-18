@@ -34,6 +34,7 @@ fieldsets:
       - gallery
       - video
       - file
+      - google-slide
   code:
     label: Code
     type: group
