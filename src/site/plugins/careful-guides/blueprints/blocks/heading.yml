@@ -25,3 +25,6 @@ fields:
     label: Centre Heading?
     type: toggle
     width: 1/2
+  backgroundColour: fields/backgroundColour
+
+
