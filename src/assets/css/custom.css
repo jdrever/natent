@@ -11848,4 +11848,8 @@ div.has-background {
   margin-bottom: 2em;
 }
 
+article[data-template~=guide-section-header] {
+  background-color: gray;
+}
+
 /*# sourceMappingURL=custom.css.map */
