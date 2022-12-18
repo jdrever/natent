@@ -44,3 +44,5 @@ $ratio   = $block->ratio()->or('auto');
 <?php endif ?>
         </div>
 <?php endforeach ?>
+    </div>
+</div> 
