@@ -30,6 +30,7 @@ fieldsets:
     type: group
     fieldsets:
       - image
+      - gallery
       - video
       - file
   code:
