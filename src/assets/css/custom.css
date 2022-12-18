@@ -11849,7 +11849,7 @@ div.has-background {
 }
 
 article[data-template~=guide-section-header] {
-  background-color: gray;
+  background-color: #e9ecef;
 }
 
 /*# sourceMappingURL=custom.css.map */
