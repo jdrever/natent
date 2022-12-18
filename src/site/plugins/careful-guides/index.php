@@ -4,6 +4,7 @@ Kirby::plugin(
   [
     'blueprints' => [
       'blocks/activity' => __DIR__ . '/blueprints/blocks/activity.yml',
+      'blocks/text' => __DIR__ . '/blueprints/blocks/text.yml',
       'blocks/lead-text' => __DIR__ . '/blueprints/blocks/lead-text.yml',
       'blocks/image' => __DIR__ . '/blueprints/blocks/image.yml',
       'blocks/gallery' => __DIR__ . '/blueprints/blocks/gallery.yml',
@@ -18,6 +19,7 @@ Kirby::plugin(
       'blocks/gallery' => __DIR__ . '/snippets/blocks/gallery.php',
       'blocks/heading' => __DIR__ . '/snippets/blocks/heading.php',
       'blocks/file' => __DIR__ . '/snippets/blocks/file.php',
+      'blocks/text' => __DIR__ . '/snippets/blocks/text.php',
       'blocks/lead-text' => __DIR__ . '/snippets/blocks/lead-text.php',
     ]
   ]
