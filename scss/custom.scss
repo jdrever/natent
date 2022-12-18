@@ -73,3 +73,8 @@ div.has-background
     padding:2em;
     margin-bottom:2em;
 }
+
+article[data-template~="guide-section-header"]
+{
+  background-color: gray;
+}
