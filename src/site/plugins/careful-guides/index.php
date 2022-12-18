@@ -21,6 +21,7 @@ Kirby::plugin(
       'blocks/file' => __DIR__ . '/snippets/blocks/file.php',
       'blocks/text' => __DIR__ . '/snippets/blocks/text.php',
       'blocks/lead-text' => __DIR__ . '/snippets/blocks/lead-text.php',
+      'blocks/quote' => __DIR__ . '/snippets/blocks/quote.php',
     ]
   ]
 );

@@ -11852,4 +11852,9 @@ article[data-template~=guide-section-header] {
   background-color: #e9ecef;
 }
 
+blockquote.blockquote {
+  border-left: 2px solid black;
+  padding-left: 1rem;
+}
+
 /*# sourceMappingURL=custom.css.map */

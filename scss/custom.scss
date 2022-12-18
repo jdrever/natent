@@ -78,3 +78,9 @@ article[data-template~="guide-section-header"]
 {
   background-color:$gray-200;
 }
+
+blockquote.blockquote
+{
+  border-left: 2px solid black;
+  padding-left: 1rem;
+}
