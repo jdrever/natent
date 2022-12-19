@@ -16,7 +16,7 @@
     <div class="col-sm-8">
       <h2><?=t('Collaboration Points','Collaboration Points')?></h2>
       <p class="h1">
-        <i class="bi bi-star"></i> 220
+        <i class="bi bi-star"></i> <?=$team['points']?>
       </p>
       <?php snippet('show-blocks',['fieldName' => 'collaborationContent'])?>
       <?php snippet('team-page/latest-comments')?>

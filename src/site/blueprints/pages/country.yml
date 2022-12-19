@@ -1,7 +1,6 @@
 title: Country
 
 options:
-  changeStatus: false
   changeSlug: false
 
 fields:
