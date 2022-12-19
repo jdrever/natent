@@ -87,7 +87,7 @@
     else
     {
  ?> 
-<div class="alert alert-danger" role="alert"><?=t("You need to enter your functions before you enter your strategies")?></div>  
+<div class="alert alert-danger" role="alert"><?=t("You need to enter your Research Questions before you enter your strategies")?></div>  
 
 <?php
 }
