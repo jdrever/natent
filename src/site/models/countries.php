@@ -1,6 +1,6 @@
 <?php
-
-class CountriesPage extends Kirby\Cms\Page
+//TODO: not currently using as causing problems with translation
+class NoCountriesPage extends Kirby\Cms\Page
 {
     public function children()
     {

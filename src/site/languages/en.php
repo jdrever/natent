@@ -9,22 +9,16 @@ return [
     ],
     'name' => 'English',
     'translations' => [
-        //menu
         'Logout' => 'Logout',
-
-        //platform home page
-        'The Phases' =>'The Phases',
+        'The Phases' => 'The Phases',
         'Country' => 'Country',
         'Work through each Phase in order' => 'Work through each Phase in order',
-        
-
-        //teams/team page
         'Team Name' => 'Team Name',
         'Topic' => 'Topic',
         'Challenge' => 'Challenge',
         'Points' => 'Points',
         'Progress' => 'Progress',
-        'Collaboration Points' => 'Collaboration Points', 
+        'Collaboration Points' => 'Collaboration Points',
         'RESUME YOUR LEARING JOURNEY' => 'RESUME YOUR LEARING JOURNEY',
         'Topic and Challenge selected' => 'Topic and Challenge selected',
         'See Comments' => 'See Comments',
@@ -47,13 +41,12 @@ return [
         'Translate to English' => 'Translate to English',
         'Recommend' => 'Recommend',
         'Remove Recommendation' => 'Remove Recommendation',
-        // File Upload Block
         'File' => 'File',
         'Label' => 'Label',
         'Leave blank to use file name' => 'Leave blank to use file name',
         'View' => 'View',
         'No file' => 'No file',
-        'EDIT TOPIC AND CHALLENGE'=> 'EDIT TOPIC AND CHALLENGE',
+        'EDIT TOPIC AND CHALLENGE' => 'EDIT TOPIC AND CHALLENGE',
         'FUNCTION' => 'FUNCTION',
         'RESEARCH QUESTION' => 'RESEARCH QUESTION',
         'EDIT RESEARCH QUESTIONS' => 'EDIT RESEARCH QUESTIONS',
@@ -64,17 +57,13 @@ return [
         'EDIT MEASURE' => 'EDIT MEASURE',
         'EDIT PITCH VIDEO' => 'EDIT PITCH VIDEO',
         'Commons Resources shared by' => 'Commons Resources shared by',
-        'Website Link'=>'Website Link',
-        'Uploaded File'=>'Uploaded File',
-        'There are currently no resources for this team'=> 'There are currently no resources for this team',
-
-        // Team page link snippet
+        'Website Link' => 'Website Link',
+        'Uploaded File' => 'Uploaded File',
+        'There are currently no resources for this team' => 'There are currently no resources for this team',
         'Your team\'s selected Topic' => 'Your team\'s selected Topic',
         'Your team\'s selected Challenge' => 'Your team\'s selected Challenge',
         'You can see full details on your Team Page' => 'You can see full details on your Team Page',
         'Not yet selected' => 'Not yet selected',
-        // Todo - teamArea translations?
-        // Add to commons form snippet
         'Add to The Commons' => 'Add to The Commons',
         'Have any resources helped you with this stage of the process? Share them with other Teams by adding them to The Commons.' => 'Have any resources helped you with this stage of the process? Share them with other Teams by adding them to The Commons.',
         'Resource' => 'Resource',
@@ -84,11 +73,8 @@ return [
         'Upload a document (optional - image or PDF only)' => 'Upload a document (optional - image or PDF only)',
         'Add More Resources' => 'Add More Resources',
         'SHARE YOUR CONTEXT AND RESOURCES' => 'SHARE YOUR CONTEXT AND RESOURCES',
-        // Common to many tasks
         'You need to select your challenge before you complete this Task' => 'You need to select your challenge before you complete this Task',
         'You need to enter your functions before you enter your strategies' => 'You need to enter your functions before you enter your strategies',
-        //ADMIN
-        //Challenges
         'Enter the new Challenge name' => 'Enter the new Challenge name',
         'Enter a description' => 'Enter a description',
         'Enter further information (displayed as second paragraph)' => 'Enter further information (displayed as second paragraph)',
@@ -104,7 +90,7 @@ return [
         'Select a Topic' => 'Select a Topic',
         'EDIT MORE TOPICS' => 'EDIT MORE TOPICS',
         'Select another Topic' => 'Select another Topic',
-        'Adding a New Challenge for' => 'Adding a New Challenge for',
+        'Adding a New Challenge for' => 'Adding a New Challenge for'
     ],
     'url' => NULL
 ];

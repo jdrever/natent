@@ -1,6 +1,6 @@
 <?php
-
-class CountryPage extends Kirby\Cms\Page
+//TODO: not currently using as causing problems with translation
+class NoCountryPage extends Kirby\Cms\Page
 {
 
     public function changeTitle(string $title, string $languageCode = null)
