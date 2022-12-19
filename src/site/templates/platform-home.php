@@ -32,7 +32,7 @@
       </h3>
       <p><?=$page->otherTeamsPageContent()->kt()?></p>
       <h3>
-      <a href="<?=$commonsPage->url()?>"><i class="bi bi-cc-circle-fill"></i><?=$commonsPage->title()?>
+      <a href="<?=$commonsPage->url()?>"><i class="bi bi-cc-circle-fill"></i><?=$commonsPage->title()?></a>
       </h3>
       <p><?=$page->commonsPageContent()->kt()?></p>
     </div>
