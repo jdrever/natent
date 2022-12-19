@@ -70,12 +70,28 @@ return [
         'You need to enter your Research Questions before you enter your strategies' => 'You need to enter your Research Questions before you enter your strategies',
 
         //collab points
+        //team profile
+        'Tell us about your Team' => 'Tell us about your Team',
+        'Tell us what Skillsets your team have' => 'Tell us what Skillsets your team have',
+        'SHARE YOUR PROFILE' => 'SHARE YOUR PROFILE',
+        
+
+
         //topic
         'SELECT THIS TOPIC' => 'SELECT THIS TOPIC',
         'List of Challenges for' => 'List of Challenges for',
         'SELECT THIS CHALLENGE' => 'SELECT THIS CHALLENGE',
         'There are not any set Challenges for this topic yet' => 'There are not any set Challenges for this topic yet',
         'Create your own Challenge for' => 'Create your own Challenge for',
+        'Select a Topic' => 'Select a Topic',
+        'EDIT MORE TOPICS' => 'EDIT MORE TOPICS',
+        'Select another Topic' => 'Select another Topic',
+        'Adding a New Challenge for' => 'Adding a New Challenge for',
+        'If you would prefer to create your own Challenge, enter it in the box below'=> 'If you would prefer to create your own Challenge, enter it in the box below',
+        'Enter your challenge' => 'Enter your challenge',
+        'CREATE YOUR CHALLENGE' => 'CREATE YOUR CHALLENGE',
+        'Teams Working on this Topic' => 'Teams Working on this Topic',
+        'There are no other teams working on this Topic at the moment - so you could be the first!' => 'There are no other teams working on this Topic at the moment - so you could be the first!',
 
 
         //TODO: admin challenge - hopefully not needed
@@ -91,15 +107,6 @@ return [
         'Name' => 'Name',
         'Description' => 'Description',
         'Further information' => 'Further information',
-        'Select a Topic' => 'Select a Topic',
-        'EDIT MORE TOPICS' => 'EDIT MORE TOPICS',
-        'Select another Topic' => 'Select another Topic',
-        'Adding a New Challenge for' => 'Adding a New Challenge for',
-        'If you would prefer to create your own Challenge, enter it in the box below'=> 'If you would prefer to create your own Challenge, enter it in the box below',
-        'Enter your challenge' => 'Enter your challenge',
-        'CREATE YOUR CHALLENGE' => 'CREATE YOUR CHALLENGE',
-        'Teams Working on this Topic' => 'Teams Working on this Topic',
-        'There are no other teams working on this Topic at the moment - so you could be the first!' => 'There are no other teams working on this Topic at the moment - so you could be the first!',
-    ],
+            ],
     'url' => NULL
 ];

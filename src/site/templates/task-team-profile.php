@@ -8,10 +8,10 @@
 <div class="container bg-light p-3">
   <form class="form-inline" method="post" action="<?= $page->url() ?>"
     enctype="multipart/form-data">
-    <label for="school-info" class="m-1"><?= $page->teamLabel() ?>:</label>
+    <label for="school-info" class="m-1"><?= t('Tell us about your Team','Tell us about your Team') ?>:</label>
     <textarea class="form-control m-1" aria-label="With textarea" id="description" name="description" rows="8"
       required><?=$team['description']?></textarea>
-    <label for="form-check"><?= $page->skillsetsLabel() ?>:</label>
+    <label for="form-check"><?= t('Tell us what Skillsets your team have','Tell us what Skillsets your team have') ?>:</label>
     <div class="container">
     <?php
 
@@ -33,7 +33,7 @@ foreach ($skills as $skill)
 }
 ?>    </div>
     <br>
-    <?php snippet('guide-navigation', ['taskButton' =>$page->shareProfileButton()]) ?>
+    <?php snippet('guide-navigation', ['taskButton' =>t('SHARE YOUR PROFILE','SHARE YOUR PROFILE')]) ?>
   </form>
 </div>
 <?php snippet('close-platform-content') ?>
