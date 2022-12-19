@@ -13,6 +13,7 @@ return [
         'The Phases' => 'The Phases',
         'Country' => 'Country',
         'Work through each Phase in order' => 'Work through each Phase in order',
+        'See Image Credits'=>'See Image Credits',
         'Team Name' => 'Team Name',
         'Topic' => 'Topic',
         'Challenge' => 'Challenge',
@@ -67,6 +68,8 @@ return [
         'Add More Resources' => 'Add More Resources',
         'You need to select your challenge before you complete this Task' => 'You need to select your challenge before you complete this Task',
         'You need to enter your Research Questions before you enter your strategies' => 'You need to enter your Research Questions before you enter your strategies',
+
+        //TODO: admin challenge - hopefully not needed
         'Enter the new Challenge name' => 'Enter the new Challenge name',
         'Enter a description' => 'Enter a description',
         'Enter further information (displayed as second paragraph)' => 'Enter further information (displayed as second paragraph)',
