@@ -5,6 +5,8 @@ if (!isset($contentId)) $contentId="";
 if (!isset($comments)||empty($comments)) $comments=helpers\DataHelper::getCommentsByContentId($team['user_id'],$contentType,$contentId);
 
 
+$otherTeamsPage=$site->find('platform/other-team-page');
+
 if (count($comments)>0) :
 ?>
   <button class="btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseComments<?=$contentId?>" aria-expanded="false" aria-controls="collapseComments<?=$contentId?>">
