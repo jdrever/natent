@@ -83,7 +83,7 @@
     <?php 
 
   
-$otherTeamPage=$site->find('platfomr/other-team-page');
+$otherTeamPage=$site->find('platform/other-team-page');
 
 
 foreach($otherTeams as $otherTeam)
