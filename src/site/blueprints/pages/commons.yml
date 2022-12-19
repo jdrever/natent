@@ -3,8 +3,7 @@ columns:
   main:
     width: 1/1
     sections:
-      fields:
-        extends: sections/core-fields
+      mainContent: sections/core-fields
       additional:
         type: fields
         fields:
