@@ -111,7 +111,7 @@ if ($teams)
 else
 {
 ?>
-<p><?=$page->noOtherTeams()?></p>
+<p><?=t('There are no other teams working on this Topic at the moment - so you could be the first!','There are no other teams working on this Topic at the moment - so you could be the first!')?></p>
 <?php
 }
 ?>

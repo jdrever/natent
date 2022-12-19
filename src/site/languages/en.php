@@ -99,6 +99,7 @@ return [
         'Enter your challenge' => 'Enter your challenge',
         'CREATE YOUR CHALLENGE' => 'CREATE YOUR CHALLENGE',
         'Teams Working on this Topic' => 'Teams Working on this Topic',
+        'There are no other teams working on this Topic at the moment - so you could be the first!' => 'There are no other teams working on this Topic at the moment - so you could be the first!',
     ],
     'url' => NULL
 ];
