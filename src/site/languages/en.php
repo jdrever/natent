@@ -11,6 +11,14 @@ return [
     'translations' => [
         //menu
         'Logout' => 'Logout',
+
+        //platform home page
+        'The Phases' =>'The Phases',
+        'Country' => 'Country',
+        'Work through each Phase in order' => 'Work through each Phase in order',
+        
+
+        //teams/team page
         'Team Name' => 'Team Name',
         'Topic' => 'Topic',
         'Challenge' => 'Challenge',

@@ -8,9 +8,9 @@ $height=200;
 $phaseCol=$userLoggedIn ? 1 : 2;
 
 ?>
-<h2>The Phases</h2>
-      Country: <?php snippet('country-switcher') ?>
-      <p>Work through each Phase in order.</p>
+<h2><?=t('The Phases', 'The Phases')?></h2>
+      <?=t('Country','Country')?>: <?php snippet('country-switcher') ?>
+      <p><?=t('Work through each Phase in order','Work through each Phase in order')?>.</p>
 
 <?php foreach ($phases as $phase) : 
     $pagesInPhase=$page->children()->filterBy('phase', strtolower($phase->title()));
