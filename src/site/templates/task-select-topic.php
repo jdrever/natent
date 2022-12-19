@@ -19,7 +19,7 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <a href="<?=$page->url()?>?topicId=<?=$area['id'] ?>"
-                  class="btn btn-sm btn-primary float-end"><?=$page->selectTopicButton()?> &#8594;</a>
+                  class="btn btn-sm btn-primary float-end"><?=t('SELECT THIS TOPIC', 'SELECT THIS TOPIC')?> &#8594;</a>
               </div>
             </div>
           </div>
@@ -31,7 +31,7 @@
 </div>
 <?php endif ?>
 <?php if ($showChallenges) : ?>
-<h3><?=$page->listOfChallengesHeading()?> <?=t($topic['name'])?></h3>
+<h3><?=t('List of Challenges for','List of Challenges for')?> <?=t($topic['name'])?></h3>
 <?php if ($challenges) : ?>
   <?php foreach ($challenges as $challenge) : ?>
 <div class="container bg-light m-1">
@@ -49,7 +49,7 @@
                     <form action="<?= $page->url()?>" method="post">
                         <input type="hidden" id="topicId" name="topicId" value="<?=$topic['id'] ?>">
                         <input type="hidden" id="challengeId" name="challengeId" value="<?=$challenge['id']?>">
-                        <input type="submit" class="btn btn-primary float-end" value="<?=$page->selectChallengeButton()?>  &#8594;">
+                        <input type="submit" class="btn btn-primary float-end" value="<?=t('SELECT THIS CHALLENGE','SELECT THIS CHALLENGE')?>  &#8594;">
                     </form>
                 </div>
             </div>
@@ -60,21 +60,21 @@
 <? 
 else :
 ?>
-<p><?=$page->noChallengesText() ?></p>
+<p><?=t('There are not any set Challenges for this topic yet','There are not any set Challenges for this topic yet') ?></p>
 <?php endif ?>
 
-<h4><?=$page->createChallengeHeading()?> <?=t($topic['name'])?></h4>
-<p><?=$page->createChallengeText()?>:</p>
+<h4><?=t('Create your own Challenge for','Create your own Challenge for')?> <?=t($topic['name'])?></h4>
+<p><?=t('If you would prefer to create your own Challenge, enter it in the box below','If you would prefer to create your own Challenge, enter it in the box below')?>:</p>
 
 <form class="form-inline" method="post" action="<?= $page->url()?>">
     <input type="hidden" name="topicId" id="topicId" value="<?=$topic['id'] ?>">
-    <label for="bespokeChallenge" class="m-1"><?=$page->enterChallengeLabel()?>:</label>
+    <label for="bespokeChallenge" class="m-1"><?=t('Enter your challenge','Enter your challenge')?>:</label>
     <textarea class="form-control m-1" aria-label="With textarea" id="bespokeChallenge"
         name="bespokeChallenge"><?=htmlspecialchars($bespokeChallenge) ?></textarea>
-    <input type="submit" class="btn btn-primary float-end" value="<?=$page->createChallengeButton()?> &#8594;">
+    <input type="submit" class="btn btn-primary float-end" value="<?=t('CREATE YOUR CHALLENGE','CREATE YOUR CHALLENGE')?> &#8594;">
 </form>
 <br>
-<h3><?=$page->teamsTopicHeading()?></h3>
+<h3><?=t('Teams Working on this Topic','Teams Working on this Topic')?></h3>
 <?php 
 
 
