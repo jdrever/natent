@@ -18,13 +18,6 @@ columns:
           - for-students
           - contact
           - platform-home
-          - team-page
-          - other-team-page
-          - other-teams
-          - example-team-page
-          - commons
-          - login
-          - admin
           - error
   - width: 1/3
     sections:

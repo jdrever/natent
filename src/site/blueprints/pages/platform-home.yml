@@ -33,7 +33,18 @@ columns:
   sidebar:
     width: 1/3
     sections:
-      pages:
+      phases:
         label: Phases
         type: pages
         template: guide
+      pages:
+        label: Phases
+        type: pages
+        templates:
+          - team-page
+          - other-team-page
+          - other-teams
+          - example-team-page
+          - commons
+          - login
+          - admin
