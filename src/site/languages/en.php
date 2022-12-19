@@ -74,10 +74,6 @@ return [
         'Tell us about your Team' => 'Tell us about your Team',
         'Tell us what Skillsets your team have' => 'Tell us what Skillsets your team have',
         'SHARE YOUR PROFILE' => 'SHARE YOUR PROFILE',
-        //context
-        'Enter your Context' => 'Enter your Context',
-        'SHARE YOUR CONTEXT' => 'SHARE YOUR CONTEXT',
-
 
         //topic
         'SELECT THIS TOPIC' => 'SELECT THIS TOPIC',
@@ -85,9 +81,6 @@ return [
         'SELECT THIS CHALLENGE' => 'SELECT THIS CHALLENGE',
         'There are not any set Challenges for this topic yet' => 'There are not any set Challenges for this topic yet',
         'Create your own Challenge for' => 'Create your own Challenge for',
-        'Select a Topic' => 'Select a Topic',
-        'EDIT MORE TOPICS' => 'EDIT MORE TOPICS',
-        'Select another Topic' => 'Select another Topic',
         'Adding a New Challenge for' => 'Adding a New Challenge for',
         'If you would prefer to create your own Challenge, enter it in the box below'=> 'If you would prefer to create your own Challenge, enter it in the box below',
         'Enter your challenge' => 'Enter your challenge',
@@ -95,11 +88,23 @@ return [
         'Teams Working on this Topic' => 'Teams Working on this Topic',
         'There are no other teams working on this Topic at the moment - so you could be the first!' => 'There are no other teams working on this Topic at the moment - so you could be the first!',
 
+        //context
+        'Enter your Context' => 'Enter your Context',
+        'SHARE YOUR CONTEXT' => 'SHARE YOUR CONTEXT',
+
+        //research Questions
+        'Enter your Research Questions below' => 'Enter your Research Questions below',
+        'Research Question' => 'Research Question',
+        'Add More Research Questions' => 'Add More Research Questions',
+        'SHARE YOUR RESEARCH QUESTIONS' => 'SHARE YOUR RESEARCH QUESTIONS',
 
         //TODO: admin challenge - hopefully not needed
         'Enter the new Challenge name' => 'Enter the new Challenge name',
         'Enter a description' => 'Enter a description',
         'Enter further information (displayed as second paragraph)' => 'Enter further information (displayed as second paragraph)',
+        'Select a Topic' => 'Select a Topic',
+        'EDIT MORE TOPICS' => 'EDIT MORE TOPICS',
+        'Select another Topic' => 'Select another Topic',
         'Select a Topic for the new Challenge' => 'Select a Topic for the new Challenge',
         'ADD MORE TOPICS' => 'ADD MORE TOPICS',
         'Select another Topic for the new Challenge' => 'Select another Topic for the new Challenge',

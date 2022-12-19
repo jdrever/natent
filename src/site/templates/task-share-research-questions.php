@@ -13,7 +13,7 @@
 {
 ?>
 <form class="form-inline" method="post" action="<?= $page->url() ?>" enctype="multipart/form-data">
-    <label class="m-1"><?=$page->researchQuestionDescriptionLabel()?></label>
+    <label class="m-1"><?=t('Enter your Research Questions below','Enter your Research Questions below')?></label>
 
     <?php
     for ($x = 1; $x <= 6; $x++) 
@@ -32,7 +32,7 @@
         {
     ?>
     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExtraQuestions" aria-expanded="false" aria-controls="collapseExtraQuestions">
-    <?=$page->addMoreResearchQuestionsLabel()?> </button>
+    <?=t('Add More Research Questions','Add More Research Questions')?> </button>
 
     <div class="collapse" id="collapseExtraQuestions">
 
@@ -44,7 +44,7 @@
         <input type="hidden"  name="functionNumber<?=$x?>" id="functionNumber<?=$x?>" value="<?=$functionNumber?>">
         <div class="form-floating">
             <input type="text" class="form-control bg-info" name="biologized<?=$x?>" id="biologized<?=$x?>" placeholder="<?=$page->researchQuestionLabel()?> <?=$x?>" aria-label="<?=$page->researchQuestionLabel()?> <?=$x?>" value="<?=$biologisedQuestionName?>">
-            <label for="biologized<?=$x?>"><?=$page->researchQuestionLabel()?> <?=$x?></label>
+            <label for="biologized<?=$x?>"><?=t('Research Question','Research Question')?> <?=$x?></label>
         </div>
     </div>
 
@@ -53,7 +53,7 @@
     ?>
 
     </div>   
-<?php snippet('guide-navigation', ['taskButton' =>$page->shareResearchQuestionsButton()]) ?>
+<?php snippet('guide-navigation', ['taskButton' =>t('SHARE YOUR RESEARCH QUESTIONS','SHARE YOUR RESEARCH QUESTIONS')]) ?>
 </form>
 
 <?php
