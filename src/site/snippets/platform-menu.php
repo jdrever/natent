@@ -9,7 +9,7 @@
         <a href="<?=$teamPage->url()?>" class="nav-link px-2 text-white"><i class="bi bi-person-heart"></i> <?=$teamPage->pageTitle()->isNotEmpty() ? $teamPage->pageTitle() : $teamPage->title()  ?></a>
       </li>
       <li>
-        <a href="<?=$otherTeamsPage->url()?>" class="nav-link px-2 text-white"><i class="bi bi-search-heart"></i><?=$otherTeamsPage->pageTitle()->isNotEmpty() ? $otherTeamPage->pageTitle() : $otherTeamsPage->title()  ?></a>
+        <a href="<?=$otherTeamsPage->url()?>" class="nav-link px-2 text-white"><i class="bi bi-search-heart"></i><?=$otherTeamsPage->pageTitle()->isNotEmpty() ? $otherTeamsPage->pageTitle() : $otherTeamsPage->title()  ?></a>
       </li>
       <li>
         <a href="<?=$commonsPage->url()?>" class="nav-link px-2 text-white"><i class="bi bi-cc-circle-fill"></i><?=$commonsPage->pageTitle()->isNotEmpty() ? $commonsPage->pageTitle() : $commonsPage->title() ?></a>
