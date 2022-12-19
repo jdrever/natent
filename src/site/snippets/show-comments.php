@@ -5,7 +5,7 @@ if (!isset($contentId)) $contentId="";
 if (!isset($comments)||empty($comments)) $comments=helpers\DataHelper::getCommentsByContentId($team['user_id'],$contentType,$contentId);
 
 
-$otherTeamsPage=$site->find('platform/other-team-page');
+$otherTeamPage=$site->find('platform/other-team-page');
 
 if (count($comments)>0) :
 ?>
