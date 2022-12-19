@@ -6,7 +6,7 @@
   {
     font-size: 1.2em;
   }
-</style>
+</style> 
 <?php $phasesCol=$userLoggedIn ? 4 : 12 ?>
 <div class="container mt-2">
   <div class="row">
