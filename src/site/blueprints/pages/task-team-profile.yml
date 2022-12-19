@@ -8,17 +8,5 @@ columns:
         type: fields
         fields:
           mainContent: fields/guideContent
-          teamLabel:
-            type: text
-            label: 'Tell us about your Team' label
-            default: Tell us about your Team
-          skillsetsLabel:
-            type: text
-            label: 'Tell us what Skillsets your team have' label
-            default: Tell us what Skillsets your team have
-          shareProfileButton:
-            type: text
-            label: 'SHARE YOUR PROFILE' button
-            default: SHARE YOUR PROFILE
 
 

@@ -74,7 +74,9 @@ return [
         'Tell us about your Team' => 'Tell us about your Team',
         'Tell us what Skillsets your team have' => 'Tell us what Skillsets your team have',
         'SHARE YOUR PROFILE' => 'SHARE YOUR PROFILE',
-        
+        //context
+        'Enter your Context' => 'Enter your Context',
+        'SHARE YOUR CONTEXT' => 'SHARE YOUR CONTEXT',
 
 
         //topic
