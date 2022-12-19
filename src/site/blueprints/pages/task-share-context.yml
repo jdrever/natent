@@ -8,11 +8,3 @@ columns:
         type: fields
         fields:
           mainContent: fields/guideContent
-          shareContextLabel:
-            type: text
-            label: 'Enter your Context' label
-            default: "Enter your Context"
-          shareContextButton:
-            type: text
-            label: 'SHARE YOUR CONTEXT' button
-            default: SHARE YOUR CONTEXT

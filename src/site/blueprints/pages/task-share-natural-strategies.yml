@@ -8,31 +8,3 @@ columns:
         type: fields
         fields:
           mainContent: fields/guideContent
-          functionLabel:
-            type: text
-            label: 'FUNCTION' label
-            default: FUNCTION
-          researchQuestionLabel:
-            type: text
-            label: 'RESEARCH QUESTION' label
-            default: RESEARCH QUESTION
-          functionDescriptionLabel:
-            type: text
-            label: 'Enter up to six Natural Strategies and Design Principles for your Function:' label
-            default: "Enter up to six Natural Strategies and Design Principles for your Function:"
-          addMoreLabel:
-            type: text
-            label: 'Add More Strategies / Principles' label
-            default: "Add More Strategies / Principles"
-          naturalStrategyLabel:
-            type: text
-            label: 'Natural Strategy' label
-            default: Natural Strategy
-          designPrincipleLabel:
-            type: text
-            label: 'Design Principle' label
-            default: Design Principle
-          shareStrategiesButton:
-            type: text
-            label: 'SHARE YOUR STRATEGIES AND PRINCIPLES' button
-            default: SHARE YOUR STRATEGIES AND PRINCIPLES

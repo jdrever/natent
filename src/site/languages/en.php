@@ -106,6 +106,10 @@ return [
         'Enter up to six Natural Strategies and Design Principles for your Research Question' => 'Enter up to six Natural Strategies and Design Principles for your Research Question',
         'SHARE YOUR STRATEGIES AND PRINCIPLES' => 'SHARE YOUR STRATEGIES AND PRINCIPLES',
 
+        //measure
+        'Describe how/if your final Design Solution has addressed the Context and Needs you identified, and which Nature\'s Unifying Patterns have helped you' => 'Describe how/if your final Design Solution has addressed the Context and Needs you identified, and which Nature\'s Unifying Patterns have helped you',
+        'SHARE YOUR RECOMMENDATIONS' => 'SHARE YOUR RECOMMENDATIONS',
+        
         //TODO: admin challenge - hopefully not needed
         'Enter the new Challenge name' => 'Enter the new Challenge name',
         'Enter a description' => 'Enter a description',
