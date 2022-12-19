@@ -10,3 +10,10 @@ node_modules/
 /src/site/controllers/helpers/DBConnect.php
 /src/site/controllers/helpers/S3ClientConfig.php
 /src/site/config/dbconfig.php
+
+/src/site/languages/de.php
+/src/site/languages/lv.php
+/src/site/languages/nl.php
+/src/site/languages/ro.php
+
+
