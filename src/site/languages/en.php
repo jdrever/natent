@@ -9,6 +9,8 @@ return [
     ],
     'name' => 'English',
     'translations' => [
+        //menu
+        'Logout' => 'Logout',
         'Team Name' => 'Team Name',
         'Topic' => 'Topic',
         'Challenge' => 'Challenge',

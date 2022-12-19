@@ -1,6 +1,6 @@
 <?php
 
-return function ($kirby) {
+return function ($kirby, $page, $site) {
 
   // don't show the login screen to already logged in users
   if ($kirby->user()) {
@@ -34,12 +34,18 @@ return function ($kirby) {
     }
 
   }
+  $platformPage=site()->find('platform');
+  $exampleTeamPage=$page->siblings()->find('platform/example-team');
+  $loginPage=$page->siblings()->find('platform/login');
 
   return [
     'error' => $error,
     'nextPageUrl' => get('nextPageUrl'),
     'userLoggedIn' => false,
     'isNonLearningJourneyPage' =>true,
+    'platformPage'=>$platformPage,
+    'exampleTeamPage'=>$exampleTeamPage,
+    'loginPage'=>$loginPage,
   ];
 
 };
