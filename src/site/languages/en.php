@@ -98,6 +98,14 @@ return [
         'Add More Research Questions' => 'Add More Research Questions',
         'SHARE YOUR RESEARCH QUESTIONS' => 'SHARE YOUR RESEARCH QUESTIONS',
 
+        //strategies
+        'RESEARCH QUESTION' => 'RESEARCH QUESTION',
+        'Add More Strategies / Principles' => 'Add More Strategies / Principles',
+        'Natural Strategy' => 'Natural Strategy',
+        'Design Principle' => 'Design Principle',
+        'Enter up to six Natural Strategies and Design Principles for your Research Question' => 'Enter up to six Natural Strategies and Design Principles for your Research Question',
+        'SHARE YOUR STRATEGIES AND PRINCIPLES' => 'SHARE YOUR STRATEGIES AND PRINCIPLES',
+
         //TODO: admin challenge - hopefully not needed
         'Enter the new Challenge name' => 'Enter the new Challenge name',
         'Enter a description' => 'Enter a description',

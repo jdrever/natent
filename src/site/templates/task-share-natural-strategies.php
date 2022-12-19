@@ -28,11 +28,11 @@
     <div class="container border bg-light p-2 m-2">
         <div class="row bg-info p-2">
             <div class="col"><?php if (isset($function['name'])) { ?>
-            <?=$page->functionLabel()?>: <?= $function['name'] ?> <i class="bi bi-arrow-right-circle-fill"></i> <?php } ?>
-            <?=$page->researchQuestionLabel()?> <?=$function['biologized_question'] ?> <i class="bi bi-arrow-right-circle-fill"></i></div>
+              <?= $function['name'] ?> <i class="bi bi-arrow-right-circle-fill"></i> <?php } ?>
+            <?=t('Research Question','Research Question') ?> <?=$function['biologized_question'] ?> <i class="bi bi-arrow-right-circle-fill"></i></div>
         </div>
         <div class="row m-1">
-            <div class="col"><label class="form-label"><?=$page->functionDescriptionLabel()?>:</label></div>
+            <div class="col"><label class="form-label"><?=t('Enter up to six Natural Strategies and Design Principles for your Research Question','Enter up to six Natural Strategies and Design Principles for your Research Question')?>:</label></div>
         </div>
         <?php
         for ($x = 1; $x <= 6; $x++) 
@@ -40,7 +40,7 @@
             if ($x==4)
             {
         ?>
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> <?=$page->addMoreLabel()?></button>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> <?=t('Add More Strategies / Principles','Add More Strategies / Principles')?></button>
         <div class="collapse" id="collapseExample">
         <?php
             }
@@ -60,13 +60,13 @@
         <div class="row m-2 p-2 bg-light border border-4 border-info">
             <div class="col">
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="<?=$page->naturalStrategyLabel()?> <?=$x?>" aria-label="<?=$page->naturalStrategyLabel()?> <?=$x?>" rows="8" name="<?=$strategyId?>" id="<?=$strategyId?>"><?=$strategyName?></textarea>
-                    <label for="<?=$strategyId?>"><?=$page->naturalStrategyLabel()?> <?=$x?></label>
+                    <textarea class="form-control" placeholder="<?=t('Natural Strategy','Natural Strategy')?> <?=$x?>" aria-label="<?=t('Natural Strategy','Natural Strategy')?> <?=$x?>" rows="8" name="<?=$strategyId?>" id="<?=$strategyId?>"><?=$strategyName?></textarea>
+                    <label for="<?=$strategyId?>"><?=t('Natural Strategy','Natural Strategy')?> <?=$x?></label>
                 </div>
                 <i class="bi bi-arrow-right-circle-fill"></i>
                 <div class="form-floating">
-                    <input type="text" class="form-control" name="<?=$principleId?>" id="<?=$principleId?>"  placeholder="<?=$page->designPrincipleLabel()?> aria-label="<?=$page->designPrincipleLabel()?> value="<?=$designPrincipleName?>">
-                    <label for="<?=$principleId?>"><?=$page->designPrincipleLabel()?> <?=$x?></label>
+                    <input type="text" class="form-control" name="<?=$principleId?>" id="<?=$principleId?>"  placeholder="<?=t('Design Principle','Design Principle')?> aria-label="<?=t('Design Principle','Design Principle')?> value="<?=$designPrincipleName?>">
+                    <label for="<?=$principleId?>"><?=t('Design Principle','Design Principle')?><?=$x?></label>
                 </div>
             </div>
         </div>
@@ -79,7 +79,7 @@
         }    
     ?>
     <input type="hidden" id="functionNumbers" name="functionNumbers" value="<?=$functionNumbers ?>" />
-    <?php snippet('guide-navigation', ['taskButton' =>$page->shareStrategiesButton()]) ?>
+    <?php snippet('guide-navigation', ['taskButton'=>t('SHARE YOUR STRATEGIES AND PRINCIPLES','SHARE YOUR STRATEGIES AND PRINCIPLES')]) ?>
 </form>
 
 <?php
