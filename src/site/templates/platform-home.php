@@ -2,7 +2,8 @@
 <?php snippet('platform-menu') ?>
 <?php snippet('show-status') ?>
 <style>
-  figcaption.figure-caption {
+  figcaption.figure-caption 
+  {
     font-size: 1.2em;
   }
 </style>
