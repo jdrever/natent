@@ -40,7 +40,7 @@ columns:
         type: pages
         template: guide
       pages:
-        label: Phases
+        label: Pages
         type: pages
         templates:
           - team-page
