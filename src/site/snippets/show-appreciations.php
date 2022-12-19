@@ -4,7 +4,6 @@ if (!isset($appreciations)||(empty($appreciations))) $appreciations=helpers\Data
 ?>
 
 <?php
-$otherTeamPage=$site->find('other-team-page');
 if (count($appreciations)>0) :?>
   <button class="btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAppreciations<?=$contentId?>" aria-expanded="false" aria-controls="collapseAppreciations<?=$contentId?>">
     <?=t("See Appreciations")?> <span class="badge bg-secondary"><?=count($appreciations)?></span>
