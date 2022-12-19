@@ -42,7 +42,6 @@ return [
         'Recommend' => 'Recommend',
         'Remove Recommendation' => 'Remove Recommendation',
         'File' => 'File',
-        'Label' => 'Label',
         'Leave blank to use file name' => 'Leave blank to use file name',
         'View' => 'View',
         'No file' => 'No file',
