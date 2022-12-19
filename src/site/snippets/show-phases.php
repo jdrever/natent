@@ -66,7 +66,7 @@ endforeach;
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <button class="btn btn-primary btn-sm m-2" type="button" data-bs-toggle="collapse"
           data-bs-target="#collapseImageCredits" aria-expanded="false" aria-controls="collapseImageCredits">
-          See Image Credits
+          <?=t('See Image Credits')?>
         </button>
         <div class="collapse" id="collapseImageCredits">
 <?php foreach ($phases as $phase) : ?>
