@@ -4,7 +4,7 @@
       <li>
         <a href="<?=$platformPage->url()?>" class="nav-link px-2 text-white"><?=$platformPage->pageTitle()->isNotEmpty() ? $platformPage->pageTitle() : $platformPage->title()?></a>
       </li>
-      <?php if ($userLoggedIn) :?>
+      <?php if ($userLoggedIn) : ?>
       <li>
         <a href="<?=$teamPage->url()?>" class="nav-link px-2 text-white"><i class="bi bi-person-heart"></i> <?=$teamPage->pageTitle()->isNotEmpty() ? $teamPage->pageTitle() : $teamPage->title()  ?></a>
       </li>

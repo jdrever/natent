@@ -43,12 +43,12 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     if (!$isNonLearningJourneyPage) Cookie::set("resumePage",$_SERVER['REQUEST_URI']);
 
     $platformPage=site()->find('platform');
-    $teamPage=$page->siblings()->find('platform/team-page');
-    $otherTeamsPage=$page->siblings()->find('platform/other-teams');
-    $commonsPage=$page->siblings()->find('platform/commons');
-    $adminPage=$page->siblings()->find('platform/admin');
-    $exampleTeamPage=$page->siblings()->find('platform/example-team');
-    $loginPage=$page->siblings()->find('platform/login');
+    $teamPage=$platformPage->children()->find('platform/team-page');
+    $otherTeamsPage=$platformPage->children()->find('platform/other-teams');
+    $commonsPage=$platformPage->children()->find('platform/commons');
+    $adminPage=$platformPage->children()->find('platform/admin');
+    $exampleTeamPage=$platformPage->children()->find('platform/example-team');
+    $loginPage=$platformPage->children()->find('platform/login');
 
     //TODO: switch this to use compact(..)
     return [ 
