@@ -5,9 +5,6 @@ columns:
     sections:
       mainContent: sections/core-fields
       additionalFields:
-        type: fields
-        fields:
-          mainContent: fields/mainContent
         editProfileButton:
           label: Edit Profile Button
           type: text
