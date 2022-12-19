@@ -5,19 +5,21 @@ columns:
     sections:
       mainContent: sections/core-fields
       additionalFields:
-        editProfileButton:
-          label: Edit Profile Button
-          type: text
-        editChallengeButton:
-          label: Edit Challenge Button
-          type: text
-        editContextButton:
-          label: Edit Context Button
-          type: text
-        editDesignButton:
-          label: Edit Context Button
-          type: text
-        editMeasureButton:
-          label: Edit Measure Button
-          type: text
+        type: fields
+        fields:
+          editProfileButton:
+            label: Edit Profile Button
+            type: text
+          editChallengeButton:
+            label: Edit Challenge Button
+            type: text
+          editContextButton:
+            label: Edit Context Button
+            type: text
+          editDesignButton:
+            label: Edit Context Button
+            type: text
+          editMeasureButton:
+            label: Edit Measure Button
+            type: text
 
