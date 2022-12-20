@@ -27,7 +27,7 @@
             <iframe src="https://docs.google.com/viewer?url=<?=$file->url()?>&embedded=true" frameborder="0" height="300px" width="100%"></iframe>
         <?php endif ?>    
         <a href="<?= $file->url()?>" target="_blank"><?=$block->label() != "" ? $block->label() : $file->filename()?></a>
-        <a class="download-button" href="<?= $file->url()?>" target="_blank"><?=t("View")?> </a>
+        <a class="btn btn-primary btn-sm" href="<?= $file->url()?>" target="_blank"><?=t('VIEW','VIEW')?> </a>
     <?php else: ?>
         <p><?=t("No file")?></p>
     <?php endif?>

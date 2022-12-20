@@ -11,6 +11,7 @@ return [
     'translations' => [
         //general
         'DOWNLOAD' => 'DOWNLOAD',
+        'VIEW' => 'VIEW',
         'Logout' => 'Logout',
         'The Phases' => 'The Phases',
         'Country' => 'Country',
