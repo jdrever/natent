@@ -23,6 +23,7 @@ fieldsets:
       - list
       - line
       - quote
+      - table
       - activity
   media:
     label: Media
