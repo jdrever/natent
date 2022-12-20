@@ -53,10 +53,10 @@ foreach ($functions as $function)
             if (isset($viewedTeam['area']))
             {
 ?>
-            <?php if ($researchPageUrl=getCollabUrl($collaborationPoints, 'task-research')) :?>
+            <?php if ($researchPageUrl=getCollabUrl($collaborationPoints, 'task-share-research-questions')) :?>
     <a href="<?= $researchPageUrl?>" class="btn btn-outline-primary"><?=t("EDIT RESEARCH QUESTIONS","EDIT RESEARCH QUESTIONS")?></a>
             <?php endif ?>
-            <?php if ($strategiesPageUrl=getCollabUrl($collaborationPoints, 'task-strategies')) :?>    
+            <?php if ($strategiesPageUrl=getCollabUrl($collaborationPoints, 'task-share-natural-strategies')) :?>    
     <a href="<?= $strategiesPage?>" class="btn btn-outline-primary"><?=t("EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES","EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES")?></a>
             <?php endif ?>
 <?php
