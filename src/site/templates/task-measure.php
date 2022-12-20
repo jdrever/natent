@@ -15,7 +15,7 @@
         <textarea class="form-control m-1" aria-label="With textarea" rows="8" id="recommendations"
         name="recommendations"><?=str_replace("<br>","\r\n", $team['recommendations'])?></textarea>
 
-        <?php snippet('guide-navigation', ['taskButton' =>$t('SHARE YOUR RECOMMENDATIONS','SHARE YOUR RECOMMENDATIONS')]) ?>
+        <?php snippet('guide-navigation', ['taskButton' =>t('SHARE YOUR RECOMMENDATIONS','SHARE YOUR RECOMMENDATIONS')]) ?>
     </form>
 
     <?php
