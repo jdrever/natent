@@ -9,7 +9,7 @@ if (isset($viewedTeam['pitch_video_you_tube_id'])&&!empty($viewedTeam['pitch_vid
 <?php endif;
 if (!$hideCollaboration) :
   if ($editTeam) : ?>
-    <?php if ($pitchPageUrl=getCollabUrl($collaborationPoints, 'task-pitch')) :?>
+    <?php if ($pitchPageUrl=getCollabUrl($collaborationPoints, 'task-share-pitch-deck')) :?>
 <a href="<?= $pitchPageUrl ?>" class="btn btn-outline-primary"><?=t("EDIT PITCH VIDEO")?></a>
     <?php endif ?>
   <?php snippet('show-appreciations', ['contentType'=>'Business Canvas', 'contentId'=> $viewedTeam['team_business_canvas_id']]) ?>

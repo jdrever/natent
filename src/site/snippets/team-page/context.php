@@ -7,7 +7,7 @@ if (!$hideCollaboration) :
     if (isset($viewedTeam['area'])) :
         snippet('show-appreciations', ['contentType'=>'Challenge Definition', 'contentId'=>$viewedTeam['team_challenge_definition_id']]);
         snippet('show-comments',['contentType'=>'Challenge Definition', 'contentId'=>$viewedTeam['team_challenge_definition_id']]);
-    if ($contextPageUrl=getCollabUrl($collaborationPoints, 'task-context')) :?>
+    if ($contextPageUrl=getCollabUrl($collaborationPoints, 'task-share-context')) :?>
     <a href="<?= $contextPageUrl ?>" class="btn btn-outline-primary"><?=t('EDIT CONTEXT')?></a>
 <?php 
     endif; 
