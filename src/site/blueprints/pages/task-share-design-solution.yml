@@ -8,19 +8,3 @@ columns:
         type: fields
         fields:
           mainContent: fields/guideContent
-          existingSolutionLabel:
-            type: text
-            label: 'Your team has an existing Design Solution. Upload a new file below to replace it' label
-            default: "Your team has an existing Design Solution. Upload a new file below to replace it"
-          uploadSolutionLabel:
-            type: text
-            label: 'Upload your Design Solution (use an image file, e.g. JPG or PNG)' label
-            default: "Upload your Design Solution (use an image file, e.g. JPG or PNG)"
-          uploadVideoPresentationLabel:
-            type: text
-            label: 'Upload your video presentation to our You Tube channel and share the link here' label
-            default: "Upload your video presentation to our You Tube channel and share the link here"
-          shareSolutionButton:
-            type: text
-            label: 'SHARE YOUR DESIGN SOLUTION' button
-            default: SHARE YOUR DESIGN SOLUTION

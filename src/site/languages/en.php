@@ -9,6 +9,8 @@ return [
     ],
     'name' => 'English',
     'translations' => [
+        //general
+        'DOWNLOAD' => 'DOWNLOAD',
         'Logout' => 'Logout',
         'The Phases' => 'The Phases',
         'Country' => 'Country',
@@ -109,7 +111,14 @@ return [
         //measure
         'Describe how/if your final Design Solution has addressed the Context and Needs you identified, and which Nature\'s Unifying Patterns have helped you' => 'Describe how/if your final Design Solution has addressed the Context and Needs you identified, and which Nature\'s Unifying Patterns have helped you',
         'SHARE YOUR RECOMMENDATIONS' => 'SHARE YOUR RECOMMENDATIONS',
-        
+
+        //design
+        'Your team has an existing Design Solution. Upload a new file below to replace it' => 'Your team has an existing Design Solution. Upload a new file below to replace it',
+        'Upload your Design Solution (use an image file, e.g. JPG or PNG)' => 'Upload your Design Solution (use an image file, e.g. JPG or PNG)',
+        'Upload your video presentation to your You Tube channel and share the link here' => 'Upload your video presentation to your YouTube channel and share the link here',
+        'SHARE YOUR DESIGN SOLUTION' => 'SHARE YOUR DESIGN SOLUTION',
+
+
         //TODO: admin challenge - hopefully not needed
         'Enter the new Challenge name' => 'Enter the new Challenge name',
         'Enter a description' => 'Enter a description',
@@ -126,6 +135,8 @@ return [
         'Name' => 'Name',
         'Description' => 'Description',
         'Further information' => 'Further information',
+        
+        
             ],
     'url' => NULL
 ];

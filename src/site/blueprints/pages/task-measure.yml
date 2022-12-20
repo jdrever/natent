@@ -8,11 +8,3 @@ columns:
         type: fields
         fields:
           mainContent: fields/guideContent
-          measureDescriptionLabel:
-            type: text
-            label: 'Describe how/if your final Design Solution has addressed the Context and Needs you identified, and which Nature's Unifying Patterns have helped you:' label
-            default: "Describe how/if your final Design Solution has addressed the Context and Needs you identified, and which Nature's Unifying Patterns have helped you:"
-          shareRecommendationsButton:
-            type: text
-            label: 'SHARE YOUR RECOMMENDATIONS' button
-            default: SHARE YOUR RECOMMENDATIONS
