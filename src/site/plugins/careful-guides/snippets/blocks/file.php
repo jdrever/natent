@@ -23,6 +23,9 @@
 
 <div class="file-block">
     <?php if($file = $block->file()->toFile()): ?>
+        <?if ($file->extension()=='pdf') : ?>
+            <iframe src="https://docs.google.com/viewer?url=<?=$file->url()?>&embedded=true" frameborder="0" height="300px" width="100%"></iframe>
+        <?php endif ?>    
         <a href="<?= $file->url()?>" target="_blank"><?=$block->label() != "" ? $block->label() : $file->filename()?></a>
         <a class="download-button" href="<?= $file->url()?>" target="_blank"><?=t("View")?> </a>
     <?php else: ?>
