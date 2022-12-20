@@ -10,8 +10,9 @@ return function($kirby, $pages, $page, $site) {
     {
         $recommendations = htmlspecialchars(get('recommendations'));
         $result = helpers\DataHelper::updateTeamWithMeasures($team['user_id'], $recommendations);
-
-        return $kirby->controller('result', compact('page', 'site', 'result','country'));
+        $userId=$platform['userId'];
+        $phaseType=$platform['phaseType'];
+        return $kirby->controller('result', compact('page', 'site', 'kirby', 'result','country','userId','phaseType'));
     }
     else
     {

@@ -28,7 +28,9 @@ return function($kirby, $pages, $page, $site) {
 
         $result = helpers\DataHelper::updateTeamWithBusinessCanvas($team['user_id'], "", "", "", "", "", $pitchVideoUrl, $pitchVideoYouTubeId);
 
-        return $kirby->controller('result', compact('page', 'site', 'result','country'));
+        $userId=$platform['userId'];
+        $phaseType=$platform['phaseType'];
+        return $kirby->controller('result', compact('page', 'site', 'kirby', 'result','country','userId','phaseType'));
     }
     else
     {

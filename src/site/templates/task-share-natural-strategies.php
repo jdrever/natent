@@ -79,6 +79,8 @@
         }    
     ?>
     <input type="hidden" id="functionNumbers" name="functionNumbers" value="<?=$functionNumbers ?>" />
+
+    <?php snippet('add-to-commons-form') ?> 
     <?php snippet('guide-navigation', ['taskButton'=>t('SHARE YOUR STRATEGIES AND PRINCIPLES','SHARE YOUR STRATEGIES AND PRINCIPLES')]) ?>
 </form>
 

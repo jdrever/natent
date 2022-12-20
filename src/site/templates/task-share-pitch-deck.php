@@ -18,7 +18,7 @@
             </div>
             <input class="form-control" type="text" id="pitchVideoUrl" name="pitchVideoUrl" aria-describedby="https-addon" value="<?=$team['pitch_video_url']?>">
         </div> 
-        
+        <?php snippet('add-to-commons-form') ?> 
         <?php snippet('guide-navigation', ['taskButton' =>t('SHARE YOUR PITCH VIDEO','SHARE YOUR PITCH VIDEO')]) ?>
     </form>
 

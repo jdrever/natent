@@ -37,7 +37,9 @@ return function($kirby, $pages, $page, $site) {
         
             $result = helpers\DataHelper::updateTeamWithDesignIdea($team['user_id'], $designFileUrl, $designIdeaUrl, $designIdeaYouTubeId);
 
-            return $kirby->controller('result', compact('page', 'site', 'result', 'country'));
+            $userId=$platform['userId'];
+            $phaseType=$platform['phaseType'];
+            return $kirby->controller('result', compact('page', 'site', 'kirby', 'result','country','userId','phaseType'));
         }
     }
     else

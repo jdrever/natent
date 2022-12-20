@@ -34,6 +34,7 @@ foreach ($skills as $skill)
 }
 ?>    </div>
     <br>
+    <?php snippet('add-to-commons-form') ?> 
     <?php snippet('guide-navigation', ['taskButton' =>t('SHARE YOUR PROFILE','SHARE YOUR PROFILE')]) ?>
   </form>
 </div>

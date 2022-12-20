@@ -50,7 +50,7 @@
             </div>
             <input class="form-control" type="text" id="designIdeaUrl" name="designIdeaUrl" aria-describedby="https-addon" value="<?=$team['design_idea_url'] ?>">
         </div>
-        
+        <?php snippet('add-to-commons-form') ?> 
         <?php snippet('guide-navigation', ['taskButton' =>t('SHARE YOUR DESIGN SOLUTION','SHARE YOUR DESIGN SOLUTION')]) ?>
     </form>
 
