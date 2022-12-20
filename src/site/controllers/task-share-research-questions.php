@@ -25,8 +25,9 @@ return function($kirby, $pages, $page, $site) {
         }
 
         $result = helpers\DataHelper::updateTeamWithFunction($team['user_id'], $functionsArray);
-
-        return $kirby->controller('result', compact('page', 'site', 'result','country'));
+        $userId=$platform['userId'];
+        $phaseType=$platform['phaseType'];
+        return $kirby->controller('result', compact('page', 'site', 'kirby', 'result','country','userId','phaseType'));
     }
     else
     {

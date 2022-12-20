@@ -47,6 +47,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                     <form action="<?= $page->url()?>" method="post">
+                      <input type="hidden" id="collabType" name="collabType" value="Challenge">
                         <input type="hidden" id="topicId" name="topicId" value="<?=$topic['id'] ?>">
                         <input type="hidden" id="challengeId" name="challengeId" value="<?=$challenge['id']?>">
                         <input type="submit" class="btn btn-primary float-end" value="<?=t('SELECT THIS CHALLENGE','SELECT THIS CHALLENGE')?>  &#8594;">

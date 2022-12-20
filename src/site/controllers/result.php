@@ -1,22 +1,59 @@
 <?php
-return function($page, $site,  $result, $country) 
+
+use carefulcollab\helpers as helpers;
+return function($page, $site, $kirby, $result, $country, $userId, $phaseType) 
 {
+
+
     if ($result->wasSuccessful)
     {
-        $collection=$site->find('platform')->index()->filterBy('template','!=','guide-section-header')->filter(function ($p) use ($country)
+        $statusType='_taskStatus';
+        $pointsAdded=$result->pointsAdded;
+        //check for commons upload
+        if (isset($result->pointsAdded)) $pointsAdded=$result->pointsAdded;
+        $resourcesArray = array();
+        for ($x = 1; $x <= 4; $x++)
         {
-            return (($p->template()!='guide')||($p->template()=='guide'&&(str_contains($p->countries(),strtolower($country)))));
-        });
+          if (!empty($_POST['resourceTitle' . $x]))
+          {
+      
+            $fileUploadResult=helpers\FileHelper::uploadFiletoS3('fileUpload' .$x);
+            if ($fileUploadResult->wasSuccessful)
+            {
+              $title = $_POST['resourceTitle' . $x];
+              $description = $_POST['resourceDescription' . $x];
+              $url = $_POST['resourceUrl' . $x];
+              $resource = new helpers\CommonsResource();
+              $resource->title=$title;
+              $resource->description=$description;
+              $resource->url=$url; 
+              $resource->fileUploadURL=$fileUploadResult->fileURL;
+              $resourcesArray[]=$resource; 
+            }
+            else
+            {
+              $result->wasSuccessful=false;
+              $result->errorMessage=$fileUploadResult->errorMessage;
+              break;
+            }
+      
+          }
+        }   
+        if ($result->wasSuccessful&&!empty($resourcesArray))
+        {
+          $collabType=get('collabType');
+          $result=helpers\DataHelper::addResourcesToCommons($userId,$resourcesArray,$phaseType,$collabType);
+          $statusType="_taskCommonsStatus";
+          $pointsAdded+=$result->pointsAdded;
+        }
 
-        if ($next = $page->children($collection)->filterBy('template','!=','guide-section-header')->first())
+        $collection = $kirby->collection("guides-content");
+
+        if ($next = $page->next($collection)) 
         {
-            $next->go(['query' => ['_taskStatus' => 'ok', 'points' =>$result->pointsAdded ]]);
+          $next->go(['query' => [$statusType => 'ok', 'points' =>$pointsAdded ]]);
         }
-        else if ($next = $page->next($collection)) 
-        {
-            $next->go(['query' => ['_taskStatus' => 'ok', 'points' =>$result->pointsAdded ]] );
-        }
-        $page->go(['query' => ['_taskStatus' => 'ok', 'points' =>$result->pointsAdded ]]);
+        $page->go(['query' => [$statusType => 'ok', 'points' =>$pointsAdded ]]);
     }
     else
     {

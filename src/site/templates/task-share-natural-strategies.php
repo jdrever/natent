@@ -16,7 +16,7 @@
 ?>
 
 <form class="form-inline" method="post" action="<?=$page->url()?>" enctype="multipart/form-data">
-
+  <input type="hidden" id="collabType" name="collabType" value="Strategies">
     <?php 
         $functionNumbers = "";
         foreach ($functions as $function) 

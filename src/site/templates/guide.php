@@ -1,6 +1,7 @@
 <?php snippet('header') ?>
 <?php snippet('platform-menu') ?>
 <?php snippet('breadcrumb') ?>
+<?php snippet('show-status') ?>
 <div class="container">
   <div class="row">
     <div class="col-12" d-none d-lg-block>

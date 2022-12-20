@@ -12,7 +12,7 @@
 ?>
   <form class="form-inline" method="post" action="<?= $page->url() ?>"
     enctype="multipart/form-data">
-
+    <input type="hidden" id="collabType" name="collabType" value="Create">
     <?php if ((isset($team['design_idea_file']))&&!empty($team['design_idea_file']))
     {
     ?>
