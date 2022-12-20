@@ -1,5 +1,7 @@
 <?php
 use carefulcollab\helpers as helpers;
+
+//TODO: don't need this?
 return function($kirby, $pages, $page, $site) {
     $requiresLogin = true;
     $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site', 'requiresLogin'));
@@ -10,6 +12,8 @@ return function($kirby, $pages, $page, $site) {
     {
         $recommendations = htmlspecialchars(get('recommendations'));
         $result = helpers\DataHelper::updateTeamWithMeasures($team['user_id'], $recommendations);
+
+        $phaseType=
 
         return $kirby->controller('result', compact('page', 'site', 'result','country'));
     }

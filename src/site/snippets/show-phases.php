@@ -6,6 +6,7 @@ $width=300;
 $height=200;
 
 $phaseCol=$userLoggedIn ? 1 : 2;
+$hasPhases=false;
 
 ?>
 <h2><?=t('The Phases', 'The Phases')?></h2>
@@ -56,13 +57,16 @@ $phaseCol=$userLoggedIn ? 1 : 2;
                 </div>
             </div>
 <?php
+      $hasPhases=true;
     endif;
   endif;  
   $phaseNumber++; 
 endforeach; 
+if ($hasPhases) :
 ?>
           </div>
       </div>
+<?php endif ?>      
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <button class="btn btn-primary btn-sm m-2" type="button" data-bs-toggle="collapse"
           data-bs-target="#collapseImageCredits" aria-expanded="false" aria-controls="collapseImageCredits">

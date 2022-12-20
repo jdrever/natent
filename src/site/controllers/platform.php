@@ -19,6 +19,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     $userId=1;
     $team=helpers\DataHelper::getTeamByWPUserId($userId);
     $status=$kirby->request()->get('_taskStatus') ? 'task-ok' : '';
+    $status=$kirby->request()->get('_taskCommonsStatus') ? 'task-commons-ok' : '';
     $status=$kirby->request()->get('_commentStatus') ? 'comment-ok' : $status;
     $status=$kirby->request()->get('_appreciationStatus') ? 'appreciation-ok' : $status;
 
@@ -59,9 +60,11 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         $phasePage=$page->parents()->filterBy('template','guide')->first();
     }
     $phaseCompletion=0;
+    $phaseType='';
     if ($phasePage)
     {
-        $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($team['id'],$phasePage->phase());
+        $phaseType=$phasePage->phase();
+        $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($team['id'],$phaseType);
         $phaseCompletion = $phaseCompletionInfo['percent_complete'];
     }
 
@@ -84,6 +87,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         'adminPage'=>$adminPage,
         'exampleTeamPage'=>$exampleTeamPage,
         'loginPage'=>$loginPage,
+        'phaseType' => $phaseType,
         'phaseCompletion'=>$phaseCompletion,
     ];
 }

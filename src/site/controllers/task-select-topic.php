@@ -15,7 +15,9 @@ return function($kirby, $pages, $page, $site)
         $challengeId = get('challengeId');
         $result=helpers\DataHelper::updateTeamChallenge($team['user_id'], $topicId, $challengeId,$bespokeChallenge); 
 
-        return $kirby->controller('result' , compact('page', 'site', 'result','country'));
+        $userId=$platform['userId'];
+        $phaseType=$platform['phaseType'];
+        return $kirby->controller('result', compact('page', 'site', 'kirby', 'result','country','userId','phaseType'));
 
     }
     else if (get('topicId'))

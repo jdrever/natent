@@ -13,6 +13,7 @@
 {
 ?>
 <form class="form-inline" method="post" action="<?= $page->url() ?>" enctype="multipart/form-data">
+  <input type="hidden" id="collabType" name="collabType" value="Functions">
     <label class="m-1"><?=t('Enter your Research Questions below','Enter your Research Questions below')?></label>
 
     <?php
@@ -52,7 +53,8 @@
     }
     ?>
 
-    </div>   
+    </div> 
+    <?php snippet('add-to-commons-form') ?> 
 <?php snippet('guide-navigation', ['taskButton' =>t('SHARE YOUR RESEARCH QUESTIONS','SHARE YOUR RESEARCH QUESTIONS')]) ?>
 </form>
 

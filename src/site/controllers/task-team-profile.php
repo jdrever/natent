@@ -12,7 +12,9 @@ return function($kirby, $pages, $page, $site) {
         $skills = implode(',', get('skills',''));
         $result=helpers\DataHelper::updateTeamProfile($team['user_id'], $description, $skills);
 
-        return $kirby->controller('result' , compact('page', 'site', 'result','country'));
+        $userId=$platform['userId'];
+        $phaseType=$platform['phaseType'];
+        return $kirby->controller('result', compact('page', 'site', 'kirby', 'result','country','userId','phaseType'));
     }
     else
     {

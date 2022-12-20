@@ -123,6 +123,9 @@ return [
         'Upload your pitch video to your YouTube channel and share the link here'=>'Upload your pitch video to your YouTube channel and share the link here',
         'SHARE YOUR PITCH VIDEO'=> 'SHARE YOUR PITCH VIDEO',
 
+        //add to commons
+        'Got More Resources to Share?'=> 'Got More Resources to Share?',
+
         //TODO: admin challenge - hopefully not needed
         'Enter the new Challenge name' => 'Enter the new Challenge name',
         'Enter a description' => 'Enter a description',

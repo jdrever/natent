@@ -10,6 +10,7 @@
 {
 ?>
   <form class="form-inline" method="post" action="<?=$page->url()?>" enctype="multipart/form-data">
+    <input type="hidden" id="collabType" name="collabType" value="Business">
         <label for="form-check"><?=t('Upload your pitch video to your YouTube channel and share the link here','Upload your pitch video to your YouTube channel and share the link here')?>:</label>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -17,7 +18,7 @@
             </div>
             <input class="form-control" type="text" id="pitchVideoUrl" name="pitchVideoUrl" aria-describedby="https-addon" value="<?=$team['pitch_video_url']?>">
         </div> 
-        
+        <?php snippet('add-to-commons-form') ?> 
         <?php snippet('guide-navigation', ['taskButton' =>t('SHARE YOUR PITCH VIDEO','SHARE YOUR PITCH VIDEO')]) ?>
     </form>
 

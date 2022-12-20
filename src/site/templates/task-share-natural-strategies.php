@@ -16,7 +16,7 @@
 ?>
 
 <form class="form-inline" method="post" action="<?=$page->url()?>" enctype="multipart/form-data">
-
+  <input type="hidden" id="collabType" name="collabType" value="Strategies">
     <?php 
         $functionNumbers = "";
         foreach ($functions as $function) 
@@ -79,6 +79,8 @@
         }    
     ?>
     <input type="hidden" id="functionNumbers" name="functionNumbers" value="<?=$functionNumbers ?>" />
+
+    <?php snippet('add-to-commons-form') ?> 
     <?php snippet('guide-navigation', ['taskButton'=>t('SHARE YOUR STRATEGIES AND PRINCIPLES','SHARE YOUR STRATEGIES AND PRINCIPLES')]) ?>
 </form>
 
