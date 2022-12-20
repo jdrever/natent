@@ -18,7 +18,7 @@ if (!$hideCollaboration) :
     if ($editTeam) :
         if (isset($viewedTeam['design_idea_you_tube_id'])||isset($viewedTeam['design_idea_file'])) :
             if ($designPageUrl=getCollabUrl($collaborationPoints, 'task-share-design-solution')) :?>
-      <a href="<?= $designPagUrl?>" class="btn btn-outline-primary"><?=t('EDIT DESIGN','EDIT DESIGN')?></a>
+      <a href="<?= $designPageUrl?>" class="btn btn-outline-primary"><?=t('EDIT DESIGN','EDIT DESIGN')?></a>
         <?php endif ?>
       <?php snippet('show-appreciations', ['contentType'=>'Design Idea', 'contentId'=>$viewedTeam['team_design_idea_id']]) ?>
       <?php snippet('show-comments',['contentType'=>'Design Idea', 'contentId'=>$viewedTeam['team_design_idea_id']]) ?>
