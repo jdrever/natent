@@ -52,7 +52,8 @@
     }
     ?>
 
-    </div>   
+    </div> 
+    <?php snippet('add-to-commons-form') ?> 
 <?php snippet('guide-navigation', ['taskButton' =>t('SHARE YOUR RESEARCH QUESTIONS','SHARE YOUR RESEARCH QUESTIONS')]) ?>
 </form>
 
