@@ -25,6 +25,7 @@ else
 
   <lite-youtube videoid="<?=$ytId?>" playlabel="<?=$block->caption()?>"></lite-youtube>
 <?php elseif(str_contains($block->url(),'vimeo')): ?>
+    <?=$block-url()?>
     <?= vimeo($block->url()) ?>
 <?php elseif ($video = Html::video($block->url())): ?>
   <?= $video ?>
