@@ -13,7 +13,7 @@ $phaseCol=$userLoggedIn ? 1 : 2;
       <p><?=t('Work through each Phase in order','Work through each Phase in order')?>.</p>
 
 <?php foreach ($phases as $phase) : 
-    $pagesInPhase=$page->children()->filterBy('phase', strtolower($phase->title()));
+    $pagesInPhase=$page->index()->filterBy('phase', strtolower($phase->title()));
     if ($pagesInPhase):
       $countryPhase=$pagesInPhase->filterBy('countries', '*=', str_replace(" ","-",strtolower($country)))->first();
       if ($countryPhase) : ?>
