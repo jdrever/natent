@@ -18,9 +18,9 @@ if (!isset($icon)) $icon="journal-text";
       </div>
       <?php endif ?>
       <div class="progress mt-1 mb-4" style="height:30px;">
-        <div class="progress-bar bg-primary" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
+        <div class="progress-bar bg-primary" role="progressbar" style="width: <?=$phaseCompletion?>%;" aria-valuenow="<?=$phaseCompletion?>" aria-valuemin="0"
           aria-valuemax="100">
-          50%
+          <?=$phaseCompletion?>%
         </div>
       </div>
       <?php snippet('show-guide-contents', ['contents'=>$page->siblings()]) ?>

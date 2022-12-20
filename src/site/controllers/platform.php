@@ -50,6 +50,21 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     $exampleTeamPage=$platformPage->children()->find('platform/example-team');
     $loginPage=$platformPage->children()->find('platform/login');
 
+    if ($page->template()=='guide')
+    {
+        $phasePage=$page;
+    }
+    else
+    {
+        $phasePage=$page->parents()->filterBy('template','guide')->first();
+    }
+    $phaseCompletion=0;
+    if ($phasePage)
+    {
+        $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($team['id'],$phasePage->phase());
+        $phaseCompletion = $phaseCompletionInfo['percent_complete'];
+    }
+
     //TODO: switch this to use compact(..)
     return [ 
         'userId' => $userId, 
@@ -69,6 +84,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         'adminPage'=>$adminPage,
         'exampleTeamPage'=>$exampleTeamPage,
         'loginPage'=>$loginPage,
+        'phaseCompletion'=>$phaseCompletion,
     ];
 }
 ?>
