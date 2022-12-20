@@ -57,7 +57,7 @@ foreach ($functions as $function)
     <a href="<?= $researchPageUrl?>" class="btn btn-outline-primary"><?=t("EDIT RESEARCH QUESTIONS","EDIT RESEARCH QUESTIONS")?></a>
             <?php endif ?>
             <?php if ($strategiesPageUrl=getCollabUrl($collaborationPoints, 'task-share-natural-strategies')) :?>    
-    <a href="<?= $strategiesPage?>" class="btn btn-outline-primary"><?=t("EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES","EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES")?></a>
+    <a href="<?= $strategiesPageUrl?>" class="btn btn-outline-primary"><?=t("EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES","EDIT NATURAL STRATEGIES AND DESIGN PRINCIPLES")?></a>
             <?php endif ?>
 <?php
             }
