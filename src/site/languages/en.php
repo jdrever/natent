@@ -118,6 +118,11 @@ return [
         'Upload your video presentation to your You Tube channel and share the link here' => 'Upload your video presentation to your YouTube channel and share the link here',
         'SHARE YOUR DESIGN SOLUTION' => 'SHARE YOUR DESIGN SOLUTION',
 
+        //pitch deck
+        'Upload your pitch video to your YouTube channel and share the link here'=>'Upload your pitch video to your YouTube channel and share the link here',
+        'SHARE YOUR RECOMMENDATIONS'=> 'SHARE YOUR RECOMMENDATIONS',
+
+
 
         //TODO: admin challenge - hopefully not needed
         'Enter the new Challenge name' => 'Enter the new Challenge name',

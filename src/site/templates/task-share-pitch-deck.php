@@ -10,7 +10,7 @@
 {
 ?>
   <form class="form-inline" method="post" action="<?=$page->url()?>" enctype="multipart/form-data">
-        <label for="form-check"><?=$page->pitchVideoDescriptionLabel()?>:</label>
+        <label for="form-check"><?=t('Upload your pitch video to your YouTube channel and share the link here','Upload your pitch video to your YouTube channel and share the link here')?>:</label>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="https-addon">https://</span>
@@ -18,7 +18,7 @@
             <input class="form-control" type="text" id="pitchVideoUrl" name="pitchVideoUrl" aria-describedby="https-addon" value="<?=$team['pitch_video_url']?>">
         </div> 
         
-        <?php snippet('guide-navigation', ['taskButton' =>$page->uploadPitchVideoButton()]) ?>
+        <?php snippet('guide-navigation', ['taskButton' =>t('SHARE YOUR RECOMMENDATIONS','SHARE YOUR RECOMMENDATIONS')]) ?>
     </form>
 
     <?php
