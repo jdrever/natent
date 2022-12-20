@@ -2,42 +2,14 @@ title: Guide
 
 columns:
   main:
-    width: 1/2
+    width: 2/3
     sections:
-      fields:
+      mainContent:
         type: fields
         fields:
-          description:
-            type: textarea
-          image:
-            label: Image
-            type: files
-            query: page.images
-          status:
-            type: select
-            translate: false
-            options:
-              - Discovery
-              - Alpha
-              - Beta
-              - Live
           mainContent: fields/guideContent
-          phase:
-            label: Phase Type
-            type: select
-            translate: false
-            options:
-              type: query
-              query: site.index.filterBy('template', 'phase')
-          countries:
-            label: Countries
-            type: multiselect
-            translate: false
-            options:
-              type: query
-              query: site.index.filterBy('template', 'country')
   sidebar:
-    width: 1/2
+    width: 1/3
     sections:
       pages:
         label: Sections
@@ -54,3 +26,35 @@ columns:
           - task-share-pitch-deck
           - task-share-research-questions
           - task-share-natural-strategies
+      settings:
+        label: Settings
+        type: fields
+        fields:
+          phase:
+            label: Phase Type
+            type: select
+            translate: false
+            options:
+              type: query
+              query: site.index.filterBy('template', 'phase')
+          countries:
+            label: Countries
+            type: multiselect
+            translate: false
+            options:
+              type: query
+              query: site.index.filterBy('template', 'country')
+          description:
+            type: textarea
+          image:
+            label: Image
+            type: files
+            query: page.images
+          status:
+            type: select
+            translate: false
+            options:
+              - Discovery
+              - Alpha
+              - Beta
+              - Live
