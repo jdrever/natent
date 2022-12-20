@@ -25,7 +25,6 @@ columns:
         label: Settings
         type: pages
         templates:
-          - countries
           - areas
           - challenges
       phases:

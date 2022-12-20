@@ -35,10 +35,11 @@ columns:
   sidebar:
     width: 1/3
     sections:
-      phases:
-        label: Phases
+      countries:
+        label: Countries
         type: pages
-        template: guide
+        templates:
+          - country
       pages:
         label: Pages
         type: pages

@@ -1,43 +1,27 @@
 <?php 
-$collection = $kirby->collection("guides-content")->filter(function ($p) use ($country)
-{
-    return (($p->template()!='guide')||($p->template()=='guide'&&(str_contains($p->countries(),strtolower($country)))));
-});
-
+$collection = $kirby->collection("guides-content");
 
 if ($page->prev($collection))
 {
-  $previousLinkTitle=$page->prev($collection)->title();
-  $previousLinkUrl=$page->prev($collection)->url();
+  $previousPage=$page->prev($collection);
 }
-elseif ($page->parent($collection))
-{
-  $previousLinkTitle=$page->parent($collection)->title();
-  $previousLinkUrl=$page->parent($collection)->url();
-}
+
 if(!isset($taskButton))
 {
-
-  if ($next = $page->children($collection)->filterBy('template','!=','guide-section-header')->first())
+  if ($next = $page->next($collection)) 
   {
-    $nextLinkTitle=$next->title();
-    $nextLinkUrl=$next->url();
-  }
-  else if ($next = $page->next($collection)) 
-  {
-    $nextLinkTitle=$next->title();
-    $nextLinkUrl=$next->url();
+    $nextPage=$page->next($collection);
   }
 }
 ?>
 
-<?php if (isset($previousLinkTitle)||isset($nextLinkTitle)||isset($taskButton)) : ?>
+<?php if (isset($previousPage)||isset($nextLinkTitle)||isset($taskButton)) : ?>
   <div class="my-4">
-  <?php if (isset($previousLinkTitle)) : ?>
-<a class="btn btn-link m-2" href="<?= $previousLinkUrl ?>"><i class="bi bi-arrow-left"></i> PREVIOUS: <?=$previousLinkTitle?></a>
+  <?php if (isset($previousPage)&&$previousPage->template()!='country') : ?>
+<a class="btn btn-link m-2" href="<?= $previousPage->url() ?>"><i class="bi bi-arrow-left"></i> PREVIOUS: <?=$previousPage->title()?></a>
   <?php endif ?>
-<?php if (isset($nextLinkTitle)) : ?>
-<a class="btn btn-primary m-2" href="<?= $nextLinkUrl ?>">NEXT: <?=$nextLinkTitle?> <i class="bi bi-arrow-right"></i></a>
+  <?php if (isset($nextPage)&&$nextPage->template()!='country') : ?>
+<a class="btn btn-primary m-2" href="<?= $nextPage->url() ?>">NEXT: <?=$nextPage->title()?> <i class="bi bi-arrow-right"></i></a>
   <?php endif ?>
   <?php if (isset($taskButton)) : ?>
     <button type="submit" class="btn btn-primary float-end"><?=$taskButton?> <i class="bi bi-arrow-right"></i></button>
