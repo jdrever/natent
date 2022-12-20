@@ -43,7 +43,7 @@
     <div class="container border bg-light p-2 m-2">
         <input type="hidden"  name="functionNumber<?=$x?>" id="functionNumber<?=$x?>" value="<?=$functionNumber?>">
         <div class="form-floating">
-            <input type="text" class="form-control bg-info" name="biologized<?=$x?>" id="biologized<?=$x?>" placeholder="<?=$page->researchQuestionLabel()?> <?=$x?>" aria-label="<?=$page->researchQuestionLabel()?> <?=$x?>" value="<?=$biologisedQuestionName?>">
+            <input type="text" class="form-control bg-info text-white" name="biologized<?=$x?>" id="biologized<?=$x?>" placeholder="<?=$page->researchQuestionLabel()?> <?=$x?>" aria-label="<?=$page->researchQuestionLabel()?> <?=$x?>" value="<?=$biologisedQuestionName?>">
             <label for="biologized<?=$x?>"><?=t('Research Question','Research Question')?> <?=$x?></label>
         </div>
     </div>
