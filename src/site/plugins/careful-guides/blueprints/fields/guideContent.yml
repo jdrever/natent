@@ -23,8 +23,7 @@ fieldsets:
       - list
       - line
       - quote
-      - table
-      - activity
+      - link-to-commons
   media:
     label: Media
     type: group

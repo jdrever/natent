@@ -1,0 +1,8 @@
+icon: book
+name: Link to Commons
+fields:
+  linkText:
+    label: Link Text
+    type: text
+
+
