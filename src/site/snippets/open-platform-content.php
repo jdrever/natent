@@ -4,11 +4,6 @@ if (!isset($icon)) $icon="journal-text";
 ?>
 <div class="container mt-3">
   <div class="row">
-    <div class="col-12" d-none d-lg-block>
-
-    </div>
-  </div>
-  <div class="row">
     <div class="col-md-3">
       <?php if ($currentGuide) ?>
       <h3><?=$currentGuide->title() ?></h3>
