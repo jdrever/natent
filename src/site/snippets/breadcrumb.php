@@ -5,7 +5,7 @@
       <?php if ($crumb->title()!='Home') :?>
     <li class="breadcrumb-item">
       <a href="<?= $crumb->url() ?>" <?= e($crumb->isActive(), 'aria-current="page"') ?>>
-        <?= html($crumb->title()) ?>
+        <?= $crumb->pageTitle()->isNotEmpty() ? html($crumb->pageTitle()) : html($crumb->title()) ?>
       </a>
     </li>
       <?php endif ?>
