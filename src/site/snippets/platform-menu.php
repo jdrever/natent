@@ -12,7 +12,7 @@
         <a href="<?=$otherTeamsPage->url()?>" class="nav-link px-2 text-white"><i class="bi bi-search-heart"></i><?=$otherTeamsPage->pageTitle()->isNotEmpty() ? $otherTeamsPage->pageTitle() : $otherTeamsPage->title()  ?></a>
       </li>
       <li>
-        <a href="<?=$commonsPage->url()?>" class="nav-link px-2 text-white"><i class="bi bi-cc-circle-fill"></i><?=$commonsPage->pageTitle()->isNotEmpty() ? $commonsPage->pageTitle() : $commonsPage->title() ?></a>
+        <a href="<?=$resourcesPage->url()?>" class="nav-link px-2 text-white"><i class="bi bi-journals"></i><?=$resourcesPage->pageTitle()->isNotEmpty() ? $resourcesPage->pageTitle() : $resourcesPage->title() ?></a>
       </li>
         <?php if ($userRole=="TEACHER"||$userRole=="ADMIN"||$userRole=="GLOBAL") : ?>
           <li>

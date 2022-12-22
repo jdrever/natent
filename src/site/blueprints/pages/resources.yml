@@ -1,9 +1,8 @@
-title: About
+title: Resources Page
 columns:
   main:
     width: 1/2
     sections:
-      hero: sections/hero
       mainContent: sections/core-fields
   sidebar:
     width: 1/2
@@ -11,5 +10,8 @@ columns:
       pages:
         label: Sub-Pages
         type: pages
-        template: sub-page
+        templates:
+          - commons
+          - nups
+          - glossary
 

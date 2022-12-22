@@ -48,6 +48,7 @@ columns:
           - other-team-page
           - other-teams
           - example-team-page
+          - resources
           - commons
           - login
           - admin
