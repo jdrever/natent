@@ -6,7 +6,6 @@ $forStudentsPage=$site->find('/for-students');
 $platformPage=$site->find('/platform');
 $contactPage=$site->find('/contact');
 ?>
-?>
 
 
   <nav class="navbar navbar-expand-lg bg-light">
