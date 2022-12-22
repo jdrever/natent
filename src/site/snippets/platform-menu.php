@@ -11,9 +11,16 @@
       <li>
         <a href="<?=$otherTeamsPage->url()?>" class="nav-link px-2 text-white"><i class="bi bi-search-heart"></i><?=$otherTeamsPage->pageTitle()->isNotEmpty() ? $otherTeamsPage->pageTitle() : $otherTeamsPage->title()  ?></a>
       </li>
-      <li>
-        <a href="<?=$resourcesPage->url()?>" class="nav-link px-2 text-white"><i class="bi bi-journals"></i><?=$resourcesPage->pageTitle()->isNotEmpty() ? $resourcesPage->pageTitle() : $resourcesPage->title() ?></a>
-      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link px-2 text-white dropdown-toggle" href="<?=$resourcesPage->url()?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-journals"></i><?=$resourcesPage->pageTitle()->isNotEmpty() ? $resourcesPage->pageTitle() : $resourcesPage->title() ?>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="<?=$commonsPage->url()?>"><?=$commonsPage->pageTitle()->isNotEmpty() ? $commonsPage->pageTitle() : $commonsPage->title()?></a></li>
+            <li><a class="dropdown-item" href="<?=$nupsPage->url()?>"><?=$nupsPage->pageTitle()->isNotEmpty() ? $nupsPage->pageTitle() : $nupsPage->title()?></a></li>
+            <li><a class="dropdown-item" href="<?=$glossaryPage->url()?>"><?=$glossaryPage->glossaryTitle()->isNotEmpty() ? $glossaryPage->glossaryTitle() : $glossaryPage->title()?></a></li>
+          </ul>
+        </li>
         <?php if ($userRole=="TEACHER"||$userRole=="ADMIN"||$userRole=="GLOBAL") : ?>
           <li>
         <a href="<?=$adminPage->url()?>" class="nav-link px-2 text-white"><i class="bi bi-door-closed-fill"></i><?=$adminPage->pageTitle()->isNotEmpty() ? $adminPage->pageTitle() : $adminPage->title() ?></a>
