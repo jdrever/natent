@@ -1,4 +1,10 @@
-  <!-- Navbar -->
+<?php 
+$homePage=$site->find('/');
+$aboutPage=$site->find('/about');
+
+?>
+
+
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a href="/"
@@ -20,10 +26,10 @@
       <div class="collapse navbar-collapse" id="navBar">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a href="/" class="nav-link active px-2">Home</a>
+            <a href="<?=$homePage->url()?>" class="nav-link active px-2"><?=$homePage->title()?></a>
           </li>
           <li class="nav-item">
-            <a href="/about/" class="nav-link px-2">About the Project</a>
+            <a href="<?=$aboutPage->url()?>" class="nav-link px-2"><?=$aboutPage->title()?></a>
           </li>
           <li class="nav-item">
             <a href="/for-teachers/" class="nav-link px-2">For Teachers</a>
