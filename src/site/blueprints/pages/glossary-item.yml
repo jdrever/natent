@@ -1,0 +1,7 @@
+title: Glossary Item
+fields:
+  term:
+    type: text
+  definition:
+    type: textarea
+

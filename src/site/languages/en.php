@@ -75,6 +75,10 @@ return [
         'You need to select your challenge before you complete this Task' => 'You need to select your challenge before you complete this Task',
         'You need to enter your Research Questions before you enter your strategies' => 'You need to enter your Research Questions before you enter your strategies',
 
+        //glossary
+        'Term' =>'Term',
+        'Definition'=>'Definition',
+
         //collab points
         //team profile
         'Tell us about your Team' => 'Tell us about your Team',

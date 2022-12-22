@@ -1,8 +1,5 @@
 <?php
 $buttonText=isset($buttonText) ? $buttonText : 'FIND OUT MORE';
-$nups=$page->children()->filter(function ($child) {
-  return $child->translation(kirby()->language()->code())->exists();
-});
 $counter=1;
 ?>
 

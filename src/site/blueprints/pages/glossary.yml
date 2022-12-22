@@ -1,0 +1,15 @@
+title: Glossary Page
+columns:
+  main:
+    width: 1/2
+    sections:
+      mainContent: sections/core-fields
+  sidebar:
+    width: 1/2
+    sections:
+      pages:
+        label: Glossary Items
+        type: pages
+        templates:
+          - "glossary-item"
+
