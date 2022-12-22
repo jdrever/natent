@@ -12,6 +12,8 @@ return [
         //general
         'DOWNLOAD' => 'DOWNLOAD',
         'VIEW' => 'VIEW',
+        'Home' => 'Home',
+        'Platform' => 'Platform',
         'Logout' => 'Logout',
         'The Phases' => 'The Phases',
         'Country' => 'Country',

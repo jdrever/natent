@@ -1,7 +1,11 @@
 <?php 
-$homePage=$site->find('/');
+$homePage=$site->url();
 $aboutPage=$site->find('/about');
-
+$forTeachersPage=$site->find('/for-teachers');
+$forStudentsPage=$site->find('/for-students');
+$platformPage=$site->find('/platform');
+$contactPage=$site->find('/contact');
+?>
 ?>
 
 
@@ -26,22 +30,22 @@ $aboutPage=$site->find('/about');
       <div class="collapse navbar-collapse" id="navBar">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a href="<?=$homePage->url()?>" class="nav-link active px-2"><?=$homePage->title()?></a>
+            <a href="<?=$site->url()?>" class="nav-link active px-2"><?=t('Home','Home')?></a>
           </li>
           <li class="nav-item">
-            <a href="<?=$aboutPage->url()?>" class="nav-link px-2"><?=$aboutPage->title()?></a>
+            <a href="<?=$aboutPage->url()?>" class="nav-link px-2"><?=$aboutPage->pageTitle()->isNotEmpty() ? $aboutPage->pageTitle() : $aboutPage->title()?></a>
           </li>
           <li class="nav-item">
-            <a href="/for-teachers/" class="nav-link px-2">For Teachers</a>
+            <a href="<?=$forTeachersPage->url()?>" class="nav-link px-2"><?=$forTeachersPage->pageTitle()->isNotEmpty() ? $forTeachersPage->pageTitle() :  $forTeachersPage->title()?></a>
           </li>
           <li class="nav-item">
-            <a href="/for-students/" class="nav-link px-2">For Students</a>
+            <a href="<?=$forStudentsPage->url()?>" class="nav-link px-2"><?=$forStudentsPage->pageTitle()->isNotEmpty() ? $forStudentsPage->pageTitle() : $forStudentsPage->title()?></a>
           </li>
           <li class="nav-item">
-            <a href="/platform/" class="nav-link px-2">The Platform</a>
+            <a href="<?=$platformPage->url()?>" class="nav-link px-2"><?=t('Platform','Platform')?></a>
           </li>
           <li class="nav-item">
-            <a href="/contact/" class="nav-link px-2">Contact Us</a>
+            <a href="<?=$contactPage->url()?>" class="nav-link px-2"><?=$contactPage->pageTitle()->isNotEmpty() ? $contactPage->pageTitle() :  $contactPage->title()?></a>
           </li>
         </ul>
         <div class="col-md-3 text-end-md px-2">
