@@ -12,6 +12,7 @@ return [
         //general
         'DOWNLOAD' => 'DOWNLOAD',
         'VIEW' => 'VIEW',
+        'FIND OUT MORE' =>'FIND OUT MORE',
         'Home' => 'Home',
         'Platform' => 'Platform',
         'Logout' => 'Logout',

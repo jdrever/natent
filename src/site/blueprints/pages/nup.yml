@@ -1,0 +1,7 @@
+title: NUP
+fields:
+  nupTitle:
+    type: text
+  description:
+    type: textarea
+
