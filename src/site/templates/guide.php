@@ -2,14 +2,14 @@
 <?php snippet('platform-menu') ?>
 <?php snippet('breadcrumb') ?>
 <?php snippet('show-status') ?>
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-12" d-none d-lg-block>
       <h1 class="fw-bold"><?=$page->title()?></h1>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
       
       <?php 
       //TODO: what to do with images?
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div class="col">
+      <div class="col-md-6">
         <p class="has-medium-font-size lh-sm"><strong>
             <?=$page->description()?></p>
         </strong>
