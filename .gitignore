@@ -17,3 +17,5 @@ node_modules/
 /src/site/languages/ro.php
 /src/site/languages/hu.php
 
+/src/site/accounts
+
