@@ -68,6 +68,12 @@ div.has-background
     margin-bottom:2em;
 }
 
+figure.has-background
+{
+    padding:2em;
+    margin-bottom:2em;
+}
+
 article[data-template~="guide-section-header"]
 {
   background-color:$gray-200;
