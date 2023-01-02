@@ -37,7 +37,7 @@ return [
             $user->logout();
           }
   
-          go('login');
+          go('platform/login');
   
         }
       ]
