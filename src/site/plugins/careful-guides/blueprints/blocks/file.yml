@@ -12,3 +12,10 @@ fields:
     inline: true
     width: 5/6
     placeholder: Leave blank to use file name
+  showEmbed:
+    label: Show Embed of file?
+    type: toggle
+    default: true
+    text:
+      - "no"
+      - "yes"
