@@ -29,8 +29,6 @@ return function ($kirby, $page, $site) {
       }
     } catch (Exception $e) {
       $error = true;
-      echo(var_dump($e));
-      die();
     }
 
   }

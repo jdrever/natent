@@ -29,7 +29,7 @@
                   <?= $page->password()->html() ?>:
 
               </label>
-                  <input type="text" name="password" required="required" aria-required="true" class="form-control" value="<?= get('password') ? esc(get('password'), 'attr') : '' ?>">
+                  <input type="password" name="password" required="required" aria-required="true" class="form-control" value="<?= get('password') ? esc(get('password'), 'attr') : '' ?>">
               </li>
               <li class="submit-buttons">
                   <input type="submit" value="<?= $page->button()->html() ?>" class="btn btn-primary">
