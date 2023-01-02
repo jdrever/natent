@@ -1,9 +1,10 @@
 <?php /** @var \Kirby\Cms\Block $block */ ?>
-<blockquote class="blockquote">
+
+<figure>
+  <blockquote class="blockquote">
   <?= $block->text() ?>
+  </blockquote>
   <?php if ($block->citation()->isNotEmpty()): ?>
-  <footer class="blockquote-footer">
-    <?= $block->citation() ?>
-  </footer>
+  <figcaption class="blockquote"><?= $block->citation() ?></figcaption>
   <?php endif ?>
-</blockquote>
+</figure>
