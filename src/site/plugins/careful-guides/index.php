@@ -7,6 +7,7 @@ Kirby::plugin(
       'blocks/text' => __DIR__ . '/blueprints/blocks/text.yml',
       'blocks/lead-text' => __DIR__ . '/blueprints/blocks/lead-text.yml',
       'blocks/image' => __DIR__ . '/blueprints/blocks/image.yml',
+      'blocks/quote' => __DIR__ . '/blueprints/blocks/quote.yml',
       'blocks/gallery' => __DIR__ . '/blueprints/blocks/gallery.yml',
       'blocks/heading' => __DIR__ . '/blueprints/blocks/heading.yml',
       'blocks/file' => __DIR__ . '/blueprints/blocks/file.yml',
