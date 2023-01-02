@@ -9,7 +9,7 @@ if ($block->backgroundColour()->isNotEmpty() and $block->backgroundColour() != "
 ?>
 <figure <?php if (!empty($figureClass)) : ?> class="<?=$figureClass ?>" <?php endif ?> <?php if (!empty($figureStyle)) : ?>style="<?=$figureStyle?>" <?php endif ?>>
   <blockquote class="blockquote">
-  <?= $block->text() ?>
+    <strong><?= $block->text() ?></strong>
   </blockquote>
   <?php if ($block->citation()->isNotEmpty()): ?>
   <figcaption class="blockquote">&mdash; <?= $block->citation() ?></figcaption>
