@@ -1,6 +1,7 @@
 <?php
 if(!isset($content)||empty($content)) return;
 if(!isset($showContent)) $showContent=true;
+if(!isset($showButton)) $showButton=true;
 if ($showContent) :?>
 <p><?=$content?></p>
 <?php endif ?>
