@@ -12,7 +12,7 @@
     </div>
   </div>
 </div>
-<div class="container my-4" style="background-color:#f9f8c8;">
+<div class="container my-4">
   <?php snippet('show-blocks')?>
   <div class="container mx-auto" style="width:60%;" >
     <h3 class="text-center fw-bold mt-4"><?=$page->getStartedHeader()?></h3>
