@@ -1,12 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 900px,
-  xl: 900px,
-  xxl: 900px,
-);
+ 
 
 $primary: #0d1070;
 $dark: #133f62;
@@ -83,4 +77,9 @@ blockquote.blockquote
 {
   border-left: 2px solid black;
   padding-left: 1rem;
+}
+
+footer.blockquote
+{
+  padding-top: 2em;
 }
