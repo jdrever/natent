@@ -9,7 +9,7 @@
     <title>Natural Entrepreneurs: <?=$page->title()?></title>
     <link rel="stylesheet" type="text/css" href="<?=url('/assets/css/custom.css')?>">
     <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+          href="/assets/icons/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="<?= url('/assets/css/lite-yt-embed.css')?>" />
     <script src="<?= url('/assets/css/lite-yt-embed.js')?>"></script>      

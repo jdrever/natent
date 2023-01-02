@@ -1,0 +1,8 @@
+icon: globe
+name: Link to NUPs
+fields:
+  linkText:
+    label: Link Text
+    type: text
+
+

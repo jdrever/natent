@@ -16,9 +16,9 @@
           <i class="bi bi-journals"></i><?=$resourcesPage->pageTitle()->isNotEmpty() ? $resourcesPage->pageTitle() : $resourcesPage->title() ?>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<?=$commonsPage->url()?>"><?=$commonsPage->pageTitle()->isNotEmpty() ? $commonsPage->pageTitle() : $commonsPage->title()?></a></li>
-            <li><a class="dropdown-item" href="<?=$nupsPage->url()?>"><?=$nupsPage->pageTitle()->isNotEmpty() ? $nupsPage->pageTitle() : $nupsPage->title()?></a></li>
-            <li><a class="dropdown-item" href="<?=$glossaryPage->url()?>"><?=$glossaryPage->glossaryTitle()->isNotEmpty() ? $glossaryPage->glossaryTitle() : $glossaryPage->title()?></a></li>
+            <li><a class="dropdown-item" href="<?=$commonsPage->url()?>"><i class="bi bi-cc-circle-fill"></i> <?=$commonsPage->pageTitle()->isNotEmpty() ? $commonsPage->pageTitle() : $commonsPage->title()?></a></li>
+            <li><a class="dropdown-item" href="<?=$nupsPage->url()?>"><i class="bi bi-globe-europe-africa"></i> <?=$nupsPage->pageTitle()->isNotEmpty() ? $nupsPage->pageTitle() : $nupsPage->title()?></a></li>
+            <li><a class="dropdown-item" href="<?=$glossaryPage->url()?>"><i class="bi bi-list-columns-reverse"></i> <?=$glossaryPage->glossaryTitle()->isNotEmpty() ? $glossaryPage->glossaryTitle() : $glossaryPage->title()?></a></li>
           </ul>
         </li>
         <?php if ($userRole=="TEACHER"||$userRole=="ADMIN"||$userRole=="GLOBAL") : ?>

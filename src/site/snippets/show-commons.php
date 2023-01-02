@@ -1,9 +1,6 @@
 <?php
 use carefulcollab\helpers as helpers;
 ?>
-<div class="container my-4">
-  <h1 class="pb-2 border-bottom"><i class="bi bi-cc-circle-fill"></i> Creative Commons</h1>
-
   <div class="btn-toolbar" role="group" aria-label="filterPhasesLabel()">
         <p class="p-1 m-0"><?=$page->filterPhasesLabel()?></p>
         <a href="<?=$page->url()?>?phaseType=General"
@@ -176,4 +173,3 @@ else
     <?php        
     }
 ?>
-</div>

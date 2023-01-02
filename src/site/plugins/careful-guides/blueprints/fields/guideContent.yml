@@ -24,6 +24,7 @@ fieldsets:
       - line
       - quote
       - link-to-commons
+      - link-to-nups
   media:
     label: Media
     type: group

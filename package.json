@@ -4,7 +4,7 @@
   "description": "Careful Digital CMS/website",
   "main": "index.js",
   "scripts": {
-    "build": "sass scss/custom.scss src/assets/css/custom.css && cp node_modules/lite-youtube-embed/src/*.* src/assets/css/"
+    "build": "sass scss/custom.scss src/assets/css/custom.css && cp node_modules/lite-youtube-embed/src/*.* src/assets/css/ && cp -R node_modules/bootstrap-icons/ src/assets/icons/"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   "homepage": "https://careful.digital",
   "dependencies": {
     "bootstrap": "^5.2.2",
+    "bootstrap-icons": "^1.10.3",
     "lite-youtube-embed": "^0.2.0"
   }
 }
