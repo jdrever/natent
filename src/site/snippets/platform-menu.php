@@ -23,7 +23,7 @@
         </li>
         <?php if ($userRole=="TEACHER"||$userRole=="ADMIN"||$userRole=="GLOBAL") : ?>
           <li>
-        <a href="<?=$adminPage->url()?>" class="nav-link px-2 text-white"><i class="bi bi-door-closed-fill"></i><?=$adminPage->pageTitle()->isNotEmpty() ? $adminPage->pageTitle() : $adminPage->title() ?></a>
+        <a href="<?=$adminPage->url()?>" class="nav-link px-2 text-white"><i class="bi bi-gear-fill"></i><?=$adminPage->pageTitle()->isNotEmpty() ? $adminPage->pageTitle() : $adminPage->title() ?></a>
       </li>
         <?php endif ?>
       <li>
