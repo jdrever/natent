@@ -83,3 +83,13 @@ footer.blockquote-footer
 {
   padding-top: 2em;
 }
+
+blockquote::before {
+  content: open-quote;
+}
+blockquote::after {
+  content: close-quote;
+}
+blockquote {
+  quotes: "“" "”" "‘" "’";
+}
