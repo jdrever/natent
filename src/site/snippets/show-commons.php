@@ -137,7 +137,7 @@ if ($resources)
     ?>
     <div class="bg-light border border-primary rounded-3 m-2 p-2">
         <h2><i class="bi bi-file-richtext"></i><?=$resource['title'] ?></h2>
-        <?= snippet('show-translatable-content', [ $content=$resource['description']] ) ?>
+        <?= snippet('show-translatable-content', [ 'content'=>$resource['description']] ) ?>
         <?php 
             $setRecommended=1;
             if (isset($resource['recommended']))
