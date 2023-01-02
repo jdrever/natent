@@ -6,7 +6,7 @@
     <meta name="description"
           content="Natural Entrepeneurs platform: biomimicry for schools">
     <meta name="author" content="Careful Digital">
-    <title></title>
+    <title>Natural Entrepreneurs: <?=$page->title()?></title>
     <link rel="stylesheet" type="text/css" href="<?=url('/assets/css/custom.css')?>">
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
