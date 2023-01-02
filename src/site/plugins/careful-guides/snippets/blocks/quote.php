@@ -5,6 +5,6 @@
   <?= $block->text() ?>
   </blockquote>
   <?php if ($block->citation()->isNotEmpty()): ?>
-  <figcaption class="blockquote"><?= $block->citation() ?></figcaption>
+  <figcaption class="blockquote">&mdash; <?= $block->citation() ?></figcaption>
   <?php endif ?>
 </figure>

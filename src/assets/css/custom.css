@@ -11857,8 +11857,9 @@ blockquote.blockquote {
   padding-left: 1rem;
 }
 
-footer.blockquote-footer {
+figcaption.blockquote {
   padding-top: 2em;
+  font-size: 0.8em;
 }
 
 blockquote::before {
