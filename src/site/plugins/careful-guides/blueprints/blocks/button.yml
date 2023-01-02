@@ -1,0 +1,9 @@
+name: Button
+icon: bolt
+tabs:
+  content:
+    fields:
+      link:
+        type: text
+      text:
+        type: text
