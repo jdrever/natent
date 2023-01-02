@@ -32,6 +32,7 @@ fieldsets:
       - gallery
       - video
       - file
+      - button
       - google-slide
   code:
     label: Code

@@ -29,6 +29,7 @@ fieldsets:
     fieldsets:
       - image
       - video
+      - button
   code:
     label: Code
     type: group
