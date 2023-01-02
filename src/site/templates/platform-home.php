@@ -2,18 +2,17 @@
 <?php snippet('platform-menu') ?>
 <?php snippet('show-status') ?>
 <style>
-  figcaption.figure-caption 
-  {
+  figcaption.figure-caption {
     font-size: 1.2em;
   }
-</style> 
+</style>
 <?php $phasesCol=$userLoggedIn ? 4 : 12 ?>
 <div class="container mt-2">
   <div class="row">
     <div class="col-sm-<?=$phasesCol?>">
-<?php snippet('show-phases') ?>
+      <?php snippet('show-phases') ?>
     </div>
-<?php if ($userLoggedIn) : ?>
+    <?php if ($userLoggedIn) : ?>
     <div class="col-sm-8">
       <h2><?=t('Collaboration Points','Collaboration Points')?></h2>
       <p class="h1">
@@ -33,7 +32,7 @@
       </h3>
       <p><?=$page->otherTeamsPageContent()->kt()?></p>
       <h3>
-      <a href="<?=$commonsPage->url()?>"><i class="bi bi-cc-circle-fill"></i><?=$commonsPage->title()?></a>
+        <a href="<?=$commonsPage->url()?>"><i class="bi bi-cc-circle-fill"></i><?=$commonsPage->title()?></a>
       </h3>
       <p><?=$page->commonsPageContent()->kt()?></p>
     </div>
