@@ -12,7 +12,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         {
             $nextPageUrl=$nextPage->url();
         }
-        $loginPage=$site->index()->find('login');
+        $loginPage=$site->index()->find('platform/login');
         $loginPage->go([ 'query' => [ 'nextPageUrl' => $nextPageUrl, 'currentPageUrl' => $page->url() ]]);
     }
     $userLoggedIn=$kirby->user();
