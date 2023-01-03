@@ -1,0 +1,8 @@
+title: Team Comments Page
+columns:
+  main:
+    width: 1/1
+    sections:
+      mainContent: sections/core-fields
+
+

@@ -1,8 +1,16 @@
 title: Team Page
 columns:
   main:
-    width: 1/1
+    width: 2/3
     sections:
       mainContent: sections/core-fields
+  pages:
+    width: 1/3
+    sections:
+      pages:
+        label: Pages
+        type: pages
+        templates:
+          - team-comments
 
 

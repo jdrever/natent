@@ -752,7 +752,7 @@ class DataHelper
         $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
         $stmt = $pdo->prepare("SELECT cc.id, ct.id as team_id, ct.name AS team_name, cc.comment, cc.content_type,cc.created_date 
             FROM cc_comments cc JOIN cc_teams ct ON cc.team_id=ct.id WHERE (cc.approved_date IS NOT null OR cc.id=?) AND cc.team_commented_on=? ORDER BY created_date DESC");        
-        $stmt->execute([ $team['id']]); 
+        $stmt->execute([ $team['id'],$team['id']]); 
         $comments = $stmt->fetchAll();
 
         return $comments;

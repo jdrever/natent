@@ -24,13 +24,13 @@
               </p>
     <?php endforeach ?>
             </div>
-          </div>
-        </div>
-      <?php //TODO: get proper url for comments page
-      $commentsPage=$site->find("/view-all-comments"); ?>
+            <?php //TODO: get proper url for comments page
+      $commentsPage=$site->find("/platform/team-page/team-comments"); ?>
     <?php if ($commentsPage) : ?>
-      <a href="<?= $commentsPage->url()?>"><?=($commentsPage->pageTitle()->isNotEmpty()) ? $commentsPage->pageTitle() : $commentsPage->title() ?></a>
+      <a href="<?= $commentsPage->url()?>" class="btn btn-primary btn-sm m-2"><?=t('View all Comments received', 'View all Comments received') ?> &rarr;</a>
     <?php endif ?>
+          </div>
+        </div>  
   <?php endif ?>
   <?php if ($latestAppreciations) : ?>
         <div class="accordion-item">
