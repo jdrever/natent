@@ -6,11 +6,5 @@ columns:
       fields:
         type: fields
         fields:
-          mainImage:
-            label: Main Image
-            type: image-clip
-            clip:
-              minwidth: 250
-              minheight: 200
-              ratio: fixed
+          backgroundColour: fields/backgroundColour
 

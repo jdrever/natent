@@ -64,11 +64,14 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     }
     $phaseCompletion=0;
     $phaseType='';
+    $phaseBackground='#ffffff';
     if ($phasePage)
     {
         $phaseType=$phasePage->phase();
         $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($team['id'],$phaseType);
         $phaseCompletion = $phaseCompletionInfo['percent_complete'];
+        $phaseTypePage=$site->find($phaseType);
+        $phaseBackground=$phaseTypePage->backgroundColour()->isNotEmpty() ? $phaseTypePage->backgroundColour() : '#ffffff';
     }
 
     //TODO: switch this to use compact(..)
@@ -95,6 +98,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         'loginPage'=>$loginPage,
         'phaseType' => $phaseType,
         'phaseCompletion'=>$phaseCompletion,
+        'phaseBackground'=>$phaseBackground,
     ];
 }
 ?>

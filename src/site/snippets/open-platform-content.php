@@ -6,16 +6,14 @@ if (!isset($icon)) $icon="journal-text";
   <div class="row">
     <div class="col-md-3">
       <?php if ($currentGuide) ?>
-      <h3><?=$currentGuide->title() ?></h3>
-      <?php if($image = $page->image()): ?>
-      <div>
-        <!--<img class="img-fluid rounded" src="<?= $image->url() ?>" alt="" width="250" height="250"-->
-      </div>
-      <?php endif ?>
-      <div class="progress mt-1 mb-4" style="height:30px;">
-        <div class="progress-bar bg-primary" role="progressbar" style="width: <?=$phaseCompletion?>%;" aria-valuenow="<?=$phaseCompletion?>" aria-valuemin="0"
-          aria-valuemax="100">
-          <?=$phaseCompletion?>%
+      <div class="container p-2" style="background-color: <?=$phaseBackground?>;">
+        <h2><?=$currentGuide->title() ?></h2>
+
+        <div class="progress mt-1 mb-4" style="height:30px;">
+          <div class="progress-bar bg-primary" role="progressbar" style="width: <?=$phaseCompletion?>%;" aria-valuenow="<?=$phaseCompletion?>" aria-valuemin="0"
+            aria-valuemax="100">
+            <?=$phaseCompletion?>%
+          </div>
         </div>
       </div>
       <?php snippet('show-guide-contents', ['contents'=>$page->siblings()]) ?>
