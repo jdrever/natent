@@ -11,5 +11,7 @@ columns:
       pages:
         label: Sub-Pages
         type: pages
-        template: admin-challenges
+        templates:
+          - admin-challenges
+          - admin-teams
 

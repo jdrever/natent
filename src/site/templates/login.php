@@ -5,7 +5,7 @@
 <div class="container my-4">
   <h1 class="pb-2 border-bottom"><i class="bi bi-door-open-fill"></i> <?=$page->title()->html()?></h1>
   <?php if($error): ?>
-  <div class="alert"><?= $page->alert()->html() ?></div>
+  <div class="alert"><?= $alert ?></div>
   <?php endif ?>
 
   <?php if ($nextPageUrl) : ?>

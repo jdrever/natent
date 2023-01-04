@@ -8,13 +8,14 @@ return function ($kirby, $page, $site) {
   }
 
   $error = false;
+  $alert="";
 
   // handle the form submission
   if ($kirby->request()->is('POST') && get('login')) {
 
     // try to log the user in with the provided credentials
     try {
-      $kirby->auth()->login(get('login'), get('password'));
+      //$kirby->auth()->login(get('login').'@natent.eu', get('password'));
 
 
       // redirect to the homepage if the login was successful
@@ -29,6 +30,7 @@ return function ($kirby, $page, $site) {
       }
     } catch (Exception $e) {
       $error = true;
+      $alert="This login could not be recognised";
     }
 
   }
@@ -38,6 +40,7 @@ return function ($kirby, $page, $site) {
 
   return [
     'error' => $error,
+    'alert' => $alert,
     'nextPageUrl' => get('nextPageUrl'),
     'userLoggedIn' => false,
     'isNonLearningJourneyPage' =>true,
