@@ -21,17 +21,12 @@
         <p class="h1">
           <i class="bi bi-star"></i> <?=$team['points']?>
         </p>
-        <p>Gain collaboration points by:</p>
-        <ul>
-          <li>completing the phases</li>
-          <li>sharing in the Commons</li>
-          <li>appreciating and commenting on other Teams</li>
-        </ul>
+        <?php snippet('show-blocks',['fieldName' => 'collaborationContent'])?>
       </div>
     </div>
     <div class="col-sm-6">
       <div class="container mt-2">
-        <?php snippet('show-blocks',['fieldName' => 'collaborationContent'])?>
+        
         <?php snippet('team-page/latest-comments')?>
       </div>
       </div>   
