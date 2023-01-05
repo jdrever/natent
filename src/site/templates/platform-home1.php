@@ -8,37 +8,10 @@
 </style>
 <?php $phasesCol=$userLoggedIn ? 6 : 12 ?>
 <div class="container mt-2">
-  <div class="row" style="background-color:lemonchiffon;">
-    <div class="col-sm-12">
+  <div class="row">
+    <div class="col-sm-<?=$phasesCol?>">
       <?php snippet('show-phases') ?>
-    </div>
-  </div>
-  <?php if ($userLoggedIn) : ?>
-  <div class="row" style="background-color:#ECE8DD;">
-    <div class="col-sm-6">
-      <div class="container p-2">
-        <h2><?=t('Collaboration Points','Collaboration Points')?></h2>
-        <p class="h1">
-          <i class="bi bi-star"></i> <?=$team['points']?>
-        </p>
-        <p>Gain collaboration points by:</p>
-        <ul>
-          <li>completing the phases</li>
-          <li>sharing in the Commons</li>
-          <li>appreciating and commenting on other Teams</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="container mt-2">
-        <?php snippet('show-blocks',['fieldName' => 'collaborationContent'])?>
-        <?php snippet('team-page/latest-comments')?>
-      </div>
-      </div>   
-  </div>
-  <div class="row" style="background-color:#CEEDC7" >
-    <div class="col-sm-6">
-      <div class="container p-2 mt-2">
+      <div class="container p-2 mt-2" style="background-color:#CEEDC7" ;>
         <h2><?=$page->lookAroundHeader()?></h2>
         <p><?=$page->lookAroundContent()->kt()?></p>
         <a href="<?=$teamPage->url()?>" class="btn btn-outline-primary"><i class="bi bi-person-heart"></i>
@@ -49,7 +22,22 @@
         <p><?=$page->otherTeamsPageContent()->kt()?></p>
       </div>
     </div>
+    <?php if ($userLoggedIn) : ?>
     <div class="col-sm-6">
+      <div class="container p-2" style="background-color:cornsilk;" ;>
+        <h2><?=t('Collaboration Points','Collaboration Points')?></h2>
+        <p class="h1">
+          <i class="bi bi-star"></i> <?=$team['points']?>
+        </p>
+        <p>Gain collaboration points by:</p>
+        <ul>
+          <li>completing the phases</li>
+          <li>sharing in the Commons</li>
+          <li>appreciating and commenting on other Teams</li>
+        </ul> 
+        <?php snippet('show-blocks',['fieldName' => 'collaborationContent'])?>
+        <?php snippet('team-page/latest-comments')?>
+      </div>
       <div class="container p-2 mt-2" style="background-color:#CEEDC7" ;>
         <h2>Resources</h2>
         <a href="<?=$commonsPage->url()?>" class="btn btn-outline-primary"><i class="bi bi-cc-circle-fill"></i>
