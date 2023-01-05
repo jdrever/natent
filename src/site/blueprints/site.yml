@@ -16,8 +16,9 @@ columns:
           - about
           - for-teachers
           - for-students
-          - contact
           - platform-home
+          - contact
+          - register
           - error
   - width: 1/3
     sections:

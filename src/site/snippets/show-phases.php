@@ -1,14 +1,3 @@
-<?php 
-use carefulcollab\helpers as helpers;
-
-$width=300;
-$height=200;
-
-$phaseCol=4;
-$hasPhases=false;
-
-?>
-
 <div class="container p-3">
 
   <div class="container">

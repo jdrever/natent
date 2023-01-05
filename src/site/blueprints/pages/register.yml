@@ -1,0 +1,34 @@
+title: Register
+columns:
+  main:
+    sections:
+      hero: sections/hero
+      mainContent: sections/core-fields
+  form:
+    type: fields
+    fields:
+      allFieldsText:
+        label: 'All fields are required' label
+        type: text
+        default: All fields are required
+      nameLabel:
+        label: 'Name' label
+        type: text
+        default: Name
+      schoolLabel:
+        label: 'School' label
+        type: text
+        default: School
+      messageLabel:
+        label: 'Message' label
+        type: text
+        default: Message
+      emailLabel:
+        label: 'Email' label
+        type: text
+        default: Email
+      registerButton:
+        label: 'REGISTER' button
+        type: text
+        default: REGISTER
+
