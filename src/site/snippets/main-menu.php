@@ -4,6 +4,7 @@ $aboutPage=$site->find('/about');
 $forTeachersPage=$site->find('/for-teachers');
 $forStudentsPage=$site->find('/for-students');
 $platformPage=$site->find('/platform');
+$registerPage=$site->find('/register-your-school');
 $contactPage=$site->find('/contact');
 ?>
 
@@ -39,6 +40,9 @@ $contactPage=$site->find('/contact');
           </li>
           <li class="nav-item">
             <a href="<?=$forStudentsPage->url()?>" class="nav-link px-2"><?=$forStudentsPage->pageTitle()->isNotEmpty() ? $forStudentsPage->pageTitle() : $forStudentsPage->title()?></a>
+          </li>
+          <li class="nav-item">
+            <a href="<?=$registerPage->url()?>" class="nav-link px-2"><?=$registerPage->pageTitle()->isNotEmpty() ? $fregisterPage->pageTitle() : $registerPage->title()?></a>
           </li>
           <li class="nav-item">
             <a href="<?=$platformPage->url()?>" class="nav-link px-2"><?=t('Platform','Platform')?></a>
