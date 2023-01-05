@@ -53,6 +53,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     $adminPage=$platformPage->children()->find('platform/admin');
     $exampleTeamPage=$platformPage->children()->find('platform/example-team');
     $loginPage=$platformPage->children()->find('platform/login');
+    $registerPage=site()->find('register-your-school');
 
     if ($page->template()=='guide')
     {
@@ -96,6 +97,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         'adminPage'=>$adminPage,
         'exampleTeamPage'=>$exampleTeamPage,
         'loginPage'=>$loginPage,
+        'registerPage'=>$registerPage,
         'phaseType' => $phaseType,
         'phaseCompletion'=>$phaseCompletion,
         'phaseBackground'=>$phaseBackground,

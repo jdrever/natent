@@ -7,41 +7,46 @@
   }
 </style>
 <div class="container mt-2">
-  <div class="row" style="background-color:lemonchiffon;">
+  <div class="row pb-4" style="background-color:#F5F5E2;">
     <div class="col-sm-12">
       <?php snippet('show-phases') ?>
     </div>
   </div>
   
-  <div class="row" style="background-color:#ECE8DD;">
+
     <?php if ($userLoggedIn) : ?>
-    <div class="col-sm-6">
-      <div class="container p-2">
-        <h2><?=t('Collaboration Points','Collaboration Points')?></h2>
-        
-        <p class="h1">
-          <i class="bi bi-star"></i> <?=$team['points']?>
-        </p>
-        <?php snippet('show-blocks',['fieldName' => 'collaborationContent'])?>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="container mt-2">
-        
-        <?php snippet('team-page/latest-comments')?>
-      </div>
-      </div>
-      <?php else : ?>
-      <div class="col-sm-12 p-2">
-        <div class="alert alert-info p-2" role="alert">
-        <h2><i class="bi bi-info-square-fill"></i> Collaboration</h2>
-        <p>To complete tasks and collaborate with other teams, you will need to register your school with the project</p>
+      <div class="row" style="background-color:#E9E9E4;">
+        <div class="col-sm-6">
+          <div class="container p-2">
+            <h2><?=t('Collaboration Points','Collaboration Points')?></h2>
+
+            <p class="h1">
+              <i class="bi bi-star"></i> <?=$team['points']?>
+            </p>
+            <?php snippet('show-blocks',['fieldName' => 'collaborationContent'])?>
+          </div>
         </div>
+        <div class="col-sm-6">
+          <div class="container mt-2">
+
+            <?php snippet('team-page/latest-comments')?>
+          </div>
         </div>
+      </div>
+        <?php else : ?>
+          <div class="row">
+            <div class="col-sm-12 p-2">
+              <div class="alert alert-info p-2" role="alert">
+                <h2><i class="bi bi-info-square-fill"></i> Register to access collaboration features</h2>
+                <p>To complete tasks and collaborate with other teams, you will need to register your school with the
+                  project</p>
+                <p><a class="btn btn-primary" href="<?=$registerPage->url()?>">REGISTER NOW</a></p>
+              </div>
+            </div>
+          </div>
       <?php endif ?>   
-  </div>
   
-  <div class="row" style="background-color:#CEEDC7" >
+  <div class="row" style="background-color:#E7F5D5;" >
     <div class="col-sm-6">
       <div class="container p-2 mt-2">
         <h2><?=$page->lookAroundHeader()?></h2>
@@ -57,7 +62,7 @@
       </div>
     </div>
     <div class="col-sm-6">
-      <div class="container p-2 mt-2" style="background-color:#CEEDC7" ;>
+      <div class="container p-2 mt-2">
         <h2>Resources</h2>
         <?php if ($userLoggedIn) : ?>
         <a href="<?=$commonsPage->url()?>" class="btn btn-outline-primary"><i class="bi bi-cc-circle-fill"></i>
