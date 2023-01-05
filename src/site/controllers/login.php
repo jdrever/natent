@@ -1,11 +1,15 @@
 <?php
 
-return function ($kirby, $page, $site) {
+return function ($kirby, $page, $pages, $site) {
 
   // don't show the login screen to already logged in users
   if ($kirby->user()) {
     go('/');
   }
+
+  $requiresLogin = false;
+  $isNonLearningJourneyPage = true;
+  $platform = $kirby->controller('platform', compact('kirby', 'pages', 'page', 'site', 'requiresLogin', 'isNonLearningJourneyPage'));
 
   $error = false;
   $alert="";
@@ -34,19 +38,12 @@ return function ($kirby, $page, $site) {
     }
 
   }
-  $platformPage=site()->find('platform');
-  $exampleTeamPage=$page->siblings()->find('platform/example-team');
-  $loginPage=$page->siblings()->find('platform/login');
-
-  return [
+  return A::merge($platform,[
     'error' => $error,
     'alert' => $alert,
     'nextPageUrl' => get('nextPageUrl'),
     'userLoggedIn' => false,
     'isNonLearningJourneyPage' =>true,
-    'platformPage'=>$platformPage,
-    'exampleTeamPage'=>$exampleTeamPage,
-    'loginPage'=>$loginPage,
-  ];
+  ]);
 
 };

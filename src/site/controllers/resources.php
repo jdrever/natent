@@ -2,9 +2,7 @@
 
 return function($kirby, $pages, $page, $site) 
 {
-    $requiresLogin=true;
+    $requiresLogin=false;
     $isNonLearningJourneyPage=true;
-    return $kirby->controller('platform' , compact('kirby', 'pages', 'page', 'site', 'requiresLogin', 'isNonLearningJourneyPage'));
-
-    
+    return $kirby->controller('platform' , compact('kirby', 'pages', 'page', 'site', 'requiresLogin', 'isNonLearningJourneyPage'));  
 };

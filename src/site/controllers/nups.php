@@ -1,7 +1,7 @@
 <?php
 return function($kirby, $pages, $page, $site) 
 {
-    $requiresLogin=true;
+    $requiresLogin=false;
     $isNonLearningJourneyPage=true;
     $platform = $kirby->controller('platform' , compact('kirby', 'pages', 'page', 'site', 'requiresLogin', 'isNonLearningJourneyPage'));
     $nups=$page->children()->filter(function ($child) {

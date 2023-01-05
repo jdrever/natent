@@ -10,7 +10,8 @@
 
   <?php if ($nextPageUrl) : ?>
     <div class="alert alert-warning" role="alert">
-        This page requires a login to the Platform.  Please either login below or skip to the next page.
+      <h2><i class="bi bi-info-square-fill"></i>This page requires a login to the Platform.</h2>
+      <p>Please either login below or skip to the next page.</p>
         <a class="btn btn-primary p-3" href="<?= $nextPageUrl ?>">SKIP<i class="bi bi-arrow-right"></i></a>
     </div>
   <?php endif ?>
