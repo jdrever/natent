@@ -20,6 +20,8 @@ $font-family-base: "Lexend", system-ui, -apple-system, "Segoe UI", Roboto,
     xl: 900px,
     xxl: 900px,
   );
+  $list-group-active-bg: $info;
+
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
