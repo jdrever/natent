@@ -5,6 +5,8 @@ return function($kirby, $pages, $page, $site) {
     $requiresLogin = true;
     $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site', 'requiresLogin'));
     $team = $platform['team'];
+    $userId=$team['user_id'];
+
     $country = $platform['country'];
 
     $newPassword=random_str(8);
@@ -12,19 +14,25 @@ return function($kirby, $pages, $page, $site) {
     if($kirby->request()->is('POST')) 
     {
         try {
+          $teamName=$_POST['teamName'];
 
             $user = $kirby->users()->create([
-              'name'      => get('team'),
-              'email'     => get('team').'@natent.eu',
+              'name'      => $teamName,
+              'email'     => str_replace(' ','-',$teamName).'@natent.eu',
               'password'  => get('password'),
               'language'  => 'en',
-              'role'      => 'editor',
+              'role'      => 'team',
               'content'   => [
                 'birthdate' => '1989-01-29'
               ]
             ]);
+
+            
+            //TODO: absolutely can't hard code this
+            $locationId=2;
+            $result=helpers\DataHelper::addTeam($userId, $teamName, $locationId);
           
-            echo 'The user "' . $user->name() . '" has been created';
+            //echo 'The user "' . $user->name() . '" has been created';
             $result=true;
           
           } catch(Exception $e) {
@@ -34,12 +42,13 @@ return function($kirby, $pages, $page, $site) {
             echo($e->getMessage());
           
           }
-
-          return A::merge($platform, compact('newPassword','result'));
+          $teams = helpers\DataHelper::getTeamsByLocation($userId);
+          return A::merge($platform, compact('newPassword','result', 'teams'));
     }
     else
     {
-        return A::merge($platform, compact('newPassword'));
+        $teams = helpers\DataHelper::getTeamsByLocation($userId);
+        return A::merge($platform, compact('newPassword', 'teams'));
     }
 };
 

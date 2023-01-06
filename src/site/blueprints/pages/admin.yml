@@ -3,7 +3,6 @@ columns:
   main:
     width: 2/3
     sections:
-      hero: sections/hero
       mainContent: sections/core-fields
   sidebar:
     width: 1/3
