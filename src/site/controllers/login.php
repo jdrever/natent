@@ -19,7 +19,9 @@ return function ($kirby, $page, $pages, $site) {
 
     // try to log the user in with the provided credentials
     try {
-      //$kirby->auth()->login(get('login').'@natent.eu', get('password'));
+      $login=get('login');
+      if (strpos($login,'@')===0)$login.='@natent.eu';
+      $kirby->auth()->login($login, get('password'));
 
 
       // redirect to the homepage if the login was successful
@@ -30,7 +32,7 @@ return function ($kirby, $page, $pages, $site) {
       }
       else
       {
-        go('/');
+        go('/platform');
       }
     } catch (Exception $e) {
       $error = true;
