@@ -13,4 +13,5 @@ columns:
         templates:
           - admin-challenges
           - admin-teams
+          - admin-moderation
 

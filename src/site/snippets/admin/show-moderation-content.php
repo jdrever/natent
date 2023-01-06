@@ -1,0 +1,113 @@
+<?php
+use carefulcollab\helpers as helpers;
+$content=helpers\DataHelper::getModerationContent($contentType, $contentId);
+    if ($contentType=="Team Profile")
+    {
+ ?>
+    <b><?=t("Tell us about your team","Tell us about your team")?>:</b><br><?=$content['description']?>
+ <?php
+    }
+    if ($contentType=="Team Challenge")
+    {
+ ?>
+    <b><?=t("Enter your challenge","Enter your challenge")?>:</b><br><?=$content['bespoke_challenge']?>
+ <?php
+    }
+    if ($contentType=="Challenge Definition")
+    {
+ ?>
+    <b><?=t("Enter your Context","Enter your Context")?>:</b><br><?=$content['context']?><br>
+    
+ <?php
+    }
+    if ($contentType=="Function")
+    {
+ ?>
+    <b><?=t("Research Question", "Research Question")?>:</b><br><?=$content['biologized_question']?><br>
+    
+ <?php
+    }
+    if ($contentType=="Strategy")
+    {
+ ?>
+    <b><?=t("Strategy","Strategy")?>:</b><br><?=$content['strategy_name']?><br>
+    <b><?=t("Design Principle","Design Principle")?>:</b><br><?=$content['design_principle']?><br>
+    
+ <?php
+    }
+    if ($contentType=="Design Idea")
+    {
+        if (isset($content['design_idea_file']))
+        {
+ ?>
+
+    <b><?=t("Upload your Design Solution (use an image file, e.g. JPG or PNG)","Upload your Design Solution (use an image file, e.g. JPG or PNG)") ?>:</b><img class="img-fluid" src="<?=$content['design_idea_file']?>"><br>
+    <?php
+        }
+        if (isset($content['design_idea_you_tube_id']))
+        {
+    ?>
+    <b><?=t("Upload your video presentation to our You Tube channel and share the link here","Upload your video presentation to our You Tube channel and share the link here") ?> :</b><br>    
+    <iframe loading="lazy" title="'Design Solution" width="500" height="281" src="https://www.youtube.com/embed/<?= $content['design_idea_you_tube_id'] ?>?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+ <?php
+        }
+    }
+    if ($contentType=="Measure")
+    {
+ ?>
+    <b><?=t("Describe how/if your final Design Solution has met your Statement of Intent, and which Nature's Unifying Patterns have helped you","Describe how/if your final Design Solution has met your Statement of Intent, and which Nature's Unifying Patterns have helped you")?>:</b><br><?=$content['recommendations']?>
+ <?php
+    }
+    if ($contentType=="Business Canvas")
+    {
+ ?>
+    <?php
+        if (isset($content['pitch_video_you_tube_id']))
+        {
+    ?>
+    <b><?=t("Upload your pitch video to your You Tube channel and share the link here","Upload your pitch video to your You Tube channel and share the link here") ?>:</b><br>
+    <iframe loading="lazy" title="'Design Solution" width="500" height="281" src="https://www.youtube.com/embed/<?= $content['pitch_video_you_tube_id'] ?>?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+ <?php
+        }
+    }
+    if ($contentType=="Comment")
+    {
+ ?>
+    <b><?=t("Comment","Comment")?>:</b><br><?=$content['comment']?>
+ <?php
+    }
+    if ($contentType=="Commons Resource")
+    {
+ ?>
+    <b><?=t("What is the title of your resource?","What is the title of your resource?")?>:</b><br><?=$content['title']?><br>
+    <b><?=t("Give a description of your resource","Give a description of your resource")?>:</b><br><?=$content['description']?><br>
+    <b><?=t("Enter the website location for your resource (if one exists)","Enter the website location for your resource (if one exists)")?>:</b><br><br><a href="https://<?=$content['url']?>"><?=$content['url']?></a><br>
+    <b><?=t("Upload a document (optional - image or PDF only)","Upload a document (optional - image or PDF only)")?>:</b><br><br><?=showFile($content['file_upload_url'],$content['title'])?><br/><?=t("Please check this file")?></a><br>       
+ <?php
+    }
+
+function showFile($fileUrl, $altText)
+{
+?>
+<div>
+<?php
+   $fileExt = pathinfo($fileUrl, PATHINFO_EXTENSION);
+   if(preg_match('(jpg|jpeg|png|gif)', $fileExt) === 1) 
+   {
+?>
+      <a target="_blank" href="<?=$fileUrl ?>"><img class="img-fluid" src="<?=$fileUrl ?>" alt="<?=$altText?>" /></a>
+<?php
+   }
+   if ($fileExt=="pdf")
+   {
+   ?>
+<iframe src="https://docs.google.com/viewer?url=<?=$fileUrl?>&embedded=true" frameborder="0" height="300px" width="100%"></iframe>
+<a target="_blank" href="<?=$fileUrl ?>" class="btn btn-outline-primary btn-outline btn-sm"><?=t('DOWNLOAD','DOWNLOAD')?></a>
+<?php
+   } 
+?>
+</div>
+<?php
+}
+?>
