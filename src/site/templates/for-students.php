@@ -17,6 +17,7 @@
   <?=$page->loginText()->kt()?>
   <p><a href="<?=url('platform')?>" class="btn btn-primary p-3"><i class="bi bi-arrow-right-circle-fill"></i> <?=$page->platformButton()?></a></p>
   <?=$page->contactText()->kt()?>
+  <p><a href="<?=$registerPage->url()?>" class="btn btn-primary p-3"><i class="bi bi-arrow-right-circle-fill"></i> <?=$registerPage->title()?></a></p>
   <p><a href="<?=url('contact')?>" class="btn btn-link"><i class="bi bi-arrow-right-circle-fill"></i> <?=$page->contactButton()?></a></p>
 <?php snippet('show-sub-pages') ?>
 </div>

@@ -14,6 +14,7 @@
 </div>
 <div class="container my-4">
 <?php snippet ('show-blocks') ?>
+<p><a href="<?=$registerPage->url()?>" class="btn btn-primary p-3"><i class="bi bi-arrow-right-circle-fill"></i> <?=$registerPage->title()?></a></p>
 <?php snippet('show-sub-pages') ?>
 </div>
 <?php snippet('footer') ?>
