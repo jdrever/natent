@@ -8,6 +8,6 @@ if ($showContent) :?>
 <?php if ($showButton) : 
       $uniqueId=uniqid();
 ?>
-<button class="btn-outline-primary btn-sm" type="button" onclick="getTranslation('<?=$content ?>','<?=$uniqueId?>')">Translate to English</button>
+<button class="btn btn-primary btn-sm" type="button" onclick="getTranslation('<?=$content ?>','<?=$uniqueId?>')">Translate to English</button>
 <div id="<?=$uniqueId?>"></div>
 <?php endif ?>

@@ -4,6 +4,7 @@
 <?php snippet('show-status') ?>
 <?php snippet('open-platform-content') ?>
 <?php snippet('show-blocks') ?>
+<?php snippet('check-access') ?>
 
 <?php if ($showTopics) : ?>
 <div class="album py-5 bg-light">

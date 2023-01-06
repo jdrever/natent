@@ -15,18 +15,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         $loginPage=$site->index()->find('platform/login');
         $loginPage->go([ 'query' => [ 'nextPageUrl' => $nextPageUrl, 'currentPageUrl' => $page->url() ]]);
     }
-    $userLoggedIn=$kirby->user();
-    $userId=1;
-    $team=helpers\DataHelper::getTeamByWPUserId($userId);
-    $status=$kirby->request()->get('_taskStatus') ? 'task-ok' : '';
-    $status=$kirby->request()->get('_taskCommonsStatus') ? 'task-commons-ok' : '';
-    $status=$kirby->request()->get('_commentStatus') ? 'comment-ok' : $status;
-    $status=$kirby->request()->get('_appreciationStatus') ? 'appreciation-ok' : $status;
-
-    $pointsAdded=$kirby->request()->get('points') ? $kirby->request()->get('points') : 0;
-    $pointsAddedOtherTeam=$kirby->request()->get('pointsOther') ? $kirby->request()->get('pointsOther') : 0;
     $countries=$site->index()->filterBy('template', 'country');
-
     if (Cookie::exists('country'))
     {
         $country=Cookie::get('country');
@@ -40,6 +29,20 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     }
     $country=$countryPage->title();
     $exampleTeam=$countryPage->exampleTeam()->toInt();
+
+    $userLoggedIn=$kirby->user();
+    $userId=1;
+    $team=helpers\DataHelper::getTeamByWPUserId($userId);
+    $status=$kirby->request()->get('_taskStatus') ? 'task-ok' : '';
+    $status=$kirby->request()->get('_taskCommonsStatus') ? 'task-commons-ok' : '';
+    $status=$kirby->request()->get('_commentStatus') ? 'comment-ok' : $status;
+    $status=$kirby->request()->get('_appreciationStatus') ? 'appreciation-ok' : $status;
+
+    $pointsAdded=$kirby->request()->get('points') ? $kirby->request()->get('points') : 0;
+    $pointsAddedOtherTeam=$kirby->request()->get('pointsOther') ? $kirby->request()->get('pointsOther') : 0;
+    
+
+
     
     if (!$isNonLearningJourneyPage) Cookie::set("resumePage",$_SERVER['REQUEST_URI']);
 
