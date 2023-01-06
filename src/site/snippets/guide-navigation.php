@@ -6,8 +6,9 @@ if ($page->prev($collection))
   $previousPage=$page->prev($collection);
 }
 
-if(!isset($taskButton))
+if(!isset($taskButton)||!$userLoggedIn)
 {
+  echo("should be");
   if ($next = $page->next($collection)) 
   {
     $nextPage=$page->next($collection);
@@ -23,7 +24,7 @@ if(!isset($taskButton))
   <?php if (isset($nextPage)&&!in_array($nextPage->template(), array('country','team-page'))) : ?>
 <a class="btn btn-primary m-2" href="<?= $nextPage->url() ?>">NEXT: <?=$nextPage->title()?> <i class="bi bi-arrow-right"></i></a>
   <?php endif ?>
-  <?php if (isset($taskButton)) : ?>
+  <?php if (isset($taskButton)&&$userLoggedIn) : ?>
     <button type="submit" class="btn btn-primary float-end"><?=$taskButton?> <i class="bi bi-arrow-right"></i></button>
   <?php endif ?>
   </div>

@@ -4,6 +4,7 @@
 <?php snippet('show-status') ?>
 <?php snippet('open-platform-content') ?>
 <?php snippet('show-blocks') ?>
+<?php snippet('check-access') ?>
 
 <div class="container bg-light p-3">
 <?php if (isset($team['area'])) 
