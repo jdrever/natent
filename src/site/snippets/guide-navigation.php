@@ -8,7 +8,6 @@ if ($page->prev($collection))
 
 if(!isset($taskButton)||!$userLoggedIn)
 {
-  echo("should be");
   if ($next = $page->next($collection)) 
   {
     $nextPage=$page->next($collection);
