@@ -21,7 +21,7 @@
         </div>
         <div class="mb-3">
           <label for="teamPasword" class="form-label">Password</label>
-          <input type="text" class="form-control" id="teamPassword" name="teamPassword">
+          <input type="text" class="form-control" id="teamPassword" name="teamPassword" value="<?=$newPassword?>">
         </div>
         <button type="submit" class="btn btn-primary">CREATE TEAM</button>
       </form>
