@@ -2,7 +2,7 @@
 use carefulcollab\helpers as helpers;
 ?>
   <div class="btn-toolbar" role="group" aria-label="filterPhasesLabel()">
-        <p class="p-1 m-0"><?=$page->filterPhasesLabel()?></p>
+        <p class="p-1 m-1"><?=$page->filterPhasesLabel()?></p>
         <a href="<?=$page->url()?>?phaseType=General"
             class="btn btn-<?=$showAsOutlineGeneralPhase ?>primary"><?=$page->generalLink()?></a>
         <a href="<?=$page->url()?>?phaseType=All"
@@ -39,7 +39,7 @@ if ($phaseTypeFilterSet&&!($phaseTypeFilter==="General"))
         $showAsOutlineAllPoints="outline-";
 ?>
     <div class="btn-toolbar btn-group-sm p-2" role="group" aria-label="<?=$page->filterCollaborationPointsLabel()?>">
-        <p class="p-1 m-0"><?=$page->filterCollaborationPointsLabel()?></p>
+        <p class="p-1 m-1"><?=$page->filterCollaborationPointsLabel()?></p>
         <a href="<?=$page->url()?>?phaseType=<?=$phaseTypeFilter ?>&collaborationPointType=All"
             class="btn btn-<?=$showAsOutlineAllPoints ?>primary m-1"><?=$page->allCollaborationPointsLink()?></a>
         <?php
