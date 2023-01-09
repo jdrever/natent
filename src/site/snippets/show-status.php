@@ -1,4 +1,3 @@
-
 <?php if (isset($status)) : ?>
   <?php if ($status==='task-ok'||$status==='task-commons-ok'||$status==='comment-ok'||$status==="appreciation-ok") : ?>
 <div class="alert alert-success alert-dismissible fade show" role="alert">

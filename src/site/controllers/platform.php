@@ -33,10 +33,11 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     $userLoggedIn=$kirby->user();
     $userId=1;
     $team=helpers\DataHelper::getTeamByWPUserId($userId);
-    $status=$kirby->request()->get('_taskStatus') ? 'task-ok' : '';
-    $status=$kirby->request()->get('_taskCommonsStatus') ? 'task-commons-ok' : '';
-    $status=$kirby->request()->get('_commentStatus') ? 'comment-ok' : $status;
-    $status=$kirby->request()->get('_appreciationStatus') ? 'appreciation-ok' : $status;
+    $status='';
+    if ($kirby->request()->get('_taskStatus')) $status='task-ok' ;
+    if ($kirby->request()->get('_taskCommonsStatus')) $status=$kirby->request()->get('task-commons-ok') ;
+    if ($kirby->request()->get('_commentStatus')) $status=$kirby->request()->get('comment-ok') ;
+    if ($kirby->request()->get('_appreciationStatus')) $status=$kirby->request()->get('appreciation-ok') ;
 
     $pointsAdded=$kirby->request()->get('points') ? $kirby->request()->get('points') : 0;
     $pointsAddedOtherTeam=$kirby->request()->get('pointsOther') ? $kirby->request()->get('pointsOther') : 0;
