@@ -72,7 +72,7 @@ $countries = helpers\DataHelper::getCountries();
     <div class="btn-toolbar" role="group" aria-label="<?=$page->filterCountriesLabel()?>">
         <p class="p-1 m-1"><?=$page->filterCountriesLabel()?></p>
         <p><a href="<?=$page->url()?>?countryId=All"
-            class="btn btn-<?=$showAsOutlineAllCountries ?>primary"><?=$page->allCountriesLink()?></a>
+            class="btn btn-<?=$showAsOutlineAllCountries ?>primary m-1"><?=$page->allCountriesLink()?></a>
                 <?php
     foreach ($countries as $country)
     {
