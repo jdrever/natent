@@ -2,6 +2,11 @@
 label: Hero Section
 type: fields
 fields:
+  info:
+    type: info
+    label: Info
+    text: |
+      Content displayed in header panel at top of page
   heroHeader:
     label: Hero Header
     type: text

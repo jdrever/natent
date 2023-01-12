@@ -9,6 +9,10 @@ columns:
       additionalFields:
         type: fields
         fields:
+          info-additional:
+            label: Info
+            type: info
+            text: Content specific to the home page
           getStartedHeader:
             label: 'Get Started' header
             type: text

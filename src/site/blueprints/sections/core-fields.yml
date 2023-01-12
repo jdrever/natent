@@ -1,6 +1,16 @@
 type: fields
 fields:
+  info-title:
+    type: info
+    label: Info
+    text: |
+      This is the title of the page that is translateable and appears in menus.
   pageTitle:
     label: Page Title
     type: text
+  info-main:
+    label: Info
+    type: info
+    text: |
+      The main block(s) of content.  Build up the blocks bit by bit.
   mainContent: fields/mainContent

@@ -9,6 +9,10 @@ columns:
         text: |
           Welcome to the NatEnt Platform content management system.
           Add and edit Pages from the panel below.
+
+          All the phase content is in the Learning Journey section.
+
+          
       pages:
         label: Pages
         type: pages

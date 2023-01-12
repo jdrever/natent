@@ -1,17 +1,10 @@
-<div class="container p-3">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <h1><?=t('Welcome to the Platform!', 'Welcome to the Platform!')?></h1>
-      </div>
-      <!--<div class="col">
-        <?=t('Select Your Country','Select Your Country')?>: <?php snippet('country-switcher') ?>
-      </div>-->
+<div class="container p-2">
+  <div class="row">
+    <div class="col">
+      <h1><?=t('Welcome to the Platform!', 'Welcome to the Platform!')?></h1>
     </div>
   </div>
-</div>
-<div class="container p-2">
-  <div class="row p-2">
+  <div class="row p-2 mb-3">
     <div class="col-8">
       <h4><?=t('Work through each Phase below in order','Work through each Phase below in order')?>.</h4>
     </div>
