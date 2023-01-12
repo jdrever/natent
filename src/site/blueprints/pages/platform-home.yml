@@ -1,14 +1,39 @@
 title: Platform Home
 columns:
+  info:
+    width: 1/1
+    sections:
+      info:
+        type: info
+        text: |
+          This where you can add, edit and translate platform content.
+
+          <b>Where to go from here:</b>
+          <ul>
+            <li>Edit and translate content on the platform home page using the panel below.</li>
+            <li>Edit and translate content in the Learning Journey phases by clicking on your country in the Country panel.</li>
+            <li>Edit and translate content on the other pages in the platform by clicking on the page in the Pages panel.</li>
+            <li>Note: to edit and translate content for the Commons, NUPs and Glossary, go to the Resources page in the Pages panel</li>
+          </ul>
   main:
     width: 2/3
     sections:
       fields:
         type: fields
         fields:
+          info-title:
+            type: info
+            label:
+            text: |
+              This is the title of the page that is translateable and appears in menus.
           pageTitle:
             label: Page Title
             type: text
+          info-additional:
+            type: info
+            label:
+            text: |
+              Content specific to the platform home page
           collaborationContent:
             label: Collaboration Content
             type: layout
@@ -35,11 +60,21 @@ columns:
   sidebar:
     width: 1/3
     sections:
+      info-countries:
+        type: info
+        label:  ' '
+        text: |
+          This is where you edit/translate the Phases content
       countries:
         label: Countries
         type: pages
         templates:
           - country
+      info-pages:
+        type: info
+        label:  ' '
+        text: |
+          This is where you edit/translate other Platform pages
       pages:
         label: Pages
         type: pages

@@ -4,14 +4,25 @@ options:
   changeSlug: false
 
 columns:
+  info:
+    width: 1/1
+    sections:
+      info-section:
+        type: info
+        label: Info
+        text: |
+          This is where you add/amend/translate learning journey phases content for your country
   main:
     width: 2/3
     sections:
+      info-fields:
+        type: info
+        label: '  '
+        text: |
+          This is where you select which language(s) this country and its content is related to.
       fields:
         type: fields
         fields:
-          id:
-            type: text
           language:
             type: multiselect
             options:
@@ -25,6 +36,11 @@ columns:
   sidebar:
     width: 1/3
     sections:
+      info-countries:
+        type: info
+        label: '  '
+        text: |
+          This is where you edit/translate each Phase
       countries:
         label: Phases
         type: pages

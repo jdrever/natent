@@ -1,18 +1,24 @@
 title: NatEnt Platform
 
 columns:
-  - width: 2/3
+  - width: 1/1
     sections:
       info:
         type: info
         label: info
         text: |
           Welcome to the NatEnt Platform content management system.
-          Add and edit Pages from the panel below.
 
-          All the phase content is in the Learning Journey section.
+          You can change the language you are working with by clicking on the globe icon above.
 
-          
+          <b>Where to go from here:</b>
+          <ul>
+            <li>Add, edit and translate the core website pages from the panel below.</li>
+            <li>Add, edit and translate plaform Content is in the Learning Journey section.</li>
+            <li>Translate key phrases by clicking the three bar menu in the top left and selecting Trevor</li>
+          </ul>
+  - width: 2/3
+    sections:
       pages:
         label: Pages
         type: pages
@@ -24,7 +30,6 @@ columns:
           - platform-home
           - contact
           - register
-          - error
   - width: 1/3
     sections:
       settings:

@@ -1,5 +1,13 @@
 title: Resources Page
 columns:
+  info:
+    width: 1/1
+    sections:
+      info:
+        type: info
+        text: |
+          This is where you edit/translate content relating to the Commons, NUPs or Glossary.  Use the Resource Pages panel to
+          choose the particular page you want to work on.
   main:
     width: 1/2
     sections:
@@ -8,7 +16,7 @@ columns:
     width: 1/2
     sections:
       pages:
-        label: Sub-Pages
+        label: Resource Pages
         type: pages
         templates:
           - commons

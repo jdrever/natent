@@ -1,9 +1,36 @@
-title: Guide
+title: Phase
 
 columns:
+  info:
+    width: 1/1
+    sections:
+      info:
+        type: info
+        text: |
+          This is where you edit content for this phase.
+
+          <b>Where to go from here:</b>
+
+          <ul>
+            <li>You can edit the introduction to the Phase below</li>
+            <li>You can add sections to the phase using the Sections panel</li>
+          </ul>
+
+          <b>Types of section you can add to the phase</b>
+          <ul>
+            <li><b>Phase Section:</b> an ordinary page of content</li>
+            <li><b>Phase Activity:</b> a page of content marked as an activity (with activity icon)</li>
+            <li><b>Phase Section Header:</b>: this is a section divider for the phase - it contains no content</li>
+            <li><b>Tasks:</b> various tasks are available</li>
+          </ul>
   main:
     width: 2/3
     sections:
+      info-intro:
+          type: info
+          label: '  '
+          text: |
+            This is where to edit the introduction to the Phase
       mainContent:
         type: fields
         fields:
@@ -11,6 +38,11 @@ columns:
   sidebar:
     width: 1/3
     sections:
+      info-sections:
+        type: info
+        label: '  '
+        text: |
+          This is where you add sections to the Phase
       pages:
         label: Sections
         type: pages
@@ -26,6 +58,11 @@ columns:
           - task-share-pitch-deck
           - task-share-research-questions
           - task-share-natural-strategies
+      info-type:
+        type: info
+        label: '  '
+        text: |
+          This is where you select what type of Phase this is
       settings:
         label: Settings
         type: fields
@@ -37,30 +74,4 @@ columns:
             options:
               type: query
               query: site.index.filterBy('template', 'phase')
-          language:
-            options:
-              type: query
-              query: kirby.languages
-              text: "{{ item.name }}"
-              value: "{{ item.code }}"
-          countries:
-            label: Countries
-            type: multiselect
-            translate: false
-            options:
-              type: query
-              query: site.index.filterBy('template', 'country')
-          description:
-            type: textarea
-          image:
-            label: Image
-            type: files
-            query: page.images
-          status:
-            type: select
-            translate: false
-            options:
-              - Discovery
-              - Alpha
-              - Beta
-              - Live
+

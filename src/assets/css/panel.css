@@ -4,3 +4,24 @@
 .k-breadcrumb-link-text { color:white; }
 .k-breadcrumb-icon { color: white; }
 
+:root {
+  --color-gray-900: #182D31;
+  --color-background: #F3F3F4;
+}
+
+.k-tabs {
+  background-color: #f7e8d6;
+}
+
+.k-header::before {
+  float: right;
+  content: '';
+  margin-top: 10px;
+  width: 200px;
+  height: 117px;
+  background-image: url('../images/natent-logo.min.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  clear: right;
+}
+
