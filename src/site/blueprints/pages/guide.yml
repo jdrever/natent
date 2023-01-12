@@ -37,6 +37,12 @@ columns:
             options:
               type: query
               query: site.index.filterBy('template', 'phase')
+          language:
+            options:
+              type: query
+              query: kirby.languages
+              text: "{{ item.name }}"
+              value: "{{ item.code }}"
           countries:
             label: Countries
             type: multiselect

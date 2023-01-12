@@ -13,7 +13,7 @@ columns:
           id:
             type: text
           language:
-            type: select
+            type: multiselect
             options:
               type: query
               query: kirby.languages

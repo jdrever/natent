@@ -89,7 +89,7 @@
     else
     {
  ?> 
-<div class="alert alert-danger" role="alert"><?=t("You need to enter your Research Questions before you enter your strategies")?></div>  
+<div class="alert alert-danger" role="alert"><?=t("You need to enter your Research Questions before you enter your strategies","You need to enter your Research Questions before you enter your strategies")?></div>  
 
 <?php
 }
@@ -98,7 +98,7 @@ else
 {
 ?> 
 
-<div class="alert alert-danger" role="alert"><?=t("You need to select your challenge before you complete this Task")?></div> 
+<div class="alert alert-danger" role="alert"><?=t("You need to select your challenge before you complete this Task","You need to select your challenge before you complete this Task")?></div> 
 
 <?php
 }
