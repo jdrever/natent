@@ -18,9 +18,16 @@ return function ($kirby, $pages, $page, $site)
     $team=$platform['team'];
     $phaseNumber=0;
 
+    $language=$kirby->language()->code();  
+
+    $languagePage=$page->children()->filterBy('template','country')->filterBy('language','*=', $language);
+
+    //echo(var_dump($languagePage));
+
     foreach ($phases as $phase)
     {
-        $pagesInPhase = $page->index()->filterBy('phase', strtolower($phase->title()));
+
+        $pagesInPhase = $languagePage->index()->filterBy('phase', strtolower($phase->title()));
         if ($pagesInPhase)
         {
             $countryPhase = $pagesInPhase->filterBy('countries', '*=', str_replace(" ", "-", strtolower($country)))->first();
