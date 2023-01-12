@@ -107,6 +107,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         'phaseType' => $phaseType,
         'phaseCompletion'=>$phaseCompletion,
         'phaseBackground'=>$phaseBackground,
+        'phaseNumber'=>$phaseNumber,
     ];
 }
 ?>
