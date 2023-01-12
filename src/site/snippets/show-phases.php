@@ -22,13 +22,19 @@
     <?php foreach ($languagePhases as $phase) : ?>
     <div class="col">
       <div class="d-grid gap-2">
-        <a href="<?=$phase->url?>" class="btn btn-outline-primary"
-          <?php if ($phase->backgroundColour) : ?>style="background-color: <?=$phase->backgroundColour?>"
+        <a href="<?=$phase->url?>" class="btn btn-outline"
+          <?php if ($phase->backgroundColour) : ?>style="border: 5px solid <?=$phase->backgroundColour?>"
           <?php endif ?>>
-          <span class="h4"><i class="bi bi-<?=$phase->phaseNumber?>-circle"></i><br><?=$phase->title?></span>
-          <br><span class="badge bg-info"><?= $phase->phaseCompletion ?>%</span>
+          <img src="/assets/images/<?=$phase->phaseNumber?>.svg" width="100"> 
+          <span class="h4"><?=$phase->title?></span>
         </a>
       </div>
+      <div class="progress mt-1 mb-4" style="height:30px;">
+          <div class="progress-bar" role="progressbar" style="width: <?=$phase->phaseCompletion ?>%; background-color: <?=$phase->backgroundColour?>"
+            aria-valuenow="<?=$phase->phaseCompletion ?>" aria-valuemin="0" aria-valuemax="100">
+            <?=$phase->phaseCompletion ?>%
+          </div>
+        </div>
     </div>
     <?php endforeach ?>
   </div>
