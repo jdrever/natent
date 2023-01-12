@@ -16,17 +16,9 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         $loginPage->go([ 'query' => [ 'nextPageUrl' => $nextPageUrl, 'currentPageUrl' => $page->url() ]]);
     }
     $countries=$site->index()->filterBy('template', 'country');
-    if (Cookie::exists('country'))
-    {
-        $country=Cookie::get('country');
-        $countryPage=$countries->findBy('title',$country);       
-    }
-    else
-    {
-        $language=$kirby->language()->code();    
-        $countryPage=$countries->findBy('language', $language);
-        
-    }
+    $language=$kirby->language()->code();
+    $countryPage=$countries->findBy('language', $language);
+    
     $country=$countryPage->title();
     $exampleTeam=$countryPage->exampleTeam()->toInt();
 

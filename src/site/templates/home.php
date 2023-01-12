@@ -13,8 +13,7 @@
   </div>
 </div>
 <div class="container my-4">
-  <?php snippet('show-blocks')?>
-  <div class="container mx-auto" style="width:60%;" >
+<div class="container mx-auto" style="width:60%;" >
     <h3 class="text-center fw-bold mt-4"><?=$page->getStartedHeader()?></h3>
     <p class="d-flex flex-row justify-content-center mb-3">
 <?php if ($forTeachers) : ?>
@@ -25,6 +24,8 @@ if ($forStudents) : ?>
 <?php endif ?>
     </p>
   </div>
-</div>
+
+  <?php snippet('show-blocks')?>
+  </div>
 
 <?php snippet('footer') ?>
