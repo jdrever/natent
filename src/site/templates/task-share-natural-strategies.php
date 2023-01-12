@@ -29,7 +29,7 @@
         <div class="row bg-info text-white p-2">
             <div class="col"><?php if (isset($function['name'])) { ?>
               <?= $function['name'] ?> <i class="bi bi-arrow-right-circle-fill"></i> <?php } ?>
-            <?=t('Research Question','Research Question') ?> <?=$function['biologized_question'] ?> <i class="bi bi-arrow-right-circle-fill"></i></div>
+            <?=t('RESEARCH QUESTION','RESEARCH QUESTION') ?>: <?=$function['biologized_question'] ?> <i class="bi bi-arrow-right-circle-fill"></i></div>
         </div>
         <div class="row m-1">
             <div class="col"><label class="form-label"><?=t('Enter up to six Natural Strategies and Design Principles for your Research Question','Enter up to six Natural Strategies and Design Principles for your Research Question')?>:</label></div>
