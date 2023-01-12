@@ -22,7 +22,7 @@ return function ($kirby, $pages, $page, $site)
 
     $languagePage=$page->children()->filterBy('template','country')->filterBy('language','*=', $language);
 
-    //echo(var_dump($languagePage));
+    echo(var_dump($languagePage));
 
     foreach ($phases as $phase)
     {
