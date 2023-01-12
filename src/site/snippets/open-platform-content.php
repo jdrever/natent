@@ -10,7 +10,7 @@ if (!isset($icon)) $icon="journal-text";
         <h4 class="fw-bold"><?=$phaseName?></h4>
         <img src="/assets/images/<?=$phaseNumber?>.svg" width="100"> 
         <div class="progress mt-1 mb-4" style="height:30px;">
-          <div class="progress-bar bg-primary" role="progressbar" style="width: <?=$phaseCompletion?>%;"
+          <div class="progress-bar" role="progressbar" style="width: <?=$phaseCompletion?>%; background-color: <?=$phaseBackground ?>"
             aria-valuenow="<?=$phaseCompletion?>" aria-valuemin="0" aria-valuemax="100">
             <?=$phaseCompletion?>%
           </div>
