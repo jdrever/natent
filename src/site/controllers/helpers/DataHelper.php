@@ -1862,6 +1862,7 @@ class DataResult
     public $errorMessage;
     public $pointsAdded;
     public $pointsAddedOtherTeam;
+    public $maximumPoints;
 }
 
 

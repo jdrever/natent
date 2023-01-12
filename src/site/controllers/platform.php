@@ -15,12 +15,6 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         $loginPage=$site->index()->find('platform/login');
         $loginPage->go([ 'query' => [ 'nextPageUrl' => $nextPageUrl, 'currentPageUrl' => $page->url() ]]);
     }
-    $countries=$site->index()->filterBy('template', 'country');
-    $language=$kirby->language()->code();
-    $countryPage=$countries->findBy('language', $language);
-    
-    $country=$countryPage->title();
-    $exampleTeam=$countryPage->exampleTeam()->toInt();
 
     $userLoggedIn=$kirby->user();
     $userId=1;
@@ -40,6 +34,17 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     if (!$isNonLearningJourneyPage) Cookie::set("resumePage",$_SERVER['REQUEST_URI']);
 
     $platformPage=site()->find('platform');
+
+    $countries=$site->index()->filterBy('template', 'country');
+    $language=$kirby->language()->code();
+    $languagePage=$platformPage->children()->filterBy('template','country')->filterBy('language','*=', $language)->first();
+
+    //echo(var_dump($kirby->language()));
+    //die();
+
+    $country=$languagePage->title();
+    $exampleTeam=$languagePage->exampleTeam()->toInt();
+
     $teamPage=$platformPage->children()->find('platform/team-page');
     $otherTeamsPage=$platformPage->children()->find('platform/other-teams');
     $resourcesPage=$platformPage->children()->find('platform/resources');
