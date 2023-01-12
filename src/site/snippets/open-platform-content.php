@@ -7,7 +7,7 @@ if (!isset($icon)) $icon="journal-text";
     <div class="col-md-3">
       <?php if ($currentGuide) ?>
       <div class="container p-3 mb-2 text-center" style="border:5px solid <?=$phaseBackground?>;">
-        <h4 class="fw-bold" style="color: <?=$phasebackground?>"><?=$phaseName?></h4>
+        <h4 class="fw-bold" style="color: <?=$phaseBackground?>"><?=$phaseName?></h4>
         <img src="/assets/images/<?=$phaseNumber?>.svg" width="100"> 
         <div class="progress mt-1 mb-4" style="height:30px;">
           <div class="progress-bar" role="progressbar" style="width: <?=$phaseCompletion?>%; background-color: <?=$phaseBackground ?>"
