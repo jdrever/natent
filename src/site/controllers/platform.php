@@ -69,6 +69,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     $phaseType='';
     $phaseNumber=0;
     $phaseBackground='#ffffff';
+    $phaseName='';
     if ($phasePage)
     {
         $phaseType=$phasePage->phase();
@@ -77,6 +78,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         $phaseTypePage=$site->find($phaseType);
         $phaseBackground=$phaseTypePage->backgroundColour()->isNotEmpty() ? $phaseTypePage->backgroundColour() : '#ffffff';
         $phaseNumber=$phaseTypePage->phaseNumber();
+        $phaseName=$phasePage->title();
     }
 
     //TODO: switch this to use compact(..)
@@ -104,6 +106,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         'loginPage'=>$loginPage,
         'registerPage'=>$registerPage,
         'phaseType' => $phaseType,
+        'phaseName'=>$phaseName,
         'phaseCompletion'=>$phaseCompletion,
         'phaseBackground'=>$phaseBackground,
         'phaseNumber'=>$phaseNumber,

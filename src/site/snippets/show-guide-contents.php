@@ -1,8 +1,6 @@
 <?php
 if(!isset($contents)) $contents=$page->children()->listed();
 ?>
-
-<h3>Contents</h3>
 <div class="list-group">
 <?php foreach ($contents as $section) : ?>
   <?php if ($section->blueprint()->name()=='pages/guide-section-header') : ?>
