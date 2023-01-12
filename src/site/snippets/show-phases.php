@@ -26,7 +26,7 @@
           <?php if ($phase->backgroundColour) : ?>style="border: 5px solid <?=$phase->backgroundColour?>"
           <?php endif ?>>
           <img src="/assets/images/<?=$phase->phaseNumber?>.svg" width="100"> 
-          <span class="h4"><?=$phase->title?></span>
+          <span class="h4" style="color: <?=$phase->backgroundColour?>"><?=$phase->title?></span>
         </a>
       </div>
       <div class="progress mt-1 mb-4" style="height:30px;">
