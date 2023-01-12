@@ -67,10 +67,13 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     }
     $phaseCompletion=0;
     $phaseType='';
+    $phaseNumber=0;
     $phaseBackground='#ffffff';
     if ($phasePage)
     {
         $phaseType=$phasePage->phase();
+        $phaseNumber=$phasePage->phaseNumber();
+
         $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($team['id'],$phaseType);
         $phaseCompletion = $phaseCompletionInfo['percent_complete'];
         $phaseTypePage=$site->find($phaseType);
