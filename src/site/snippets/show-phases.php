@@ -13,13 +13,13 @@
       <a href="<?=Cookie::get('resumePage')?>" class="btn btn-primary btn-lg"><?=t('RESUME','RESUME')?> <i
           class="bi bi-arrow-right"></i></a>
       <?php else : ?>
-      <a href="<?=$countryPhases[0]->url?>" class="btn btn-primary btn-lg"><?=t('GET STARTED', 'GET STARTED')?>
+      <a href="<?=$languagePhases[0]->url?>" class="btn btn-primary btn-lg"><?=t('GET STARTED', 'GET STARTED')?>
         →</a>
       <?php endif ?>
     </div>
   </div>
   <div class="row">
-    <?php foreach ($countryPhases as $phase) : ?>
+    <?php foreach ($languagePhases as $phase) : ?>
     <div class="col">
       <div class="d-grid gap-2">
         <a href="<?=$phase->url?>" class="btn btn-outline-primary"

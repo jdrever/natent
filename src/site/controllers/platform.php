@@ -89,6 +89,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         'countries'=>$countries, 
         'exampleTeam'=>$exampleTeam,
         'isNonLearningJourneyPage'=>$isNonLearningJourneyPage,
+        'languagePage' => $languagePage,
         'platformPage'=>$platformPage,
         'teamPage'=>$teamPage,
         'otherTeamsPage'=>$otherTeamsPage,

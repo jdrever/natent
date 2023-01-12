@@ -13,15 +13,11 @@ return function ($kirby, $pages, $page, $site)
     $latestAppreciations = helpers\DataHelper::getLatestAppreciations($userId);
 
     $phases = $site->index()->filterBy('template', 'phase');
-    $countryPhases=[];
-    $country=$platform['country'];
+    $languagePhases=[];
     $team=$platform['team'];
     $phaseNumber=0;
-
-    $language=$kirby->language()->code();  
-
-
-    $languagePage=$page->children()->filterBy('template','country')->filterBy('language','*=', $language)->first();
+  
+    $languagePage=$platform['languagePage'];
 
     foreach ($phases as $phase)
     {
@@ -36,10 +32,10 @@ return function ($kirby, $pages, $page, $site)
             $addPhase->title=$phasePage->title();
             $addPhase->url=$phasePage->url();
             $addPhase->backgroundColour=$phase->backgroundColour();
-            $countryPhases[]=$addPhase;
+            $languagePhases[]=$addPhase;
             $phaseNumber++;
         }
     }
 
-    return A::merge($platform, compact('countryPhases', 'latestComments', 'latestAppreciations'));
+    return A::merge($platform, compact('languagePhases', 'latestComments', 'latestAppreciations'));
 };
