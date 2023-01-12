@@ -6,8 +6,9 @@ columns:
       info:
         type: info
         label: info
-        text:
-          Welcome to the NatEnt Platform content management system.  Add and edit Pages from the panel below.
+        text: |
+          Welcome to the NatEnt Platform content management system.
+          Add and edit Pages from the panel below.
       pages:
         label: Pages
         type: pages

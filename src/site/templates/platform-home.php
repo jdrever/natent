@@ -6,8 +6,8 @@
     font-size: 1.2em;
   }
 </style>
-<div class="container mt-2">
-  <div class="row pb-4" style="background-color:#F5F5E2;">
+<div class="container mt-2 bg-light">
+  <div class="row pb-4">
     <div class="col-sm-12">
       <?php snippet('show-phases') ?>
     </div>
@@ -15,7 +15,7 @@
   
 
     <?php if ($userLoggedIn) : ?>
-      <div class="row" style="background-color:#E9E9E4;">
+      <div class="row">
         <div class="col-sm-6">
           <div class="container p-2">
             <h2><?=t('Collaboration Points','Collaboration Points')?></h2>
@@ -46,7 +46,7 @@
           </div>
       <?php endif ?>   
   
-  <div class="row" style="background-color:#E7F5D5;" >
+  <div class="row">
     <div class="col-sm-6">
       <div class="container p-2 mt-2">
         <h2><?=$page->lookAroundHeader()?></h2>

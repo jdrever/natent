@@ -1,6 +1,6 @@
 <?php snippet('header') ?>
 <div class="p-2"
-  style="background-image: url('/assets/images/hero-image.jpg'); background-repeat: no-repeat; background-size:cover; height: 300px; ">
+  style="background-image: url('/assets/images/hero-image.jpg'); background-repeat: no-repeat; background-size:cover; height: 500px; ">
   <div class="container mt-lg-5 text-start">
     <div class="shrinkwrap text-start text-white">
       <h1>
