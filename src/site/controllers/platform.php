@@ -39,6 +39,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     $language=$kirby->language()->code();
     $languagePage=$platformPage->children()->filterBy('template','country')->filterBy('language','*=', $language)->first();
 
+    if (is_null($languagePage)) $languagePage=$platformPage->children()->filterBy('template','country')->filterBy('language','*=', 'en')->first();
     //echo(var_dump($kirby->language()));
     //die();
 
