@@ -2,6 +2,7 @@
 
 <div class="container m-2 p-2 bg-light">
     <?php if($file = $block->file()->toFile()): ?>
+        <p>ext=<?=$file->extension()?> embed=<?=block->showEmbed()->toBool()?></p>
         <?php if ($file->extension()=='pdf'&&$block->showEmbed()->toBool()!=false) : ?>
             <iframe src="https://docs.google.com/viewer?url=<?=$file->url()?>&embedded=true" frameborder="0" height="300px" width="100%"></iframe>
         <?php endif ?>    
