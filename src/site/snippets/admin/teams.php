@@ -13,7 +13,7 @@ use carefulcollab\helpers as helpers;
   </select>
 </form>
 
-<div class="container m-2 border border-primary bg-light p-3">
+<div class="container mt-2 mb-4 border border-primary bg-light p-3">
   <h2>Create a New Team</h2>
 
   <form method="post" id="createTeamForm" name="createTeamForm">

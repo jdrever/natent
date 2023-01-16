@@ -11,7 +11,7 @@ if (count($subPages)>0) :
   <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
     <?php foreach($subPages as $subPage): ?>
     <div class="feature col">
-      <h3 class="fs-2"><?= $subPage->translatedTitle()->isEmpty() ? $subPage->title()->html() : $subPage->translatedTitle()->html() ?></h3>
+      <h3 class="fs-2"><?= $subPage->pageTitle()->isEmpty() ? $subPage->title()->html() : $subPage->pageTitle()->html() ?></h3>
       <p><?= $subPage->description()->html() ?></p>
       <p><a href="<?= $subPage->url() ?>" class="btn btn-sm btn-outline-secondary"><?=t($buttonText,$buttonText)?></a></p>
     </div>
