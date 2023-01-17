@@ -1,0 +1,10 @@
+title: "Task: Final Review"
+icon: bolt
+columns:
+  main:
+    width: 1/1
+    sections:
+      fields:
+        type: fields
+        fields:
+          mainContent: fields/guideContent

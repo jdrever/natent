@@ -152,6 +152,23 @@ return [
         'Description' => 'Description',
         'Further information' => 'Further information',
         
+        //final review
+        'What have you learned through this process?' => 'What have you learned through this process?',
+        'Strongly Disagree' => 'Strongly Disagree',
+        'Disagree' => 'Disagree',
+        'Neither Agree Nor Disagree' => 'Neither Agree Nor Disagree',
+        'Agree' => 'Agree',
+        'Strongly Agree' => 'Strongly Agree',
+        'I can more easily identify sustainability challenges which need to be met.' => 'I can more easily identify sustainability challenges which need to be met.',
+        'I feel better able to make connections between nature and human design.' => 'I feel better able to make connections between nature and human design.',
+        'I feel more able to combine knowledge and resources from a range of sources to improve results (other people, nature, online research, etc).' => 'I feel more able to combine knowledge and resources from a range of sources to improve results (other people, nature, online research, etc).',
+        'I can better integrate functions and strategies from nature into a design solution.' => 'I can better integrate functions and strategies from nature into a design solution.',
+        'I feel more confident to work with others to find solutions to design challenges.' => 'I feel more confident to work with others to find solutions to design challenges.',
+        'I feel more confident to influence solutions for sustainability.' => 'I feel more confident to influence solutions for sustainability.',
+        'I feel more connected with nature as a source of inspiration for solutions to human challenges.' => 'I feel more connected with nature as a source of inspiration for solutions to human challenges.',
+        'I can better imagine a desirable future and link this with practical design ideas.' => 'I can better imagine a desirable future and link this with practical design ideas.',
+        'How can you learn from nature to create a positive future for people and planet?' => 'How can you learn from nature to create a positive future for people and planet?',
+        'SHARE YOUR FINAL REVIEW' => 'SHARE YOUR FINAL REVIEW'
         
             ],
     'url' => NULL

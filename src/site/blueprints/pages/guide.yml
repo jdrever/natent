@@ -58,6 +58,7 @@ columns:
           - task-share-pitch-deck
           - task-share-research-questions
           - task-share-natural-strategies
+          - task-final-review
       info-type:
         type: info
         label: '  '
