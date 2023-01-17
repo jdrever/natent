@@ -41,9 +41,10 @@ return function($kirby, $pages, $page, $site)
     }
     else
     {
-        $areas=helpers\DataHelper::getAreasWithAvailableChallenges($team['user_id']);
-
         $currentLang=$kirby->language()->code();
+        $areas=helpers\DataHelper::getAreasWithAvailableChallenges($team['user_id'], $currentLang);
+
+        
     
         $imageFileEnding=".png";
         if ($currentLang=='lv')

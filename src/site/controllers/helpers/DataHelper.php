@@ -196,8 +196,21 @@ class DataHelper
     {
         $pdo=self::getPDOConnection();
         $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
-        $stmt=$pdo->prepare("SELECT DISTINCT cca.* FROM cc_areas cca JOIN cc_challenges ccc ON (cca.id=ccc.area_id OR cca.id=area_id2  OR cca.id=area_id3  OR cca.id=area_id4  OR cca.id=area_id5) WHERE (ccc.country_id=? OR ccc.show_for_all=1) ORDER BY cca.id");
+
+        $stmt=$pdo->prepare("SELECT DISTINCT cca.id,cca.name,cca.description FROM cc_areas cca JOIN cc_challenges ccc ON (cca.id=ccc.area_id OR cca.id=area_id2  OR cca.id=area_id3  OR cca.id=area_id4  OR cca.id=area_id5) WHERE (ccc.country_id=? OR ccc.show_for_all=1) ORDER BY cca.id");
         $stmt->execute([$team['country_id']]);
+        //not using translation table 17/01/23 JD
+        //
+        //if ($languageCode==='en')
+        //{
+
+        //}
+        //else
+        //{
+        //    $stmt=$pdo->prepare("SELECT DISTINCT cca.id, IFNULL(ccat.translated_title, cca.name) AS name, IFNULL(ccat.description, cca.description) AS description FROM cc_areas cca LEFT JOIN cc_areas_translations ccat ON cca.id=ccat.area_id JOIN cc_challenges ccc ON (cca.id=ccc.area_id OR cca.id=area_id2  OR cca.id=area_id3  OR cca.id=area_id4  OR cca.id=area_id5) WHERE (ccc.country_id=? OR ccc.show_for_all=1) AND ccat.language_code=? ORDER BY cca.id");
+        //    $stmt->execute([$team['country_id'], $languageCode]);
+        //}
+        
         return $stmt->fetchAll();        
     }
 

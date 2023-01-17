@@ -16,7 +16,7 @@
           <img class="img-fluid" src="<?=url('/assets/images/SDGs/' . $area['id'] . $imageFileEnding) ?>"
             alt="<?=$area['name']?>">
           <div class="card-body">
-            <p class="card-text"><strong><?=trim($area['name'])?></strong><br /><?=trim($area['description'])?></p>
+            <p class="card-text"><strong><?=t($area['name'],$area['name'])?></strong><br /><?=t($area['description'], $area['description'])?></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <a href="<?=$page->url()?>?topicId=<?=$area['id'] ?>"

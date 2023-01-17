@@ -9,7 +9,8 @@ fields:
     type: text
     label: Area Id
     disabled: true
-  translatedTitle:
+  translated_title:
+    label: Title
     type: text
   description:
     type: text

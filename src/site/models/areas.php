@@ -5,7 +5,7 @@ class AreasPage extends Kirby\Cms\Page
     public function children()
     {
         $areas = [];
-
+        //TODO: don't hardcode the languages
         foreach (Db::select('cc_areas') as $area)
         {
             $content = [
@@ -15,11 +15,22 @@ class AreasPage extends Kirby\Cms\Page
             $contentEn = [
                 
                 'description' => $area->description(),
+                'translated_title' => $area->title(),
             ];
+            $contentDe=[];
+            $contentNl=[];
             if ($areaDe=Db::first('cc_areas_translations', '*', 'area_id='.$area->id().' and language_code="de"'))
             {
                 $contentDe = [
+                    'translated_title' => $areaDe->translated_title(),
                     'description' => $areaDe->description(),
+                ];
+            }
+            if ($areaNl=Db::first('cc_areas_translations', '*', 'area_id='.$area->id().' and language_code="nl"'))
+            {
+                $contentNl = [
+                    'translated_title' => $areaNl->translated_title(),
+                    'description' => $areaNl->description(),
                 ];
             }
 
@@ -29,19 +40,21 @@ class AreasPage extends Kirby\Cms\Page
                 'slug' => Str::slug($area->name()),
                 'model'    => 'area',  
                 'num' =>   $area->id(),      
-                'content' => array_merge($content, $contentEn),
                 'translations' => [ 
                     'en' =>
                     [
                         'code' => 'en',
-                        //this is where I should be using the translated content from the database above, I can't even pass in hard-coded values
-                        'content' => ['description'=>'en-test', ]                   
+                        'content' => array_merge($content, $contentEn)                   
                     ],
                     'de' =>
                     [
                         'code' => 'de',
-                        //this is where I should be using the translated content from the database above, I can't even pass in hard-coded values
-                        'content' => ['description'=>'de-test', 'translatedTitle'=>'hi',],
+                        'content' => array_merge($content, $contentDe) ,
+                    ],
+                    'nl' =>
+                    [
+                        'code' => 'nl',
+                        'content' => array_merge($content, $contentNl) ,
                     ],
                 ]
             ];

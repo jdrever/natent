@@ -37,4 +37,9 @@ columns:
         type: pages
         templates:
           - phase
+      settings:
+        label: Settings
+        type: pages
+        templates:
+          - areas
 
