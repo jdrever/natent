@@ -1,6 +1,7 @@
 <?php
 
 use carefulcollab\helpers as helpers;
+use carefulcollab\helpers\DataResult;
 
 return function ($kirby, $pages, $page, $site)
 {
@@ -8,7 +9,9 @@ return function ($kirby, $pages, $page, $site)
   $platform = $kirby->controller('platform', compact('page', 'pages', 'kirby', 'site', 'requiresLogin'));
   $team = $platform['team'];
   $userId = $team['user_id'];
-  $result = '';
+  $result = new DataResult();
+  $actionType='';
+  $selectedTab='add';
 
   $country = $platform['country'];
 
@@ -22,7 +25,9 @@ return function ($kirby, $pages, $page, $site)
     {
       try
       {
+        $actionType='creation of the team';
         $teamName = $_POST['teamName'];
+
 
         $user = $kirby->users()->create([
           'name'      => $teamName,
@@ -39,50 +44,77 @@ return function ($kirby, $pages, $page, $site)
         //TODO: absolutely can't hard code this
         $locationId = 2;
         $result = helpers\DataHelper::addTeam($userId, $teamName, $locationId);
-
-        //echo 'The user "' . $user->name() . '" has been created';
-        $result = true;
       }
       catch (Exception $e)
       {
 
-        echo 'The team could not be created';
-        $result = false;
-        echo ($e->getMessage());
+        $result->errorMessage='The team could not be created: '.$e->getMessage();
+        $result->wasSuccessful = false;
       }
     }
     if ($action == "RENAME-TEAM")
     {
-      $actionType = "Team name update";
-      $teamId = $_POST['teamId'];
-      $teamName = $_POST['teamName'];
-      $oldTeamName = $_POST['teamName'];
-      $team=$kirby->user(str_replace(' ', '-', $oldTeamName) . '@natent.eu');
-      $result = helpers\DataHelper::updateTeamName($userId, $teamId, $teamName);
-      $team->changeName($teamName);
-      $team->changeEmail(str_replace(' ', '-', $teamName) . '@natent.eu');
+      $selectedTab='edit';
+      try
+      {
+        $actionType = "team name update";
+        $teamId = $_POST['teamId'];
+        $teamName = $_POST['teamName'];
+        $oldTeamName = $_POST['oldTeamName'];
+        $team=$kirby->user(str_replace(' ', '-', $oldTeamName) . '@natent.eu');
+        $result = helpers\DataHelper::updateTeamName($userId, $teamId, $teamName);
+        $team->changeName($teamName);
+        $team->changeEmail(str_replace(' ', '-', $teamName) . '@natent.eu');
+      }
+      catch (Exception $e)
+      {
+
+        $result->errorMessage='The team could not be renamed: '.$e->getMessage();
+        $result->wasSuccessful = false;
+      }
     }
 
     if ($action == "RESET-PASSWORD")
     {
-      $actionType = "Reset team password";
-      $teamName = $_POST['teamName'];
-      $password = $_POST['password'];
-      $team=$kirby->user(str_replace(' ', '-', $teamName) . '@natent.eu');
-      $team->changePassword($password);
+      $selectedTab='edit';
+      try
+      {
+
+        $actionType = "Reset team password";
+        $teamName = $_POST['teamName'];
+        $password = $_POST['password'];
+        $team=$kirby->user(str_replace(' ', '-', $teamName) . '@natent.eu');
+        $team->changePassword($password);
+      }
+      catch (Exception $e)
+      {
+
+        $result->errorMessage='The password could not be reset: '.$e->getMessage();
+        $result->wasSuccessful = false;
+      }
     }
 
     if ($action == "REMOVE-TEAM")
     {
-      $actionType = "Team removal";
-      $teamId = $_POST['teamId'];
-      $teamName = $_POST['teamName'];
-      $result = helpers\DataHelper::removeTeam($userId, $teamId);
-      $team=$kirby->user(str_replace(' ', '-', $teamName) . '@natent.eu');
-      $team->delete();
+      $selectedTab='edit';
+      try
+      {
+        $actionType = "Team removal";
+        $teamId = $_POST['teamId'];
+        $teamName = $_POST['teamName'];
+        $result = helpers\DataHelper::removeTeam($userId, $teamId);
+        $team=$kirby->user(str_replace(' ', '-', $teamName) . '@natent.eu');
+        $team->delete();
+      }
+      catch (Exception $e)
+      {
+
+        $result->errorMessage='The team could not be removed: '.$e->getMessage();
+        $result->wasSuccessful = false;
+      }
     }
   }
 
   $teams = helpers\DataHelper::getTeamsByLocation($userId);
-  return A::merge($platform, compact('newPassword', 'result', 'teams'));
+  return A::merge($platform, compact( 'teams','newPassword', 'result', 'actionType', 'selectedTab'));
 };
