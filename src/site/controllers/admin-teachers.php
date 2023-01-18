@@ -128,6 +128,8 @@ return function ($kirby, $pages, $page, $site)
     $adminLocation=$team['location_id'];
   }
 
+  echo('adminLocation='.$adminLocation);
+
   $locations=($adminCountry>0) ? helpers\DataHelper::getLocationsByCountryId($adminCountry) : [];
   $teachers = helpers\DataHelper::getTeachersByLocationId($adminLocation);
 
