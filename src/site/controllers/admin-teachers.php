@@ -23,11 +23,11 @@ return function ($kirby, $pages, $page, $site)
   {
     $action = $_POST['action'];
 
-    if ($action === 'CREATE-TEAM')
+    if ($action === 'CREATE-TEACHER')
     {
       try
       {
-        $actionType='creation of the team';
+        $actionType='creation of the teacher';
         $teamName = $_POST['teamName'];
 
 
@@ -36,38 +36,37 @@ return function ($kirby, $pages, $page, $site)
           'email'     => str_replace(' ', '-', $teamName) . '@natent.eu',
           'password'  => get('password'),
           'language'  => 'en',
-          'role'      => 'team',
+          'role'      => 'teacher',
         ]);
 
         $locationId = $_POST['locationId'];
-
-        $result = helpers\DataHelper::addTeamandUser($userId, $user->id(), $teamName, $locationId, 'STUDENT');
+        $result = helpers\DataHelper::addTeam($userId, $teamName, $locationId);
       }
       catch (Exception $e)
       {
 
-        $result->errorMessage='The team could not be created: '.$e->getMessage();
+        $result->errorMessage='The teacher could not be added: '.$e->getMessage();
         $result->wasSuccessful = false;
       }
     }
-    if ($action == "RENAME-TEAM")
+    if ($action == "RENAME-TEACHER")
     {
       $selectedTab='edit';
       try
       {
-        $actionType = "team name update";
-        $teamId = $_POST['teamId'];
-        $teamName = $_POST['teamName'];
-        $oldTeamName = $_POST['oldTeamName'];
-        $renameTeam=$kirby->user(str_replace(' ', '-', $oldTeamName) . '@natent.eu');
-        $result = helpers\DataHelper::updateTeamName($userId, $teamId, $teamName);
-        $renameTeam->changeName($teamName);
-        $renameTeam->changeEmail(str_replace(' ', '-', $teamName) . '@natent.eu');
+        $actionType = "teacher name update";
+        $teacherId = $_POST['teacherId'];
+        $teacherName = $_POST['teacherName'];
+        $oldTeacherName = $_POST['oldTeacherName'];
+        $renameTeacher=$kirby->user(str_replace(' ', '-', $oldTeacherName) . '@natent.eu');
+        $result = helpers\DataHelper::updateTeacherName($userId, $teacherId, $teacherName);
+        $renameTeacher->changeName($teacherName);
+        $renameTeacher->changeEmail(str_replace(' ', '-', $teacherName) . '@natent.eu');
       }
       catch (Exception $e)
       {
 
-        $result->errorMessage='The team could not be renamed: '.$e->getMessage();
+        $result->errorMessage='The teacher could not be renamed: '.$e->getMessage();
         $result->wasSuccessful = false;
       }
     }
@@ -78,8 +77,8 @@ return function ($kirby, $pages, $page, $site)
       try
       {
 
-        $actionType = "Reset team password";
-        $teamName = $_POST['teamName'];
+        $actionType = "Reset teacher password";
+        $teamName = $_POST['teacherName'];
         $password = $_POST['password'];
         $resetTeam=$kirby->user(str_replace(' ', '-', $teamName) . '@natent.eu');
         $resetTeam->changePassword($password);
@@ -92,14 +91,14 @@ return function ($kirby, $pages, $page, $site)
       }
     }
 
-    if ($action == "REMOVE-TEAM")
+    if ($action == "REMOVE-TEACHER")
     {
       $selectedTab='edit';
       try
       {
-        $actionType = "Team removal";
-        $teamId = $_POST['teamId'];
-        $teamName = $_POST['teamName'];
+        $actionType = "Teacher removal";
+        $teamId = $_POST['teacherId'];
+        $teamName = $_POST['teacherName'];
         $result = helpers\DataHelper::removeTeam($userId, $teamId);
         $removeTeam=$kirby->user(str_replace(' ', '-', $teamName) . '@natent.eu');
         $removeTeam->delete();
@@ -107,7 +106,7 @@ return function ($kirby, $pages, $page, $site)
       catch (Exception $e)
       {
 
-        $result->errorMessage='The team could not be removed: '.$e->getMessage();
+        $result->errorMessage='The teacher could not be removed: '.$e->getMessage();
         $result->wasSuccessful = false;
       }
     }
@@ -129,13 +128,13 @@ return function ($kirby, $pages, $page, $site)
   if ($team['role']=='TEACHER')
   {
     $locations=helpers\DataHelper::getLocationsByCountry($userId);
-    $teams = helpers\DataHelper::getTeamsByLocation($userId);
+    $teams = helpers\DataHelper::getTeachersByLocation($userId);
     $adminLocation=$team['location_id'];
   }
   else
   {
     $locations=($adminCountry>0) ? helpers\DataHelper::getLocationsByCountryId($adminCountry) : [];
-    $teams = helpers\DataHelper::getTeamsByLocationId($adminLocation);
+    $teams = helpers\DataHelper::getTeachersByLocationId($adminLocation);
   }
 
   

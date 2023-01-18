@@ -1601,39 +1601,29 @@ class DataHelper
         return $result;
     }
 
-    public static function addUser($wpUserId, $teamId, $userName, $userPassword, $role)
+
+    public static function addTeamAndUser($userId, $newUserId, $teamName, $locationId, $role)
     {
         $result=new DataResult();
         try
         {
             $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
-            $team=self::getTeamByWPUserId($wpUserId);
+            $team=self::getTeamByWPUserId($userId);
 
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
             {
-                $userData = array
-                (
-                    'user_login' =>  $userName,
-                    'first_name' =>  'Team Member',
-                    'user_pass'  =>  $userPassword
-                );
-                $userId = wp_insert_user( $userData );
-                if ( ! is_wp_error( $userId ) ) 
-                {
 
-                    wp_new_user_notification($userId, null, 'both');
+                $sql=("INSERT INTO cc_teams (location_id, name, created_date, created_by, approved_date, approved_by) VALUES (?,?,now(),?, now(),?)");       
+                $pdo->prepare($sql)->execute([$locationId,$teamName, $userId, $userId]);
+                $result->wasSuccessful=true;
 
-                    $sql=("INSERT INTO cc_users (wp_user_id, team_id, role) VALUES (?,?,?)");       
-                    $pdo->prepare($sql)->execute([$userId,$teamId, $role]);
+                $teamId=$pdo->lastInsertId();
 
-                    $result->wasSuccessful=true;
-                    return $result;
-                }
-                else
-                {
-                    $result->errorMessage=$userId->get_error_message();
-                    $result->wasSuccessful=false;
-                }
+                $sql=("INSERT INTO cc_users (wp_user_id, team_id, role) VALUES (?,?,?)");       
+                $pdo->prepare($sql)->execute([$newUserId,$teamId, $role]);
+
+                $result->wasSuccessful=true;
+                return $result;
             }
             else
             {

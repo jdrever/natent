@@ -8,35 +8,35 @@ use carefulcollab\helpers as helpers;
 <ul class="nav nav-tabs" id="adminTab" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link<?=($selectedTab==='add') ? ' active' : '' ?>" id="add-tab" data-bs-toggle="tab" data-bs-target="#add" type="button" role="tab"
-      aria-controls="add" aria-selected="<?=($selectedTab==='add') ? 'true' : 'false' ?>" ><?= t("Add a New Team","Add a New Team") ?></button>
+      aria-controls="add" aria-selected="<?=($selectedTab==='add') ? 'true' : 'false' ?>" ><?= t("Add a New Teacher","Add a New Teacher") ?></button>
   </li>
   <li class="nav-item" role="presentation">
     <button class="nav-link<?=($selectedTab==='edit') ? ' active' : '' ?>" id="edit-tab" data-bs-toggle="tab" data-bs-target="#edit" type="button" role="tab"
       aria-controls="edit"
-      aria-selected="<?=($selectedTab==='edit') ? 'true' : 'false' ?>"><?= t("Editing an Existing Team", "Editing an Existing Team") ?></button>
+      aria-selected="<?=($selectedTab==='edit') ? 'true' : 'false' ?>"><?= t("Editing an Existing Teacher", "Editing an Existing Teacher") ?></button>
   </li>
 </ul>
 <div class="tab-content" id="adminTabContent">
   <div class="tab-pane fade<?=$selectedTab==='add' ? ' show active' : ''?>" id="add" role="tabpanel" aria-labelledby="add-tab">
     <div class="container mt-2 mb-4 border bg-white p-3">
-      <form method="post" id="createTeamForm" name="createTeamForm">
-        <input type="hidden" id="action" name="action" value="CREATE-TEAM">
+      <form method="post" id="createTeacherForm" name="createTeacherForm">
+        <input type="hidden" id="action" name="action" value="CREATE-TEACHER">
         <input type="hidden" id="locationId" name="locationId" value="<?=$adminLocation?>">
         <div class="mb-3">
-          <label for="teamName" class="form-label">Team Name</label>
-          <input type="text" class="form-control" id="teamName" name="teamName" aria-describedby="teamNameHelp"
+          <label for="teacherName" class="form-label">Teacher Name</label>
+          <input type="text" class="form-control" id="teacherName" name="teacherName" aria-describedby="teacherNameHelp"
             required>
-          <div id="teamNameHelp" class="form-text"><span style="font-size: 1.2em;">Please <strong>don't use anyone's
+          <div id="teacherNameHelp" class="form-text"><span style="font-size: 1.2em;">Please <strong>don't use anyone's
                 real names!</strong></span></div>
         </div>
         <div class="mb-3">
-          <label for="teamPasword" class="form-label">Password</label>
-          <input type="text" class="form-control" id="teamPassword" name="teamPassword" value="<?=$newPassword?>"
+          <label for="teacherPasword" class="form-label">Password</label>
+          <input type="text" class="form-control" id="teacherPassword" name="teacherPassword" value="<?=$newPassword?>"
             aria-describedby="passwordHelp" required readonly>
           <div id="passwordHelp" class="form-text"><span style="font-size: 1.2em;">You need to <strong>note this
                 password down NOW</strong> - you won't get to see it again!</span></div>
         </div>
-        <button type="submit" name="createTeamButton" id="createTeamButton" class="btn btn-primary">ADD TEAM</button>
+        <button type="submit" name="createTeacherButton" id="createTeacherButton" class="btn btn-primary">ADD TEACHER</button>
       </form>
     </div>
 
@@ -55,8 +55,7 @@ use carefulcollab\helpers as helpers;
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
-            <button type="button" class="btn btn-primary" id="createTeamModalButton" name="createTeamModalButton">ADD
-              TEAM</button>
+            <button type="button" class="btn btn-primary" id="createTeacherModalButton" name="createTeacherModalButton">ADD TEACHER</button>
           </div>
         </div>
       </div>
@@ -68,23 +67,23 @@ use carefulcollab\helpers as helpers;
   <div class="tab-pane fade<?=($selectedTab==='edit') ? ' show active' : ''?>" id="edit" role="tabpanel" aria-labelledby="edit-tab">
     <table class="table m-2 p-2 border bg-white">
       <tr>
-        <th><?= t("Team Name","Team Name") ?></th>
+        <th><?= t("Teacher Name","Teacher Name") ?></th>
         <th><?= t("Reset Password To","Reset Password To") ?></th>
         <th><?= t("Remove","Remove") ?></th>
       </tr>
 
       <?php
-    foreach ($teams as $thisTeam)
+    foreach ($teachers as $thisTeacher)
     {
       $newResetPassword=helpers\DataHelper::random_str(8);
     ?>
       <tr>
         <td>
           <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
-            <input type="hidden" id="action" name="action" value="RENAME-TEAM">
-            <input type="text" id="teamName" name="teamName" value="<?= $thisTeam['name'] ?>" required>
-            <input type="hidden" id="teamId" name="teamId" value="<?= $thisTeam['id'] ?>">
-            <input type="hidden" id="oldTeamName" name="oldTeamName" value="<?= $thisTeam['name'] ?>">
+            <input type="hidden" id="action" name="action" value="RENAME-TEACHER">
+            <input type="text" id="teacherName" name="teacherName" value="<?= $thisTeacher['name'] ?>" required>
+            <input type="hidden" id="teacherId" name="teacherId" value="<?= $thisTeacher['id'] ?>">
+            <input type="hidden" id="oldTeacherName" name="oldTeacherName" value="<?= $thisTeacher['name'] ?>">
             <input type="submit" class="btn btn-primary" value="<?= t("RENAME","RENAME") ?>">
           </form>
         </td>
@@ -95,17 +94,17 @@ use carefulcollab\helpers as helpers;
               aria-describedby="passwordHelp" readonly>
             <div id="passwordHelp" class="form-text"><span style="font-size: 1.2em;"><strong>Note this password down NOW
                   before clicking RESET</strong></span></div>
-            <input type="hidden" id="teamName" name="teamName" value="<?= $thisTeam['name'] ?>">
+            <input type="hidden" id="teacherName" name="teacherName" value="<?= $thisTeacher['name'] ?>">
             <input type="submit" class="btn btn-primary" value="<?= t("RESET","RESET") ?>">
           </form>
         </td>
 
         <td>
           <?php 
-        if ($thisTeam['id']==$team['id'])
+        if ($thisTeacher['id']==$teacher['id'])
         { ?>
           <div class="alert alert-info" role="alert">
-            <?=t("You are currently logged in as this Team and therefore cannot remove it","You are currently logged in as this Team and therefore cannot remove it")?>.
+            <?=t("You are currently logged in as this Teacher and therefore cannot remove it","You are currently logged in as this Teacher and therefore cannot remove it")?>.
           </div>
           <?php
         }
@@ -113,20 +112,20 @@ use carefulcollab\helpers as helpers;
         {
 ?>
           <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
-            <input type="hidden" id="action" name="action" value="REMOVE-TEAM">
+            <input type="hidden" id="action" name="action" value="REMOVE-TEACHER">
             <div class="form-floating">
-              <input type="text" class="form-control" name="teamCheck<?= $thisTeam['id'] ?>"
-                id="teamCheck<?= $thisTeam['id'] ?>"
-                placeholder="<?= t("Type the Team name to confirm","Type the Team name to confirm") ?>"
-                aria-label="<?= t("Type the Team name to confirm","Type the Team name to confirm") ?>" required
-                pattern="<?= $thisTeam['name'] ?>">
+              <input type="text" class="form-control" name="teacherCheck<?= $thisTeacher['id'] ?>"
+                id="teacherCheck<?= $thisTeacher['id'] ?>"
+                placeholder="<?= t("Type the Teacher name to confirm","Type the Teacher name to confirm") ?>"
+                aria-label="<?= t("Type the Teacher name to confirm","Type the Teacher name to confirm") ?>" required
+                pattern="<?= $thisTeacher['name'] ?>">
               <label
-                for="teamCheck<?= $thisTeam['id'] ?>"><?= t("Type the Team name to confirm","Type the Team name to confirm") ?></label>
+                for="teacherCheck<?= $thisTeacher['id'] ?>"><?= t("Type the Teacher name to confirm","Type the Teacher name to confirm") ?></label>
             </div>
-            <input type="hidden" id="teamId" name="teamId" value="<?= $thisTeam['id'] ?>">
-            <input type="hidden" id="teamName" name="teamName" value="<?= $thisTeam['name'] ?>">
+            <input type="hidden" id="teacherId" name="teacherId" value="<?= $thisTeacher['id'] ?>">
+            <input type="hidden" id="teacherName" name="teacherName" value="<?= $thisTeacher['name'] ?>">
             <input type="submit" class="btn btn-danger"
-              value="<?= t("REMOVE TEAM AND ALL OF THEIR WORK","REMOVE TEAM AND ALL OF THEIR WORK") ?>">
+              value="<?= t("REMOVE TEACHER AND ALL OF THEIR WORK","REMOVE TEACHER AND ALL OF THEIR WORK") ?>">
           </form>
           <?php
         }
@@ -141,22 +140,22 @@ use carefulcollab\helpers as helpers;
 </div>
 
 <script>
-  let createTeamButton = document.getElementById('createTeamButton');
-  let createTeamForm = document.getElementById('createTeamForm');
-  let createTeamModalButton = document.getElementById('createTeamModalButton');
+  let createTeacherButton = document.getElementById('createTeacherButton');
+  let createTeacherForm = document.getElementById('createTeacherForm');
+  let createTeacherModalButton = document.getElementById('createTeacherModalButton');
   const passwordModal = new bootstrap.Modal('#passwordModal');
-  createTeamButton.addEventListener('click', function(event) {
+  createTeacherButton.addEventListener('click', function(event) {
     passwordModal.show();
     event.preventDefault();
   });
-  createTeamModalButton.addEventListener('click', function(event) {
+  createTeacherModalButton.addEventListener('click', function(event) {
     // Check if valid using HTML5 checkValidity() builtin function
-    if (createTeamForm.checkValidity()) {
+    if (createTeacherForm.checkValidity()) {
       console.log('valid');
-      createTeamForm.submit();
+      createTeacherForm.submit();
     } else {
       passwordModal.hide();
-      createTeamForm.reportValidity();
+      createTeacherForm.reportValidity();
       console.log('not valid');
     }
   });

@@ -1,3 +1,10 @@
+<?php
+if (!isset($showLocation))
+{
+  $showLocation=true;
+}
+?>
+
 <?php if ($team['role']==='GLOBAL'||$team['role']==='ADMIN') :?>
 <div class="container bg-light p-3 m-3">
   <?php if ($team['role']==='GLOBAL') :?>
@@ -24,7 +31,7 @@
     </div>
   </form>
   <?php endif ?>
-  <?php if (($team['role']==='ADMIN'||$team['role']==='GLOBAL')&&count($locations)>0) :?>
+  <?php if ($showLocation&&($team['role']==='ADMIN'||$team['role']==='GLOBAL')&&count($locations)>0) :?>
   <form class="form-inline" method="post" action="/admin-controller">
     <input type="hidden" name="action" id="action" value="select-location">
     <div class="row g-3 align-items-center">

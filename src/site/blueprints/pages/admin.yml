@@ -15,4 +15,5 @@ columns:
           - admin-teams
           - admin-moderation
           - admin-locations
+          - admin-kirby-ids
 

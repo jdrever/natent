@@ -18,8 +18,12 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     }
 
     $userLoggedIn=$kirby->user();
-    $userId=1;
-    $team=helpers\DataHelper::getTeamByWPUserId($userId);
+    $kirbyUserId=$userLoggedIn->id();
+    $team=helpers\DataHelper::getTeamByWPUserId($kirbyUserId);
+
+    //echo(var_dump($team));
+    //die();
+    $userId=$team['user_id'];
 
     if ($requiresAdminRole&&(!in_array($team['role'],array('TEACHER','ADMIN','GLOBAL'))))
         $loginPage->go();
