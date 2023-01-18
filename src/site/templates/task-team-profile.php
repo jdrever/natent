@@ -12,7 +12,7 @@
     <input type="hidden" id="collabType" name="collabType" value="Profile">
     <label for="school-info" class="m-1"><?= t('Tell us about your Team','Tell us about your Team') ?>:</label>
     <textarea class="form-control m-1" aria-label="With textarea" id="description" name="description" rows="8"
-      required><?=$team['description']?></textarea>
+      required><?=(isset($team['description'])) ? $team['description'] : '' ?></textarea>
     <label for="form-check"><?= t('Tell us what Skillsets your team have','Tell us what Skillsets your team have') ?>:</label>
     <div class="container">
     <?php

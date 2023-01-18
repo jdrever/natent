@@ -63,6 +63,7 @@ return function ($kirby, $pages, $page, $site)
         $result = helpers\DataHelper::updateTeamName($userId, $teamId, $teamName);
         $renameTeam->changeName($teamName);
         $renameTeam->changeEmail(str_replace(' ', '-', $teamName) . '@natent.eu');
+        $result->wasSuccessful = true;
       }
       catch (Exception $e)
       {
@@ -83,6 +84,7 @@ return function ($kirby, $pages, $page, $site)
         $password = $_POST['password'];
         $resetTeam=$kirby->user(str_replace(' ', '-', $teamName) . '@natent.eu');
         $resetTeam->changePassword($password);
+        $result->wasSuccessful = true;
       }
       catch (Exception $e)
       {
@@ -103,6 +105,7 @@ return function ($kirby, $pages, $page, $site)
         $result = helpers\DataHelper::removeTeam($userId, $teamId);
         $removeTeam=$kirby->user(str_replace(' ', '-', $teamName) . '@natent.eu');
         $removeTeam->delete();
+        $result->wasSuccessful = true;
       }
       catch (Exception $e)
       {
@@ -127,7 +130,7 @@ return function ($kirby, $pages, $page, $site)
     $adminLocation=Cookie::exists('adminCountry') ? Cookie::get('adminLocation') : 0;
 
 
-    if ($team['role']=='TEACHER')
+  if ($team['role']=='TEACHER')
   {
     $locations=helpers\DataHelper::getLocationsByCountry($userId);
     $teams = helpers\DataHelper::getTeamsByLocation($userId);
