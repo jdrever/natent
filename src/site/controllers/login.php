@@ -38,6 +38,7 @@ return function ($kirby, $page, $pages, $site) {
     } catch (Exception $e) {
       $error = true;
       $alert="This login could not be recognised";
+      echo($e);
     }
 
   }
