@@ -34,7 +34,7 @@ return function ($kirby, $pages, $page, $site)
         $user = $kirby->users()->create([
           'name'      => $teacherName,
           'email'     => str_replace(' ', '-', $teacherName) . '@natent.eu',
-          'password'  => get('password'),
+          'password'  => $_POST['teacherPassword'],
           'language'  => 'en',
           'role'      => 'teacher',
         ]);
