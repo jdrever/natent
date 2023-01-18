@@ -22,6 +22,7 @@ return function ($kirby, $page, $pages, $site) {
       $login=get('login');
       if (strpos($login,'@')===0)$login.='@natent.eu';
       $login=str_replace(' ','-',$login);
+      echo($login);
       $kirby->auth()->login($login, get('password'));
 
 
