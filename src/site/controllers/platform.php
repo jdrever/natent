@@ -86,8 +86,13 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     if ($phasePage)
     {
         $phaseType=$phasePage->phase();
-        $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($team['id'],$phaseType);
-        $phaseCompletion = $phaseCompletionInfo['percent_complete'];
+        if ($usedLoggedOn)
+            $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($team['id'],$phaseType);
+            $phaseCompletion = $phaseCompletionInfo['percent_complete'];
+        }
+        else
+            $phaseCompletion=0;
+
         $phaseTypePage=$site->find($phaseType);
         $phaseBackground=$phaseTypePage->backgroundColour()->isNotEmpty() ? $phaseTypePage->backgroundColour() : '#ffffff';
         $phaseNumber=$phaseTypePage->phaseNumber();
