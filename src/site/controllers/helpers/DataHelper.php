@@ -123,6 +123,13 @@ class DataHelper
   
     }
 
+    public static function getTeamByKirbyUserId($kirbyUserId)
+    {
+        $pdo=self::getPDOConnection();
+        return self::getTeamByKirbyUserIdUsingPDO($kirbyUserId,$pdo);
+  
+    }
+
     private static function getTeamByTeamIdUsingPDO($teamId, $pdo)
     {
         $stmt = $pdo->prepare("SELECT * FROM cc_all_teams_approved WHERE id=?");
@@ -132,6 +139,14 @@ class DataHelper
     }
 
     private static function getTeamByWPUserIdUsingPDO($wpUserId, $pdo)
+    {
+        $stmt = $pdo->prepare("SELECT * FROM cc_teams_by_user WHERE user_id=?");
+        $stmt->execute([$wpUserId]); 
+        $team = $stmt->fetch();
+        return $team;
+    }
+
+    private static function getTeamByKirbyUserIdUsingPDO($kirbyUserId, $pdo)
     {
         $stmt = $pdo->prepare("SELECT * FROM cc_teams_by_user WHERE wp_user_id=?");
         $stmt->execute([$wpUserId]); 
@@ -1608,7 +1623,7 @@ class DataHelper
         try
         {
             $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
-            $team=self::getTeamByWPUserId($userId);
+            $team=self::getTeamByKirbyUserId($userId);
 
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
             {
