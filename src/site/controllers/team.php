@@ -12,22 +12,22 @@ return function($platform, $site, $viewedTeam, $editTeam, $hideCollaboration=fal
 
     $latestComments=($editTeam) ? helpers\DataHelper::getLatestComments($userId) : [];
     $latestAppreciations=($editTeam) ? helpers\DataHelper::getLatestAppreciations($userId) : [];
+
+    $languagePage=$platform['languagePage'];
     
     foreach ($phases as $nextPhase)
     {
-        $pagesInPhase=$site->index()->filterBy('template', 'guide')->filterBy('phase', strtolower($nextPhase->title()));
-        if ($pageInPhase=$pagesInPhase->first())
-        {
-            $phase[0] = $pageInPhase->title();
-            $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($viewedTeam['id'],$nextPhase->title());
-            $phase[1] = $phaseCompletionInfo['percent_complete'];
-            $phaseCompletion[]=$phase;
+        $phasePage = $languagePage->index()->filterBy('phase', strtolower($nextPhase->title()))->first();
+ 
+        $phase[0] = $phasePage->title();
+        $phaseCompletionInfo=helpers\DataHelper::getCompletionByPhaseTypeForTeam($viewedTeam['id'],$nextPhase->title());
+        $phase[1] = $phaseCompletionInfo['percent_complete'];
+        $phaseCompletion[]=$phase;
 
-            $pointsInPhase=$pageInPhase->index()->filterBy('template','^=', 'task');
-            foreach ($pointsInPhase as $point)
-            {
-                $collaborationPoints[]=$point;
-            }
+        $pointsInPhase=$phasePage->index()->filterBy('template','^=', 'task');
+        foreach ($pointsInPhase as $point)
+        {
+            $collaborationPoints[]=$point;
         }
         
     }

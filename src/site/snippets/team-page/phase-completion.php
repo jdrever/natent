@@ -18,7 +18,7 @@
         }
         ?>
         <div class="col">
-            <h5><?= t("Points") ?></h5>
+            <h5><?= t("Points", "Points") ?></h5>
             <p class="h1"><?= $viewedTeam['points'] ?></p>
         </div>
     </div>
