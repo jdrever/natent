@@ -76,7 +76,7 @@ class DataHelper
     public static function getTeamsOrderByPoints($areaId, $countryId, $skillsetName)
     {
 
-        $conditions = [];
+        $conditions[] = "NOT IFNULL(personal_only,0)=1";
         $parameters = [];
 
         if ($areaId!='All')
