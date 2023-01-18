@@ -121,15 +121,17 @@ return function ($kirby, $pages, $page, $site)
   }
   
   if ($team['role']=='GLOBAL'||$team['role']=='ADMIN')
+  {
     $adminLocation=Cookie::exists('adminLocation') ? Cookie::get('adminLocation') : $team['location_id'];
     $adminCountry=Cookie::exists('adminCountry') ? Cookie::get('adminCountry') : $team['country_id'];
+  }
 
   if ($team['role']=='TEACHER')
   {
     $adminLocation=$team['location_id'];
   }
 
-  echo('adminLocation='.$adminLocation);
+  echo('adminLocation='.$adminLocation . 'role='.$team['role']);
 
   $locations=($adminCountry>0) ? helpers\DataHelper::getLocationsByCountryId($adminCountry) : [];
   $teachers = helpers\DataHelper::getTeachersByLocationId($adminLocation);
