@@ -17,15 +17,22 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         $loginPage->go([ 'query' => [ 'nextPageUrl' => $nextPageUrl, 'currentPageUrl' => $page->url() ]]);
     }
 
+    $userId=0;
+    $team=[];
+    $userRole='';
     $userLoggedIn=$kirby->user();
-    $kirbyUserId=$userLoggedIn->id();
-    $team=helpers\DataHelper::getTeamByWPUserId($kirbyUserId);
 
-    //echo(var_dump($team));
-    //die();
-    $userId=$team['user_id'];
 
-    if ($requiresAdminRole&&(!in_array($team['role'],array('TEACHER','ADMIN','GLOBAL'))))
+
+    if ($userLoggedIn)
+    {
+        $kirbyUserId=$userLoggedIn->id();
+        $team=helpers\DataHelper::getTeamByKirbyUserId($kirbyUserId);
+        $userId=$team['user_id'];
+        $userRole=$team['role'];
+    }
+
+    if ($requiresAdminRole&&(!in_array($userRole,array('TEACHER','ADMIN','GLOBAL'))))
         $loginPage->go();
 
     $status='';
@@ -60,6 +67,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     $adminPage=$platformPage->children()->find('platform/admin');
     $exampleTeamPage=$platformPage->children()->find('platform/example-team');
     $loginPage=$platformPage->children()->find('platform/login');
+    $switchTeamsPage=$platformPage->index()->find('platform/admin/switch-teams');
     $registerPage=site()->find('register-your-school');
 
     if ($page->template()=='guide')
@@ -91,7 +99,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         'userId' => $userId, 
         'userLoggedIn' => $userLoggedIn, 
         'team' => $team, 'status' =>$status, 
-        'userRole' => $team['role'], 
+        'userRole' => $userRole, 
         'pointsAdded' => $pointsAdded, 
         'pointsAddedOtherTeam' =>$pointsAddedOtherTeam, 
         'country'=>$country, 
@@ -109,6 +117,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         'adminPage'=>$adminPage,
         'exampleTeamPage'=>$exampleTeamPage,
         'loginPage'=>$loginPage,
+        'switchTeamsPage'=>$switchTeamsPage,
         'registerPage'=>$registerPage,
         'phaseType' => $phaseType,
         'phaseName'=>$phaseName,

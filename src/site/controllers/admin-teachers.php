@@ -28,19 +28,19 @@ return function ($kirby, $pages, $page, $site)
       try
       {
         $actionType='creation of the teacher';
-        $teamName = $_POST['teamName'];
+        $teacherName = $_POST['teacherName'];
 
 
         $user = $kirby->users()->create([
-          'name'      => $teamName,
-          'email'     => str_replace(' ', '-', $teamName) . '@natent.eu',
+          'name'      => $teacherName,
+          'email'     => str_replace(' ', '-', $teacherName) . '@natent.eu',
           'password'  => get('password'),
           'language'  => 'en',
           'role'      => 'teacher',
         ]);
 
         $locationId = $_POST['locationId'];
-        $result = helpers\DataHelper::addTeam($userId, $teamName, $locationId);
+        $result = helpers\DataHelper::addTeamandUser($userId, $user->id(), $teacherName, $locationId, 'TEACHER');
       }
       catch (Exception $e)
       {
@@ -59,7 +59,7 @@ return function ($kirby, $pages, $page, $site)
         $teacherName = $_POST['teacherName'];
         $oldTeacherName = $_POST['oldTeacherName'];
         $renameTeacher=$kirby->user(str_replace(' ', '-', $oldTeacherName) . '@natent.eu');
-        $result = helpers\DataHelper::updateTeacherName($userId, $teacherId, $teacherName);
+        $result = helpers\DataHelper::updateTeamName($userId, $teacherId, $teacherName);
         $renameTeacher->changeName($teacherName);
         $renameTeacher->changeEmail(str_replace(' ', '-', $teacherName) . '@natent.eu');
       }
@@ -125,18 +125,9 @@ return function ($kirby, $pages, $page, $site)
   if ($team['role']=='GLOBAL'||$team['role']=='ADMIN')
     $adminLocation=Cookie::exists('adminCountry') ? Cookie::get('adminLocation') : 0;
 
-  if ($team['role']=='TEACHER')
-  {
-    $locations=helpers\DataHelper::getLocationsByCountry($userId);
-    $teams = helpers\DataHelper::getTeachersByLocation($userId);
-    $adminLocation=$team['location_id'];
-  }
-  else
-  {
-    $locations=($adminCountry>0) ? helpers\DataHelper::getLocationsByCountryId($adminCountry) : [];
-    $teams = helpers\DataHelper::getTeachersByLocationId($adminLocation);
-  }
+  $locations=($adminCountry>0) ? helpers\DataHelper::getLocationsByCountryId($adminCountry) : [];
+  $teachers = helpers\DataHelper::getTeachersByLocationId($adminLocation);
 
   
-  return A::merge($platform, compact( 'teams','countries','locations','newPassword', 'result', 'actionType', 'selectedTab', 'adminCountry','adminLocation'));
+  return A::merge($platform, compact( 'teachers','countries','locations','newPassword', 'result', 'actionType', 'selectedTab', 'adminCountry','adminLocation'));
 };

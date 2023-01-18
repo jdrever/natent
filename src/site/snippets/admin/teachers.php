@@ -101,7 +101,7 @@ use carefulcollab\helpers as helpers;
 
         <td>
           <?php 
-        if ($thisTeacher['id']==$teacher['id'])
+        if ($thisTeacher['id']==$team['id'])
         { ?>
           <div class="alert alert-info" role="alert">
             <?=t("You are currently logged in as this Teacher and therefore cannot remove it","You are currently logged in as this Teacher and therefore cannot remove it")?>.

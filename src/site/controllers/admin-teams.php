@@ -126,7 +126,8 @@ return function ($kirby, $pages, $page, $site)
   if ($team['role']=='GLOBAL'||$team['role']=='ADMIN')
     $adminLocation=Cookie::exists('adminCountry') ? Cookie::get('adminLocation') : 0;
 
-  if ($team['role']=='TEACHER')
+
+    if ($team['role']=='TEACHER')
   {
     $locations=helpers\DataHelper::getLocationsByCountry($userId);
     $teams = helpers\DataHelper::getTeamsByLocation($userId);
@@ -137,6 +138,7 @@ return function ($kirby, $pages, $page, $site)
     $locations=($adminCountry>0) ? helpers\DataHelper::getLocationsByCountryId($adminCountry) : [];
     $teams = helpers\DataHelper::getTeamsByLocationId($adminLocation);
   }
+
 
   
   return A::merge($platform, compact( 'teams','countries','locations','newPassword', 'result', 'actionType', 'selectedTab', 'adminCountry','adminLocation'));

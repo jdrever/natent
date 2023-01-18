@@ -31,12 +31,24 @@
           <li><a href="<?=$adminPage->url()?>" class="nav-link px-2 text-white"><i class="bi bi-gear-fill"></i><?=$adminPage->pageTitle()->isNotEmpty() ? $adminPage->pageTitle() : $adminPage->title() ?></a></li>
 <?php endif ?>
 <?php if ($userLoggedIn) : ?>
-      <li>
-        <a href="<?= url('logout') ?> " class="nav-link px-2 text-white"><i class="bi bi-door-closed-fill"></i><?=t('Logout', 'Logout')?></a>
-      </li>
+  <li class="nav-item dropdown">
+          <a class="nav-link px-2 text-white dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <?=t('Team','Team')?>: <?=$team['name']?>
+            </a>
+          <ul class="dropdown-menu">      
+  <?php if ($userLoggedIn&&($userRole=="TEACHER"||$userRole=="ADMIN"||$userRole=="GLOBAL")) : ?>
+            <li>
+              <a class="dropdown-item" href="<?=$switchTeamsPage->url()?> "><i class="bi bi-microsoft-teams"></i> <?=$switchTeamsPage->pageTitle()->isNotEmpty() ? $switchTeamsPage->pageTitle() : $switchTeamsPage->title() ?></a>
+            </li>
+  <?php endif ?>
+            <li>
+              <a class="dropdown-item" href="<?= url('logout') ?> "><i class="bi bi-door-closed-fill"></i><?=t('Logout', 'Logout')?></a>
+            </li>
+          </ul>
+</li>
 <?php else : ?>
       <li>
-        <a href="<?= $loginPage->url() ?>" class="nav-link px-2 text-white"><i class="bi bi-door-open-fill"></i><?=$loginPage->pageTitle()->isNotEmpty() ? $loginTeamPage->pageTitle() : $loginPage->title() ?></a>
+        <a href="<?= $loginPage->url() ?>" class="nav-link px-2 text-white"><i class="bi bi-door-open-fill"></i> <?=$loginPage->pageTitle()->isNotEmpty() ? $loginTeamPage->pageTitle() : $loginPage->title() ?></a>
       </li>
 <?php endif ?>
     </ul>

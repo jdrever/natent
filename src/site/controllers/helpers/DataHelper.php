@@ -149,7 +149,7 @@ class DataHelper
     private static function getTeamByKirbyUserIdUsingPDO($kirbyUserId, $pdo)
     {
         $stmt = $pdo->prepare("SELECT * FROM cc_teams_by_user WHERE wp_user_id=?");
-        $stmt->execute([$wpUserId]); 
+        $stmt->execute([$kirbyUserId]); 
         $team = $stmt->fetch();
         return $team;
     }
@@ -1528,6 +1528,15 @@ class DataHelper
         $teams = $stmt->fetchAll();
         return $teams;
     }
+
+    public static function getTeachersByLocationId($locationId)
+    {
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
+        $stmt = $pdo->prepare("SELECT * FROM cc_teams WHERE location_id=? AND personal_only=1 AND (removed=0 OR removed is null)");       
+        $stmt->execute([$locationId]); 
+        $teams = $stmt->fetchAll();
+        return $teams;
+    }
     
     public static function addTeam($wpUserId, $teamName, $locationId)
     {
@@ -1623,14 +1632,17 @@ class DataHelper
         try
         {
             $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
-            $team=self::getTeamByKirbyUserId($userId);
+
+            $team=self::getTeamByWpUserId($userId);
 
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
             {
+                $personalOnly=($role=='TEACHER') ? 1 : 0;        
 
-                $sql=("INSERT INTO cc_teams (location_id, name, created_date, created_by, approved_date, approved_by) VALUES (?,?,now(),?, now(),?)");       
-                $pdo->prepare($sql)->execute([$locationId,$teamName, $userId, $userId]);
+                $sql=("INSERT INTO cc_teams (location_id, name, created_date, created_by, approved_date, approved_by, personal_only) VALUES (?,?,now(),?, now(),?,?)");       
+                $pdo->prepare($sql)->execute([$locationId,$teamName, $userId, $userId, $personalOnly]);
                 $result->wasSuccessful=true;
+
 
                 $teamId=$pdo->lastInsertId();
 
@@ -1638,6 +1650,7 @@ class DataHelper
                 $pdo->prepare($sql)->execute([$newUserId,$teamId, $role]);
 
                 $result->wasSuccessful=true;
+
                 return $result;
             }
             else
@@ -1713,14 +1726,14 @@ class DataHelper
     }
 
 
-    public static function updateTeamForUser($wpUserId, $userId, $teamId)
+    public static function updateTeamForUser($userId, $teamId)
     {
         $result=new DataResult();
 
         try
         {
             $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
-            $team=self::getTeamByWPUserId($wpUserId);
+            $team=self::getTeamByWPUserId($userId);
 
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
             {

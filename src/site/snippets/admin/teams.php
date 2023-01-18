@@ -1,5 +1,7 @@
 <?php
 use carefulcollab\helpers as helpers;
+//echo(var_dump($teams));
+//die();
 ?>
 
 

@@ -6,6 +6,6 @@
 <?php snippet ('show-blocks') ?>
 <?php snippet ('admin/location-selector') ?>
 <?php snippet ('admin/show-status') ?>
-<?php snippet ('admin/teams') ?>
+<?php snippet ('admin/teachers') ?>
 </div>
 <?php snippet('footer') ?>

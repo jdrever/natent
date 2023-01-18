@@ -13,7 +13,9 @@ columns:
         templates:
           - admin-challenges
           - admin-teams
+          - admin-teachers
           - admin-moderation
           - admin-locations
+          - admin-switch-teams
           - admin-kirby-ids
 
