@@ -35,7 +35,7 @@ return function ($kirby, $pages, $page, $site)
             $addPhase=new StdClass;
             $addPhase->phaseNumber=$phaseNumber+1;
 
-            if ($$userLoggedOn)
+            if ($userLoggedOn)
             {
                 $phaseCompletionInfo = helpers\DataHelper::getCompletionByPhaseTypeForTeam($team['id'], $phase->title());
                 $addPhase->phaseCompletion=$phaseCompletionInfo['percent_complete'];
