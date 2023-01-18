@@ -2,16 +2,7 @@
 use carefulcollab\helpers as helpers;
 ?>
 
-<form>
-  <label>Country</label>
-  <select>
-    <option>UK</option>
-  </select>
-  <label>School</label>
-  <select>
-    <option>Example School</option>
-  </select>
-</form>
+
 
 
 <ul class="nav nav-tabs" id="adminTab" role="tablist">
@@ -27,9 +18,10 @@ use carefulcollab\helpers as helpers;
 </ul>
 <div class="tab-content" id="adminTabContent">
   <div class="tab-pane fade<?=$selectedTab==='add' ? ' show active' : ''?>" id="add" role="tabpanel" aria-labelledby="add-tab">
-    <div class="container mt-2 mb-4 border border-primary bg-light p-3">
+    <div class="container mt-2 mb-4 border bg-white p-3">
       <form method="post" id="createTeamForm" name="createTeamForm">
         <input type="hidden" id="action" name="action" value="CREATE-TEAM">
+        <input type="hidden" id="locationId" name="locationId" value="<?=$adminLocation?>">
         <div class="mb-3">
           <label for="teamName" class="form-label">Team Name</label>
           <input type="text" class="form-control" id="teamName" name="teamName" aria-describedby="teamNameHelp"
@@ -74,7 +66,7 @@ use carefulcollab\helpers as helpers;
 
 <div class="tab-content" id="adminTabContent">
   <div class="tab-pane fade<?=($selectedTab==='edit') ? ' show active' : ''?>" id="edit" role="tabpanel" aria-labelledby="edit-tab">
-    <table class="table m-2 p-2 border">
+    <table class="table m-2 p-2 border bg-white">
       <tr>
         <th><?= t("Team Name","Team Name") ?></th>
         <th><?= t("Reset Password To","Reset Password To") ?></th>

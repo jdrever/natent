@@ -6,7 +6,9 @@ use carefulcollab\helpers\DataResult;
 return function ($kirby, $pages, $page, $site)
 {
   $requiresLogin = true;
-  $platform = $kirby->controller('platform', compact('page', 'pages', 'kirby', 'site', 'requiresLogin'));
+  $isNonLearningJourneyPage =false;
+  $requiresAdminRole=true;
+  $platform = $kirby->controller('platform', compact('page', 'pages', 'kirby', 'site', 'requiresLogin', 'isNonLearningJourneyPage','requiresAdminRole'));
   $team = $platform['team'];
   $userId = $team['user_id'];
   $result = new DataResult();
@@ -40,9 +42,7 @@ return function ($kirby, $pages, $page, $site)
           ]
         ]);
 
-
-        //TODO: absolutely can't hard code this
-        $locationId = 2;
+        $locationId = $_POST['locationId'];
         $result = helpers\DataHelper::addTeam($userId, $teamName, $locationId);
       }
       catch (Exception $e)
@@ -61,10 +61,10 @@ return function ($kirby, $pages, $page, $site)
         $teamId = $_POST['teamId'];
         $teamName = $_POST['teamName'];
         $oldTeamName = $_POST['oldTeamName'];
-        $team=$kirby->user(str_replace(' ', '-', $oldTeamName) . '@natent.eu');
+        $renameTeam=$kirby->user(str_replace(' ', '-', $oldTeamName) . '@natent.eu');
         $result = helpers\DataHelper::updateTeamName($userId, $teamId, $teamName);
-        $team->changeName($teamName);
-        $team->changeEmail(str_replace(' ', '-', $teamName) . '@natent.eu');
+        $renameTeam->changeName($teamName);
+        $renameTeam->changeEmail(str_replace(' ', '-', $teamName) . '@natent.eu');
       }
       catch (Exception $e)
       {
@@ -83,8 +83,8 @@ return function ($kirby, $pages, $page, $site)
         $actionType = "Reset team password";
         $teamName = $_POST['teamName'];
         $password = $_POST['password'];
-        $team=$kirby->user(str_replace(' ', '-', $teamName) . '@natent.eu');
-        $team->changePassword($password);
+        $resetTeam=$kirby->user(str_replace(' ', '-', $teamName) . '@natent.eu');
+        $resetTeam->changePassword($password);
       }
       catch (Exception $e)
       {
@@ -103,8 +103,8 @@ return function ($kirby, $pages, $page, $site)
         $teamId = $_POST['teamId'];
         $teamName = $_POST['teamName'];
         $result = helpers\DataHelper::removeTeam($userId, $teamId);
-        $team=$kirby->user(str_replace(' ', '-', $teamName) . '@natent.eu');
-        $team->delete();
+        $removeTeam=$kirby->user(str_replace(' ', '-', $teamName) . '@natent.eu');
+        $removeTeam->delete();
       }
       catch (Exception $e)
       {
@@ -114,7 +114,32 @@ return function ($kirby, $pages, $page, $site)
       }
     }
   }
+  $countries = helpers\DataHelper::getCountries();
+  $adminCountry=0;
+  $adminLocation=0;
 
-  $teams = helpers\DataHelper::getTeamsByLocation($userId);
-  return A::merge($platform, compact( 'teams','newPassword', 'result', 'actionType', 'selectedTab'));
+  if ($team['role']=='ADMIN')
+  {
+    $adminCountry=$team['country_id'];
+  }
+  if ($team['role']=='GLOBAL')
+    $adminCountry=Cookie::exists('adminCountry') ? Cookie::get('adminCountry') : 0;
+  
+  if ($team['role']=='GLOBAL'||$team['role']=='ADMIN')
+    $adminLocation=Cookie::exists('adminCountry') ? Cookie::get('adminLocation') : 0;
+
+  if ($team['role']=='TEACHER')
+  {
+    $locations=helpers\DataHelper::getLocationsByCountry($userId);
+    $teams = helpers\DataHelper::getTeamsByLocation($userId);
+    $adminLocation=$team['location_id'];
+  }
+  else
+  {
+    $locations=($adminCountry>0) ? helpers\DataHelper::getLocationsByCountryId($adminCountry) : [];
+    $teams = helpers\DataHelper::getTeamsByLocationId($adminLocation);
+  }
+
+  
+  return A::merge($platform, compact( 'teams','countries','locations','newPassword', 'result', 'actionType', 'selectedTab', 'adminCountry','adminLocation'));
 };

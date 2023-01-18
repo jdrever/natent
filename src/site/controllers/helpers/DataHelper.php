@@ -1456,6 +1456,15 @@ class DataHelper
             return false;
     }
 
+    public static function getLocationsByCountryId($countryId)
+    {
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
+        $stmt = $pdo->prepare("SELECT * FROM cc_locations WHERE (removed=0 OR removed is null) AND country_id=?"); 
+        $stmt->execute([$countryId]); 
+        $locations = $stmt->fetchAll();
+        return $locations;
+    }
+
     public static function getTeamsByRole($wpUserId)
     {
         $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
@@ -1492,6 +1501,15 @@ class DataHelper
         $team=self::getTeamByWPUserId($wpUserId);
         $stmt = $pdo->prepare("SELECT * FROM cc_teams WHERE location_id=? AND (removed=0 OR removed is null)");       
         $stmt->execute([$team['location_id']]); 
+        $teams = $stmt->fetchAll();
+        return $teams;
+    }
+
+    public static function getTeamsByLocationId($locationId)
+    {
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
+        $stmt = $pdo->prepare("SELECT * FROM cc_teams WHERE location_id=? AND (removed=0 OR removed is null)");       
+        $stmt->execute([$locationId]); 
         $teams = $stmt->fetchAll();
         return $teams;
     }

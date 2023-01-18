@@ -20,6 +20,16 @@ return [
         }
       ],
       [
+        'pattern' => 'admin-controller',
+        'method' => 'POST',
+        'action'  => function () {
+          return new Page([
+            'slug' => 'admin-controller',
+            'template' => 'admin-controller',
+          ]);
+        }
+      ],
+      [
         'pattern' => 'country-controller',
         'method' => 'GET',
         'action'  => function () {

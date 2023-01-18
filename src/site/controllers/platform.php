@@ -3,8 +3,9 @@ include 'helpers/DataHelper.php';
 
 use carefulcollab\helpers as helpers;
 
-return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearningJourneyPage =false) 
+return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearningJourneyPage =false, $requiresAdminRole=false) 
 {
+    $loginPage=$site->index()->find('platform/login');
     if ($requiresLogin&&!$kirby->user())
     {
         $nextPageUrl="";
@@ -12,13 +13,17 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         {
             $nextPageUrl=$nextPage->url();
         }
-        $loginPage=$site->index()->find('platform/login');
+
         $loginPage->go([ 'query' => [ 'nextPageUrl' => $nextPageUrl, 'currentPageUrl' => $page->url() ]]);
     }
 
     $userLoggedIn=$kirby->user();
     $userId=1;
     $team=helpers\DataHelper::getTeamByWPUserId($userId);
+
+    if ($requiresAdminRole&&(!in_array($team['role'],array('TEACHER','ADMIN','GLOBAL'))))
+        $loginPage->go();
+
     $status='';
     if ($kirby->request()->get('_taskStatus')) $status='task-ok' ;
     if ($kirby->request()->get('_taskCommonsStatus')) $status=$kirby->request()->get('task-commons-ok') ;
@@ -28,8 +33,6 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     $pointsAdded=$kirby->request()->get('points') ? $kirby->request()->get('points') : 0;
     $pointsAddedOtherTeam=$kirby->request()->get('pointsOther') ? $kirby->request()->get('pointsOther') : 0;
     
-
-
     
     if (!$isNonLearningJourneyPage) Cookie::set("resumePage",$_SERVER['REQUEST_URI']);
 
@@ -40,8 +43,6 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     $languagePage=$platformPage->children()->filterBy('template','country')->filterBy('language','*=', $language)->first();
 
     if (is_null($languagePage)) $languagePage=$platformPage->children()->filterBy('template','country')->filterBy('language','*=', 'en')->first();
-    //echo(var_dump($kirby->language()));
-    //die();
 
     $country=$languagePage->title();
     $exampleTeam=$languagePage->exampleTeam()->toInt();
