@@ -10,8 +10,9 @@ return function ($kirby, $pages, $page, $site)
     $userId = $platform['userId'];
     $latestAppreciations=[];
     $latestComments=[];
+    $userLoggedOn=$platform['userLoggedIn'];
 
-    if ($platform['userLoggedIn'])
+    if ($userLoggedOn)
     {
         $latestComments = helpers\DataHelper::getLatestComments($userId);
         $latestAppreciations = helpers\DataHelper::getLatestAppreciations($userId);
@@ -29,10 +30,16 @@ return function ($kirby, $pages, $page, $site)
         $phasePage = $languagePage->index()->filterBy('phase', strtolower($phase->title()))->first();
         if ($phasePage)
         {
-            $phaseCompletionInfo = helpers\DataHelper::getCompletionByPhaseTypeForTeam($team['id'], $phase->title());
+            
+            
             $addPhase=new StdClass;
             $addPhase->phaseNumber=$phaseNumber+1;
-            $addPhase->phaseCompletion=$phaseCompletionInfo['percent_complete'];
+
+            if ($$userLoggedOn)
+            {
+                $phaseCompletionInfo = helpers\DataHelper::getCompletionByPhaseTypeForTeam($team['id'], $phase->title());
+                $addPhase->phaseCompletion=$phaseCompletionInfo['percent_complete'];
+            }
             $addPhase->title=$phasePage->title();
             $addPhase->url=$phasePage->url();
             $addPhase->backgroundColour=$phase->backgroundColour();
