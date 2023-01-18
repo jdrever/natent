@@ -20,7 +20,8 @@ return function ($kirby, $page, $pages, $site) {
     // try to log the user in with the provided credentials
     try {
       $login=get('login');
-      if (strpos($login,'@')===0)$login.='@natent.eu';
+      echo(strpos($login,'@'));
+      if (strpos($login,'@')===0){ $login.='@natent.eu'; }
       $login=str_replace(' ','-',$login);
       echo($login);
       $kirby->auth()->login($login, get('password'));
