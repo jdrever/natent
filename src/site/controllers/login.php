@@ -20,10 +20,8 @@ return function ($kirby, $page, $pages, $site) {
     // try to log the user in with the provided credentials
     try {
       $login=get('login');
-      echo(strpos($login,'@'));
       if (strpos($login,'@')===false){ $login.='@natent.eu'; }
       $login=str_replace(' ','-',$login);
-      echo($login);
       $kirby->auth()->login($login, get('password'));
 
 
@@ -40,7 +38,6 @@ return function ($kirby, $page, $pages, $site) {
     } catch (Exception $e) {
       $error = true;
       $alert="This login could not be recognised";
-      echo($e);
     }
 
   }

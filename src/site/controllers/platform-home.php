@@ -8,10 +8,14 @@ return function ($kirby, $pages, $page, $site)
     $isNonLearningJourneyPage = true;
     $platform = $kirby->controller('platform', compact('kirby', 'pages', 'page', 'site', 'requiresLogin', 'isNonLearningJourneyPage'));
     $userId = $platform['userId'];
-    
-    $latestComments = helpers\DataHelper::getLatestComments($userId);
-    $latestAppreciations = helpers\DataHelper::getLatestAppreciations($userId);
+    $latestAppreciations=[];
+    $latestComments=[];
 
+    if ($platform['userLoggedIn'])
+    {
+        $latestComments = helpers\DataHelper::getLatestComments($userId);
+        $latestAppreciations = helpers\DataHelper::getLatestAppreciations($userId);
+    }
     $phases = $site->index()->filterBy('template', 'phase');
     $languagePhases=[];
     $team=$platform['team'];
