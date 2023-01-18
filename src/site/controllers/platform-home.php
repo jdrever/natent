@@ -40,6 +40,10 @@ return function ($kirby, $pages, $page, $site)
                 $phaseCompletionInfo = helpers\DataHelper::getCompletionByPhaseTypeForTeam($team['id'], $phase->title());
                 $addPhase->phaseCompletion=$phaseCompletionInfo['percent_complete'];
             }
+            else
+            {
+                $addPhase->phaseCompletion=0;
+            }
             $addPhase->title=$phasePage->title();
             $addPhase->url=$phasePage->url();
             $addPhase->backgroundColour=$phase->backgroundColour();
