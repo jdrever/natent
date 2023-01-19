@@ -18,4 +18,5 @@ node_modules/
 /src/site/languages/hu.php
 
 /src/site/accounts
+.VSCodeCounter/
 
