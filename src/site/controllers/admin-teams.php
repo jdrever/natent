@@ -119,6 +119,7 @@ return function ($kirby, $pages, $page, $site)
   $adminCountry=0;
   $adminLocation=0;
 
+
   if ($team['role']=='ADMIN')
     $adminCountry=$team['country_id'];
     
@@ -126,7 +127,7 @@ return function ($kirby, $pages, $page, $site)
     $adminCountry=Cookie::exists('adminCountry') ? Cookie::get('adminCountry') : 0;
   
   if ($team['role']=='GLOBAL'||$team['role']=='ADMIN')
-    $adminLocation=Cookie::exists('adminCountry') ? Cookie::get('adminLocation') : 0;
+    $adminLocation=Cookie::exists('adminLocation') ? Cookie::get('adminLocation') : 0;
 
 
   if ($team['role']=='TEACHER')
