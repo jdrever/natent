@@ -1,10 +1,11 @@
 <?php
 use carefulcollab\helpers as helpers;
 return function($kirby, $pages, $page, $site) {
-    $requiresLogin=true;
+    $requiresLogin=false;
     $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site','requiresLogin'));
     $team=$platform['team'];
     $country=$platform['country'];
+    $userLoggedIn=$platform['userLoggedIn'];
 
     if($kirby->request()->is('POST')) 
     {
@@ -18,8 +19,15 @@ return function($kirby, $pages, $page, $site) {
     }
     else
     {
-        return A::merge($platform, [
-            'showForm' => true
-        ]);
+        if ($userLoggedIn)
+        {
+            $teamContext=isset($team['context']) ? $team['context'] : '';
+        }
+        else
+        {
+            $exampleTeam=helpers\DataHelper::getTeamByTeamId($platform['exampleTeam']);
+            $teamContext=isset($exampleTeam['context']) ? $exampleTeam['context'] : '';
+        }
+        return A::merge($platform, compact('teamContext'));
     }
 };
