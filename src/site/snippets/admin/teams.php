@@ -80,10 +80,14 @@ if ($adminLocation>0) :
       $newResetPassword=helpers\DataHelper::random_str(8);
     ?>
       <tr>
+          <th colspan=3><?=$thisTeam['name']?></th>
+    </tr>
+      <tr>
         <td>
           <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
             <input type="hidden" id="action" name="action" value="RENAME-TEAM">
-            <input type="text" id="teamName" name="teamName" value="<?= $thisTeam['name'] ?>" required>
+            <label for="teamName" class="form-label">Enter the new name below:</lablel>
+            <input type="text" class="form-control m-2" id="teamName" name="teamName" value="<?= $thisTeam['name'] ?>" required>
             <input type="hidden" id="teamId" name="teamId" value="<?= $thisTeam['id'] ?>">
             <input type="hidden" id="oldTeamName" name="oldTeamName" value="<?= $thisTeam['name'] ?>">
             <input type="submit" class="btn btn-primary" value="<?= t("RENAME","RENAME") ?>">
