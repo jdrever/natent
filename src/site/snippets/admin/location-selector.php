@@ -36,7 +36,8 @@ if (!isset($showLocation))
     <input type="hidden" name="action" id="action" value="select-location">
     <div class="row g-3 align-items-center">
       <div class="col-2">
-        <label for="locationId" class="form-label">School</label>
+        <label for="locationId" class="form-label" aria-describedby="locationHelp">School</label>
+        <div id="locationHelp" class="form-text">Make sure you select the school FIRST!</div>
       </div>
       <div class="col-3">
         <select class="form-select" id="locationId" name="locationId">
