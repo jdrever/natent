@@ -1,5 +1,8 @@
-<?php if ($items)
+<?php 
+if ($adminLocation>0)
 {
+  if ($items)
+  {
 ?>
 
 <p><?=t("Below is a list of all content that requires moderation","Below is a list of all content that requires moderation")?>:</P>
@@ -54,5 +57,6 @@ else
 ?>
     <div class="alert alert-info" role="alert"><?=t("You do not have any items to moderate","You do not have any items to moderate")?>.</div>
 <?php
+  }
 }
 ?>
