@@ -10,6 +10,7 @@ return function ($kirby, $pages, $page, $site)
   $userId = $team['user_id'];
   $result = '';
   $actionType='';
+  $selectedTab='add';
 
   $country = $platform['country'];
 
@@ -25,7 +26,6 @@ return function ($kirby, $pages, $page, $site)
         $locationLongitude=$_POST['locationLongitude'];
         $countryId=$_POST['countryId'];
         $result=helpers\DataHelper::addLocation($userId, $countryId, $locationName, $locationLatitude, $locationLongitude);
-        $selectedTab=4;
     }
 
     if ($action=="UPDATE-LOCATION")
@@ -36,7 +36,7 @@ return function ($kirby, $pages, $page, $site)
         $locationLatitude=$_POST['locationLatitude'];
         $locationLongitude=$_POST['locationLongitude'];
         $result=helpers\DataHelper::updateLocation($userId, $locationId, $locationName, $locationLatitude, $locationLongitude);
-        $selectedTab=4;
+        $selectedTab='edit';
     }
 
     if ($action=="REMOVE-LOCATION")
@@ -44,11 +44,21 @@ return function ($kirby, $pages, $page, $site)
         $actionType="removal of a Location";
         $locationId=$_POST['locationId'];
         $result=helpers\DataHelper::removeLocation($userId, $locationId);
-        $selectedTab=4;
+        $selectedTab='edit';
     }
   }
 
   $countries = helpers\DataHelper::getCountries();
-  $locations = helpers\DataHelper::getLocationsByCountry($userId);
-  return A::merge($platform, compact('countries', 'locations','result', 'actionType'));
+
+  $adminCountry=0;
+  
+  if ($team['role']=='ADMIN')
+    $adminCountry=$team['country_id'];
+    
+  if ($team['role']=='GLOBAL')
+    $adminCountry=Cookie::exists('adminCountry') ? Cookie::get('adminCountry') : 0;
+
+  $locations = helpers\DataHelper::getLocationsByCountryId($adminCountry);
+
+  return A::merge($platform, compact('countries', 'locations','result', 'actionType', 'selectedTab', 'adminCountry'));
 };

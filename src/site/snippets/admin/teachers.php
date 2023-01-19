@@ -3,21 +3,21 @@ use carefulcollab\helpers as helpers;
 if ($adminLocation>0) :
 ?>
 
-
-
 <ul class="nav nav-tabs" id="adminTab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link<?=($selectedTab==='add') ? ' active' : '' ?>" id="add-tab" data-bs-toggle="tab" data-bs-target="#add" type="button" role="tab"
-      aria-controls="add" aria-selected="<?=($selectedTab==='add') ? 'true' : 'false' ?>" ><?= t("Add a New Teacher","Add a New Teacher") ?></button>
+    <button class="nav-link<?=($selectedTab==='add') ? ' active' : '' ?>" id="add-tab" data-bs-toggle="tab"
+      data-bs-target="#add" type="button" role="tab" aria-controls="add"
+      aria-selected="<?=($selectedTab==='add') ? 'true' : 'false' ?>"><?= t("Add a New Teacher","Add a New Teacher") ?></button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link<?=($selectedTab==='edit') ? ' active' : '' ?>" id="edit-tab" data-bs-toggle="tab" data-bs-target="#edit" type="button" role="tab"
-      aria-controls="edit"
+    <button class="nav-link<?=($selectedTab==='edit') ? ' active' : '' ?>" id="edit-tab" data-bs-toggle="tab"
+      data-bs-target="#edit" type="button" role="tab" aria-controls="edit"
       aria-selected="<?=($selectedTab==='edit') ? 'true' : 'false' ?>"><?= t("Editing an Existing Teacher", "Editing an Existing Teacher") ?></button>
   </li>
 </ul>
 <div class="tab-content" id="adminTabContent">
-  <div class="tab-pane fade<?=$selectedTab==='add' ? ' show active' : ''?>" id="add" role="tabpanel" aria-labelledby="add-tab">
+  <div class="tab-pane fade<?=$selectedTab==='add' ? ' show active' : ''?>" id="add" role="tabpanel"
+    aria-labelledby="add-tab">
     <div class="container mt-2 mb-4 border bg-white p-3">
       <form method="post" id="createTeacherForm" name="createTeacherForm">
         <input type="hidden" id="action" name="action" value="CREATE-TEACHER">
@@ -36,7 +36,8 @@ if ($adminLocation>0) :
           <div id="passwordHelp" class="form-text"><span style="font-size: 1.2em;">You need to <strong>note this
                 password down NOW</strong> - you won't get to see it again!</span></div>
         </div>
-        <button type="submit" name="createTeacherButton" id="createTeacherButton" class="btn btn-primary">ADD TEACHER</button>
+        <button type="submit" name="createTeacherButton" id="createTeacherButton" class="btn btn-primary">ADD
+          TEACHER</button>
       </form>
     </div>
 
@@ -55,7 +56,8 @@ if ($adminLocation>0) :
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
-            <button type="button" class="btn btn-primary" id="createTeacherModalButton" name="createTeacherModalButton">ADD TEACHER</button>
+            <button type="button" class="btn btn-primary" id="createTeacherModalButton"
+              name="createTeacherModalButton">ADD TEACHER</button>
           </div>
         </div>
       </div>
@@ -64,7 +66,8 @@ if ($adminLocation>0) :
 </div>
 
 <div class="tab-content" id="adminTabContent">
-  <div class="tab-pane fade<?=($selectedTab==='edit') ? ' show active' : ''?>" id="edit" role="tabpanel" aria-labelledby="edit-tab">
+  <div class="tab-pane fade<?=($selectedTab==='edit') ? ' show active' : ''?>" id="edit" role="tabpanel"
+    aria-labelledby="edit-tab">
     <table class="table m-2 p-2 border bg-white">
       <tr>
         <th><?= t("Teacher Name","Teacher Name") ?></th>
