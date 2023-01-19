@@ -83,31 +83,7 @@ $content=helpers\DataHelper::getModerationContent($contentType, $contentId);
     <b><?=t("What is the title of your resource?","What is the title of your resource?")?>:</b><br><?=$content['title']?><br>
     <b><?=t("Give a description of your resource","Give a description of your resource")?>:</b><br><?=$content['description']?><br>
     <b><?=t("Enter the website location for your resource (if one exists)","Enter the website location for your resource (if one exists)")?>:</b><br><br><a href="https://<?=$content['url']?>"><?=$content['url']?></a><br>
-    <b><?=t("Upload a document (optional - image or PDF only)","Upload a document (optional - image or PDF only)")?>:</b><br><br><?=showFile($content['file_upload_url'],$content['title'])?><br/><?=t("Please check this file")?></a><br>       
+    <b><?=t("Upload a document (optional - image or PDF only)","Upload a document (optional - image or PDF only)")?>:</b><br><br><?php snippet('show-file', ['fileUrl'=>$content['file_upload_url'],'altText'=>$content['title']])?><br/><?=t("Please check this file")?></a><br>       
  <?php
     }
-
-function showFile($fileUrl, $altText)
-{
-?>
-<div>
-<?php
-   $fileExt = pathinfo($fileUrl, PATHINFO_EXTENSION);
-   if(preg_match('(jpg|jpeg|png|gif)', $fileExt) === 1) 
-   {
-?>
-      <a target="_blank" href="<?=$fileUrl ?>"><img class="img-fluid" src="<?=$fileUrl ?>" alt="<?=$altText?>" /></a>
-<?php
-   }
-   if ($fileExt=="pdf")
-   {
-   ?>
-<iframe src="https://docs.google.com/viewer?url=<?=$fileUrl?>&embedded=true" frameborder="0" height="300px" width="100%"></iframe>
-<a target="_blank" href="<?=$fileUrl ?>" class="btn btn-outline-primary btn-outline btn-sm"><?=t('DOWNLOAD','DOWNLOAD')?></a>
-<?php
-   } 
-?>
-</div>
-<?php
-}
 ?>
