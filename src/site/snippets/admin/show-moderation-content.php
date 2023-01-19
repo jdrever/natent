@@ -1,8 +1,6 @@
 <?php
 use carefulcollab\helpers as helpers;
   $content=helpers\DataHelper::getModerationContent($contentType, $contentId);
-  echo(var_dump($content)); 
-  //die();
     if ($contentType=="Team Profile"&&false)
     {
  ?>
