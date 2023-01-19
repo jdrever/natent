@@ -41,6 +41,7 @@ return function($kirby, $pages, $page, $site)
         $bespokeChallenge='';
         $teams=[];
         $topic=helpers\DataHelper::getAreaToInvestigate($topicId);
+        
         if ($userLoggedIn)
         {
             $challenges=helpers\DataHelper::getChallengesInArea($team['country_id'], $topicId);

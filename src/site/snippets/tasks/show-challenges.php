@@ -1,5 +1,5 @@
-<h3><?=t('List of Challenges for','List of Challenges for')?> <?=t($topic['name'])?></h3>
-<?php if ($challenges) : ?>
+<h3><?=t('List of Challenges for','List of Challenges for')?> <?=t($topic['name'],$topic['name'])?></h3>
+<?php if (count($challenges)>0) : ?>
   <?php foreach ($challenges as $challenge) : ?>
 <div class="container bg-light m-1">
     <div class="card shadow-sm">
@@ -26,9 +26,7 @@
     </div>
 </div>
   <?php endforeach ?>
-<? 
-else :
-?>
+<?php else : ?>
 <p><?=t('There are not any set Challenges for this topic yet','There are not any set Challenges for this topic yet') ?></p>
 <?php endif ?>
 
