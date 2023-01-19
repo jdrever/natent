@@ -1,7 +1,6 @@
 <?php
 use carefulcollab\helpers as helpers;
-//echo(var_dump($teams));
-//die();
+if ($adminLocation>0) :
 ?>
 
 
@@ -163,3 +162,4 @@ use carefulcollab\helpers as helpers;
     }
   });
 </script>
+<?php endif ?>
