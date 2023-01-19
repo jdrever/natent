@@ -5,6 +5,8 @@ return function($kirby, $pages, $page, $site) {
     $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site','requiresLogin'));
     $team=$platform['team'];
     $country=$platform['country'];
+    $userLoggedIn=$platform['userLoggedIn'];
+    
     
     if($kirby->request()->is('POST')) 
     {
@@ -19,9 +21,18 @@ return function($kirby, $pages, $page, $site) {
     else
     {
         $skills=helpers\DataHelper::getSkillsets();
-        return A::merge($platform, [
-            'skills' => $skills,
-            'showForm' => true
-        ]);
+
+        if ($userLoggedIn)
+        {
+            $teamDescription=isset($team['description']) ? $team['description'] : '';
+            $teamSkills=isset($team['skills']) ? $team['skills'] : '';
+        }
+        else
+        {
+            $exampleTeam=helpers\DataHelper::getTeamByTeamId($platform['exampleTeam']);
+            $teamDescription=isset($exampleTeam['description']) ? $exampleTeam['description'] : '';
+            $teamSkills=isset($exampleTeam['skills']) ? $exampleTeam['skills'] : '';
+        }
+        return A::merge($platform, compact('skills','teamSkills', 'teamDescription'));
     }
 };

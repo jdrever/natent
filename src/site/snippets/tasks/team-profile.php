@@ -4,7 +4,7 @@
     <input type="hidden" id="collabType" name="collabType" value="Profile">
     <label for="school-info" class="m-1"><?= t('Tell us about your Team','Tell us about your Team') ?>:</label>
     <textarea class="form-control m-1" aria-label="With textarea" id="description" name="description" rows="8"
-      required><?=(isset($team['description'])) ? $team['description'] : '' ?></textarea>
+      required><?=$teamDescription ?></textarea>
     <label for="form-check"><?= t('Tell us what Skillsets your team have','Tell us what Skillsets your team have') ?>:</label>
     <div class="container">
     <?php
@@ -16,7 +16,7 @@ foreach ($skills as $skill)
             <div class="row">
               <div class="col border border-secondary bg-light p-2 m-1">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="<?=$skillName?>" name="skills[]" id="skills"  <?php if (isset($team['skills'])&&strpos($team['skills'],$skillName)!== false) { echo ("checked"); } ?> >
+                        <input class="form-check-input" type="checkbox" value="<?=$skillName?>" name="skills[]" id="skills"  <?php if (strpos($teamSkills,$skillName)!== false) { echo ("checked"); } ?> >
                         <label class="form-check-label" for="skills">
                             <?=t($skillName, $skillName) ?>
                         </label>
