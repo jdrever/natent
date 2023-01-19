@@ -120,9 +120,8 @@ return function ($kirby, $pages, $page, $site)
   $adminLocation=0;
 
   if ($team['role']=='ADMIN')
-  {
     $adminCountry=$team['country_id'];
-  }
+    
   if ($team['role']=='GLOBAL')
     $adminCountry=Cookie::exists('adminCountry') ? Cookie::get('adminCountry') : 0;
   
