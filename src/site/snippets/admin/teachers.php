@@ -1,7 +1,7 @@
 <?php
 use carefulcollab\helpers as helpers;
+if ($adminLocation>0) :
 ?>
-
 
 
 
@@ -160,3 +160,4 @@ use carefulcollab\helpers as helpers;
     }
   });
 </script>
+<?php endif ?>
