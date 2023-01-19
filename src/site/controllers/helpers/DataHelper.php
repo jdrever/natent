@@ -1100,12 +1100,11 @@ class DataHelper
     }  
 
 
-    public static function getModerationQueue($wpUserId)
+    public static function getModerationQueue($locationId)
     {
         $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
-        $team=self::getTeamByWPUserId($wpUserId);
         $stmt = $pdo->prepare("SELECT * FROM cc_moderation_queue WHERE location_id=? ORDER BY created_date");       
-        $stmt->execute([$team['location_id']]); 
+        $stmt->execute([$locationId]); 
         $moderationQueue = $stmt->fetchAll();
         return $moderationQueue;
     }  
@@ -1121,18 +1120,18 @@ class DataHelper
     }  
 
 
-    public static function approveAllContent($wpUserId)
+    public static function approveAllContent($userId, $locationId)
     {
         $result=new DataResult();
         try
         {
             $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
             $pdo->beginTransaction();
-            $team=self::getTeamByWPUserId($wpUserId);
+            $team=self::getTeamByWPUserIdUsingPDO($userId,$pdo);
             if ($team['role']=='TEACHER'||$team['role']=='ADMIN'||$team['role']=="GLOBAL")
             {
                 
-                $moderationQueue=self::getModerationQueue($wpUserId);
+                $moderationQueue=self::getModerationQueue($locationId);
                 foreach($moderationQueue as $item)
                 {
                     $contentType=$item['content_type'];
@@ -1141,7 +1140,7 @@ class DataHelper
                     if (!empty($tableToUpdate))
                     {
                         $sql=("UPDATE " . $tableToUpdate ." SET approved_by=?,approved_date=now() WHERE id=?");
-                        $pdo->prepare($sql)->execute([$wpUserId, $contentId]);
+                        $pdo->prepare($sql)->execute([$locationId, $contentId]);
                     }
                 }
                 $pdo->commit();

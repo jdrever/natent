@@ -1,61 +1,67 @@
 <?php
+
 use carefulcollab\helpers as helpers;
+use carefulcollab\helpers\DataResult;
 
-return function($kirby, $pages, $page, $site) {
-    $requiresLogin = true;
-    $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site', 'requiresLogin'));
-    $team = $platform['team'];
-    $userId=$team['user_id'];
+return function ($kirby, $pages, $page, $site)
+{
+  $requiresLogin = true;
+  $platform = $kirby->controller('platform', compact('page', 'pages', 'kirby', 'site', 'requiresLogin'));
+  $team = $platform['team'];
+  $userId = $team['user_id'];
+  $result = new DataResult();
+  $actionType = '';
 
-    $items = helpers\DataHelper::getModerationQueue($userId);
-    
-    if($kirby->request()->is('POST')) 
+  if ($team['role'] == 'ADMIN')
+    $adminCountry = $team['country_id'];
+
+  if ($team['role'] == 'GLOBAL')
+    $adminCountry = Cookie::exists('adminCountry') ? Cookie::get('adminCountry') : 0;
+
+  if ($team['role'] == 'GLOBAL' || $team['role'] == 'ADMIN')
+    $adminLocation = Cookie::exists('adminCountry') ? Cookie::get('adminLocation') : 0;
+
+  if ($team['role'] == 'TEACHER')
+  {
+    $adminLocation = $team['location_id'];
+  }
+  else
+  {
+    $locations = ($adminCountry > 0) ? helpers\DataHelper::getLocationsByCountryId($adminCountry) : [];
+  }
+
+
+  if ($kirby->request()->is('POST'))
+  {
+    $action = $_POST['action'];
+    if ($action == "APPROVE" || $action == "REJECT")
     {
-        try {
-          
-          $result=true;
-          } catch(Exception $e) {
-          
-            echo 'The user could not be created';
-            $result=false;
-            echo($e->getMessage());
-          
-          }
+      $contentType = $_POST['contentType'];
+      $contentId = $_POST['contentId'];
+      $selectedTab = 2;
 
-          return A::merge($platform, compact('result', 'items'));
+      if ($action == "APPROVE")
+      {
+        $actionType = "approval of this content";
+        $result = helpers\DataHelper::approveContent($userId, $contentType, $contentId);
+      }
+      if ($action == "REJECT")
+      {
+        $actionType = "rejection of this content";
+        $result = helpers\DataHelper::rejectContent($userId, $contentType, $contentId);
+      }
     }
-    else
+    if ($action == "APPROVE-ALL")
     {
-        return A::merge($platform, compact('items'));
+      $actionType = "approval of this content";
+      $result = helpers\DataHelper::approveAllContent($userId, $adminLocation);
     }
+  }
+
+  $countries = helpers\DataHelper::getCountries();
+
+
+
+  $items = helpers\DataHelper::getModerationQueue($adminLocation);
+  return A::merge($platform, compact('items', 'countries', 'locations', 'adminCountry', 'adminLocation', 'result', 'actionType'));
 };
-
-/**
- * Generate a random string, using a cryptographically secure 
- * pseudorandom number generator (random_int)
- *
- * This function uses type hints now (PHP 7+ only), but it was originally
- * written for PHP 5 as well.
- * 
- * For PHP 7, random_int is a PHP core function
- * For PHP 5.x, depends on https://github.com/paragonie/random_compat
- * 
- * @param int $length      How many characters do we want?
- * @param string $keyspace A string of all possible characters
- *                         to select from
- * @return string
- */
-function random_str(
-  int $length = 64,
-  string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-): string {
-  if ($length < 1) {
-      throw new \RangeException("Length must be a positive integer");
-  }
-  $pieces = [];
-  $max = mb_strlen($keyspace, '8bit') - 1;
-  for ($i = 0; $i < $length; ++$i) {
-      $pieces []= $keyspace[random_int(0, $max)];
-  }
-  return implode('', $pieces);
-}
