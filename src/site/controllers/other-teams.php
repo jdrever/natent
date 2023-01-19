@@ -44,7 +44,7 @@ return function($kirby, $pages, $page, $site)
     else 
         $showAsOutlineAllAreas="outline-";
 
-    $areas=helpers\DataHelper::getAreasWithAvailableChallenges($userId);
+    $areas=helpers\DataHelper::getAreasWithAvailableChallenges($team['country_id']);
     $countries = helpers\DataHelper::getCountries();
     $skillsets = helpers\DataHelper::getSkillsets();
 

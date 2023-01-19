@@ -207,25 +207,11 @@ class DataHelper
         return $pdo->query("SELECT id,name,description FROM cc_areas")->fetchAll();        
     }
 
-    public static function getAreasWithAvailableChallenges($wpUserId)
+    public static function getAreasWithAvailableChallenges($countryId)
     {
-        $pdo=self::getPDOConnection();
-        $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
-
+        $pdo = new PDO(self::DSN, self::DB_USER, self::DB_PASSWORD);
         $stmt=$pdo->prepare("SELECT DISTINCT cca.id,cca.name,cca.description FROM cc_areas cca JOIN cc_challenges ccc ON (cca.id=ccc.area_id OR cca.id=area_id2  OR cca.id=area_id3  OR cca.id=area_id4  OR cca.id=area_id5) WHERE (ccc.country_id=? OR ccc.show_for_all=1) ORDER BY cca.id");
-        $stmt->execute([$team['country_id']]);
-        //not using translation table 17/01/23 JD
-        //
-        //if ($languageCode==='en')
-        //{
-
-        //}
-        //else
-        //{
-        //    $stmt=$pdo->prepare("SELECT DISTINCT cca.id, IFNULL(ccat.translated_title, cca.name) AS name, IFNULL(ccat.description, cca.description) AS description FROM cc_areas cca LEFT JOIN cc_areas_translations ccat ON cca.id=ccat.area_id JOIN cc_challenges ccc ON (cca.id=ccc.area_id OR cca.id=area_id2  OR cca.id=area_id3  OR cca.id=area_id4  OR cca.id=area_id5) WHERE (ccc.country_id=? OR ccc.show_for_all=1) AND ccat.language_code=? ORDER BY cca.id");
-        //    $stmt->execute([$team['country_id'], $languageCode]);
-        //}
-        
+        $stmt->execute([$countryId]);  
         return $stmt->fetchAll();        
     }
 
@@ -237,12 +223,11 @@ class DataHelper
         return $stmt->fetch();         
     }
 
-    public static function getChallengesInArea($wpUserId, $areaId)
+    public static function getChallengesInArea($countryId, $areaId)
     {
         $pdo=self::getPDOConnection();
-        $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
         $stmt= $pdo->prepare("SELECT * FROM cc_challenges WHERE (area_id=? OR area_id2=? OR area_id3=? OR area_id4=? OR area_id5=?) AND (country_id=? OR show_for_all=1)");
-        $stmt->execute([$areaId, $areaId,$areaId,$areaId,$areaId,$team['country_id']]);
+        $stmt->execute([$areaId, $areaId,$areaId,$areaId,$areaId,$countryId]);
         return $stmt->fetchAll();         
     }
 

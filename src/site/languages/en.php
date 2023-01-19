@@ -88,7 +88,11 @@ return [
         'SHARE YOUR PROFILE' => 'SHARE YOUR PROFILE',
 
         //topic
+        'Your team has previously selected a Topic and Challenge' => 'Your team has previously selected a Topic and Challenge',
+        'The example team selected the following Topic and Challenge' => 'The example team selected the following Topic and Challenge',
         'SELECT THIS TOPIC' => 'SELECT THIS TOPIC',
+        'BROWSE THIS TOPIC' => 'BROWSE THIS TOPIC',
+        'You can browse the Topics and Challenges, or click Next to continue the Learning Journey'=>'You can browse the Topics and Challenges, or click Next to continue the Learning Journey',
         'List of Challenges for' => 'List of Challenges for',
         'SELECT THIS CHALLENGE' => 'SELECT THIS CHALLENGE',
         'There are not any set Challenges for this topic yet' => 'There are not any set Challenges for this topic yet',
@@ -135,7 +139,27 @@ return [
         //add to commons
         'Got More Resources to Share?'=> 'Got More Resources to Share?',
 
-        //TODO: admin challenge - hopefully not needed
+        //content for non-logged in users
+        'Register to access collaboration features'=>'Register to access collaboration features',
+        'Everyone can explore the Natural Entrepreurs Learning Journey but to complete tasks and collaborate with other teams, you will need to register your school with the
+        project'=>'Everyone can explore the Natural Entrepreurs Learning Journey but to complete tasks and collaborate with other teams, you will need to register your school with the
+        project',
+        'Or if you already have a username and password, then' => 'Or if you already have a username and password, then',
+        'The information below is taken from the Example Team, and is intended to give an idea of what a good response to this task might look like.  You can continue to 
+        browse through the Learning Journey by clicking the NEXT button below' => 'The information below is taken from the Example Team, and is intended to give an idea of what a good response to this task might look like.  You can continue to 
+        browse through the Learning Journey by clicking the NEXT button below',
+
+        //collab point completion message
+        'Thankyou for completing this collaboration point!'=>'Thankyou for completing this collaboration point!',
+        'Your team has gained' => 'Your team has gained',
+        'points and now has a total of' => 'points and now has a total of',
+        'points'=>'points',
+        'The team you engaged with gained'=> 'The team you engaged with gained',
+        'Your Team Page will have been updated. Other teams will be able to see what you have been working on, and you can
+        check out other teams to get inspiration'=>'Your Team Page will have been updated. Other teams will be able to see what you have been working on, and you can
+        check out other teams to get inspiration',
+
+        //admin challenge - hopefully not needed
         'Enter the new Challenge name' => 'Enter the new Challenge name',
         'Enter a description' => 'Enter a description',
         'Enter further information (displayed as second paragraph)' => 'Enter further information (displayed as second paragraph)',
@@ -168,7 +192,11 @@ return [
         'I feel more connected with nature as a source of inspiration for solutions to human challenges.' => 'I feel more connected with nature as a source of inspiration for solutions to human challenges.',
         'I can better imagine a desirable future and link this with practical design ideas.' => 'I can better imagine a desirable future and link this with practical design ideas.',
         'How can you learn from nature to create a positive future for people and planet?' => 'How can you learn from nature to create a positive future for people and planet?',
-        'SHARE YOUR FINAL REVIEW' => 'SHARE YOUR FINAL REVIEW'
+        'SHARE YOUR FINAL REVIEW' => 'SHARE YOUR FINAL REVIEW',
+
+        //example team content
+        
+
         
             ],
     'url' => NULL

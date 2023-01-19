@@ -7,6 +7,21 @@ return function($kirby, $pages, $page, $site)
     $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site','requiresLogin'));
     $team=$platform['team'];
     $country=$platform['country'];
+    $userLoggedIn=$platform['userLoggedIn'];
+
+    if ($userLoggedIn)
+    {
+        $teamArea=$team['area'];
+        $teamChallenge=$team['challenge'];
+    }
+    else
+    {
+        $exampleTeam=helpers\DataHelper::getTeamByTeamId($platform['exampleTeam']);
+        $teamArea=$exampleTeam['area'];
+        $teamChallenge=$exampleTeam['challenge'];
+    }
+
+
 
     if($kirby->request()->is('POST')) 
     {
@@ -23,12 +38,20 @@ return function($kirby, $pages, $page, $site)
     else if (get('topicId'))
     {
         $topicId=get('topicId');
-        $topic=helpers\DataHelper::getAreaToInvestigate($topicId);
-        $challenges=helpers\DataHelper::getChallengesInArea($team['user_id'], $topicId);
         $bespokeChallenge='';
-        if ($team['bespoke_challenge']==1) $bespokeChallenge=$team['challenge'];
-
-        $teams = helpers\DataHelper::getTeamsByAreaId($topicId);
+        $teams=[];
+        $topic=helpers\DataHelper::getAreaToInvestigate($topicId);
+        if ($userLoggedIn)
+        {
+            $challenges=helpers\DataHelper::getChallengesInArea($team['country_id'], $topicId);
+            if ($team['bespoke_challenge']==1) $bespokeChallenge=$team['challenge'];
+            $teams = helpers\DataHelper::getTeamsByAreaId($topicId);
+        }
+        else
+        {
+            
+            $challenges=helpers\DataHelper::getChallengesInArea($exampleTeam['country_id'], $topicId);
+        }
 
         return A::merge($platform, [
             'topic' => $topic,
@@ -36,16 +59,25 @@ return function($kirby, $pages, $page, $site)
             'teams' => $teams,
             'showTopics' => false,
             'showChallenges' => true,
+            'teamArea' => $teamArea,
+            'teamChallenge' => $teamChallenge,
             'bespokeChallenge' => $bespokeChallenge,
         ]);
     }
     else
     {
         $currentLang=$kirby->language()->code();
-        $areas=helpers\DataHelper::getAreasWithAvailableChallenges($team['user_id'], $currentLang);
 
+        if ($userLoggedIn)
+        {
+            $areas=helpers\DataHelper::getAreasWithAvailableChallenges($team['country_id']);
+        }
+        else
+        {
+            $exampleTeam=helpers\DataHelper::getTeamByTeamId($platform['exampleTeam']);
+            $areas=helpers\DataHelper::getAreasWithAvailableChallenges($exampleTeam['country_id']);
+        }    
         
-    
         $imageFileEnding=".png";
         if ($currentLang=='lv')
             $imageFileEnding='-lv.jpg';
@@ -59,6 +91,8 @@ return function($kirby, $pages, $page, $site)
         return A::merge($platform,[
             'showTopics' => true,
             'showChallenges' => false,
+            'teamArea' => $teamArea,
+            'teamChallenge' => $teamChallenge,
             'areas' => $areas,
             'imageFileEnding' => $imageFileEnding
         ]);
