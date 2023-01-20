@@ -24,6 +24,7 @@ return function($kirby, $site, $pages, $page) {
         $data = [
             'name' => get('name'),
             'email' => get('email'),
+            'school' => get('school'),
             'message'  => get('message')
         ];
 
@@ -55,7 +56,7 @@ return function($kirby, $site, $pages, $page) {
                     'subject'  => esc($data['name']) . ' sent you a message from the NatEnt Platform',
                     'data'     => [
                         'text'   => esc($data['message']),
-                        'sender' => esc($data['name']),
+                        'sender' => esc($data['name'] . ' '. $data['school']),
                         'email'  => esc($data['email'])
                     ]
                 ]);

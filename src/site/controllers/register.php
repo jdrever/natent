@@ -23,17 +23,20 @@ return function($kirby, $site, $pages, $page) {
         $data = [
             'name' => get('name'),
             'email' => get('email'),
+            'school' => get('school'),
             'message'  => get('message')
         ];
 
         $rules = [
             'name'  => ['required', 'minLength' => 3],
+            'school'  => ['required', 'minLength' => 3],
             'email' => ['required', 'email'],
             'message'  => ['required', 'minLength' => 3, 'maxLength' => 3000],
         ];
 
         $messages = [
             'name'  => 'Please enter a valid name',
+            'name'  => 'Please enter a valid school name',
             'email' => 'Please enter a valid email address',
             'message'  => 'Please enter a message'
         ];
@@ -54,7 +57,7 @@ return function($kirby, $site, $pages, $page) {
                     'subject'  => esc($data['name']) . ' sent you a registration request from the NatEnt Platform',
                     'data'     => [
                         'text'   => esc($data['message']),
-                        'sender' => esc($data['name']),
+                        'sender' => esc($data['name'] . ' '. $data['school']),
                         'email'  => esc($data['email'])
                     ]
                 ]);
