@@ -3,7 +3,6 @@
 {
 ?>
 <form class="form-inline" method="post" enctype="multipart/form-data">
-  <input type="hidden" id="collabType" name="collabType" value="Functions">
     <label class="m-1"><?=t('Enter your Research Questions below','Enter your Research Questions below')?></label>
 
     <?php

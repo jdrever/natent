@@ -76,7 +76,22 @@ return function($kirby, $pages, $page, $site)
         $showAllResourcesAsOutline="outline-";
     }
 
-    $phases = helpers\DataHelper::getPhasesByCountryId($team['country_id']);
+    //$phases = helpers\DataHelper::getPhasesByCountryId($team['country_id']);
+
+    $phaseTypes=$site->index()->filterBy('template','phase');
+    $phases=[];
+    
+
+    $languagePage=$platform['languagePage'];
+    
+    foreach ($phaseTypes as $nextPhase)
+    {
+        $phasePage = $languagePage->index()->filterBy('phase', strtolower($nextPhase->title()))->first();
+        $phases[]=$phasePage;
+    }
+
+    //echo(var_dump($phases));
+    //die();
 
     $phaseTypeFilterSet=false;
 
@@ -86,7 +101,7 @@ return function($kirby, $pages, $page, $site)
 
 
 
-    return A::merge($platform, compact('resources', 'phases', 'countryFilter', 'showAsOutlineAllCountries', 
+    return A::merge($platform, compact('resources', 'phases','countryFilter', 'showAsOutlineAllCountries', 
         'collaborationPointFilter', 'phaseTypeFilter',
         'phaseTypeFilter', 'showAsOutlineAllPhases', 'showAsOutlineGeneralPhase', 
         'recommendedFilter', 'showRecommendedResourcesAsOutline', 'showAllResourcesAsOutline', 'phaseTypeFilterSet'));

@@ -5,7 +5,6 @@
 <div class="container bg-light p-3">
   <form class="form-inline" method="post" action="<?= $page->url() ?>"
     enctype="multipart/form-data">
-    <input type="hidden" id="collabType" name="collabType" value="Create">
     <?php if ((isset($teamDesignFile))&&!empty($teamDesignFile))
     {
     ?>

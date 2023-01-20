@@ -6,7 +6,6 @@
     <iframe loading="lazy" title="'Pitch Video" width="500" height="281" src="https://www.youtube.com/embed/<?= $teamPitchVideoYouTubeId ?>?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
   <?php endif ?>
   <form class="form-inline" method="post" action="<?=$page->url()?>" enctype="multipart/form-data">
-    <input type="hidden" id="collabType" name="collabType" value="Business">
         <label for="form-check" class="form-label"><?=t('Upload your pitch video to your YouTube channel and share the link here','Upload your pitch video to your YouTube channel and share the link here')?>:</label>
         <div class="input-group mb-3">
             <div class="input-group-prepend">

@@ -8,3 +8,6 @@ columns:
         type: fields
         fields:
           mainContent: fields/guideContent
+        collabType:
+          type: text
+          

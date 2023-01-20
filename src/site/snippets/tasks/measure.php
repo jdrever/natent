@@ -2,8 +2,7 @@
 <?php if (isset($teamArea)) 
 {
 ?>
-  <form class="form-inline" method="post" action="<?=$page->url()?>" enctype="multipart/form-data">
-        <input type="hidden" id="collabType" name="collabType" value="Measure">
+  <form class="form-inline" method="post" action="<?=$page->url()?>">
         <label for="recommendations" class="m-1"><?=t('Describe how/if your final Design Solution has addressed the Context and Needs you identified, and which Nature\'s Unifying Patterns have helped you','Describe how/if your final Design Solution has addressed the Context and Needs you identified, and which Nature\'s Unifying Patterns have helped you')?>:</label>
         <div id="recommendationsHelp" class="form-text"><?= t('Enter at least 50 characters to receive points!','Enter at least 50 characters to receive points!')?></div>
         <textarea class="form-control m-1" aria-label="With textarea" rows="8" id="recommendations"

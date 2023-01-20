@@ -1,7 +1,6 @@
 <div class="container bg-light p-3">
 
   <form class="form-inline" method="post">
-    <input type="hidden" id="collabType" name="collabType" value="Statement">
     <label for="context" class="m-1"><?=t('Enter your Context','Enter your Context')?>:</label>
     <div id="contextHelp" class="form-text"><?= t('Enter at least 50 characters to receive points!','Enter at least 50 characters to receive points!')?></div>
     <textarea class="form-control m-1" aria-label="With textarea" id="context" name="context" rows="8"

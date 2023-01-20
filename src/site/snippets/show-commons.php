@@ -10,17 +10,19 @@ use carefulcollab\helpers as helpers;
         <?php
 foreach ($phases as $phase)
 {
-    $phaseTitle=$phase['phase_title'];
-    if (($phaseTypeFilter==$phase['phase_type']))
+    $phaseTitle=$phase->title();
+    $phaseType=$phase->phase();
+    if (($phaseTypeFilter==$phaseType))
     {
         $showAsOutline="";
         $phaseTypeFilterSet=true;
+        $selectedPhase=$phase;
     }
     else $showAsOutline="outline-";
 
 ?>
 
-        <a href="<?=$page->url()?>?phaseType=<?=$phase['phase_type'] ?>"
+        <a href="<?=$page->url()?>?phaseType=<?=$phaseType ?>"
             class="btn btn-<?=$showAsOutline ?>primary"><?=$phaseTitle?></a>
         <?php
 }
@@ -28,9 +30,9 @@ foreach ($phases as $phase)
     </div>
     <?php
 
-if ($phaseTypeFilterSet&&!($phaseTypeFilter==="General"))
+if ($phaseTypeFilterSet&&!($phaseTypeFilter==="General")&&$selectedPhase)
 {
-    $collaborationPoints=helpers\DataHelper::getCollaborationPointsByPhaseType($userId, $phaseTypeFilter);
+  $collaborationPoints=$selectedPhase->index()->filterBy('template','^=', 'task');
     if ($collaborationPointFilter==="All" or empty($collaborationPointFilter))
     {
         $showAsOutlineAllPoints="";
@@ -45,12 +47,10 @@ if ($phaseTypeFilterSet&&!($phaseTypeFilter==="General"))
         <?php
     foreach ($collaborationPoints as $collaborationPoint)
     {
-        $collaborationPointName=$collaborationPoint['name'];
-        //TODO: need a proper strategy for cp naming
-        //$collaborationPointPage=t($collaborationPointName);
-        //if (isset(get_post($collaborationPointPage)->post_title))
-        $collaborationPointName=t($collaborationPointName,$collaborationPointName);//Page)->post_title;
-        if (!($collaborationPointFilter==$collaborationPoint['collaboration_point_type']))
+        $collaborationPointName=$collaborationPoint->title();
+        $collaborationPointType=$collaborationPoint->template();
+
+        if (!($collaborationPointFilter==$collaborationPointType))
         {
             $showAsOutline="outline-";
             $pcollaborationTypeFilterSet=true;
@@ -59,7 +59,7 @@ if ($phaseTypeFilterSet&&!($phaseTypeFilter==="General"))
 
 ?>
 
-        <a href="<?=$page->url()?>?phaseType=<?=$phaseTypeFilter ?>&collaborationPointType=<?=$collaborationPoint['collaboration_point_type']?>"
+        <a href="<?=$page->url()?>?phaseType=<?=$phaseTypeFilter ?>&collaborationPointType=<?=$collaborationPointType?>"
             class="btn btn-<?=$showAsOutline ?>primary m-1"><?=$collaborationPointName?></a>
         <?php
     }

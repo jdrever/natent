@@ -3,36 +3,32 @@
 use carefulcollab\helpers as cchelpers;
 
 $phaseTitle="";
-$collaborationPointName="";
+$collaborationPointType="";
 $resources = cchelpers\DataHelper::getResourcesFromCommonsByTeamId($viewedTeam['id'], !$editTeam);
 
 if ($resources)
 {
     foreach ($resources as $resource)
     {
-        $nextPhaseTitle=$resource['phase_title'];        
+        $nextPhaseTitle=$resource['phase_title']; 
+        $phasePage = $languagePage->index()->filterBy('phase', strtolower($nextPhaseTitle))->first();       
         if (!($phaseTitle==$nextPhaseTitle))
         {
-            $nextPhase=cchelpers\DataHelper::getPhaseTitle($userId,$nextPhaseTitle);
-            if ($nextPhase)
-            {
 ?>
-    <h4><?=$nextPhase['phase_title'] ?></h4>
+    <h4><?=$phasePage->title() ?></h4>
     <?php
-            }
-            $phaseTitle=$resource['phase_title'];
         }
-        $nextCollaborationPointName=$resource['collaboration_point_name'];
-        if (!($collaborationPointName==$nextCollaborationPointName))
+        $phaseTitle=$resource['phase_title'];
+        
+        $nextCollaborationPointType=$resource['collaboration_point_type'];
+        $collaborationPoint=$languagePage->index()->filterBy('template', $nextCollaborationPointType)->first(); 
+        if (isset($collaborationPoint)&&!($collaborationPointType==$nextCollaborationPointType))
         {
-                //TODO: proper translation needed
-                //$nextCollaborationPointPage=getTranslatedPageByTitle($nextCollaborationPointName);
-                //if (isset(get_post($nextCollaborationPointPage)->post_title))
-                $nextCollaborationPointName=t($collaborationPointName,$collaborationPointName);//get_post($nextCollaborationPointPage)->post_title;
+                $nextCollaborationPointName=$collaborationPoint->title();
 ?>
     <h5><?=$nextCollaborationPointName ?></h5>
 <?php
-            $collaborationPointName=$resource['collaboration_point_name'];
+            $collaborationPointType=$resource['collaboration_point_type'];
         }
     ?>
     <div class="bg-light border border-primary rounded-3 m-2 p-2">

@@ -1,7 +1,6 @@
 <div class="container bg-light p-3">
   <form class="form-inline" method="post" action="<?= $page->url() ?>"
     enctype="multipart/form-data">
-    <input type="hidden" id="collabType" name="collabType" value="Profile">
     <label for="school-info" class="m-1"><?= t('Tell us about your Team','Tell us about your Team') ?>:</label>
     <div id="descriptionHelp" class="form-text"><?= t('Enter at least 50 characters to receive points!','Enter at least 50 characters to receive points!')?></div>
     <textarea class="form-control m-1" aria-label="With textarea" id="description" name="description" rows="8"

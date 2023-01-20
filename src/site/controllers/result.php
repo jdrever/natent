@@ -45,7 +45,7 @@ return function($page, $site, $kirby, $result, $country, $userId, $phaseType)
         }   
         if ($result->wasSuccessful&&!empty($resourcesArray))
         {
-          $collabType=get('collabType');
+          $collabType=$page->template();
           $result=helpers\DataHelper::addResourcesToCommons($userId,$resourcesArray,$phaseType,$collabType);
           $statusType="_taskCommonsStatus";
           $pointsAdded+=$result->pointsAdded;
