@@ -199,6 +199,42 @@ return [
 
         //example team content
         
+        // topic names
+        'No Poverty' => 'No Poverty',
+        'End poverty in all its forms everywhere' => 'End poverty in all its forms everywhere',
+        'Zero Hunger' => 'Zero Hunger',
+        'End hunger, achieve food security and improved nutrition and promote sustainable agriculture' => 'End hunger, achieve food security and improved nutrition and promote sustainable agriculture',
+        'Good Health and Well-being' => 'Good Health and Well-being',
+        'Ensure healthy lives and promote well-being for all at all ages' => 'Ensure healthy lives and promote well-being for all at all ages',
+        'Quality Education' => 'Quality Education',
+        'Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all' => 'Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all',
+        'Gender Equality' => 'Gender Equality',
+        'Achieve gender equality and empower all women and girls' => 'Achieve gender equality and empower all women and girls',
+        'Clean Water and Sanitation' => 'Clean Water and Sanitation',
+        'Ensure availability and sustainable management of water and sanitation for all' => 'Ensure availability and sustainable management of water and sanitation for all',
+        'Affordable and Clean Energy' => 'Affordable and Clean Energy',
+        'Ensure access to affordable, reliable, sustainable and modern energy for all' => 'Ensure access to affordable, reliable, sustainable and modern energy for all',
+        'Decent Work and Economic Growth' => 'Decent Work and Economic Growth',
+        'Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all' => 'Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all',
+        'Industry, Innovation and Infrastructure' => 'Industry, Innovation and Infrastructure',
+        'Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation' => 'Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation',
+        'Reduced Inequality' => 'Reduced Inequality',
+        'Reduce inequality within and among countries' => 'Reduce inequality within and among countries',
+        'Sustainable Cities and Communities' => 'Sustainable Cities and Communities',
+        'Make cities and human settlements inclusive, safe, resilient and sustainable' => 'Make cities and human settlements inclusive, safe, resilient and sustainable',
+        'Responsible Consumption and Production' => 'Responsible Consumption and Production',
+        'Ensure sustainable consumption and production patterns' => 'Ensure sustainable consumption and production patterns',
+        'Climate Action' => 'Climate Action',
+        'Take urgent action to combat climate change and its impact' => 'Take urgent action to combat climate change and its impact',
+        'Life Below Water' => 'Life Below Water',
+        'Conserve and sustainably use the oceans, seas and marine resources for sustainable development' => 'Conserve and sustainably use the oceans, seas and marine resources for sustainable development',
+        'Life on Land' => 'Life on Land',
+        'Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss' => 'Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss',
+        'Peace, Justice and Strong Institutions' => 'Peace, Justice and Strong Institutions',
+        'Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels' => 'Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels',
+        'Partnerships to achieve the Goal' => 'Partnerships to achieve the Goal',
+        'Strengthen the means of implementation and revitalize the global partnership for sustainable development' => 'Strengthen the means of implementation and revitalize the global partnership for sustainable development',
+
 
         
             ],
