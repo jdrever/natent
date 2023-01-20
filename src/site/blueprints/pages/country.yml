@@ -33,6 +33,9 @@ columns:
           exampleTeam:
             type: number
             label: The number of the Example Team
+          emailAddress:
+            type: email
+            label: The email address (used for contact/registration emails sent from the website)
   sidebar:
     width: 1/3
     sections:

@@ -2,7 +2,16 @@
 <?php snippet ('show-simple-hero') ?>
 <div class="container my-4">
 <?php snippet ('show-blocks') ?>
-  <form action="#">
+
+<?php if($success): ?>
+<div class="alert alert-success">
+  <p><?= $success ?></p>
+</div>
+<?php else: ?>
+<?php if (isset($alert['error'])): ?>
+<div class="alert alert-danger"><?= $alert['error'] ?></div>
+<?php endif ?>
+  <form method="post">
     <fieldset>
       <p class="required"><?=$page->allFieldsText()?>.</p>
       <ol class="list-unstyled">
@@ -24,7 +33,7 @@
         </li>
         <li class="mb-3">
           <label for="name" class="form-label"><?=$page->messageLabel()?>:</label>
-          <textarea class="form-control"></textarea>
+          <textarea class="form-control" id="message" name="message"></textarea>
         </li>
         <li class="mb-3">
           <label for="email" class="form-label"><?=$page->emailLabel()?>:</label>

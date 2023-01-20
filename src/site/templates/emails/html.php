@@ -1,6 +1,5 @@
-Hello Careful Digital,
+Email sent from the NatEnt platform:
 
 <p><?= $text ?></p>
 
-<p>Best,</p>
-<p><?= $sender ?></p>
+<p>Name: <?= $sender ?></p>

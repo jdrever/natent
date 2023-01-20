@@ -39,7 +39,7 @@
                  name="email"
                  required="required"
                  aria-required="true"
-                 class="form-control" value="james@careful.digital">
+                 class="form-control">
         </li>
         <li class="mb-3">
           <label for="name" class="form-label"><?=$page->messageLabel()?>:</label>

@@ -1,18 +1,24 @@
 <?php
-return function($kirby, $pages, $page) {
+return function($kirby, $site, $pages, $page) {
 
     $alert = null;
 
    
 
-    if($kirby->request()->is('POST')) {
+    if($kirby->request()->is('POST')) 
+    {
+        $platformPage=site()->find('platform');
+
+        $language=$kirby->language()->code();
+        $languagePage=$platformPage->children()->filterBy('template','country')->filterBy('language','*=', $language)->first();
+
+        $toAddress=$languagePage->emailAddress();
 
 
         // check the honeypot
         if(empty(get('website')) === false) {
-            echo("hmm");
-            //go($page->url());
-            //exit;
+            go($page->url());
+            exit;
         }
 
         $data = [
@@ -44,11 +50,13 @@ return function($kirby, $pages, $page) {
                     'template' => 'email',
                     'from'     => 'james@careful.digital',
                     'replyTo'  => $data['email'],
-                    'to'       => 'james@careful.digital',
-                    'subject'  => esc($data['name']) . ' sent you a message from your contact form',
+                    'to'       => $toAddress,
+                    'cc'       => 'james@careful.digital',
+                    'subject'  => esc($data['name']) . ' sent you a registration request from the NatEnt Platform',
                     'data'     => [
                         'text'   => esc($data['message']),
-                        'sender' => esc($data['name'])
+                        'sender' => esc($data['name']),
+                        'email'  => esc($data['email'])
                     ]
                 ]);
 

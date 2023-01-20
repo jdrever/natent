@@ -1,4 +1,4 @@
-Hello Careful Digital,
+Email sent from the NatEnt platform:
 
 <?= $text ?>
 
