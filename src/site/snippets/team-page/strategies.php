@@ -8,18 +8,6 @@ foreach ($functions as $function)
     $researchQuestion=$function['biologized_question'];
 ?>
     <table class="table m-2 p-2 border">
-    <?php
-    //showing historical functions (for now)
-    if (isset($function['name']))
-    {
-?>
-        <tr>
-            <th class="bg-info"><?= t("FUNCTION", "FUNCTION") ?>: <?= $function['name'] ?>  </th>
-        </tr>
-<?php
-    }
-?>
-
         <tr>
             <th class="bg-info text-white"><?=t("RESEARCH QUESTION", "RESEARCH QUESTION")?>: <?= $researchQuestion ?>
                 <?php snippet('show-translatable-content', ['content'=>"RESEARCH QUESTION: " . $researchQuestion, 'showButton'=>!$editTeam,'showContent'=>false]) ?>

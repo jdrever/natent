@@ -17,8 +17,7 @@
     ?>
     <div class="container border bg-light p-2 m-2">
         <div class="row bg-info text-white p-2">
-            <div class="col"><?php if (isset($function['name'])) { ?>
-              <?= $function['name'] ?> <i class="bi bi-arrow-right-circle-fill"></i> <?php } ?>
+            <div class="col">
             <?=t('RESEARCH QUESTION','RESEARCH QUESTION') ?>: <?=$function['biologized_question'] ?> <i class="bi bi-arrow-right-circle-fill"></i></div>
         </div>
         <div class="row m-1">
