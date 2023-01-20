@@ -8,6 +8,7 @@ return [
       'install' => true,
       'css' => 'assets/css/panel.css',
     ],
+    'defaultEmail' => 'james@careful.digital',
     'routes' => [
       [
         'pattern' => 'collab-controller',

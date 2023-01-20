@@ -12,7 +12,7 @@ return function($kirby, $site, $pages, $page) {
         $language=$kirby->language()->code();
         $languagePage=$platformPage->children()->filterBy('template','country')->filterBy('language','*=', $language)->first();
 
-        $toAddress=$languagePage->emailAddress()->isNotEmpty() ? $languagePage->emailAddress() : 'james@careful.digital';
+        $toAddress=$languagePage->emailAddress()->isNotEmpty() ? $languagePage->emailAddress() : option('defaultEmail');
 
 
         // check the honeypot
@@ -48,10 +48,10 @@ return function($kirby, $site, $pages, $page) {
             try {
                 $kirby->email([
                     'template' => 'email',
-                    'from'     => 'james@careful.digital',
+                    'from'     => option('defaultEmail'),
                     'replyTo'  => $data['email'],
                     'to'       => $toAddress,
-                    'cc'       => 'james@careful.digital',
+                    'cc'       => option('defaultEmail'),
                     'subject'  => esc($data['name']) . ' sent you a registration request from the NatEnt Platform',
                     'data'     => [
                         'text'   => esc($data['message']),
