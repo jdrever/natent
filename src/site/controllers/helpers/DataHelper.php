@@ -1073,10 +1073,10 @@ class DataHelper
                     $pdo->prepare($sql)->execute([$team['id'],$phaseType,$response->questionId, $response->textResponse] );
                 }  
             }
-            $checkMax=self::addPointsToTeam($team['id'],5,$pdo);
+            $checkMax=self::addPointsToTeam($team['id'],20,$pdo);
             if ($checkMax==='MAX') $result->maximumPoints=true;
             $pdo->commit();
-            $result->pointsAdded=5;
+            $result->pointsAdded=20;
             $result->wasSuccessful=true;
 
         }

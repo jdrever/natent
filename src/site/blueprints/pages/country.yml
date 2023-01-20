@@ -30,7 +30,7 @@ columns:
               query: kirby.languages
               text: "{{ item.name }}"
               value: "{{ item.code }}"
-          example_team_id:
+          exampleTeam:
             type: number
             label: The number of the Example Team
   sidebar:
