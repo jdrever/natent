@@ -76,6 +76,21 @@ return [
         'Add More Resources' => 'Add More Resources',
         'You need to select your challenge before you complete this Task' => 'You need to select your challenge before you complete this Task',
         'You need to enter your Research Questions before you enter your strategies' => 'You need to enter your Research Questions before you enter your strategies',
+        
+        //skills
+        'Skills'=>'Skills',
+        'Biology'=>'Biology',
+        'Chemistry'=>'Chemistry',
+        'Physics'=>'Physics',
+        'Entrepreneurship'=>'Entrepreneurship',
+        'Business'=>'Business',
+        'Design'=>'Design',
+        'Art'=>'Art',
+        'Engineering'=>'Engineering',
+        'Digital - videos'=>'Digital - videos',
+        'Computing'=>'Computing',
+        'Photography'=>'Photography',
+
 
         //glossary
         'Term' =>'Term',
