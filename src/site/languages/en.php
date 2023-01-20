@@ -86,6 +86,7 @@ return [
         'Tell us about your Team' => 'Tell us about your Team',
         'Tell us what Skillsets your team have' => 'Tell us what Skillsets your team have',
         'SHARE YOUR PROFILE' => 'SHARE YOUR PROFILE',
+        'Enter at least 50 characters to receive points!'=>'Enter at least 50 characters to receive points!',
 
         //topic
         'Your team has previously selected a Topic and Challenge' => 'Your team has previously selected a Topic and Challenge',
