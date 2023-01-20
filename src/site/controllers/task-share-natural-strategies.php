@@ -1,10 +1,11 @@
 <?php
 use carefulcollab\helpers as helpers;
 return function($kirby, $pages, $page, $site) {
-    $requiresLogin=true;
+    $requiresLogin=false;
     $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site','requiresLogin'));
     $team=$platform['team'];
     $country=$platform['country'];
+    $userLoggedIn=$platform['userLoggedIn'];
     
     if($kirby->request()->is('POST')) 
     {
@@ -48,19 +49,28 @@ return function($kirby, $pages, $page, $site) {
     }
     else
     {
-        $functions = helpers\DataHelper::getFunctionsByTeamAndChallengeId($team['id'], $team['challenge_id'], false);
-        $strategies = array();
+        if ($userLoggedIn)
+        {
+            $teamFunctions = helpers\DataHelper::getFunctionsByTeamAndChallengeId($team['id'], $team['challenge_id'], false);
+            $teamArea=$team['area'];
+            $teamId=$team['team_id'];
+        }
+        else
+        {
+            $exampleTeam=helpers\DataHelper::getTeamByTeamId($platform['exampleTeam']);
+            $teamFunctions = helpers\DataHelper::getFunctionsByTeamAndChallengeId($exampleTeam['id'], $exampleTeam['challenge_id'], false);
+            $teamArea=$exampleTeam['area'];
+            $teamId=$exampleTeam['team_id'];
+        }
+        $teamStrategies = array();
 
-        foreach ($functions as $function) 
+        foreach ($teamFunctions as $function) 
         {
             $functionNumber = $function['function_number'];
-            $strategies[$functionNumber] = helpers\DataHelper::getNaturalStrategiesByFunctionNumber($team["user_id"], $functionNumber, false);
+            $teamStrategies[$functionNumber] = helpers\DataHelper::getNaturalStrategiesByFunctionNumber($teamId, $functionNumber, false);
         }
 
-        return A::merge($platform, [
-            'functions' => $functions,
-            'strategies' => $strategies,
-            'showForm' => true
-        ]);
+        //echo(var_dump($teamFunctions));
+        return A::merge($platform, compact('teamFunctions','teamStrategies','teamArea'));
     }
 };

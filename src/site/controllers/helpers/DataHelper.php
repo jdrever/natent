@@ -365,12 +365,12 @@ class DataHelper
     }  
 
     
-    public static function getNaturalStrategiesByFunctionNumber($wpUserId, $functionNumber,$approvedOnly)
+    public static function getNaturalStrategiesByFunctionNumber($teamId, $functionNumber,$approvedOnly)
     {
         $addApproved="";
         if ($approvedOnly===true) $addApproved="_approved";
         $pdo=self::getPDOConnection();
-        $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
+        $team=self::getTeamByTeamIdUsingPDO($teamId,$pdo);
         $stmt = $pdo->prepare("SELECT strategy_name,design_principle FROM cc_all_strategies" .$addApproved. " WHERE team_id=? AND challenge_id=? AND function_number=?");        
         $stmt->execute([$team['id'],$team['challenge_id'],$functionNumber]); 
         $naturalStrategies = $stmt->fetchAll();
