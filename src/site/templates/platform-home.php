@@ -40,7 +40,8 @@
                 <h2><i class="bi bi-info-square-fill"></i> Register to access collaboration features</h2>
                 <p>Everyone can explore the Natural Entrepreurs Learning Journey but to complete tasks and collaborate with other teams, you will need to register your school with the
                   project.</p>
-                <p><a class="btn btn-primary" href="<?=$registerPage->url()?>"><?=$registerPage->title()?></a> or if you already have a username and password, then <a class="btn btn-primary" href="<?=$loginPage->url()?>"><?=$loginPage->title()?></a></p>
+                <p><a class="btn btn-primary" href="<?=$registerPage->url()?>"><?=$registerPage->pageTitle()->isNotEmpty() ? $registerPage->pageTitle() : $registerPage->title()?></a> or if you already have a username and password, then 
+                  <a class="btn btn-primary" href="<?=$loginPage->url()?>"><?=$loginPage->pageTitle()->isNotEmpty() ? $loginPage->pageTitle() : $loginPage->title()?></a></p>
               </div>
             </div>
           </div>
@@ -56,7 +57,7 @@
           <?=$teamPage->pageTitle()->isNotEmpty() ? $teamPage->pageTitle() : $teamPage->title()?></a>
         <p><?=$page->teamPageContent()->kt()?></p>
         <a href="<?=$otherTeamsPage->url()?>" class="btn btn-outline-primary"><i class="bi bi-search-heart"></i>
-          <?=$otherTeamsPage->title()?></a>
+          <?=$otherTeamsPage->pageTitle()->isNotEmpty() ? $otherTeamsPage->pageTitle() : $otherTeamsPage->title()?></a>
         <p><?=$page->otherTeamsPageContent()->kt()?></p>
         <?php endif ?>
       </div>
@@ -66,16 +67,16 @@
         <h2>Resources</h2>
         <?php if ($userLoggedIn) : ?>
         <a href="<?=$commonsPage->url()?>" class="btn btn-outline-primary"><i class="bi bi-cc-circle-fill"></i>
-          <?=$commonsPage->title()?></a>
+          <?=$commonsPage->pageTitle()->isNotEmpty() ? $commonsPage->pageTitle() : $commonsPage->title()?></a>
         <p><?=$page->commonsPageContent()->kt()?></p>
         <?php endif ?>
         <?php if (isset($exampleTeam)) : ?>
             <p><a href="<?= $exampleTeamPage->url() ?>" class="btn btn-outline-primary"><i class="bi bi-person-heart"></i><?=$exampleTeamPage->pageTitle()->isNotEmpty() ? $exampleTeamPage->pageTitle() : $exampleTeamPage->title() ?></a></p>      
         <?php endif ?>
         <p><a href="<?=$nupsPage->url()?>" class="btn btn-outline-primary"><i class="bi bi-globe-europe-africa"></i>
-          <?=$nupsPage->title()?></a></p>
+          <?=$nupsPage->pageTitle()->isNotEmpty() ? $nupsPage->pageTitle() : $nupsPage->title()?></a></p>
         <p><a href="<?=$glossaryPage->url()?>" class="btn btn-outline-primary"><i class="bi bi-list-columns-reverse"></i>
-          <?=$glossaryPage->title()?></a></p>
+          <?=$glossaryPage->pageTitle()->isNotEmpty() ? $glossaryPage->pageTitle() : $glossaryPage->title()?></a></p>
       </div>
     </div>
   </div>
