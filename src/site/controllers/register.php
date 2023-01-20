@@ -12,7 +12,7 @@ return function($kirby, $site, $pages, $page) {
         $language=$kirby->language()->code();
         $languagePage=$platformPage->children()->filterBy('template','country')->filterBy('language','*=', $language)->first();
 
-        $toAddress=$languagePage->emailAddress();
+        $toAddress=$languagePage->emailAddress()->isNotEmpty() ? $languagePage->emailAddress() : 'james@careful.digital';
 
 
         // check the honeypot
