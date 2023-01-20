@@ -51,6 +51,7 @@ return function($kirby, $pages, $page, $site) {
             $teamArea=$team['area'];
             $teamDesignFile=$team['design_idea_file'];
             $teamDesignUrl=$team['design_idea_url'];
+            $teamDesignYouTubeId=$team['design_idea_you_tube_id'];
 
         }
         else
@@ -59,7 +60,8 @@ return function($kirby, $pages, $page, $site) {
             $teamArea=$exampleTeam['area'];
             $teamDesignFile=$exampleTeam['design_idea_file'];
             $teamDesignUrl=$exampleTeam['design_idea_url'];
+            $teamDesignYouTubeId=$exampleTeam['design_idea_you_tube_id'];
         }
-        return A::merge($platform, compact('teamArea','teamDesignFile','teamDesignUrl'));
+        return A::merge($platform, compact('teamArea','teamDesignFile','teamDesignUrl','teamDesignYouTubeId'));
     }
 };

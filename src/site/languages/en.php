@@ -128,6 +128,7 @@ return [
 
         //design
         'Your team has an existing Design Solution. Upload a new file below to replace it' => 'Your team has an existing Design Solution. Upload a new file below to replace it',
+        'Your team has an existing Design Solution video. Change the link below to replace it' => 'Your team has an existing Design Solution video. Change the link below to replace it',
         'Upload your Design Solution (use an image file, e.g. JPG or PNG)' => 'Upload your Design Solution (use an image file, e.g. JPG or PNG)',
         'Upload your video presentation to your You Tube channel and share the link here' => 'Upload your video presentation to your YouTube channel and share the link here',
         'SHARE YOUR DESIGN SOLUTION' => 'SHARE YOUR DESIGN SOLUTION',
