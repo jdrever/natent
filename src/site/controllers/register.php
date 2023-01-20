@@ -3,30 +3,34 @@ return function($kirby, $pages, $page) {
 
     $alert = null;
 
-    if($kirby->request()->is('POST') && get('submit')) {
+   
+
+    if($kirby->request()->is('POST')) {
+
 
         // check the honeypot
         if(empty(get('website')) === false) {
-            go($page->url());
-            exit;
+            echo("hmm");
+            //go($page->url());
+            //exit;
         }
 
         $data = [
             'name' => get('name'),
             'email' => get('email'),
-            'text'  => get('text')
+            'message'  => get('message')
         ];
 
         $rules = [
             'name'  => ['required', 'minLength' => 3],
             'email' => ['required', 'email'],
-            'text'  => ['required', 'minLength' => 3, 'maxLength' => 3000],
+            'message'  => ['required', 'minLength' => 3, 'maxLength' => 3000],
         ];
 
         $messages = [
             'name'  => 'Please enter a valid name',
             'email' => 'Please enter a valid email address',
-            'text'  => 'Please enter a text between 3 and 3000 characters'
+            'message'  => 'Please enter a message'
         ];
 
         // some of the data is invalid
@@ -43,7 +47,7 @@ return function($kirby, $pages, $page) {
                     'to'       => 'james@careful.digital',
                     'subject'  => esc($data['name']) . ' sent you a message from your contact form',
                     'data'     => [
-                        'text'   => esc($data['text']),
+                        'text'   => esc($data['message']),
                         'sender' => esc($data['name'])
                     ]
                 ]);
