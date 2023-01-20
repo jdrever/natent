@@ -12,8 +12,7 @@ return function($kirby, $site, $pages, $page) {
         $language=$kirby->language()->code();
         $languagePage=$platformPage->children()->filterBy('template','country')->filterBy('language','*=', $language)->first();
 
-        $toAddress=$languagePage->emailAddress()->isNotEmpty() ? $languagePage->emailAddress() : option('defaultEmail');
-
+        $toAddress=$languagePage->emailAddress()->isNotEmpty() ? $languagePage->emailAddress()->value() : option('defaultEmail');
 
         // check the honeypot
         if(empty(get('website')) === false) {
