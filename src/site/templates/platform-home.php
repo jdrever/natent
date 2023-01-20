@@ -53,7 +53,7 @@
         <p><?=$page->lookAroundContent()->kt()?></p>
         <?php if ($userLoggedIn) : ?>
         <a href="<?=$teamPage->url()?>" class="btn btn-outline-primary"><i class="bi bi-person-heart"></i>
-          <?=$teamPage->title()?></a>
+          <?=$teamPage->pageTitle()->isNotEmpty() ? $teamPage->pageTitle() : $teamPage->title()?></a>
         <p><?=$page->teamPageContent()->kt()?></p>
         <a href="<?=$otherTeamsPage->url()?>" class="btn btn-outline-primary"><i class="bi bi-search-heart"></i>
           <?=$otherTeamsPage->title()?></a>

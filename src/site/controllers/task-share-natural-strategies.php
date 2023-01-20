@@ -53,14 +53,14 @@ return function($kirby, $pages, $page, $site) {
         {
             $teamFunctions = helpers\DataHelper::getFunctionsByTeam($team['id'], false);
             $teamArea=$team['area'];
-            $teamId=$team['team_id'];
+            $teamId=$team['id'];
         }
         else
         {
             $exampleTeam=helpers\DataHelper::getTeamByTeamId($platform['exampleTeam']);
             $teamFunctions = helpers\DataHelper::getFunctionsByTeam($exampleTeam['id'], false);
             $teamArea=$exampleTeam['area'];
-            $teamId=$exampleTeam['team_id'];
+            $teamId=$exampleTeam['id'];
         }
         $teamStrategies = array();
 

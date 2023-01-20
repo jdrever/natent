@@ -13,6 +13,8 @@ if ($userLoggedIn) :
     <br/>
     <strong><?=t("Your team's selected Challenge")?>: </strong> <?=$teamChallenge?>
   </p>
-  <p><a href=<?=url("/team-page/")?>><?= t("You can see full details on your Team Page") ?></a></p>
+  <p><?=t("You can see full details on your Team Page", "You can see full details on your Team Page")?>
+  <p><a href="<?=$teamPage->url()?>" class="btn btn-outline-primary"><i class="bi bi-person-heart"></i>
+          <?=$teamPage->pageTitle()->isNotEmpty() ? $teamPage->pageTitle() : $teamPage->title()?></a></p>
 </div>
 <?php endif ?>
