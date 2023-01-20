@@ -1,6 +1,6 @@
 <?php if ($userLoggedIn) : ?>
 <div class="container mt-2">
-  <div class="alert alert-info" role="alert"><i class="bi bi-exclamation-square-fill h1"></i><?=t("Have any resources helped you with this stage of the process? Share them with other Teams by adding them to The Commons.")?>
+  <div class="alert alert-info" role="alert"><i class="bi bi-exclamation-square-fill h1"></i> <?=t("Have any resources helped you with this stage of the process? Share them with other Teams by adding them to The Commons.")?>
   <button type="button" class="btn btn-primary m-2" data-bs-toggle="collapse" data-bs-target="#collapseCommons" aria-expanded="false" aria-controls="collapseCommons">Share Your Resources</button>
   <div class="collapse" id="collapseCommons">
         <div id="resources" class="container">

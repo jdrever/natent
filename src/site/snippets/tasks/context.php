@@ -4,7 +4,7 @@
     <input type="hidden" id="collabType" name="collabType" value="Statement">
     <label for="context" class="m-1"><?=t('Enter your Context','Enter your Context')?>:</label>
     <textarea class="form-control m-1" aria-label="With textarea" id="context" name="context" rows="8"
-      required><?=$teamContext?></textarea>
+    <?=($userLoggedIn) ? 'required' : 'readonly'?>><?=$teamContext?></textarea>
 
     <?php snippet('add-to-commons-form') ?>
 

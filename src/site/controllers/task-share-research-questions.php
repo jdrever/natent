@@ -1,10 +1,11 @@
 <?php
 use carefulcollab\helpers as helpers;
 return function($kirby, $pages, $page, $site) {
-    $requiresLogin = true;
+    $requiresLogin = false;
     $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site', 'requiresLogin'));
     $team = $platform['team'];
     $country = $platform['country'];
+    $userLoggedIn=$platform['userLoggedIn'];
     
     if($kirby->request()->is('POST')) 
     {
@@ -31,10 +32,17 @@ return function($kirby, $pages, $page, $site) {
     }
     else
     {
-        $functions = helpers\DataHelper::getFunctionsByTeamAndChallengeId($team['id'], $team['challenge_id'], false);
-        return A::merge($platform, [
-            'functions' => $functions,
-            'showForm' => true
-        ]);
+        if ($userLoggedIn)
+        {
+            $teamFunctions = helpers\DataHelper::getFunctionsByTeamAndChallengeId($team['id'], $team['challenge_id'], false);
+            $teamArea=$team['area'];
+        }
+        else
+        {
+            $exampleTeam=helpers\DataHelper::getTeamByTeamId($platform['exampleTeam']);
+            $teamFunctions = helpers\DataHelper::getFunctionsByTeamAndChallengeId($exampleTeam['id'], $exampleTeam['challenge_id'], false);
+            $teamArea=$exampleTeam['area'];
+        }
+        return A::merge($platform, compact('teamFunctions', 'teamArea'));
     }
 };

@@ -1,10 +1,10 @@
 <?php
 if ($userLoggedIn) :
-$teamArea = $team['area'];
-if (empty($teamArea)) $teamArea = t("Not yet selected","Not yet selected");
+  $teamArea = $team['area'];
+  if (empty($teamArea)) $teamArea = t("Not yet selected","Not yet selected");
 
-$teamChallenge = $team['challenge'];
-if (empty($teamChallenge)) $teamChallenge = t("Not yet selected","Not yet selected");
+  $teamChallenge = $team['challenge'];
+  if (empty($teamChallenge)) $teamChallenge = t("Not yet selected","Not yet selected");
 ?>
 
 <div class="alert alert-info" role="alert">
