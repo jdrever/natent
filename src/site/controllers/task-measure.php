@@ -5,6 +5,7 @@ return function($kirby, $pages, $page, $site) {
     $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site', 'requiresLogin'));
     $team = $platform['team'];
     $country = $platform['country'];
+    $userLoggedIn=$platform['userLoggedIn'];
     
     if($kirby->request()->is('POST')) 
     {
@@ -16,8 +17,18 @@ return function($kirby, $pages, $page, $site) {
     }
     else
     {
-        return A::merge($platform, [
-            'showForm' => true
-        ]);
+        if ($userLoggedIn)
+        {
+            $teamArea=$team['area'];
+            $teamRecommendations=isset($team['recommendations']) ? $team['recommendations'] : '';
+
+        }
+        else
+        {
+            $exampleTeam=helpers\DataHelper::getTeamByTeamId($platform['exampleTeam']);
+            $teamArea=$exampleTeam['area'];
+            $teamRecommendations=isset($exampleTeam['recommendations']) ? $exampleTeam['recommendations'] : '';
+        }
+        return A::merge($platform,compact('teamArea','teamRecommendations'));
     }
 };
