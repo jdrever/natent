@@ -271,13 +271,13 @@ class DataHelper
     } 
 
     
-    public static function getFunctionsByTeamAndChallengeId($teamId,$challengeId,$approvedOnly)
+    public static function getFunctionsByTeam($teamId,$approvedOnly)
     {
         $addApproved="";
         if ($approvedOnly===true) $addApproved="_approved";
         $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
-        $stmt = $pdo->prepare("SELECT id,function_number, name, biologized_question FROM cc_all_functions" .$addApproved. " WHERE team_id=? AND challenge_id=?");
-        $stmt->execute([$teamId,$challengeId]); 
+        $stmt = $pdo->prepare("SELECT id,function_number, name, biologized_question FROM cc_all_functions" .$addApproved. " WHERE team_id=?");
+        $stmt->execute([$teamId]); 
         $functions = $stmt->fetchAll();
         return $functions;
     }
@@ -294,8 +294,8 @@ class DataHelper
             $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
             
             //check if this is the first function entered.  If so, add 20 points
-            $stmt = $pdo->prepare("SELECT COUNT(*) AS number_of_functions FROM cc_all_functions WHERE team_id=? AND challenge_id=?");
-            $stmt->execute([$team['id'],$team['challenge_id']]);
+            $stmt = $pdo->prepare("SELECT COUNT(*) AS number_of_functions FROM cc_all_functions WHERE team_id=?");
+            $stmt->execute([$team['id']]);
             $checkFunctions=$stmt->fetch();
             if ($checkFunctions['number_of_functions']==0&&count($functions)>0) 
             {
@@ -332,8 +332,8 @@ class DataHelper
             $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
 
             //check if this is the first strategy entered.  If so, add 20 points
-            $stmt = $pdo->prepare("SELECT COUNT(*) AS number_of_strategies FROM cc_all_strategies WHERE team_id=? AND challenge_id=?");
-            $stmt->execute([$team['id'],$team['challenge_id']]);
+            $stmt = $pdo->prepare("SELECT COUNT(*) AS number_of_strategies FROM cc_all_strategies WHERE team_id=?");
+            $stmt->execute([$team['id']]);
             $checkStrategies=$stmt->fetch();
             if ($checkStrategies['number_of_strategies']==0&&count($strategies)>0) 
             {
@@ -371,8 +371,8 @@ class DataHelper
         if ($approvedOnly===true) $addApproved="_approved";
         $pdo=self::getPDOConnection();
         $team=self::getTeamByTeamIdUsingPDO($teamId,$pdo);
-        $stmt = $pdo->prepare("SELECT strategy_name,design_principle FROM cc_all_strategies" .$addApproved. " WHERE team_id=? AND challenge_id=? AND function_number=?");        
-        $stmt->execute([$team['id'],$team['challenge_id'],$functionNumber]); 
+        $stmt = $pdo->prepare("SELECT strategy_name,design_principle FROM cc_all_strategies" .$addApproved. " WHERE team_id=? AND function_number=?");        
+        $stmt->execute([$team['id'],$functionNumber]); 
         $naturalStrategies = $stmt->fetchAll();
 
         return $naturalStrategies;
@@ -384,8 +384,8 @@ class DataHelper
         if ($approvedOnly===true) $addApproved="_approved";
         $pdo=self::getPDOConnection();
         $team=self::getTeamByTeamIdUsingPDO($teamId,$pdo);
-        $stmt = $pdo->prepare("SELECT strategy_name,design_principle FROM cc_all_strategies" .$addApproved. " WHERE team_id=? AND challenge_id=? AND function_number=?");        
-        $stmt->execute([$teamId,$team['challenge_id'],$functionNumber]); 
+        $stmt = $pdo->prepare("SELECT strategy_name,design_principle FROM cc_all_strategies" .$addApproved. " WHERE team_id=? AND function_number=?");        
+        $stmt->execute([$teamId,$functionNumber]); 
         $naturalStrategies = $stmt->fetchAll();
         return $naturalStrategies;
     }

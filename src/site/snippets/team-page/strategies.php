@@ -1,7 +1,7 @@
 <?php
 use carefulcollab\helpers as helpers;
 
-$functions = helpers\DataHelper::getFunctionsByTeamAndChallengeId($viewedTeam['id'], $viewedTeam['challenge_id'], !$editTeam);
+$functions = helpers\DataHelper::getFunctionsByTeam($viewedTeam['id'], !$editTeam);
 
 foreach ($functions as $function)
 {

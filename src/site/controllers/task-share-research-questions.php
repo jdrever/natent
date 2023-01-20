@@ -34,13 +34,13 @@ return function($kirby, $pages, $page, $site) {
     {
         if ($userLoggedIn)
         {
-            $teamFunctions = helpers\DataHelper::getFunctionsByTeamAndChallengeId($team['id'], $team['challenge_id'], false);
+            $teamFunctions = helpers\DataHelper::getFunctionsByTeam($team['id'], $team['challenge_id'], false);
             $teamArea=$team['area'];
         }
         else
         {
             $exampleTeam=helpers\DataHelper::getTeamByTeamId($platform['exampleTeam']);
-            $teamFunctions = helpers\DataHelper::getFunctionsByTeamAndChallengeId($exampleTeam['id'], $exampleTeam['challenge_id'], false);
+            $teamFunctions = helpers\DataHelper::getFunctionsByTeam($exampleTeam['id'], false);
             $teamArea=$exampleTeam['area'];
         }
         return A::merge($platform, compact('teamFunctions', 'teamArea'));
