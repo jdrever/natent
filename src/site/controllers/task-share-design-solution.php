@@ -1,10 +1,12 @@
 <?php
 use carefulcollab\helpers as helpers;
+
 return function($kirby, $pages, $page, $site) {
-    $requiresLogin = true;
+    $requiresLogin = false;
     $platform = $kirby->controller('platform', compact('page', 'pages', 'kirby', 'site', 'requiresLogin'));
     $team = $platform['team'];
     $country = $platform['country'];
+    $userLoggedIn=$platform['userLoggedIn'];
 
     if($kirby->request()->is('POST')) 
     {
@@ -44,8 +46,20 @@ return function($kirby, $pages, $page, $site) {
     }
     else
     {
-        return A::merge($platform, [
-            'showForm' => true
-        ]);
+        if ($userLoggedIn)
+        {
+            $teamArea=$team['area'];
+            $teamDesignFile=$team['design_idea_file'];
+            $teamDesignUrl=$team['design_idea_url'];
+
+        }
+        else
+        {
+            $exampleTeam=helpers\DataHelper::getTeamByTeamId($platform['exampleTeam']);
+            $teamArea=$exampleTeam['area'];
+            $teamDesignFile=$exampleTeam['design_idea_file'];
+            $teamDesignUrl=$exampleTeam['design_idea_url'];
+        }
+        return A::merge($platform, compact('teamArea','teamDesignFile','teamDesignUrl'));
     }
 };
