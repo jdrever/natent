@@ -43,6 +43,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
 
     $pointsAdded=$kirby->request()->get('points') ? $kirby->request()->get('points') : 0;
     $pointsAddedOtherTeam=$kirby->request()->get('pointsOther') ? $kirby->request()->get('pointsOther') : 0;
+    $maximumPoints=$kirby->request()->get('maxPoints') ? $kirby->request()->get('maxPoints') : 0;
     
     
     if (!$isNonLearningJourneyPage) Cookie::set("resumePage",$_SERVER['REQUEST_URI']);
@@ -107,6 +108,7 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         'team' => $team, 'status' =>$status, 
         'userRole' => $userRole, 
         'pointsAdded' => $pointsAdded, 
+        'maximumPoints' => $maximumPoints, 
         'pointsAddedOtherTeam' =>$pointsAddedOtherTeam, 
         'country'=>$country, 
         'countries'=>$countries, 

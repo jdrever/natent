@@ -20,10 +20,14 @@
 
 
   <p class="lead">
-
 <?php if ($pointsAdded>0) : ?>
   <i class="bi bi-star"></i><?=t("Your team has gained")?> <strong><?=$pointsAdded ?></strong> <?=t("points and now has a total of")?> <strong><?=$team['points']?></strong> <?=t("points","points")?>. 
 <?php endif ?>
+
+<?php if ($maximumPoints==='Y') : ?>
+  <p class="h2"><i class="bi bi-stars"></i></i><strong><?=t("Congratulatons! Your team now has reached the maximum score on the platform!","Congratulatons! Your team now has reached the maximum score on the platform!")?></strong></p>
+<?php endif ?>
+
 <?php if ($pointsAddedOtherTeam>0) : ?>
   <i class="bi bi-star"></i><?=t("The team you engaged with gained","The team you engaged with gained")?> <strong><?=$pointsAddedOtherTeam ?></strong> <?=t("points","points")?>. 
 <?php endif ?>

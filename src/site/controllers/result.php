@@ -9,8 +9,12 @@ return function($page, $site, $kirby, $result, $country, $userId, $phaseType)
     {
         $statusType='_taskStatus';
         $pointsAdded=$result->pointsAdded;
+        
+        $maxPoints='N';
+        if (isset($result->maximumPoints)&&$result->maximumPoints===true) $maxPoints='Y';
+
         //check for commons upload
-        if (isset($result->pointsAdded)) $pointsAdded=$result->pointsAdded;
+
         $resourcesArray = array();
         for ($x = 1; $x <= 4; $x++)
         {
@@ -51,9 +55,9 @@ return function($page, $site, $kirby, $result, $country, $userId, $phaseType)
 
         if ($next = $page->next($collection)) 
         {
-          $next->go(['query' => [$statusType => 'ok', 'points' =>$pointsAdded ]]);
+          $next->go(['query' => [$statusType => 'ok', 'points' =>$pointsAdded, 'maxPoints'=>$maxPoints ]]);
         }
-        $page->go(['query' => [$statusType => 'ok', 'points' =>$pointsAdded ]]);
+        $page->go(['query' => [$statusType => 'ok', 'points' =>$pointsAdded,'maxPoints'=>$maxPoints ]]);
     }
     else
     {
