@@ -135,6 +135,7 @@ return [
 
         '******TASK: PITCH DECK******' => 'Not for translation',
         'Upload your pitch video to your YouTube channel and share the link here'=>'Upload your pitch video to your YouTube channel and share the link here',
+        'Your team has an existing pitch video. Change the link below to replace it'=>'Your team has an existing pitch video. Change the link below to replace it',
         'SHARE YOUR PITCH VIDEO'=> 'SHARE YOUR PITCH VIDEO',
 
         //add to commons

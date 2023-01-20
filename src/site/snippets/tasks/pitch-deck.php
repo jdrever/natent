@@ -2,7 +2,7 @@
 <?php if (isset($teamArea)) 
 {
   if ((isset($teamPitchVideoUrl))&&!empty($teamPitchVideoUrl)) : ?>
-    <p><b><?=t('Your team has an existing Design Solution video. Change the link below to replace it','Your team has an existing Design Solution video. Upload a link below to replace it')?>.</b></p>
+    <p><b><?=t('Your team has an existing pitch video. Change the link below to replace it','Your team has an existing pitch video. Upload a link below to replace it')?>.</b></p>
     <iframe loading="lazy" title="'Pitch Video" width="500" height="281" src="https://www.youtube.com/embed/<?= $teamPitchVideoYouTubeId ?>?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
   <?php endif ?>
   <form class="form-inline" method="post" action="<?=$page->url()?>" enctype="multipart/form-data">
