@@ -3,8 +3,9 @@
     enctype="multipart/form-data">
     <input type="hidden" id="collabType" name="collabType" value="Profile">
     <label for="school-info" class="m-1"><?= t('Tell us about your Team','Tell us about your Team') ?>:</label>
+    <div id="descriptionHelp" class="form-text"><?= t('Enter at least 50 characters to receive points!','Enter at least 50 characters to receive points!')?></div>
     <textarea class="form-control m-1" aria-label="With textarea" id="description" name="description" rows="8"
-       <?=($userLoggedIn) ? 'required' : 'readonly'?>><?=$teamDescription ?></textarea>
+       <?=($userLoggedIn) ? 'required' : 'readonly'?> aria-describedby="descriptionHelp"><?=$teamDescription ?></textarea>
     <label for="form-check"><?= t('Tell us what Skillsets your team have','Tell us what Skillsets your team have') ?>:</label>
     <div class="container">
     <?php

@@ -21,7 +21,7 @@ class DataHelper
     private const DB_PASSWORD = DBConfig::DB_PASSWORD;
 
     
-    public static function updateTeamProfile($wpUserId, $descripton,$skills)
+    public static function updateTeamProfile($wpUserId, $description,$skills)
     {
         $result=new DataResult();
 
@@ -33,13 +33,13 @@ class DataHelper
             if (isset($team['id']))
             {
                 $approvalDetails=self::getApprovalDetails($wpUserId,$team['role']);
-                if (!isset($team['description'])) 
+                if ((!isset($team['description'])&&strlen($description)>=50)) 
                 {
                     self::addPointsToTeam($team['id'],20,$pdo);
                     $result->pointsAdded=20;
                 }
                 $sql=("INSERT INTO cc_team_profiles (team_id,description,skills,created_date,created_by, approved_date,approved_by) VALUES (?,?,?,now(),?,?,?)");
-                $pdo->prepare($sql)->execute([$team['id'], $descripton,$skills,$wpUserId,$approvalDetails->approvedDate,$approvalDetails->approvedBy]);
+                $pdo->prepare($sql)->execute([$team['id'], $description,$skills,$wpUserId,$approvalDetails->approvedDate,$approvalDetails->approvedBy]);
                 $result->wasSuccessful=true;
                 $pdo->commit();
             }
@@ -184,7 +184,6 @@ class DataHelper
                     self::addPointsToTeam($team['id'],20,$pdo);
                     $result->pointsAdded=20;
                 }
-                //$result= self::updateChallenge($pdo, $wpUserId, $team['id]'],$team['role'], $areaId,$challengeId,true);
                 $sql=("INSERT INTO cc_team_challenges (team_id, area_id, challenge_id,bespoke_challenge, created_date,created_by, approved_date, approved_by) VALUES (?,?,?,?,now(),?,?,?)");
                 $pdo->prepare($sql)->execute([$team['id'], $areaId, $challengeId, $bespokeChallenge, $wpUserId,$approvalDetails->approvedDate,$approvalDetails->approvedBy]);
                 $result->wasSuccessful=true;
@@ -248,7 +247,7 @@ class DataHelper
             $pdo=self::getPDOConnection();
             $pdo->beginTransaction();
             $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
-            if ((!isset($team['context'])||empty($team['context'])&&!empty($context))) 
+            if ((!isset($team['context'])||empty($team['context'])&&!empty($context)&&strlen($context)>=50)) 
             {
                 self::addPointsToTeam($team['id'],20,$pdo);
                 $result->pointsAdded=20;
@@ -439,7 +438,7 @@ class DataHelper
             $pdo=self::getPDOConnection();
             $pdo->beginTransaction();
             $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
-            if ((!isset($team['recommendations'])||empty($team['design_idea_url']))&&(!empty($recommendations))) 
+            if ((!isset($team['recommendations']))&&(!empty($recommendations)&&strlen($recommendations>=50))) 
             {
                 self::addPointsToTeam($team['id'],20,$pdo);
                 $result->pointsAdded=20;
