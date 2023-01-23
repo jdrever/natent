@@ -3,6 +3,7 @@ use carefulcollab\helpers as helpers;
 
 return function($kirby, $pages, $page, $site) {
     $requiresLogin = true;
+    $isNonLearningJourneyPage=true;
 
     $platform = $kirby->controller('platform' , compact('page', 'pages', 'kirby', 'site', 'requiresLogin'));
     $team = $platform['team'];

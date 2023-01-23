@@ -6,7 +6,7 @@ use carefulcollab\helpers\DataResult;
 return function ($kirby, $pages, $page, $site)
 {
   $requiresLogin = true;
-  $isNonLearningJourneyPage =false;
+  $isNonLearningJourneyPage =true;
   $requiresAdminRole=true;
   $platform = $kirby->controller('platform', compact('page', 'pages', 'kirby', 'site', 'requiresLogin', 'isNonLearningJourneyPage','requiresAdminRole'));
   $team = $platform['team'];
