@@ -33,7 +33,7 @@ class DataHelper
             if (isset($team['id']))
             {
                 $approvalDetails=self::getApprovalDetails($wpUserId,$team['role']);
-                if ((!isset($team['description'])&&strlen($description)>=50)) 
+                if ((!isset($team['description'])||strlen($team['description']?? '')<50)&&strlen($description)>=50)
                 {
                     $checkMax=self::addPointsToTeam($team['id'],20,$pdo);
                     $result->pointsAdded=20;
@@ -444,7 +444,7 @@ class DataHelper
             $pdo=self::getPDOConnection();
             $pdo->beginTransaction();
             $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
-            if ((!isset($team['recommendations']))&&(!empty($recommendations)&&strlen($recommendations>=50))) 
+            if ((!isset($team['recommendations'])||strlen($team['recommendations']?? '')<50)&&strlen($recommendations)>=50)
             {
                     $checkMax=self::addPointsToTeam($team['id'],20,$pdo);
                     $result->pointsAdded=20;
@@ -2064,5 +2064,6 @@ class FileResult
     public $wasSuccessful;
     public $errorMessage;
     public $fileURL;
+    public $pointsAdded=0;
 }
 

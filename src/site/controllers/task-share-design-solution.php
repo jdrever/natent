@@ -10,39 +10,52 @@ return function($kirby, $pages, $page, $site) {
 
     if($kirby->request()->is('POST')) 
     {
-        $designFileUrl = "";
-        $designIdeaUrl = "";
-        $designIdeaYouTubeId = "";
-        $result = helpers\FileHelper::uploadFiletoS3('designIdeaFile');
-
-        if ($result->wasSuccessful)
+        try
         {
-            //if no new file but is existing file use that
-            if (empty($result->fileURL) && isset($_POST['existingDesignIdeaFile']))
-                $designFileUrl = get('existingDesignIdeaFile');
-            else
-                $designFileUrl = $result->fileURL;
-        }
-      
-        if (isset($_POST['designIdeaUrl']) && !empty($_POST['designIdeaUrl']))
-        {
-            $designIdeaUrl = str_replace("https://", "", get('designIdeaUrl'));
-            if (str_starts_with($designIdeaUrl, "youtu.be/"))
-            {
-                $designIdeaYouTubeId = str_replace("youtu.be/", "", $designIdeaUrl);
-            }
-            else
-            {
-                parse_str(parse_url($designIdeaUrl, PHP_URL_QUERY), $designIdeaUrlVars);
-                $designIdeaYouTubeId = $designIdeaUrlVars['v'];
-            }
-        
-            $result = helpers\DataHelper::updateTeamWithDesignIdea($team['user_id'], $designFileUrl, $designIdeaUrl, $designIdeaYouTubeId);
+            $designFileUrl = "";
+            $designIdeaUrl = "";
+            $designIdeaYouTubeId = "";
 
             $userId=$platform['userId'];
             $phaseType=$platform['phaseType'];
-            return $kirby->controller('result', compact('page', 'site', 'kirby', 'result','country','userId','phaseType'));
+
+            $result = helpers\FileHelper::uploadFiletoS3('designIdeaFile');
+
+
+            if ($result->wasSuccessful)
+            {
+                //if no new file but is existing file use that
+                if (empty($result->fileURL) && isset($_POST['existingDesignIdeaFile']))
+                    $designFileUrl = get('existingDesignIdeaFile');
+                else
+                    $designFileUrl = $result->fileURL;
+            }
+        
+            if (isset($_POST['designIdeaUrl']) && !empty($_POST['designIdeaUrl']))
+            {
+                $designIdeaUrl = str_replace("https://", "", get('designIdeaUrl'));
+                if (str_starts_with($designIdeaUrl, "youtu.be/"))
+                {
+                    $designIdeaYouTubeId = str_replace("youtu.be/", "", $designIdeaUrl);
+                }
+                else
+                {
+                    parse_str(parse_url($designIdeaUrl, PHP_URL_QUERY), $designIdeaUrlVars);
+                    $designIdeaYouTubeId = $designIdeaUrlVars['v'];
+                }
+            
+                $result = helpers\DataHelper::updateTeamWithDesignIdea($team['user_id'], $designFileUrl, $designIdeaUrl, $designIdeaYouTubeId);
+            }
         }
+        catch (Exception $e)
+        {
+            $result->wasSuccessful=false;
+            $result->errorMessage=$e;
+            $result->pointsAdded=0;
+
+        }
+        return $kirby->controller('result', compact('page', 'site', 'kirby', 'result','country','userId','phaseType'));
+        
     }
     else
     {

@@ -13,6 +13,9 @@ return function ($kirby, $pages, $page, $site)
   $result = new DataResult();
   $actionType = '';
 
+  $locations=[];
+  $adminCountry=0;
+
   if ($team['role'] == 'ADMIN')
     $adminCountry = $team['country_id'];
 
