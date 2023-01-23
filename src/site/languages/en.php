@@ -78,7 +78,6 @@ return [
         'You need to enter your Research Questions before you enter your strategies' => 'You need to enter your Research Questions before you enter your strategies',
         
         //skills
-        'Skills'=>'Skills',
         'Biology'=>'Biology',
         'Chemistry'=>'Chemistry',
         'Physics'=>'Physics',
