@@ -1,4 +1,6 @@
-<?php if ($latestComments||$latestAppreciations) : ?>
+<?php 
+$otherTeamPage=$site->find('platform/other-team-page');
+if ($latestComments||$latestAppreciations) : ?>
   <div class="accordion accordion-flush" id="accordionCommentsAppreciations">
   <?php if ($latestComments):?>
         <div class="accordion-item">
@@ -15,7 +17,7 @@
                 <small>
                   <i class="bi bi-chat-fill"></i>
                   on your  <?=$comment['content_type']?> by
-                  <a href="/other-team-page/?teamId=<?=$comment['team_id']?>"><?=$comment['team_name']?></a>
+                  <a href="<?=$otherTeamPage->url()?>?teamId=<?=$comment['team_id']?>"><?=$comment['team_name']?></a>
                   <br>
                   <i class="bi bi-quote"></i>
                   <i><?=substr($comment['comment'],0,20)?></i>
@@ -24,7 +26,7 @@
               </p>
     <?php endforeach ?>
             </div>
-            <?php //TODO: get proper url for comments page
+            <?php 
       $commentsPage=$site->find("/platform/team-page/team-comments"); ?>
     <?php if ($commentsPage) : ?>
       <a href="<?= $commentsPage->url()?>" class="btn btn-primary btn-sm m-2"><?=t('View all Comments received', 'View all Comments received') ?> &rarr;</a>
@@ -47,7 +49,7 @@
                   <small>
                     <i class="bi bi-stars"></i>
                     of your <?=$appreciation['content_type']?>  by
-                    <a href="/other-team-page/?teamId=<?=$appreciation['team_id']?>"><?=$appreciation['team_name']?></a>
+                    <a href="<?=$otherTeamPage->url()?>?teamId=<?=$appreciation['team_id']?>"><?=$appreciation['team_name']?></a>
                   </small>
                 </p>
 
