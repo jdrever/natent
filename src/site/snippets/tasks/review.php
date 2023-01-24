@@ -73,11 +73,9 @@
         {
         ?>
         <div class="container p-2 m-2 border border-info rounded">  
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="<?= t($question['question'],$question['question']) ?>" rows="8" name="question<?=$questionId?>" id="question<?=$questionId?>"></textarea>
-                <label for="question<?=$questionId?>"><?= t($question['question'],$question['question']) ?></label>
-                <input type="hidden" name="question<?=$questionId?>ResponseType" value="TEXT"> 
-            </div>
+            <label for="question<?=$questionId?>"><?= t($question['question'],$question['question']) ?></label>
+            <textarea class="form-control" rows="8" name="question<?=$questionId?>" id="question<?=$questionId?>"></textarea>  
+            <input type="hidden" name="question<?=$questionId?>ResponseType" value="TEXT"> 
         </div>
     <?php
     }
