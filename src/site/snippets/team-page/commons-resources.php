@@ -12,10 +12,10 @@ if ($resources)
     {
         $nextPhaseTitle=$resource['phase_title']; 
         $phasePage = $languagePage->index()->filterBy('phase', strtolower($nextPhaseTitle))->first();       
-        if (!($phaseTitle==$nextPhaseTitle))
+        if (!($phaseTitle==$nextPhaseTitle)&&$phasePage)
         {
 ?>
-    <h4><?=$phasePage->title() ?></h4>
+    <h4><?=$phasePage->title()->isNotEmpty() ? $phasePage->title() : 'Missing phase' ?></h4>
     <?php
         }
         $phaseTitle=$resource['phase_title'];
