@@ -36,10 +36,16 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
         $loginPage->go();
 
     $status='';
-    if ($kirby->request()->get('_taskStatus')) $status='task-ok' ;
-    if ($kirby->request()->get('_taskCommonsStatus')) $status='task-commons-ok';
-    if ($kirby->request()->get('_commentStatus')) $status='comment-ok';
-    if ($kirby->request()->get('_appreciationStatus')) $status='appreciation-ok';
+    if (get('_taskStatus')&&get('_taskStatus')=='ok') $status='task-ok' ;
+    if (get('_taskStatus')&&get('_taskStatus')=='error') $status='task-error' ;
+    if (get('_taskCommonsStatus')&&get('_taskCommonsStatus')=='ok') $status='task-commons-ok';
+    if (get('_taskCommonsStatus')&&get('_taskCommonsStatus')=='error') $status='task-commons-error';
+    if (get('_commentStatus')&&get('_commentStatus')=='ok') $status='comment-ok';
+    if (get('_commentStatus')&&get('_commentStatus')=='error') $status='comment-error';
+    if (get('_appreciationStatus')&&get('_appreciationStatus')=='ok') $status='appreciation-ok';
+    if (get('_appreciationStatus')&&get('_appreciationStatus')=='error') $status='appreciation-error';
+
+    $errorMessage=get('message') ? get('message') : '';
 
     $pointsAdded=$kirby->request()->get('points') ? $kirby->request()->get('points') : 0;
     $pointsAddedOtherTeam=$kirby->request()->get('pointsOther') ? $kirby->request()->get('pointsOther') : 0;
@@ -105,7 +111,9 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     return [ 
         'userId' => $userId, 
         'userLoggedIn' => $userLoggedIn, 
-        'team' => $team, 'status' =>$status, 
+        'team' => $team, 
+        'status' =>$status, 
+        'errorMessage' =>$errorMessage, 
         'userRole' => $userRole, 
         'pointsAdded' => $pointsAdded, 
         'maximumPoints' => $maximumPoints, 

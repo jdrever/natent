@@ -43,14 +43,23 @@
     <?php endif ?>
 </div>
   <?php endif ?>
-
-
-  <?php if ($status==='err') : ?>
+  <?php if ($status==='task-error'||$status==='task-commons-error'||$status==='comment-error'||$status==="appreciation-error") : ?>
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   <h2>
-    <i class="bi bi-exclamation-square-fill"></i>
-    An error has occurred while attempting to complete this collaboration point.
+    <i class="bi-hand-thumbs-up-fill"></i>
+    <?php if ($status==='task-error') : ?>
+    <?=t("An error occured while completing this collaboration point","An error occured while completing this collaboration point")?>
+    <?php endif ?>
+    <?php if ($status==='task-commons-error') : ?>
+      <?=t("An error occured while completing this collaboration point andadding resources to the Commons","An error occured while completing this collaboration point andadding resources to the Commons")?>
+    <?php endif ?>
+    <?php if ($status==='comment-error') : ?>
+      <?=t("An error occured while adding your comment","An error occured while adding your comment")?>
+    <?php endif ?>
+    <?php if ($status==='appreciation-error') : ?>
+      <?=t("An error occured while adding your appreciation!","An error occured while adding your appreciation!")?>
+    <?php endif ?>
   </h2>
   <p class="lead">
     ERROR MESSAGE: <?=$errorMessage?> 

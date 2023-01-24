@@ -4,11 +4,11 @@ use carefulcollab\helpers as helpers;
 return function($page, $site, $kirby, $result, $country, $userId, $phaseType) 
 {
 
-
     if ($result->wasSuccessful)
     {
         $statusType='_taskStatus';
         $pointsAdded=$result->pointsAdded;
+        $statusResult='ok';
         
         $maxPoints='N';
         if (isset($result->maximumPoints)&&$result->maximumPoints===true) $maxPoints='Y';
@@ -22,6 +22,7 @@ return function($page, $site, $kirby, $result, $country, $userId, $phaseType)
           {
       
             $fileUploadResult=helpers\FileHelper::uploadFiletoS3('fileUpload' .$x);
+            
             if ($fileUploadResult->wasSuccessful)
             {       
               $title = $_POST['resourceTitle' . $x];
@@ -38,33 +39,38 @@ return function($page, $site, $kirby, $result, $country, $userId, $phaseType)
             {
               $result->wasSuccessful=false;
               $result->errorMessage=$fileUploadResult->errorMessage;
-              break;
+              $statusResult='error';
             }
       
           }
         }   
         if ($result->wasSuccessful&&!empty($resourcesArray))
         {
-          $collabType=$page->template();
-          $result=helpers\DataHelper::addResourcesToCommons($userId,$resourcesArray,$phaseType,$collabType);
-          $statusType="_taskCommonsStatus";
-          $pointsAdded+=$result->pointsAdded;
-          if (isset($result->maximumPoints)&&$result->maximumPoints===true) $maxPoints='Y';
+            $collabType=$page->template();
+            $statusType="_taskCommonsStatus";
+            $result=helpers\DataHelper::addResourcesToCommons($userId,$resourcesArray,$phaseType,$collabType);
+            if ($result->wasSuccessful)
+            {
+              $pointsAdded+=$result->pointsAdded;
+              if (isset($result->maximumPoints)&&$result->maximumPoints===true) $maxPoints='Y';
+            }
+            else
+            {
+              $statusResult='error';
+            }
         }
-
-        $collection = $kirby->collection("guides-content");
-
-        if ($next = $page->next($collection)) 
-        {
-          $next->go(['query' => [$statusType => 'ok', 'points' =>$pointsAdded, 'maxPoints'=>$maxPoints ]]);
-        }
-        $page->go(['query' => [$statusType => 'ok', 'points' =>$pointsAdded,'maxPoints'=>$maxPoints ]]);
     }
     else
     {
-        //return $platform;
-        if ($page=$site->find('error'))
-            $page->go([ 'query' => ['errorMessage' => isset($result->errorMessage) ? $result->errorMessage : 'No error message returned']]);
+      $statusResult="error";
     }
+
+    $collection = $kirby->collection("guides-content");
+
+    if ($next = $page->next($collection)) 
+    {
+      $next->go(['query' => [$statusType => $statusResult, 'points' =>$pointsAdded, 'maxPoints'=>$maxPoints, 'message'=>$result->errorMessage ]]);
+    }
+    $page->go(['query' => [$statusType => $statusResult, 'points' =>$pointsAdded,'maxPoints'=>$maxPoints, 'message'=>$result->errorMessage ]]);
 }
 ?>
