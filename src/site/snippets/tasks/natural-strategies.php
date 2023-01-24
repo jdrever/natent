@@ -53,8 +53,8 @@
                 </div>
                 <i class="bi bi-arrow-right-circle-fill"></i>
                 <div class="form-floating">
-                    <input type="text" class="form-control" name="<?=$principleId?>" id="<?=$principleId?>"  placeholder="<?=t('Design Principle','Design Principle')?> aria-label="<?=t('Design Principle','Design Principle')?> value="<?=$designPrincipleName?>" <?=($userLoggedIn) ? '' : 'readonly'?>>
-                    <label for="<?=$principleId?>"><?=t('Design Principle','Design Principle')?><?=$x?></label>
+                    <input type="text" class="form-control" name="<?=$principleId?>" id="<?=$principleId?>"  placeholder="<?=t('Design Principle','Design Principle')?> <?=$x?>" aria-label="<?=t('Design Principle','Design Principle')?> <?=$x?>" value="<?=$designPrincipleName?>" <?=($userLoggedIn) ? '' : 'readonly'?>>
+                    <label for="<?=$principleId?>"><?=t('Design Principle','Design Principle')?> <?=$x?></label>
                 </div>
             </div>
         </div>
