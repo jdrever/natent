@@ -16,9 +16,6 @@ function getCollabUrl($collaborationPoints,$template)
 }
 
 ?>
-
-
-
     <?php snippet('team-page/phase-completion') ?>
  <?php if ($editTeam) :?>  
     <?php snippet('team-page/latest-comments') ?> 
