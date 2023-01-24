@@ -509,6 +509,7 @@ class DataHelper
             $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
 
             $approvalDetails=self::getApprovalDetails($wpUserId,$team['role']);
+            $result->pointsAdded=0;
 
             foreach($resources as $resource)
             {
