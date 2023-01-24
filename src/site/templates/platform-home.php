@@ -28,7 +28,7 @@
         </div>
         <div class="col-sm-6">
           <div class="container mt-2">
-
+          <?php snippet('admin/moderation-notification')?>
             <?php snippet('team-page/latest-comments')?>
           </div>
         </div>
