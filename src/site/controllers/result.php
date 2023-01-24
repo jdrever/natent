@@ -3,14 +3,15 @@
 use carefulcollab\helpers as helpers;
 return function($page, $site, $kirby, $result, $country, $userId, $phaseType) 
 {
-
+    $statusType='_taskStatus';
+    $pointsAdded=0;
+    $maxPoints='N';
     if ($result->wasSuccessful)
     {
-        $statusType='_taskStatus';
+        
         $pointsAdded=$result->pointsAdded;
         $statusResult='ok';
-        
-        $maxPoints='N';
+  
         if (isset($result->maximumPoints)&&$result->maximumPoints===true) $maxPoints='Y';
 
         //check for commons upload

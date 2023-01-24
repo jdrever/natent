@@ -35,7 +35,7 @@ class DataHelper
                 $approvalDetails=self::getApprovalDetails($wpUserId,$team['role']);
                 if ((!isset($team['description'])||strlen($team['description']?? '')<50)&&strlen($description??'')>=50)
                 {
-                    $checkMax=self::addPointsToTeam($team['id'],20,$pdo);
+                    $checkMax=self::addPointsToTeam($team['id'],'Sharing team profile', 20,$pdo);
                     $result->pointsAdded=20;
                     if ($checkMax==='MAX') $result->maximumPoints=true;
                 }
@@ -182,7 +182,7 @@ class DataHelper
                 }
                 if (!isset($team['challenge_id'])) 
                 {
-                    $checkMax=self::addPointsToTeam($team['id'],20,$pdo);
+                    $checkMax=self::addPointsToTeam($team['id'],'Selecting topic', 20,$pdo);
                     $result->pointsAdded=20;
                     if ($checkMax==='MAX') $result->maximumPoints=true;
                 }
@@ -251,7 +251,7 @@ class DataHelper
             $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
             if ((!isset($team['context'])||strlen($team['context']?? '')<50)&&strlen($context??'')>=50)
             {
-                    $checkMax=self::addPointsToTeam($team['id'],20,$pdo);
+                    $checkMax=self::addPointsToTeam($team['id'],'Sharing Context', 20,$pdo);
                     $result->pointsAdded=20;
                     if ($checkMax==='MAX') $result->maximumPoints=true;
             }
@@ -301,7 +301,7 @@ class DataHelper
             $checkFunctions=$stmt->fetch();
             if ($checkFunctions['number_of_functions']==0&&count($functions)>0) 
             {
-                    $checkMax=self::addPointsToTeam($team['id'],20,$pdo);
+                    $checkMax=self::addPointsToTeam($team['id'],'Sharing Research Question', 20,$pdo);
                     $result->pointsAdded=20;
                     if ($checkMax==='MAX') $result->maximumPoints=true;
             }
@@ -340,7 +340,7 @@ class DataHelper
             $checkStrategies=$stmt->fetch();
             if ($checkStrategies['number_of_strategies']==0&&count($strategies)>0) 
             {
-                    $checkMax=self::addPointsToTeam($team['id'],20,$pdo);
+                    $checkMax=self::addPointsToTeam($team['id'],'Sharing Natural Stategies', 20,$pdo);
                     $result->pointsAdded=20;
                     if ($checkMax==='MAX') $result->maximumPoints=true;
             }
@@ -415,7 +415,7 @@ class DataHelper
             $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
             if ((!isset($team['design_idea_url'])||empty($team['design_idea_url']))&&(!empty($designIdeaFile)||!empty($designIdeaYouTubeId))) 
             {
-                    $checkMax=self::addPointsToTeam($team['id'],20,$pdo);
+                    $checkMax=self::addPointsToTeam($team['id'],'Sharing Design Solution', 20,$pdo);
                     $result->pointsAdded=20;
                     if ($checkMax==='MAX') $result->maximumPoints=true;
             }
@@ -446,7 +446,7 @@ class DataHelper
             $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
             if ((!isset($team['recommendations'])||strlen($team['recommendations']?? '')<50)&&strlen($recommendations??'')>=50)
             {
-                    $checkMax=self::addPointsToTeam($team['id'],20,$pdo);
+                    $checkMax=self::addPointsToTeam($team['id'],'Sharing Measures', 20,$pdo);
                     $result->pointsAdded=20;
                     if ($checkMax==='MAX') $result->maximumPoints=true;
             }
@@ -477,7 +477,7 @@ class DataHelper
             $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
             if ((!isset($team['pitch_video_url'])||empty($team['pitch_video_url']))&&!empty($pitchVideoUrl))
             {
-                $checkMax=self::addPointsToTeam($team['id'],20,$pdo);
+                $checkMax=self::addPointsToTeam($team['id'],'Sharing Pitch Deck', 20,$pdo);
                 $result->pointsAdded=20;
                 if ($checkMax==='MAX') $result->maximumPoints=true;
             }
@@ -516,7 +516,7 @@ class DataHelper
 
                 $sql=("INSERT INTO cc_commons_resources (team_id, country_id, phase_type, collaboration_point_type, title, description, url, file_upload_url, created_date,created_by, approved_date, approved_by ) VALUES (?,?,?,?,?,?,?,?,now(),?,?,?)");
                 $pdo->prepare($sql)->execute([$team["id"], $team['country_id'],$phaseType, $collaborationPointType, $resource->title, $resource->description, $resource->url, $resource->fileUploadURL, $wpUserId,$approvalDetails->approvedDate,$approvalDetails->approvedBy]);
-                $checkMax=self::addPointsToTeam($team['id'],20,$pdo);
+                $checkMax=self::addPointsToTeam($team['id'],'Sharing Commons Resource',20,$pdo);
                 if ($checkMax==='MAX') $result->maximumPoints=true;
                 $result->pointsAdded+=20;
             }
@@ -646,7 +646,7 @@ class DataHelper
             $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
             
             //add 15 points for the team who are commenting
-            $checkMax=self::addPointsToTeam($team['id'],15,$pdo);
+            $checkMax=self::addPointsToTeam($team['id'],'Commenting on another team', 15,$pdo);
             if ($checkMax==='MAX') $result->maximumPoints=true;
             $result->pointsAdded=15;
 
@@ -655,7 +655,7 @@ class DataHelper
             $stmt = $pdo->prepare("SELECT team_id FROM ". $contentTypeTable . " WHERE id=?"); 
             $stmt->execute([$contentId]);
             $otherTeam=$stmt->fetch();
-            self::addPointsToTeam($otherTeam['team_id'],20,$pdo);
+            self::addPointsToTeam($otherTeam['team_id'],'Being commented on by another team', 20,$pdo);
             $result->pointsAddedOtherTeam=20;
 
             $approvalDetails=self::getApprovalDetails($wpUserId,$team['role']);
@@ -691,7 +691,7 @@ class DataHelper
             $otherTeam=$stmt->fetch();
             if (!$team['id']==$otherTeam['team_id'])
             {
-                self::addPointsToTeam($otherTeam['team_id'],15,$pdo);
+                self::addPointsToTeam($otherTeam['team_id'],'Being appreciated by another team',15,$pdo);
                 $result->pointsAddedOtherTeam=15;
                 //add 5 points to the team who is appreciating the content (if they haven't already done so)
                 $stmt=$pdo->prepare("SELECT id FROM cc_appreciations WHERE content_type=? AND content_id=?");
@@ -699,7 +699,7 @@ class DataHelper
                 $checkForExistingAppreciation=$stmt->fetch();
                 if (!($checkForExistingAppreciation))
                 {
-                    $checkMax=self::addPointsToTeam($team['id'],5,$pdo);
+                    $checkMax=self::addPointsToTeam($team['id'],'Appreciating another team', 5,$pdo);
                     if ($checkMax==='MAX') $result->maximumPoints=true;
                     $result->pointsAdded=5;
                 }
@@ -782,7 +782,7 @@ class DataHelper
         return $comments;
     }  
 
-    private static function addPointsToTeam($teamId, $points, $pdo) : string
+    private static function addPointsToTeam($teamId, $pointsType, $points, $pdo) : string
     {
         $sql=("UPDATE cc_teams SET points=ifnull(points,0)+? WHERE id=?");
         $pdo->prepare($sql)->execute([$points, $teamId]); 
@@ -795,6 +795,11 @@ class DataHelper
             $sql=("UPDATE cc_teams SET points=500 WHERE id=?");
             $pdo->prepare($sql)->execute([$teamId]); 
             return 'MAX';
+        }
+        else
+        {
+            $sql=("INSERT INTO cc_team_points_audit_trail (team_id,points_type,points_added, date_added) VALUES (?,?,?,now())");       
+            $pdo->prepare($sql)->execute([$teamId, $pointsType, $points]);
         }
         return '';
     }
@@ -1074,7 +1079,7 @@ class DataHelper
                     $pdo->prepare($sql)->execute([$team['id'],$phaseType,$response->questionId, $response->textResponse] );
                 }  
             }
-            $checkMax=self::addPointsToTeam($team['id'],20,$pdo);
+            $checkMax=self::addPointsToTeam($team['id'],'Sharing phase response', 20,$pdo);
             if ($checkMax==='MAX') $result->maximumPoints=true;
             $pdo->commit();
             $result->pointsAdded=20;
