@@ -1,9 +1,9 @@
+
 <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePoints"
   aria-expanded="false" aria-controls="collapsePoints">
-  <?=t("See Points Audit Trail", "See Points Audit Trail")?>
+  <?=t("How did this Team earn its points?", "How did this Team earn its points?")?>
 </button>
 <div class="collapse" id="collapsePoints">
-
   <table class="table">
     <tr>
       <th><?=t("Type of Points","Type of Points")?></th>

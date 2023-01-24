@@ -1,6 +1,5 @@
-
 <div class="container my-4">
-<h1 class="pb-2 border-bottom"><i class="bi bi-person-heart"></i> <?= $viewedTeam['name'] ?></h1>
+  <h1 class="pb-2 border-bottom"><i class="bi bi-person-heart"></i> <?= $viewedTeam['name'] ?></h1>
   <div class="row p-3">
     <?php
         foreach ($phaseCompletion as $phase)
@@ -24,13 +23,11 @@
       <p class="h1"><?= $viewedTeam['points'] ?></p>
     </div>
   </div>
-  
-
-<?php if ($userRole==='ADMIN'||$userRole==='GLOBAL'||$userRole==='TEACHER'): ?>
-<div class="row">
-  <div class="col-12">
-  <?php snippet('team-page/points') ?>
-</div>
-</div>
-<?php endif ?>
+  <? if ($pointsAuditTrail) : ?>
+  <div class="row">
+    <div class="col-12">
+      <?php snippet('team-page/points') ?>
+    </div>
+  </div>
+  <? endif ?>
 </div>
