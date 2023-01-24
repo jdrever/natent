@@ -11,7 +11,7 @@ return function($kirby, $pages, $page, $site) {
     if($kirby->request()->is('POST')) 
     {
         $description = htmlspecialchars(get('description'));
-        $skills = implode(',', get('skills',''));
+        $skills = get('skills') ? implode(',', get('skills','')) : '';
         $result=helpers\DataHelper::updateTeamProfile($team['user_id'], $description, $skills);
 
         $userId=$platform['userId'];

@@ -1,7 +1,7 @@
 <?php
 use carefulcollab\helpers as helpers;
   $content=helpers\DataHelper::getModerationContent($contentType, $contentId);
-    if ($contentType=="Team Profile"&&false)
+    if ($contentType=="Team Profile")
     {
  ?>
     <b><?=t("Tell us about your team","Tell us about your team")?>:</b><br><?=$content['description']?>
