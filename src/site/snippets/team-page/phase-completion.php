@@ -26,7 +26,7 @@
   </div>
   
 
-<?php if ($userRole==='ADMIN'||$userRole==='GLOBAL'): ?>
+<?php if ($userRole==='ADMIN'||$userRole==='GLOBAL'||$userRole==='TEACHER'): ?>
 <div class="row">
   <div class="col-12">
   <?php snippet('team-page/points') ?>
