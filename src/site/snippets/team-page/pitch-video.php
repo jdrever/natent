@@ -5,7 +5,7 @@ if (isset($viewedTeam['pitch_video_you_tube_id'])&&!empty($viewedTeam['pitch_vid
     <iframe loading="lazy" title="'Pitch Video" width="500" height="281" src="https://www.youtube.com/embed/<?= $viewedTeam['pitch_video_you_tube_id'] ?>?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <?php else : ?>
-    <p><?=t("Not yet uploaded")?>.</p>
+    <p><?=t("Not yet uploaded", "Not yet uploaded")?>.</p>
 <?php endif;
 if (!$hideCollaboration) :
   if ($editTeam) : ?>
