@@ -82,6 +82,7 @@ return function ($kirby, $pages, $page, $site)
         $password = $_POST['password'];
         $resetTeam=$kirby->user(str_replace(' ', '-', $teamName) . '@natent.eu');
         $resetTeam->changePassword($password);
+        $result->wasSuccessful = true;
       }
       catch (Exception $e)
       {

@@ -1419,7 +1419,7 @@ class DataHelper
             }
             else
             {
-                $result->errorMessage="You do not have permission to add a new location";
+                $result->errorMessage="You do not have permission to update a location";
                 $result->wasSuccessful=false;
             }
         }
