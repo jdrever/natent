@@ -37,9 +37,9 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
 
     $status='';
     if ($kirby->request()->get('_taskStatus')) $status='task-ok' ;
-    if ($kirby->request()->get('_taskCommonsStatus')) $status=$kirby->request()->get('task-commons-ok') ;
-    if ($kirby->request()->get('_commentStatus')) $status=$kirby->request()->get('comment-ok') ;
-    if ($kirby->request()->get('_appreciationStatus')) $status=$kirby->request()->get('appreciation-ok') ;
+    if ($kirby->request()->get('_taskCommonsStatus')) $status='task-commons-ok';
+    if ($kirby->request()->get('_commentStatus')) $status='comment-ok';
+    if ($kirby->request()->get('_appreciationStatus')) $status='appreciation-ok';
 
     $pointsAdded=$kirby->request()->get('points') ? $kirby->request()->get('points') : 0;
     $pointsAddedOtherTeam=$kirby->request()->get('pointsOther') ? $kirby->request()->get('pointsOther') : 0;

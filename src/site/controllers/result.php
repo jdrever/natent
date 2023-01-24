@@ -23,7 +23,7 @@ return function($page, $site, $kirby, $result, $country, $userId, $phaseType)
       
             $fileUploadResult=helpers\FileHelper::uploadFiletoS3('fileUpload' .$x);
             if ($fileUploadResult->wasSuccessful)
-            {
+            {       
               $title = $_POST['resourceTitle' . $x];
               $description = $_POST['resourceDescription' . $x];
               $url = $_POST['resourceUrl' . $x];
@@ -49,6 +49,7 @@ return function($page, $site, $kirby, $result, $country, $userId, $phaseType)
           $result=helpers\DataHelper::addResourcesToCommons($userId,$resourcesArray,$phaseType,$collabType);
           $statusType="_taskCommonsStatus";
           $pointsAdded+=$result->pointsAdded;
+          if (isset($result->maximumPoints)&&$result->maximumPoints===true) $maxPoints='Y';
         }
 
         $collection = $kirby->collection("guides-content");
