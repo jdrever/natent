@@ -475,7 +475,7 @@ class DataHelper
             $pdo=self::getPDOConnection();
             $pdo->beginTransaction();
             $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
-            if ((!isset($team['value_proposition'])||empty($team['value_proposition']))&&!empty($valueProposition))
+            if ((!isset($team['pitch_video_url'])||empty($team['pitch_video_url']))&&!empty($pitchVideoUrl))
             {
                 $checkMax=self::addPointsToTeam($team['id'],20,$pdo);
                 $result->pointsAdded=20;
