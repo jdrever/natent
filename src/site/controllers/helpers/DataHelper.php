@@ -804,6 +804,15 @@ class DataHelper
         return '';
     }
 
+    public static function getPointsAuditTrail($teamId)
+    {
+        $pdo = new PDO(self::DSN,self::DB_USER,self::DB_PASSWORD);
+        $stmt = $pdo->prepare("SELECT * FROM cc_team_points_audit_trail WHERE team_id=? ORDER BY date_added DESC");        
+        $stmt->execute([$teamId]); 
+        $points = $stmt->fetchAll();
+        return $points;
+    }
+
     public static function getPhaseByCountryId($phaseType, $countryId)
     {
 

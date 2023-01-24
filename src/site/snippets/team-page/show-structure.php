@@ -18,12 +18,12 @@ function getCollabUrl($collaborationPoints,$template)
 ?>
 
 
-<div class="container my-4">
+
     <?php snippet('team-page/phase-completion') ?>
  <?php if ($editTeam) :?>  
     <?php snippet('team-page/latest-comments') ?> 
 <?php endif ?>
-
+<div class="container my-4">
     <div class="row g-1">
         <div class="feature col p-3 m-2 bg-light border border-secondary">
             <h3><?=t("Team Profile")?></h3>

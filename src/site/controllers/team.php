@@ -13,6 +13,8 @@ return function($platform, $site, $viewedTeam, $editTeam, $hideCollaboration=fal
     $latestComments=($editTeam) ? helpers\DataHelper::getLatestComments($userId) : [];
     $latestAppreciations=($editTeam) ? helpers\DataHelper::getLatestAppreciations($userId) : [];
 
+    $pointsAuditTrail=helpers\DataHelper::getPointsAuditTrail($viewedTeam['id']); 
+
     $languagePage=$platform['languagePage'];
     
     foreach ($phases as $nextPhase)
@@ -42,7 +44,8 @@ return function($platform, $site, $viewedTeam, $editTeam, $hideCollaboration=fal
         'collaborationPoints',
         'latestComments',
         'latestAppreciations',
-        'skills'));
+        'skills',
+        'pointsAuditTrail'));
 
 }
 ?>
