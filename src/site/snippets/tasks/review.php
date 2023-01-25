@@ -42,33 +42,34 @@
     ?>  
         <div class="container p-2 m-2 border border-info rounded">    
             <label for="question<?=$questionId?>" class="m-1"><?= t($question['question'],$question['question']) ?></label>
-            <br>
-
+            <div class="row row-cols-1 row-cols-sm-5">
             <?php
             for ($x = 1; $x <= 5; $x++) 
             {
               $buttonColour=($x==1||$x==5) ? 'light' : 'dark';
             ?>
+              <div class="col">
                 <div class="form-check form-check-inline p-2 likert-<?=$x?>">
-                <?php
-                if ($x == 1)
-                {
-                    echo(t("Strongly Disagree"));
-                }
-                ?>
                 <input type="radio" class="btn-check" name="question<?=$questionId?>" id="question<?=$questionId?>-<?=$x?>" value="<?=$x?>" autocomplete="off" required>
                 <label class="btn btn-outline-<?=$buttonColour?>" for="question<?=$questionId?>-<?=$x?>"><?=$x?></label>
                 <input type="hidden" name="question<?=$questionId?>ResponseType" value="NUMERIC"> 
 
                 <?php
+                if ($x == 1)
+                {
+                    echo(t("Strongly Disagree"));
+                }
                 if ($x == 5)
                 {
                     echo(t("Strongly Agree"));
                 }
                 ?>
                 </div>
+              </div>
             <?php
-            }
+            } ?>
+            </div>
+<?php
         }
         if ($question['question_type'] == 'TEXT')
         {
