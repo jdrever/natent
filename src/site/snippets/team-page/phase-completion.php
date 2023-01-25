@@ -29,5 +29,5 @@
       <?php snippet('team-page/points') ?>
     </div>
   </div>
-  <? endif ?>
+  <?php endif ?>
 </div>
