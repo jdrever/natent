@@ -9,7 +9,7 @@ $otherTeamPage=$site->find('platform/other-team-page');
 
 if (count($comments)>0) :
 ?>
-  <button class="btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseComments<?=$contentId?>" aria-expanded="false" aria-controls="collapseComments<?=$contentId?>">
+  <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseComments<?=$contentId?>" aria-expanded="false" aria-controls="collapseComments<?=$contentId?>">
 
    <?=t("See Comments")?> <span class="badge bg-secondary"><?=count($comments)?></span> 
   </button>
@@ -21,7 +21,7 @@ if (count($comments)>0) :
             $uniqueId=uniqid();
 ?>
 
-<button class="btn-outline-primary btn-sm" type="button" onclick="getTranslation('<?=$comment['comment'] ?>','<?=$uniqueId?>')"><?=t('Translate to English')?></button></div>
+<button class="btn btn-outline-primary btn-sm" type="button" onclick="getTranslation('<?=$comment['comment'] ?>','<?=$uniqueId?>')"><?=t('Translate to English')?></button></div>
 <div id="<?=$uniqueId?>"></div>
 <?php snippet('show-appreciation-button',['contentType'=>'Comment', 'contentId'=>$comment['id']]) ?>
 

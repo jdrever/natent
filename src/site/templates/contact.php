@@ -50,4 +50,5 @@
   </div>
   </form>
 </div>
+<?php endif ?>
 <?php snippet('footer') ?>
