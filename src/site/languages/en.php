@@ -76,6 +76,10 @@ return [
         'Add More Resources' => 'Add More Resources',
         'You need to select your challenge before you complete this Task' => 'You need to select your challenge before you complete this Task',
         'You need to enter your Research Questions before you enter your strategies' => 'You need to enter your Research Questions before you enter your strategies',
+        'How did this Team earn its points?' => 'How did this Team earn its points?',
+        'Type of Points' => 'Type of Points',
+        'Points Added' => 'Points Added',
+        'Date/Time' => 'Date/Time',
         
         //skills
         'Biology'=>'Biology',
