@@ -31,7 +31,7 @@ return function($kirby, $pages, $page, $site)
       {
         $maxPoints='N';
         if (isset($result->maximumPoints)&&$result->maximumPoints===true) $maxPoints='Y';
-        Response::go(getRedirectUrl($callingPage, '_appreciationStatus=ok&points=' . '&pointsOther=' . $result->pointsAddedOtherTeam . '&maxPoints=' .$maxPoints));
+        Response::go(getRedirectUrl($callingPage, '_appreciationStatus=ok&points=' . $result->pointsAdded . '&pointsOther=' . $result->pointsAddedOtherTeam . '&maxPoints=' .$maxPoints));
       }
     }
   

@@ -689,7 +689,7 @@ class DataHelper
             $stmt = $pdo->prepare("SELECT team_id FROM ". $contentTypeTable . " WHERE id=?"); 
             $stmt->execute([$contentId]);
             $otherTeam=$stmt->fetch();
-            if (!$team['id']==$otherTeam['team_id'])
+            if (!($team['id']===$otherTeam['team_id']))
             {
                 self::addPointsToTeam($otherTeam['team_id'],'Being appreciated by another team',15,$pdo);
                 $result->pointsAddedOtherTeam=15;
@@ -708,6 +708,7 @@ class DataHelper
             $pdo->prepare($sql)->execute([$team['id'],$contentType, $contentId, $otherTeam['team_id'], $wpUserId] );
             $pdo->commit();
             $result->wasSuccessful=true;
+            
 
         }
         catch (\PDOException $e)
