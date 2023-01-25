@@ -128,6 +128,8 @@ return [
         'Research Question' => 'Research Question',
         'Add More Research Questions' => 'Add More Research Questions',
         'SHARE YOUR RESEARCH QUESTIONS' => 'SHARE YOUR RESEARCH QUESTIONS',
+        'Research Questions' => 'Research Questions',
+        'No Research Questions have been shared'=> 'No Research Questions have been shared',
 
         //strategies
         'RESEARCH QUESTION' => 'RESEARCH QUESTION',

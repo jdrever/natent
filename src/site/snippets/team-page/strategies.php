@@ -1,10 +1,13 @@
 <?php
 use carefulcollab\helpers as helpers;
+?>
 
+<h4><?=t('Research Questions','Research Questions')?></h4>
+<?php
 $functions = helpers\DataHelper::getFunctionsByTeam($viewedTeam['id'], !$editTeam);
 
-foreach ($functions as $function)
-{
+if ($functions) :
+foreach ($functions as $function) :
     $researchQuestion=$function['biologized_question'];
 ?>
     <table class="table m-2 p-2 border">
@@ -58,5 +61,8 @@ foreach ($functions as $function)
 <?php
         }
     }
-}
 ?>
+<?php endforeach ?>
+<?php else : ?>
+  <p><?=t("No Research Questions have been shared","No Research Questions have been shared")?></p>
+<?php endif ?>
