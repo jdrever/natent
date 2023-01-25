@@ -23,7 +23,7 @@
       <p class="h1"><?= $viewedTeam['points'] ?></p>
     </div>
   </div>
-  <? if ($pointsAuditTrail) : ?>
+  <? if (count($pointsAuditTrail)>0) : ?>
   <div class="row">
     <div class="col-12">
       <?php snippet('team-page/points') ?>
