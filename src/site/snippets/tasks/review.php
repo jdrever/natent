@@ -47,6 +47,7 @@
             <?php
             for ($x = 1; $x <= 5; $x++) 
             {
+              $buttonColour=($x==1||$x==5) ? 'light' : 'dark';
             ?>
                 <div class="form-check form-check-inline p-2 likert-<?=$x?>">
                 <?php
@@ -56,7 +57,7 @@
                 }
                 ?>
                 <input type="radio" class="btn-check" name="question<?=$questionId?>" id="question<?=$questionId?>-<?=$x?>" value="<?=$x?>" autocomplete="off" required>
-                <label class="btn btn-outline-dark" for="question<?=$questionId?>-<?=$x?>"><?=$x?></label>
+                <label class="btn btn-outline-<?=$buttonColour?>" for="question<?=$questionId?>-<?=$x?>"><?=$x?></label>
                 <input type="hidden" name="question<?=$questionId?>ResponseType" value="NUMERIC"> 
 
                 <?php
