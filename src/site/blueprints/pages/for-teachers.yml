@@ -5,6 +5,13 @@ columns:
     sections:
       hero: sections/hero
       mainContent: sections/core-fields
+      additional:
+        type: fields
+        fields:
+          platformButton:
+            label: 'EXPLORE THE PLATFORM' button
+            type: text
+            default: EXPLORE THE PLATFORM
   sidebar:
     width: 1/3
     sections:
@@ -12,4 +19,5 @@ columns:
         label: Sub-Pages
         type: pages
         template: sub-page
+
 
