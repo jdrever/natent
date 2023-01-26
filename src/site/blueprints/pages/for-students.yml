@@ -16,6 +16,8 @@ columns:
             label: 'START USING THE PLATFORM' button
             type: text
             default: START USING THE PLATFORM
+
+            
           contactText:
             label: Contact text
             type: textarea

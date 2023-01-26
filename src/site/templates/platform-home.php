@@ -7,13 +7,25 @@
   }
 </style>
 <div class="container mt-2 bg-light">
+<?php if (!$userLoggedIn)  : ?>
+  <div class="row">
+    <div class="col-sm-12 p-2">
+      <div class="alert alert-info p-2" role="alert">
+        <h2><i class="bi bi-info-square-fill"></i> Login or Register to access collaboration features</h2>
+        <p>Everyone can explore the Natural Entrepreurs Learning Journey but to complete tasks and collaborate with other teams, you will need to register your school with the
+          project.</p>
+        <p><a class="btn btn-primary" href="<?=$registerPage->url()?>"><?=$registerPage->pageTitle()->isNotEmpty() ? $registerPage->pageTitle() : $registerPage->title()?></a> or if you already have a username and password, then 
+          <a class="btn btn-primary" href="<?=$loginPage->url()?>"><?=$loginPage->pageTitle()->isNotEmpty() ? $loginPage->pageTitle() : $loginPage->title()?></a></p>
+      </div>
+    </div>
+  </div>
+  <?php endif ?> 
+
   <div class="row pb-4">
     <div class="col-sm-12">
       <?php snippet('show-phases') ?>
     </div>
   </div>
-  
-
     <?php if ($userLoggedIn) : ?>
       <div class="row">
         <div class="col-sm-6">
@@ -33,19 +45,9 @@
           </div>
         </div>
       </div>
-        <?php else : ?>
-          <div class="row">
-            <div class="col-sm-12 p-2">
-              <div class="alert alert-info p-2" role="alert">
-                <h2><i class="bi bi-info-square-fill"></i> Register to access collaboration features</h2>
-                <p>Everyone can explore the Natural Entrepreurs Learning Journey but to complete tasks and collaborate with other teams, you will need to register your school with the
-                  project.</p>
-                <p><a class="btn btn-primary" href="<?=$registerPage->url()?>"><?=$registerPage->pageTitle()->isNotEmpty() ? $registerPage->pageTitle() : $registerPage->title()?></a> or if you already have a username and password, then 
-                  <a class="btn btn-primary" href="<?=$loginPage->url()?>"><?=$loginPage->pageTitle()->isNotEmpty() ? $loginPage->pageTitle() : $loginPage->title()?></a></p>
-              </div>
-            </div>
-          </div>
-      <?php endif ?>   
+      <?php endif ?>
+
+        
   
   <div class="row">
     <div class="col-sm-6">
