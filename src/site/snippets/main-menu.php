@@ -45,7 +45,7 @@ $contactPage=$site->find('/contact');
             <a href="<?=$registerPage->url()?>" class="nav-link px-2"><?=$registerPage->pageTitle()->isNotEmpty() ? $fregisterPage->pageTitle() : $registerPage->title()?></a>
           </li>
           <li class="nav-item">
-            <a href="<?=$platformPage->url()?>" class="nav-link px-2"><?=t('Platform','Platform')?></a>
+            <a href="<?=$platformPage->url()?>" class="nav-link px-2"><?=t('Platform','Explore the Platform')?></a>
           </li>
           <li class="nav-item">
             <a href="<?=$contactPage->url()?>" class="nav-link px-2"><?=$contactPage->pageTitle()->isNotEmpty() ? $contactPage->pageTitle() :  $contactPage->title()?></a>

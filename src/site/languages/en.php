@@ -15,7 +15,7 @@ return [
         'FIND OUT MORE' =>'FIND OUT MORE',
         'NEXT' => 'NEXT',
         'Home' => 'Home',
-        'Platform' => 'Platform',
+        'Platform' => 'Explore the Platform',
         'Logout' => 'Logout',
         'The Phases' => 'The Phases',
         'Country' => 'Country',
