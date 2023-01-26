@@ -4,21 +4,21 @@
       <h1><?=t('Welcome to the Platform!', 'Welcome to the Platform!')?></h1>
     </div>
   </div>
-  <div class="row p-2 mb-3">
-    <div class="col-8">
+  <div class="row row-cols-1 row-cols-sm-2">
+    <div class="col">
       <h4><?=t('Work through each Phase below in order','Work through each Phase below in order')?>.</h4>
     </div>
-    <div class="col-4">
+    <div class="col">
       <?php if (Cookie::exists('resumePage')) : ?>
-      <a href="<?=Cookie::get('resumePage')?>" class="btn btn-primary btn-lg"><?=t('RESUME','RESUME')?> <i
+      <a href="<?=Cookie::get('resumePage')?>" class="btn btn-primary btn-lg m-2"><?=t('RESUME','RESUME')?> <i
           class="bi bi-arrow-right"></i></a>
       <?php else : ?>
-      <a href="<?=$languagePhases[0]->url?>" class="btn btn-primary btn-lg"><?=t('GET STARTED', 'GET STARTED')?>
+      <a href="<?=$languagePhases[0]->url?>" class="btn btn-primary btn-lg m-2"><?=t('GET STARTED', 'GET STARTED')?>
         →</a>
       <?php endif ?>
     </div>
   </div>
-  <div class="row">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
     <?php foreach ($languagePhases as $phase) : ?>
     <div class="col">
       <div class="d-grid gap-2">
