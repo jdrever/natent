@@ -163,7 +163,7 @@ return [
         'Got More Resources to Share?'=> 'Got More Resources to Share?',
 
         //content for non-logged in users
-        'Register to access collaboration features'=>'Register to access collaboration features',
+        'Login or Register to access collaboration features'=>'Login or Register to access collaboration features',
         'Everyone can explore the Natural Entrepreurs Learning Journey but to complete tasks and collaborate with other teams, you will need to register your school with the
         project'=>'Everyone can explore the Natural Entrepreurs Learning Journey but to complete tasks and collaborate with other teams, you will need to register your school with the
         project',
