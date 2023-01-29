@@ -6,7 +6,7 @@
   </div>
   <div class="row row-cols-1 row-cols-sm-2">
     <div class="col">
-      <h4><?=t('Work through each Phase below in order','Work through each Phase below in order')?>.</h4>
+      <h4><?=t('Work through each Phase in order','Work through each Phase in order')?>.</h4>
     </div>
     <div class="col">
       <?php if (Cookie::exists('resumePage')) : ?>

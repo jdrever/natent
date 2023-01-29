@@ -19,6 +19,7 @@ return [
         'Logout' => 'Logout',
         'The Phases' => 'The Phases',
         'Country' => 'Country',
+        'Welcome to the Platform!' => 'Welcome to the Platform!',
         'Work through each Phase in order' => 'Work through each Phase in order',
         'See Image Credits'=>'See Image Credits',
         'Team Name' => 'Team Name',
