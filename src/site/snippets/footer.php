@@ -20,54 +20,7 @@
       </small>
     </p>
   </div>
-  <section class="logo-list">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-2 col-md-4 col-6">
-          <a href="https://biomimicryacademy.com">
-            <img src="https://natent.eu/wp-content/themes/carefulcollab/images/partners/biomimicry-academy-logo.jpg"
-                 class="img-fluid"
-                 alt="Biomimicry Academy logo">
-          </a>
-        </div>
-        <div class="col-lg-2 col-md-4 col-6">
-          <a href="https://www.biomimicrynl.org/">
-            <img src="https://natent.eu/wp-content/themes/carefulcollab/images/partners/biomimicry-nl-logo.jpg"
-                 class="img-fluid"
-                 alt="Biomimicry NL logo">
-          </a>
-        </div>
-        <div class="col-lg-2 col-md-4 col-6">
-          <a href="https://www.videsskola.lv/">
-            <img src="https://natent.eu/wp-content/themes/carefulcollab/images/partners/bvs_logo.jpg"
-                 class="img-fluid"
-                 alt="BVS logo">
-          </a>
-        </div>
-        <div class="col-lg-2 col-md-4 col-6">
-          <a href="https://careful.digital/">
-            <img src="https://natent.eu/wp-content/themes/carefulcollab/images/partners/careful-digital-logo.svg"
-                 class="img-fluid"
-                 alt="Careful Digital logo">
-          </a>
-        </div>
-        <div class="col-lg-2 col-md-4 col-6">
-          <a href="https://www.focuseco.ro/">
-            <img src="https://natent.eu/wp-content/themes/carefulcollab/images/partners/focus-logo.jpg"
-                 class="img-fluid"
-                 alt="Focus logo">
-          </a>
-        </div>
-        <div class="col-lg-2 col-md-4 col-6">
-          <a href="https://www.wild-awake.org/">
-            <img src="https://natent.eu/wp-content/themes/carefulcollab/images/partners/wild-awake.png"
-                 class="img-fluid"
-                 alt="Wild Awake logo">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <?php snippet('show-logos') ?>
 </footer>
 </body>
 </html>

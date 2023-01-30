@@ -1,0 +1,8 @@
+title: Project Partners
+
+sections:
+  areas:
+    label: Project Partners
+    type: pages
+    info: "{{ page.partner }}"
+    template: partner

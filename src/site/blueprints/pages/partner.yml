@@ -1,8 +1,8 @@
 title: Project partner
 fields:
-  name:
-    type: text
-  image:
+  website:
+    type: url
+  logo:
     type: files
     query: page.images
 
