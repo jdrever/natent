@@ -4,4 +4,7 @@ fields:
     type: text
   description:
     type: textarea
+  image:
+    type: files
+    query: page.images
 

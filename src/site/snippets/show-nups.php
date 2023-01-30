@@ -4,18 +4,23 @@ $counter=1;
 ?>
 
 <?php foreach($nups as $nup): ?>
-<div class="card m-2 text-white bg-info">
-  <div class="card-header">
-      <h2>
-          <?=$nup->nupTitle()->isNotEmpty() ? $nup->nupTitle() : $nup->title()?>&nbsp;
-          <button class="btn btn-outline-light btn-sml" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNUP<?=$counter?>" aria-expanded="false" aria-controls="collapseNUP<?=$counter?>">
+<div class="container m-2 p-2 text-white bg-info">
+  <div class="row">
+  <?php if ($image=$nup->image()) :?>
+    <div class="col-sm-3">
+      <img src="<?=$image->resize(200)->url() ?>" alt="" >
+    </div>
+    <?php endif ?>
+    <div class="col">
+      <h2><?=$nup->nupTitle()->isNotEmpty() ? $nup->nupTitle() : $nup->title()?></h2>
+      <button class="btn btn-outline-light btn-sml" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNUP<?=$counter?>" aria-expanded="false" aria-controls="collapseNUP<?=$counter?>">
           <?=t($buttonText)?></button>
-      </h2>
+    </div>
   </div>
-  <div class="collapse" id="collapseNUP<?=$counter?>">
-      <div class="card-body">
-          <p class="card-text"><?=$nup->description()?></p>
-      </div>
+  <div class="collapse p-2" id="collapseNUP<?=$counter?>">
+    <div class="card-body">
+      <p class="card-text"><?=$nup->description()?></p>
+    </div>
   </div>
 </div>
 <?php $counter++; ?>
