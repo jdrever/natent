@@ -13,7 +13,7 @@ $contactPage=$site->find('/contact');
     <div class="container-fluid">
       <a href="/"
          class="navbar-brand d-flex align-items-center text-decoration-none lh-sm">
-        <img class="img-fluid m-1" src="/assets/images/natent-logo.min.svg" width="50" alt="Nat Ent logo: bees working together in a hive"/>
+        <img class="img-fluid m-1" src="/assets/images/natent-logo.min.svg" width="50" height="54" alt="Nat Ent logo: bees working together in a hive"/>
         Natural
         <br>
         Entrepreneurs
