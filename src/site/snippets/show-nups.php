@@ -8,7 +8,7 @@ $counter=1;
   <div class="row">
   <?php if ($image=$nup->image()) :?>
     <div class="col-sm-3">
-      <img src="<?=$image->resize(200)->url() ?>" alt="<? $image->alt()->isNotEmpty() ? $image->alt() : ''  ?>" >
+      <img src="<?=$image->resize(200)->url() ?>" alt="<?=$image->alt()->isNotEmpty() ? $image->alt() : ''  ?>" >
     </div>
     <?php endif ?>
     <div class="col">
