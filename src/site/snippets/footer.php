@@ -1,4 +1,4 @@
-<footer class="container text-muted border-top mt-2 pt-3 border-2">
+<footer class="container border-top mt-2 pt-3 border-2">
   <div class="lh-1">
     <p>
       <a href="#">Back to top</a>
