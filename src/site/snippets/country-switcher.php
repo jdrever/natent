@@ -6,7 +6,7 @@
     <?php foreach($countries as $countryOption): ?>
     <a class="dropdown-item <?php e($countryOption->title() == $country, ' active') ?>"
       href="/country-controller?country=<?=$countryOption->title() ?>" >
-      <?php echo html($countryOption->title()) ?>
+      <?php t($countryOption->title(),$countryOption->title()) ?>
     </a>
     <?php endforeach ?>
   </div>

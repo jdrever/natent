@@ -256,8 +256,12 @@ return [
         'Partnerships to achieve the Goal' => 'Partnerships to achieve the Goal',
         'Strengthen the means of implementation and revitalize the global partnership for sustainable development' => 'Strengthen the means of implementation and revitalize the global partnership for sustainable development',
 
-
-        
-            ],
+        // languages
+        'English' => 'English',
+        'German' => 'German',
+        'Hungarian' => 'Hungarian',
+        'Netherlands' => ' Netherlands',
+        'Romanian' => 'Romanian',
+    ],
     'url' => NULL
 ];
