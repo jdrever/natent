@@ -1,0 +1,8 @@
+title: Project partner
+fields:
+  name:
+    type: text
+  image:
+    type: files
+    query: page.images
+
