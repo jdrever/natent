@@ -13,7 +13,7 @@ foreach ($partners as $partner) :
 
             <img src="<?=$partnerLogo->url()?>"
                  class="img-fluid"
-                 alt="<?=$partner->name()?> logo" style="width:300">
+                 alt="<?=$partner->name()?> logo" style="width:300; height=<?=$partnerLogo->height()?>;">
           </a>
         </div>
 <?php endforeach ?>
