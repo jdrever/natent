@@ -14,6 +14,7 @@ return [
         'FIND OUT MORE' => 'FIND OUT MORE',
         'NEXT' => 'NEXT',
         'PREVIOUS' => 'PREVIOUS',
+        'GET STARTED' => 'GET STARTED',
         'Home' => 'Home',
         'Platform' => 'Explore the Platform',
         'Logout' => 'Logout',
