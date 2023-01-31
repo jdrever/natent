@@ -2,7 +2,12 @@
 <?php snippet ('show-simple-hero') ?>
 <div class="container my-4">
 <?php snippet ('show-blocks') ?>
-
+<style>
+.honeypot {
+    position: absolute;
+    left: -9999px;
+}
+</style>
 <?php if($success): ?>
 <div class="alert alert-success">
   <p><?= $success ?></p>
@@ -11,7 +16,12 @@
 <?php if (isset($alert['error'])): ?>
 <div class="alert alert-danger"><?= $alert['error'] ?></div>
 <?php endif ?>
+
   <form method="post">
+    <div class="honeypot">
+      <label for="website">Website <abbr title="required">*</abbr></label>
+      <input type="url" id="website" name="website" tabindex="-1">
+    </div>
     <fieldset>
       <p class="required"><?=$page->allFieldsText()?>.</p>
       <ol class="list-unstyled">
