@@ -23,25 +23,14 @@
           });
       }
     </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-    <link rel='stylesheet'
-          id='mp-theme-css'
-          href='https://natent.eu/wp-content/plugins/memberpress/css/ui/theme.css?ver=1.9.23'
-          type='text/css'
-          media='all'/>
-    <link rel="icon"
-          href="https://natent.eu/wp-content/uploads/2022/08/cropped-natent-favicon-32x32.jpg"
-          sizes="32x32"/>
-    <link rel="icon"
-          href="https://natent.eu/wp-content/uploads/2022/08/cropped-natent-favicon-192x192.jpg"
-          sizes="192x192"/>
-    <link rel="apple-touch-icon"
-          href="https://natent.eu/wp-content/uploads/2022/08/cropped-natent-favicon-180x180.jpg"/>
-    <meta name="msapplication-TileImage"
-          content="https://natent.eu/wp-content/uploads/2022/08/cropped-natent-favicon-270x270.jpg"/>
     <meta name='robots' content='max-image-preview:large'/>
+
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" data-site="CIABHZKK" defer></script>
+    <!-- / Fathom -->
   </head>
   <body style="background-color: #F8F5F4;">
   <header>
