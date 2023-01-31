@@ -167,7 +167,7 @@ return [
         'Login or Register to access collaboration features'=>'Login or Register to access collaboration features',
         'Everyone can explore the Natural Entrepreurs Learning Journey' => 'Everyone can explore the Natural Entrepreurs Learning Journey but to complete tasks and collaborate with other teams, you will need to register your school with the project',
         'Or if you already have a username and password, then' => 'Or if you already have a username and password, then',
-        'The information below is taken from the Example Team, and is intended to give an idea of what a good response to this task might look like.  You can continue to browse through the Learning Journey by clicking the NEXT button below' => 'The information below is taken from the Example Team, and is intended to give an idea of what a good response to this task might look like.  You can continue to browse through the Learning Journey by clicking the NEXT button below',
+        'The information below is taken from the Example Team' => 'The information below is taken from the Example Team, and is intended to give an idea of what a good response to this task might look like.  You can continue to browse through the Learning Journey by clicking the NEXT button below',
 
         //collab point completion message
         'Thankyou for completing this collaboration point!'=>'Thankyou for completing this collaboration point!',
