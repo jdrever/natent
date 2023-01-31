@@ -258,6 +258,7 @@ return [
         'Hungarian' => 'Hungarian',
         'Netherlands' => ' Netherlands',
         'Romanian' => 'Romanian',
+        'Latvian' => 'Latvian',
     ],
     'url' => NULL
 ];
