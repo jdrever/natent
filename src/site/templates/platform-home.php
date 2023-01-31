@@ -12,10 +12,9 @@
     <div class="col-sm-12 p-2">
       <div class="alert alert-info p-2" role="alert">
         <h2><i class="bi bi-info-square-fill"></i> <?=t('Login or Register to access collaboration features','Login or Register to access collaboration features')?></h2>
-        <p><?=t('Everyone can explore the Natural Entrepreurs Learning Journey but to complete tasks and collaborate with other teams, you will need to register your school with the
-          project','Everyone can explore the Natural Entrepreurs Learning Journey but to complete tasks and collaborate with other teams, you will need to register your school with the
+        <p><?=t('Everyone can explore the Natural Entrepreneurs Learning Journey','Everyone can explore the Natural Entrepreurs Learning Journey but to complete tasks and collaborate with other teams, you will need to register your school with the
           project')?>.</p>
-        <p><a class="btn btn-primary" href="<?=$registerPage->url()?>"><?=$registerPage->pageTitle()->isNotEmpty() ? $registerPage->pageTitle() : $registerPage->title()?></a> or if you already have a username and password, then 
+        <p><a class="btn btn-primary" href="<?=$registerPage->url()?>"><?=$registerPage->pageTitle()->isNotEmpty() ? $registerPage->pageTitle() : $registerPage->title()?></a> <?=t('Or if you already have a username and password, then', 'or if you already have a username and password, then')?> 
           <a class="btn btn-primary" href="<?=$loginPage->url()?>"><?=$loginPage->pageTitle()->isNotEmpty() ? $loginPage->pageTitle() : $loginPage->title()?></a></p>
       </div>
     </div>
