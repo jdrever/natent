@@ -4,12 +4,12 @@
       <a href="#">Back to top</a>
     </p>
     <p>
-      <small>&copy; The Natural Entrepreneurs project, 2022</small>
+      <small>&copy; The Natural Entrepreneurs project, 2023</small>
     </p>
     <p>
       <img width="213px"
            height="47px"
-           src="https://natent.eu/wp-content/themes/carefulcollab/images/eu-erasmus-logo.jpg"
+           src="/assets/images/eu-erasmus-logo.jpg"
            alt="With the support of the Erasmus+ programme of the European Union"/>
     </p>
     <p class="col-8">
