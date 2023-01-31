@@ -2,17 +2,16 @@
 
 return [
     'code' => 'en',
-    'default' => true,
+    'default' => false,
     'direction' => 'ltr',
     'locale' => [
         'LC_ALL' => 'en_US'
     ],
     'name' => 'English',
     'translations' => [
-        //general
         'DOWNLOAD' => 'DOWNLOAD',
         'VIEW' => 'VIEW',
-        'FIND OUT MORE' =>'FIND OUT MORE',
+        'FIND OUT MORE' => 'FIND OUT MORE',
         'NEXT' => 'NEXT',
         'PREVIOUS' => 'PREVIOUS',
         'Home' => 'Home',
@@ -22,7 +21,7 @@ return [
         'Country' => 'Country',
         'Welcome to the Platform!' => 'Welcome to the Platform!',
         'Work through each Phase in order' => 'Work through each Phase in order',
-        'See Image Credits'=>'See Image Credits',
+        'See Image Credits' => 'See Image Credits',
         'Team Name' => 'Team Name',
         'Topic' => 'Topic',
         'Challenge' => 'Challenge',
@@ -82,105 +81,74 @@ return [
         'Type of Points' => 'Type of Points',
         'Points Added' => 'Points Added',
         'Date/Time' => 'Date/Time',
-        
-        //skills
-        'Biology'=>'Biology',
-        'Chemistry'=>'Chemistry',
-        'Physics'=>'Physics',
-        'Entrepreneurship'=>'Entrepreneurship',
-        'Business'=>'Business',
-        'Design'=>'Design',
-        'Art'=>'Art',
-        'Engineering'=>'Engineering',
-        'Digital - videos'=>'Digital - videos',
-        'Computing'=>'Computing',
-        'Photography'=>'Photography',
-
-
-        //glossary
-        'Term' =>'Term',
-        'Definition'=>'Definition',
-
-        //collab points
-        //team profile
+        'Biology' => 'Biology',
+        'Chemistry' => 'Chemistry',
+        'Physics' => 'Physics',
+        'Entrepreneurship' => 'Entrepreneurship',
+        'Business' => 'Business',
+        'Art' => 'Art',
+        'Engineering' => 'Engineering',
+        'Digital - videos' => 'Digital - videos',
+        'Computing' => 'Computing',
+        'Photography' => 'Photography',
+        'Term' => 'Term',
+        'Definition' => 'Definition',
         'Tell us about your Team' => 'Tell us about your Team',
         'Tell us what Skillsets your team have' => 'Tell us what Skillsets your team have',
         'SHARE YOUR PROFILE' => 'SHARE YOUR PROFILE',
-        'Enter at least 50 characters to receive points!'=>'Enter at least 50 characters to receive points!',
-
-        //topic
+        'Enter at least 50 characters to receive points!' => 'Enter at least 50 characters to receive points!',
         'Your team has previously selected a Topic and Challenge' => 'Your team has previously selected a Topic and Challenge',
         'The example team selected the following Topic and Challenge' => 'The example team selected the following Topic and Challenge',
         'SELECT THIS TOPIC' => 'SELECT THIS TOPIC',
         'BROWSE THIS TOPIC' => 'BROWSE THIS TOPIC',
-        'You can browse the Topics and Challenges, or click Next to continue the Learning Journey'=>'You can browse the Topics and Challenges, or click Next to continue the Learning Journey',
+        'You can browse the Topics and Challenges, or click Next to continue the Learning Journey' => 'You can browse the Topics and Challenges, or click Next to continue the Learning Journey',
         'List of Challenges for' => 'List of Challenges for',
         'SELECT THIS CHALLENGE' => 'SELECT THIS CHALLENGE',
         'There are not any set Challenges for this topic yet' => 'There are not any set Challenges for this topic yet',
         'Create your own Challenge for' => 'Create your own Challenge for',
         'Adding a New Challenge for' => 'Adding a New Challenge for',
-        'If you would prefer to create your own Challenge, enter it in the box below'=> 'If you would prefer to create your own Challenge, enter it in the box below',
+        'If you would prefer to create your own Challenge, enter it in the box below' => 'If you would prefer to create your own Challenge, enter it in the box below',
         'Enter your challenge' => 'Enter your challenge',
         'CREATE YOUR CHALLENGE' => 'CREATE YOUR CHALLENGE',
         'Teams Working on this Topic' => 'Teams Working on this Topic',
         'There are no other teams working on this Topic at the moment - so you could be the first!' => 'There are no other teams working on this Topic at the moment - so you could be the first!',
-
-        //context
         'Enter your Context' => 'Enter your Context',
         'SHARE YOUR CONTEXT' => 'SHARE YOUR CONTEXT',
-
-        //research Questions
         'Enter your Research Questions below' => 'Enter your Research Questions below',
         'Research Question' => 'Research Question',
         'Add More Research Questions' => 'Add More Research Questions',
         'SHARE YOUR RESEARCH QUESTIONS' => 'SHARE YOUR RESEARCH QUESTIONS',
         'Research Questions' => 'Research Questions',
-        'No Research Questions have been shared'=> 'No Research Questions have been shared',
-
-        //strategies
-        'RESEARCH QUESTION' => 'RESEARCH QUESTION',
+        'No Research Questions have been shared' => 'No Research Questions have been shared',
         'Add More Strategies / Principles' => 'Add More Strategies / Principles',
         'Natural Strategy' => 'Natural Strategy',
         'Design Principle' => 'Design Principle',
         'Enter up to six Natural Strategies and Design Principles for your Research Question' => 'Enter up to six Natural Strategies and Design Principles for your Research Question',
         'SHARE YOUR STRATEGIES AND PRINCIPLES' => 'SHARE YOUR STRATEGIES AND PRINCIPLES',
-
-        //measure
         'Describe how/if your final Design Solution has addressed the Context and Needs you identified, and which Nature\'s Unifying Patterns have helped you' => 'Describe how/if your final Design Solution has addressed the Context and Needs you identified, and which Nature\'s Unifying Patterns have helped you',
         'SHARE YOUR RECOMMENDATIONS' => 'SHARE YOUR RECOMMENDATIONS',
-
-        //design
         'Your team has an existing Design Solution. Upload a new file below to replace it' => 'Your team has an existing Design Solution. Upload a new file below to replace it',
         'Your team has an existing Design Solution video. Change the link below to replace it' => 'Your team has an existing Design Solution video. Change the link below to replace it',
         'Upload your Design Solution (use an image file, e.g. JPG or PNG)' => 'Upload your Design Solution (use an image file, e.g. JPG or PNG)',
         'Upload your video presentation to your You Tube channel and share the link here' => 'Upload your video presentation to your YouTube channel and share the link here',
         'SHARE YOUR DESIGN SOLUTION' => 'SHARE YOUR DESIGN SOLUTION',
-
         '******TASK: PITCH DECK******' => 'Not for translation',
-        'Upload your pitch video to your YouTube channel and share the link here'=>'Upload your pitch video to your YouTube channel and share the link here',
-        'Your team has an existing pitch video. Change the link below to replace it'=>'Your team has an existing pitch video. Change the link below to replace it',
-        'SHARE YOUR PITCH VIDEO'=> 'SHARE YOUR PITCH VIDEO',
-
-        //add to commons
-        'Got More Resources to Share?'=> 'Got More Resources to Share?',
-
-        //content for non-logged in users
-        'Login or Register to access collaboration features'=>'Login or Register to access collaboration features',
-        'Everyone can explore the Natural Entrepreurs Learning Journey' => 'Everyone can explore the Natural Entrepreurs Learning Journey but to complete tasks and collaborate with other teams, you will need to register your school with the project',
+        'Upload your pitch video to your YouTube channel and share the link here' => 'Upload your pitch video to your YouTube channel and share the link here',
+        'Your team has an existing pitch video. Change the link below to replace it' => 'Your team has an existing pitch video. Change the link below to replace it',
+        'SHARE YOUR PITCH VIDEO' => 'SHARE YOUR PITCH VIDEO',
+        'Got More Resources to Share?' => 'Got More Resources to Share?',
+        'Login or Register to access collaboration features' => 'Login or Register to access collaboration features',
+        'Everyone can explore the Natural Entrepreneurs Learning Journey' => 'Everyone can explore the Natural Entreprenurs Learning Journey but to complete tasks and collaborate with other teams, you will need to register your school with the project',
         'Or if you already have a username and password, then' => 'Or if you already have a username and password, then',
         'The information below is taken from the Example Team' => 'The information below is taken from the Example Team, and is intended to give an idea of what a good response to this task might look like.  You can continue to browse through the Learning Journey by clicking the NEXT button below',
-
-        //collab point completion message
-        'Thankyou for completing this collaboration point!'=>'Thankyou for completing this collaboration point!',
+        'Thankyou for completing this collaboration point!' => 'Thankyou for completing this collaboration point!',
         'Your team has gained' => 'Your team has gained',
         'points and now has a total of' => 'points and now has a total of',
-        'points'=>'points',
-        'The team you engaged with gained'=> 'The team you engaged with gained',
+        'points' => 'points',
+        'The team you engaged with gained' => 'The team you engaged with gained',
         'Your Team Page will have been updated. Other teams will be able to see what you have been working on, and you can
-        check out other teams to get inspiration'=>'Your Team Page will have been updated. Other teams will be able to see what you have been working on, and you can
+        check out other teams to get inspiration' => 'Your Team Page will have been updated. Other teams will be able to see what you have been working on, and you can
         check out other teams to get inspiration',
-
-        //admin challenge - hopefully not needed
         'Enter the new Challenge name' => 'Enter the new Challenge name',
         'Enter a description' => 'Enter a description',
         'Enter further information (displayed as second paragraph)' => 'Enter further information (displayed as second paragraph)',
@@ -196,8 +164,6 @@ return [
         'Name' => 'Name',
         'Description' => 'Description',
         'Further information' => 'Further information',
-        
-        //final review
         'What have you learned through this process?' => 'What have you learned through this process?',
         'Strongly Disagree' => 'Strongly Disagree',
         'Disagree' => 'Disagree',
@@ -214,10 +180,6 @@ return [
         'I can better imagine a desirable future and link this with practical design ideas.' => 'I can better imagine a desirable future and link this with practical design ideas.',
         'How can you learn from nature to create a positive future for people and planet?' => 'How can you learn from nature to create a positive future for people and planet?',
         'SHARE YOUR FINAL REVIEW' => 'SHARE YOUR FINAL REVIEW',
-
-        //example team content
-        
-        // topic names
         'No Poverty' => 'No Poverty',
         'End poverty in all its forms everywhere' => 'End poverty in all its forms everywhere',
         'Zero Hunger' => 'Zero Hunger',
@@ -252,14 +214,12 @@ return [
         'Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels' => 'Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels',
         'Partnerships to achieve the Goal' => 'Partnerships to achieve the Goal',
         'Strengthen the means of implementation and revitalize the global partnership for sustainable development' => 'Strengthen the means of implementation and revitalize the global partnership for sustainable development',
-
-        // languages
         'English' => 'English',
         'German' => 'German',
         'Hungarian' => 'Hungarian',
         'Netherlands' => ' Netherlands',
         'Romanian' => 'Romanian',
-        'Latvian' => 'Latvian',
+        'Latvian' => 'Latvian'
     ],
     'url' => NULL
 ];
