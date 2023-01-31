@@ -1,7 +1,7 @@
 <?php if ($userLoggedIn&&isset($team['area'])) : ?> 
 <div class="alert alert-info" role="alert">
 <i class="bi bi-info-square-fill"></i>
-  <strong><?=t("Your team has previously selected a Topic and Challenge","Your team has previously selected a Topic and Challenge","Your team has previously selected a Topic and Challenge","Your team has previously selected a Topic and Challenge") ?></strong>
+  <strong><?=t("Your team has previously selected a Topic and Challenge","Your team has previously selected a Topic and Challenge") ?></strong>
   <p><strong><?=t("Topic","Topic")?>: </strong><?=t($teamArea,$teamArea) ?><br />
     <strong><?=t("Challenge","Challenge")?>: </strong> <?=t($teamChallenge,$teamChallenge) ?></p>
 </div>
