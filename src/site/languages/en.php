@@ -14,6 +14,7 @@ return [
         'VIEW' => 'VIEW',
         'FIND OUT MORE' =>'FIND OUT MORE',
         'NEXT' => 'NEXT',
+        'PREVIOUS' => 'PREVIOUS',
         'Home' => 'Home',
         'Platform' => 'Explore the Platform',
         'Logout' => 'Logout',
