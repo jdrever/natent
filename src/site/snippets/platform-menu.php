@@ -48,7 +48,7 @@
 </li>
 <?php else : ?>
       <li>
-        <a href="<?= $loginPage->url() ?>" class="nav-link px-2 text-white"><i class="bi bi-door-open-fill"></i> <?=$loginPage->pageTitle()->isNotEmpty() ? $loginTeamPage->pageTitle() : $loginPage->title() ?></a>
+        <a href="<?= $loginPage->url() ?>" class="nav-link px-2 text-white"><i class="bi bi-door-open-fill"></i> <?=$loginPage->pageTitle()->isNotEmpty() ? $loginPage->pageTitle() : $loginPage->title() ?></a>
       </li>
 <?php endif ?>
     </ul>
