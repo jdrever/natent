@@ -25,7 +25,7 @@
         <a href="<?=$phase->url?>" class="btn btn-outline"
           <?php if ($phase->backgroundColour) : ?>style="border: 5px solid <?=$phase->backgroundColour?>"
           <?php endif ?>>
-          <img src="/assets/images/<?=$phase->phaseNumber?>.svg" width="100"> 
+          <img src="/assets/images/<?=$phase->phaseNumber?>.svg" width="100"><br> 
           <span class="h4" style="color: <?=$phase->backgroundColour?>"><?=$phase->title?></span>
         </a>
       </div>
