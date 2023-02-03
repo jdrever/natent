@@ -1,7 +1,7 @@
 <footer class="container border-top mt-2 pt-3 border-2">
   <div class="lh-1">
     <p>
-      <a href="#">Back to top</a>
+      <a href="#"><?=t('Back to top','Back to top')?></a>
     </p>
     <p>
       <small>&copy; The Natural Entrepreneurs project, 2023</small>

@@ -1,6 +1,6 @@
 <?php
 
-$buttonText=isset($buttonText) ? $buttonText : 'READ MORE';
+$buttonText=isset($buttonText) ? $buttonText : t('READ MORE','READ MORE');
 $subPages=$page->children()->filter(function ($child) {
   return $child->translation(kirby()->language()->code())->exists();
 });

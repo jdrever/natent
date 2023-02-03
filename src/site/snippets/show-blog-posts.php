@@ -10,7 +10,7 @@ if (count($posts)>0) :
 <h2><?= $post->title() ?></h2>
 <p><strong><?= $post->publishedDate() ?></strong></p>
 <p><?= $post->openingContent() ?>
-  <p><a href="<?=$post->url()?>" type="button" class="btn btn-primary m-2">READ MORE &rarr;</a></p>
+  <p><a href="<?=$post->url()?>" type="button" class="btn btn-primary m-2"><?=t('READ MORE','READ MORE')?> &rarr;</a></p>
   <?php endforeach ?>
 
   <?php endif ?>
