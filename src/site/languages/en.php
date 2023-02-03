@@ -71,6 +71,7 @@ return [
         'Add to The Commons' => 'Add to The Commons',
         'Have any resources helped you with this stage of the process? Share them with other Teams by adding them to The Commons.' => 'Have any resources helped you with this stage of the process? Share them with other Teams by adding them to The Commons.',
         'Resource' => 'Resource',
+        'Resources' => 'Resources',
         'What is the title of your resource?' => 'What is the title of your resource?',
         'Give a description of your resource' => 'Give a description of your resource',
         'Enter the website location for your resource (if one exists)' => 'Enter the website location for your resource (if one exists)',

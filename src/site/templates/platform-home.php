@@ -66,7 +66,7 @@
     </div>
     <div class="col-sm-6">
       <div class="container p-2 mt-2">
-        <h2>Resources</h2>
+        <h2><?=t('Resources','Resources')?></h2>
         <?php if ($userLoggedIn) : ?>
         <a href="<?=$commonsPage->url()?>" class="btn btn-outline-primary"><i class="bi bi-cc-circle-fill"></i>
           <?=$commonsPage->pageTitle()->isNotEmpty() ? $commonsPage->pageTitle() : $commonsPage->title()?></a>
