@@ -9,7 +9,7 @@ if ($userLoggedIn) :
 
 <div class="alert alert-info" role="alert">
   <p>
-    <strong><?=t("Your team's selected Topic")?>: </strong> <?=$teamArea?>
+    <strong><?=t("Your team's selected Topic")?>: </strong> <?=t($teamArea,$teamArea)?>
     <br/>
     <strong><?=t("Your team's selected Challenge")?>: </strong> <?=$teamChallenge?>
   </p>
