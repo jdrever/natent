@@ -32,9 +32,7 @@
   <i class="bi bi-star"></i><?=t("The team you engaged with gained","The team you engaged with gained")?> <strong><?=$pointsAddedOtherTeam ?></strong> <?=t("points","points")?>. 
 <?php endif ?>
   <?php if ($status==='task-ok'||$status==='task-commons-ok') : ?>
-    <?=t("Your Team Page will have been updated. Other teams will be able to see what you have been working on, and you can
-    check out other teams to get inspiration","Your Team Page will have been updated. Other teams will be able to see what you have been working on, and you can
-    check out other teams to get inspiration")?>.
+    <?=t("Your Team Page will have been updated. Other teams will be able to see what you have been working on, and you can check out other teams to get inspiration","Your Team Page will have been updated. Other teams will be able to see what you have been working on, and you can check out other teams to get inspiration")?>.
     <p>
       <a href="<?=$teamPage->url()?>" class="btn btn-outline-primary m-2"><i class="bi bi-person-heart"></i>  <?=$teamPage->title()?></a>
       <a href="<?=$otherTeamsPage->url()?>"

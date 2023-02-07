@@ -39,7 +39,7 @@
     <?php endif ?>
         <label for="designIdea" class="form-label m-1"><?=t('Upload your Design Solution (use an image file, e.g. JPG or PNG)','Upload your Design Solution (use an image file, e.g. JPG or PNG)')?>:</label>
         <input type="file" class="form-control" name="designIdeaFile" id="designIdeaFile" <?=($userLoggedIn) ? '' : 'disabled'?>>
-        <label for="form-check" class="form-label m-1"><?=t('Upload your video presentation to your YouTube channel and share the link here','Upload your video presentation to your YouTube channel and share the link here')?>:</label>
+        <label for="form-check" class="form-label m-1"><?=t('Upload your video presentation to your You Tube channel and share the link here','Upload your video presentation to your You Tube channel and share the link here')?>:</label>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="https-addon">https://</span>

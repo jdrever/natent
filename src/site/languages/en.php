@@ -137,7 +137,7 @@ return [
         'Your team has an existing Design Solution. Upload a new file below to replace it' => 'Your team has an existing Design Solution. Upload a new file below to replace it',
         'Your team has an existing Design Solution video. Change the link below to replace it' => 'Your team has an existing Design Solution video. Change the link below to replace it',
         'Upload your Design Solution (use an image file, e.g. JPG or PNG)' => 'Upload your Design Solution (use an image file, e.g. JPG or PNG)',
-        'Upload your video presentation to your You Tube channel and share the link here' => 'Upload your video presentation to your YouTube channel and share the link here',
+        'Upload your video presentation to your You Tube channel and share the link here' => 'Upload your video presentation to your You Tube channel and share the link here',
         'SHARE YOUR DESIGN SOLUTION' => 'SHARE YOUR DESIGN SOLUTION',
         '******TASK: PITCH DECK******' => 'Not for translation',
         'Upload your pitch video to your YouTube channel and share the link here' => 'Upload your pitch video to your YouTube channel and share the link here',
@@ -153,9 +153,7 @@ return [
         'points and now has a total of' => 'points and now has a total of',
         'points' => 'points',
         'The team you engaged with gained' => 'The team you engaged with gained',
-        'Your Team Page will have been updated. Other teams will be able to see what you have been working on, and you can
-        check out other teams to get inspiration' => 'Your Team Page will have been updated. Other teams will be able to see what you have been working on, and you can
-        check out other teams to get inspiration',
+        'Your Team Page will have been updated. Other teams will be able to see what you have been working on, and you can check out other teams to get inspiration' => 'Your Team Page will have been updated. Other teams will be able to see what you have been working on, and you can check out other teams to get inspiration',
         'Enter the new Challenge name' => 'Enter the new Challenge name',
         'Enter a description' => 'Enter a description',
         'Enter further information (displayed as second paragraph)' => 'Enter further information (displayed as second paragraph)',
