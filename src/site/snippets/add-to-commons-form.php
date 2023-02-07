@@ -1,7 +1,7 @@
 <?php if ($userLoggedIn) : ?>
 <div class="container mt-2">
   <div class="alert alert-info" role="alert"><i class="bi bi-exclamation-square-fill h1"></i> <?=t("Have any resources helped you with this stage of the process? Share them with other Teams by adding them to The Commons.")?>
-  <button type="button" class="btn btn-primary m-2" data-bs-toggle="collapse" data-bs-target="#collapseCommons" aria-expanded="false" aria-controls="collapseCommons">Share Your Resources</button>
+  <button type="button" class="btn btn-primary m-2" data-bs-toggle="collapse" data-bs-target="#collapseCommons" aria-expanded="false" aria-controls="collapseCommons"><?=t('Share Your Resources','Share Your Resources')?></button>
   <div class="collapse" id="collapseCommons">
         <div id="resources" class="container">
             <?php
@@ -15,7 +15,7 @@
             
             <?php } ?>
 
-                <h5><?=t("Resource")?> <?=$x?></h5>
+                <h5><?=t("Resource","Resource")?> <?=$x?></h5>
                 <div class="container border bg-light p-2 m-2">
                     <label for="resourceTitle<?=$x?>" class="m-1"><?=t("What is the title of your resource?","What is the title of your resource?")?></label>
                     <input class="form-control m-1" type="text" id="resourceTitle<?=$x?>" name="resourceTitle<?=$x?>">

@@ -72,6 +72,8 @@ return [
         'You can see full details on your Team Page' => 'You can see full details on your Team Page',
         'Not yet selected' => 'Not yet selected',
         'Add to The Commons' => 'Add to The Commons',
+        'Share Your Resources' => 'Share Your Resources',
+        
         'Have any resources helped you with this stage of the process? Share them with other Teams by adding them to The Commons.' => 'Have any resources helped you with this stage of the process? Share them with other Teams by adding them to The Commons.',
         'Resource' => 'Resource',
         'Resources' => 'Resources',
