@@ -24,13 +24,13 @@ if ($adminLocation>0) :
         <input type="hidden" id="action" name="action" value="CREATE-TEAM">
         <input type="hidden" id="locationId" name="locationId" value="<?=$adminLocation?>">
         <div class="mb-3">
-          <label for="teamName" class="form-label">Team Name</label>
+          <label for="teamName" class="form-label"><?=t('Team Name','Team Name')?></label>
           <input type="text" class="form-control" id="teamName" name="teamName" aria-describedby="teamNameHelp"
             required>
           <div id="teamNameHelp" class="form-text"><span style="font-size: 1.2em;"><strong><?=t('Please don\'t use anyone\'s real names!','Please don\'t use anyone\'s real names!')?></strong></span></div>
         </div>
         <div class="mb-3">
-          <label for="teamPasword" class="form-label">Password</label>
+          <label for="teamPasword" class="form-label"><?=t('Password','Password')?></label>
           <input type="text" class="form-control" id="teamPassword" name="teamPassword" value="<?=$newPassword?>"
             aria-describedby="passwordHelp" required readonly>
           <div id="passwordHelp" class="form-text"><span style="font-size: 1.2em;"><strong><?=t('You need to note this password down NOW - you won\'t get to see it again!','You need to note this password down NOW - you won\'t get to see it again!')?></strong></span></div>
