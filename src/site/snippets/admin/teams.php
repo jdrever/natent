@@ -14,7 +14,7 @@ if ($adminLocation>0) :
   <li class="nav-item" role="presentation">
     <button class="nav-link<?=($selectedTab==='edit') ? ' active' : '' ?>" id="edit-tab" data-bs-toggle="tab" data-bs-target="#edit" type="button" role="tab"
       aria-controls="edit"
-      aria-selected="<?=($selectedTab==='edit') ? 'true' : 'false' ?>"><?= t("Editing an Existing Team", "Editing an Existing Team") ?></button>
+      aria-selected="<?=($selectedTab==='edit') ? 'true' : 'false' ?>"><?= t("Edit an Existing Team", "Edit an Existing Team") ?></button>
   </li>
 </ul>
 <div class="tab-content" id="adminTabContent">
@@ -27,17 +27,15 @@ if ($adminLocation>0) :
           <label for="teamName" class="form-label">Team Name</label>
           <input type="text" class="form-control" id="teamName" name="teamName" aria-describedby="teamNameHelp"
             required>
-          <div id="teamNameHelp" class="form-text"><span style="font-size: 1.2em;">Please <strong>don't use anyone's
-                real names!</strong></span></div>
+          <div id="teamNameHelp" class="form-text"><span style="font-size: 1.2em;"><strong><?=t('Please don\'t use anyone\'s real names!','Please don\'t use anyone\'s real names!')?></strong></span></div>
         </div>
         <div class="mb-3">
           <label for="teamPasword" class="form-label">Password</label>
           <input type="text" class="form-control" id="teamPassword" name="teamPassword" value="<?=$newPassword?>"
             aria-describedby="passwordHelp" required readonly>
-          <div id="passwordHelp" class="form-text"><span style="font-size: 1.2em;">You need to <strong>note this
-                password down NOW</strong> - you won't get to see it again!</span></div>
+          <div id="passwordHelp" class="form-text"><span style="font-size: 1.2em;"><strong><?=t('You need to note this password down NOW - you won\'t get to see it again!','You need to note this password down NOW - you won\'t get to see it again!')?></strong></span></div>
         </div>
-        <button type="submit" name="createTeamButton" id="createTeamButton" class="btn btn-primary">ADD TEAM</button>
+        <button type="submit" name="createTeamButton" id="createTeamButton" class="btn btn-primary"><?=t('ADD TEAM','ADD TEAM')?></button>
       </form>
     </div>
 
@@ -46,18 +44,17 @@ if ($adminLocation>0) :
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="passwordModalLabel">Make a note of this password</h1>
+            <h1 class="modal-title fs-5" id="passwordModalLabel"><?=t('Make a note of this password','Make a note of this password')?></h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            You need to note this password down NOW - you won't get to see it again!
+            <?=t('You need to note this password down NOW - you won\'t get to see it again!','You need to note this password down NOW - you won\'t get to see it again!')?>
             <br><br>
-            Password: <?=$newPassword?>
+            <?=t('Password','Password')?>: <?=$newPassword?>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
-            <button type="button" class="btn btn-primary" id="createTeamModalButton" name="createTeamModalButton">ADD
-              TEAM</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?=t('CANCEL','CANCEL')?></button>
+            <button type="button" class="btn btn-primary" id="createTeamModalButton" name="createTeamModalButton"><?=t('ADD TEAM','ADD TEAM')?></button>
           </div>
         </div>
       </div>
@@ -98,8 +95,7 @@ if ($adminLocation>0) :
             <input type="hidden" id="action" name="action" value="RESET-PASSWORD">
             <input type="text" id="password" name="password" value="<?= $newResetPassword ?>" required
               aria-describedby="passwordHelp" readonly>
-            <div id="passwordHelp" class="form-text"><span style="font-size: 1.2em;"><strong>Note this password down NOW
-                  before clicking RESET</strong></span></div>
+            <div id="passwordHelp" class="form-text"><span style="font-size: 1.2em;"><strong><?=t('Note this password down NOW before clicking RESET','Note this password down NOW before clicking RESET')?></strong></span></div>
             <input type="hidden" id="teamName" name="teamName" value="<?= $thisTeam['name'] ?>">
             <input type="submit" class="btn btn-primary" value="<?= t("RESET","RESET") ?>">
           </form>

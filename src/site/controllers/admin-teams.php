@@ -80,7 +80,7 @@ return function ($kirby, $pages, $page, $site)
       {
 
         $actionType = "Reset team password";
-        $teamName = $_POST['teamName'];
+        $teamName = trim($_POST['teamName']);
         $password = $_POST['password'];
         $resetTeam=$kirby->user(str_replace(' ', '-', $teamName) . '@natent.eu');
         $resetTeam->changePassword($password);
