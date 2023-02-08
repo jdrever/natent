@@ -231,6 +231,7 @@ return [
         'Reset Password To'=>'Reset Password To',
         'Remove'=>'Remove',
         'RENAME' => 'RENAME',
+        'Enter the new name below' => 'Enter the new name below',
         'Note this password down NOW before clicking RESET' => 'Note this password down NOW before clicking RESET',
         'You are currently logged in as this Team and therefore cannot remove it'=> 'You are currently logged in as this Team and therefore cannot remove it',
         'Type the Team name to confirm' => 'Type the Team name to confirm',

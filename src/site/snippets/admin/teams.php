@@ -83,7 +83,7 @@ if ($adminLocation>0) :
         <td>
           <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
             <input type="hidden" id="action" name="action" value="RENAME-TEAM">
-            <label for="teamName" class="form-label">Enter the new name below:</lablel>
+            <label for="teamName" class="form-label"><?=t('Enter the new name below','Enter the new name below')?>:</lablel>
             <input type="text" class="form-control m-2" id="teamName" name="teamName" value="<?= $thisTeam['name'] ?>" required>
             <input type="hidden" id="teamId" name="teamId" value="<?= $thisTeam['id'] ?>">
             <input type="hidden" id="oldTeamName" name="oldTeamName" value="<?= $thisTeam['name'] ?>">
