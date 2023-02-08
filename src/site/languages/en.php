@@ -251,9 +251,17 @@ return [
         'English' => 'English',
         'German' => 'German',
         'Hungarian' => 'Hungarian',
-        'Netherlands' => ' Netherlands',
+        'Dutch' => 'Dutch',
         'Romanian' => 'Romanian',
-        'Latvian' => 'Latvian'
+        'Latvian' => 'Latvian',
+
+        'UK' => 'UK',
+        'Latvia' => 'Latvia',
+        'Romania' => 'Romania',
+        'Germany' => 'Germany',
+        'Netherlands' => 'Netherlands',
+        'Hungary' => 'Hungary',
+        'South Africa' => 'South Africa',
     ],
     'url' => NULL
 ];
