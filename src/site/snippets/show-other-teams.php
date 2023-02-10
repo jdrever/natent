@@ -1,7 +1,6 @@
 <?php
  use carefulcollab\helpers as helpers;
  ?>
-<div class="container my-4">
   <div class="btn-toolbar" role="group" aria-label="<?=$page->filterTopicsLabel()?>">
     <p class="p-1 m-0"><?=$page->filterTopicsLabel()?></p>
     <p><a href="<?=$page->url() ?>?areaId=All"
@@ -130,5 +129,3 @@ endforeach;
 }
 ?>
   </table>
-
-</div>
