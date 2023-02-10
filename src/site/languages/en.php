@@ -154,6 +154,7 @@ return [
         'points' => 'points',
         'The team you engaged with gained' => 'The team you engaged with gained',
         'Your Team Page will have been updated. Other teams will be able to see what you have been working on, and you can check out other teams to get inspiration' => 'Your Team Page will have been updated. Other teams will be able to see what you have been working on, and you can check out other teams to get inspiration',
+        'Congratulatons! Your team now has reached the maximum score on the platform!' => 'Congratulatons! Your team now has reached the maximum score on the platform!',
         'Enter the new Challenge name' => 'Enter the new Challenge name',
         'Enter a description' => 'Enter a description',
         'Enter further information (displayed as second paragraph)' => 'Enter further information (displayed as second paragraph)',
