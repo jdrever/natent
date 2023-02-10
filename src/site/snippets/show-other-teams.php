@@ -2,7 +2,6 @@
  use carefulcollab\helpers as helpers;
  ?>
 <div class="container my-4">
-  <h1 class="pb-2 border-bottom"><i class="bi bi-search-heart"></i> Other Teams </h1>
   <div class="btn-toolbar" role="group" aria-label="<?=$page->filterTopicsLabel()?>">
     <p class="p-1 m-0"><?=$page->filterTopicsLabel()?></p>
     <p><a href="<?=$page->url() ?>?areaId=All"
@@ -94,7 +93,7 @@ foreach($otherTeams as $otherTeam)
     <tr>
       <td><a href="<?=$otherTeamPage->url() . '/?teamId=' . $otherTeam['id']?>"><?=$otherTeam['name']?></a>
       </td>
-      <td><?=$otherTeam['area']?></td>
+      <td><?=t($otherTeam['area'],$otherTeam['area'])?></td>
       <td><?=$otherTeam['challenge']?></td>
       <td><?=$otherTeam['points']?></td>
       <td colspan=4>
