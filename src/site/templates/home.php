@@ -17,10 +17,10 @@
     <h3 class="text-center fw-bold mt-4"><?=$page->getStartedHeader()?></h3>
     <p class="d-flex flex-row justify-content-center mb-3">
 <?php if ($forTeachers) : ?>
-      <a href="<?=$forTeachers->url()?>" class="btn btn-primary flex-fill me-2"><?=$forTeachers->title()?></a>
+      <a href="<?=$forTeachers->url()?>" class="btn btn-primary flex-fill me-2"><?=$forTeachers->pageTitle()->isNotEmpty() ? $forTeachers->pageTitle() : $forTeachers->title()?></a>
 <?php endif;
 if ($forStudents) : ?>
-      <a href="<?=$forStudents->url()?>" class="btn btn-secondary flex-fill ms-2"><?=$forStudents->title()?></a>
+      <a href="<?=$forStudents->url()?>" class="btn btn-secondary flex-fill ms-2"><?=$forStudents->pageTitle()->isNotEmpty() ? $forStudents->pageTitle() : $forStudents->title()?></a>
 <?php endif ?>
     </p>
   </div>
