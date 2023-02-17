@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'debug'  => true,
+    'debug'  => $_SERVER['HTTP_HOST']=='localhost:8085' ? true : false,
     'languages' =>true,
     'panel' =>
     [
