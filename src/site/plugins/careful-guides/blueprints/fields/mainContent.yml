@@ -23,6 +23,7 @@ fieldsets:
       - list
       - quote
       - activity
+      - link-to-nups
   media:
     label: Media
     type: group
