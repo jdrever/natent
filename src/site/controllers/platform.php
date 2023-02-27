@@ -38,12 +38,15 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
     $status='';
     if (get('_taskStatus')&&get('_taskStatus')=='ok') $status='task-ok' ;
     if (get('_taskStatus')&&get('_taskStatus')=='error') $status='task-error' ;
+    if (get('_recommendStatus')&&get('_recommendStatus')=='ok') $status='recommend-ok' ;
+    if (get('_recommendStatus')&&get('_recommendStatus')=='error') $status='recommend-error' ;
     if (get('_taskCommonsStatus')&&get('_taskCommonsStatus')=='ok') $status='task-commons-ok';
     if (get('_taskCommonsStatus')&&get('_taskCommonsStatus')=='error') $status='task-commons-error';
     if (get('_commentStatus')&&get('_commentStatus')=='ok') $status='comment-ok';
     if (get('_commentStatus')&&get('_commentStatus')=='error') $status='comment-error';
     if (get('_appreciationStatus')&&get('_appreciationStatus')=='ok') $status='appreciation-ok';
     if (get('_appreciationStatus')&&get('_appreciationStatus')=='error') $status='appreciation-error';
+
 
     $errorMessage=get('message') ? get('message') : '';
 

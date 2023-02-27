@@ -10,10 +10,10 @@ if ($userRole!='ADMIN'&&$userRole!="GLOBAL") return;
 
    $collaborationPointPage=$site->find('collab-controller');
   ?>
-<form class="form-inline" method="post" action="$collaborationPointPage->url()">
+<form class="form-inline" method="post" action="/collab-controller">
     <input type="hidden" name="point" id="point" value="Recommend">
-    <input type="hidden" name="resourceId" id="contentId" value="$resourceId">
-    <input type="hidden" name="recommend" id="recommend" value="$recommend">
+    <input type="hidden" name="resourceId" id="contentId" value="<?=$resourceId?>">
+    <input type="hidden" name="recommend" id="recommend" value="<?=$recommend?>">
     <div class="d-flex align-items-end justify-content-end">
       <div>
           <button type="submit" class="btn btn-outline-primary btn-outline btn-sm"><i class="bi bi-hand-thumbs-up-fill"></i><?=t($recommendButtonText,$recommendButtonText)?></button>

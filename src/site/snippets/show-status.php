@@ -1,5 +1,5 @@
 <?php if (isset($status)) : ?>
-  <?php if ($status==='task-ok'||$status==='task-commons-ok'||$status==='comment-ok'||$status==="appreciation-ok") : ?>
+  <?php if ($status==='task-ok'||$status==='task-commons-ok'||$status==='comment-ok'||$status==="appreciation-ok"||$status==="recommend-ok") : ?>
 <div class="alert alert-success alert-dismissible fade show" role="alert">
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   <h2>
@@ -15,6 +15,9 @@
     <?php endif ?>
     <?php if ($status==='appreciation-ok') : ?>
       <?=t("Thankyou for adding your appreciation!","Thankyou for adding your appreciation!")?>
+    <?php endif ?>
+    <?php if ($status==='recommend-ok') : ?>
+      <?=t("The recommendation for the resource has been updated","The recommendation for the resource has been updated")?>
     <?php endif ?>
   </h2>
 
@@ -41,7 +44,7 @@
     <?php endif ?>
 </div>
   <?php endif ?>
-  <?php if ($status==='task-error'||$status==='task-commons-error'||$status==='comment-error'||$status==="appreciation-error") : ?>
+  <?php if ($status==='task-error'||$status==='task-commons-error'||$status==='comment-error'||$status==="appreciation-error"||$status==="recommend-error") : ?>
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   <h2>
@@ -57,6 +60,9 @@
     <?php endif ?>
     <?php if ($status==='appreciation-error') : ?>
       <?=t("An error occured while adding your appreciation!","An error occured while adding your appreciation!")?>
+    <?php endif ?>
+    <?php if ($status==='recommend-error') : ?>
+      <?=t("An error occured while updating your recommendation!","An error occured while updating your recommendation!")?>
     <?php endif ?>
   </h2>
   <p class="lead">
