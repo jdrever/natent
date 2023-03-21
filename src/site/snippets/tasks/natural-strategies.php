@@ -10,6 +10,8 @@
         $functionNumbers = "";
         foreach ($teamFunctions as $function) 
         {
+          if (!empty($function['biologized_question']))
+          {
             $functionNumber = $function['function_number'];
             $functionNumbers .= $functionNumber . ',';
             $functionStrategies = $teamStrategies[$functionNumber];
@@ -59,6 +61,7 @@
             </div>
         </div>
         <?php
+          }
         }    
         ?>
         </div>
