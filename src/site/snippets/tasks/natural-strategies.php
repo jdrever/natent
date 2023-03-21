@@ -58,6 +58,10 @@
                     <input type="text" class="form-control" name="<?=$principleId?>" id="<?=$principleId?>"  placeholder="<?=t('Design Principle','Design Principle')?> <?=$x?>" aria-label="<?=t('Design Principle','Design Principle')?> <?=$x?>" value="<?=$designPrincipleName?>" <?=($userLoggedIn) ? '' : 'readonly'?>>
                     <label for="<?=$principleId?>"><?=t('Design Principle','Design Principle')?> <?=$x?></label>
                 </div>
+
+                <?php if ($strategyName) : ?>
+            <input type="checkbox" name="remove<?=$strategyId?>" id="remove<?=$x?>"  value="y"><label for="remove<?=$x?>" class="form-text">&nbsp;<?=t('Remove this Natural Strategy/Design Principle','Remove this Natural Strategy/Design Principle')?></label>
+        <?php endif ?>
             </div>
         </div>
         <?php
