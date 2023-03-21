@@ -9,6 +9,7 @@ $functions = helpers\DataHelper::getFunctionsByTeam($viewedTeam['id'], !$editTea
 if ($functions) :
 foreach ($functions as $function) :
     $researchQuestion=$function['biologized_question'];
+    if (!empty($researchQuestion)) :
 ?>
     <table class="table m-2 p-2 border">
         <tr>
@@ -34,6 +35,8 @@ foreach ($functions as $function) :
     }
         ?>
     </table>
+  <?php endif ?>
+<?php endforeach ?>
 <?php
     if (!$hideCollaboration) 
     {
@@ -62,7 +65,6 @@ foreach ($functions as $function) :
         }
     }
 ?>
-<?php endforeach ?>
 <?php else : ?>
   <p><?=t("No Research Questions have been shared","No Research Questions have been shared")?></p>
 <?php endif ?>

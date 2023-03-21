@@ -36,6 +36,9 @@
             <input type="text" class="form-control bg-info text-white" name="biologized<?=$x?>" id="biologized<?=$x?>" placeholder="<?=$page->researchQuestionLabel()?> <?=$x?>" aria-label="<?=$page->researchQuestionLabel()?> <?=$x?>" value="<?=$biologisedQuestionName?>" <?=($userLoggedIn) ? '' : 'readonly'?>>
             <label class="text-white" for="biologized<?=$x?>"><?=t('Research Question','Research Question')?> <?=$x?></label>
         </div>
+        <?php if ($biologisedQuestionName) : ?>
+            <input type="checkbox" name="remove<?=$x?>" id="remove<?=$x?>"  value="y"><label for="remove<?=$x?>" class="form-text">&nbsp;<?=t('Remove this Research Question and any associated Strategies and Principles','Remove this Research Question and any associated Strategies and Principles')?></label>
+        <?php endif ?>
     </div>
 
     <?php

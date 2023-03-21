@@ -308,10 +308,12 @@ class DataHelper
             
             $approvalDetails=self::getApprovalDetails($wpUserId,$team['role']);
 
+            $counter=0;
+
             foreach($functions as $function)
             {
-                $sql=("INSERT INTO cc_team_functions (team_id, challenge_id, function_number, name, biologized_question, created_date,created_by, approved_date, approved_by) VALUES (?,?,?,?,?,now(),?,?,?)");
-                $pdo->prepare($sql)->execute([$team["id"], $team['challenge_id'], $function->functionNumber, $function->functionName, $function->biologizedQuestion, $wpUserId,$approvalDetails->approvedDate,$approvalDetails->approvedBy]);
+                    $sql=("INSERT INTO cc_team_functions (team_id, challenge_id, function_number, name, biologized_question, created_date,created_by, approved_date, approved_by) VALUES (?,?,?,?,?,now(),?,?,?)");
+                    $pdo->prepare($sql)->execute([$team["id"], $team['challenge_id'], $function->functionNumber, $function->functionName, $function->biologizedQuestion, $wpUserId,$approvalDetails->approvedDate,$approvalDetails->approvedBy]);
             }
             $pdo->commit();
             $result->wasSuccessful=true;
@@ -1972,6 +1974,7 @@ class FunctionAndBiologizedQuestion
     public $functionNumber;
     public $functionName;
     public $biologizedQuestion;
+    public $remove;
 }
 
 class NaturalStrategy

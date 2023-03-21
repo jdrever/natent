@@ -12,7 +12,7 @@ return function($kirby, $pages, $page, $site) {
         $functionsArray = array();
         for ($x = 1; $x <= 6; $x++)
         {
-            if (!empty($_POST['biologized' . $x]) or !empty($_POST['functionNumber' . $x]))
+            if ((!empty($_POST['biologized' . $x]) or !empty($_POST['functionNumber' . $x])))
             {
                 $function = new helpers\FunctionAndBiologizedQuestion();
 
@@ -21,6 +21,12 @@ return function($kirby, $pages, $page, $site) {
 
                 $function->functionName = "";
                 $function->biologizedQuestion = htmlspecialchars(get('biologized' . $x)); 
+
+                if (isset($_POST['remove'. $x]))
+                {
+                    $function->biologizedQuestion='';
+                }
+
                 $functionsArray[] = $function; 
             }
         }
