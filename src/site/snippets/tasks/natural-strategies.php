@@ -60,15 +60,16 @@
                 </div>
 
                 <?php if ($strategyName) : ?>
-            <input type="checkbox" name="remove<?=$strategyId?>" id="remove<?=$x?>"  value="y"><label for="remove<?=$x?>" class="form-text">&nbsp;<?=t('Remove this Natural Strategy/Design Principle','Remove this Natural Strategy/Design Principle')?></label>
+            <input type="checkbox" name="remove<?=$strategyId?>" id="remove<?=$strategyId?>"  value="y"><label for="remove<?=$x?>" class="form-text">&nbsp;<?=t('Remove this Natural Strategy/Design Principle','Remove this Natural Strategy/Design Principle')?></label>
         <?php endif ?>
             </div>
         </div>
         <?php
-          }
-        }    
+          }   
         ?>
         </div>
+        <?php 
+       } ?>
     </div>
     <?php
         }    

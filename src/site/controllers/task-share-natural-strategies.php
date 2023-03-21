@@ -33,8 +33,15 @@ return function($kirby, $pages, $page, $site) {
                 {
                     $strategy = new helpers\NaturalStrategy();
                     $strategy->functionNumber = $functionNumber;
-                    $strategy->strategyName = htmlspecialchars($strategyName);
                     $strategy->strategyNumber = $x;
+
+                    if (isset($_POST['remove'.$strategyId])) 
+                    {
+                        $strategyName='';
+                        $principleName='';
+                    }
+                    $strategy->strategyName = htmlspecialchars($strategyName);
+                    
                     $strategy->designPrinciple = htmlspecialchars($principleName);
                     $strategies[] = $strategy;
                 }
