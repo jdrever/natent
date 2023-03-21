@@ -308,7 +308,6 @@ class DataHelper
             
             $approvalDetails=self::getApprovalDetails($wpUserId,$team['role']);
 
-            $counter=0;
 
             foreach($functions as $function)
             {
