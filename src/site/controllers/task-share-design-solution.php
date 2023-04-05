@@ -43,9 +43,8 @@ return function($kirby, $pages, $page, $site) {
                     parse_str(parse_url($designIdeaUrl, PHP_URL_QUERY), $designIdeaUrlVars);
                     $designIdeaYouTubeId = $designIdeaUrlVars['v'];
                 }
-            
-                $result = helpers\DataHelper::updateTeamWithDesignIdea($team['user_id'], $designFileUrl, $designIdeaUrl, $designIdeaYouTubeId);
             }
+            $result = helpers\DataHelper::updateTeamWithDesignIdea($team['user_id'], $designFileUrl, $designIdeaUrl, $designIdeaYouTubeId);
         }
         catch (Exception $e)
         {
