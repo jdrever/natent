@@ -22,7 +22,7 @@ return function ($kirby, $page, $pages, $site) {
       $login=get('login');
       if (strpos($login,'@')===false){ $login.='@natent.eu'; }
       $login=str_replace(' ','-',$login);
-      $kirby->auth()->login($login, get('password'));
+      $kirby->auth()->login($login, get('password'),true);
 
 
       // redirect to the homepage if the login was successful
