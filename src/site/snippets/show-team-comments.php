@@ -6,7 +6,7 @@
     <a href="/other-team-page/?teamId=<?=$comment['team_id']?>"><?=$comment['team_name']?></a>
     <br>
     <i class="bi bi-quote"></i>
-    <i><?=substr($comment['comment'],0,20)?></i>
+    <i><?=$comment['comment']?></i>
     <i class="bi bi-three-dots"></i>
   </small>
 </p>
