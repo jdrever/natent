@@ -58,6 +58,7 @@ return [
         'Context' => 'Context',
         'Design' => 'Design',
         'on your' => 'on your',
+        'of your' => 'of your',
         'by' => 'by',
         'Not yet uploaded' => 'Not yet uploaded',
         'Describe how and if your final design solution has met your context' => 'Describe how/if your final Design Solution has met your Statement of Intent, and which Nature\'s Unifying Patterns have helped you',
