@@ -17,7 +17,7 @@ if ($latestComments||$latestAppreciations) : ?>
           <p class="p-1 border">
             <small>
               <i class="bi bi-chat-fill"></i>
-              on your <?=$comment['content_type']?> by
+              <?=t('on your','on your')?> <?=t($comment['content_type'],$comment['content_type'])?> <?=t('by','by')?>
               <a href="<?=$otherTeamPage->url()?>?teamId=<?=$comment['team_id']?>"><?=$comment['team_name']?></a>
               <br>
               <i class="bi bi-quote"></i>
