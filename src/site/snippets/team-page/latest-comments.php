@@ -52,7 +52,7 @@ if ($latestComments||$latestAppreciations) : ?>
           <p class="p-1 border">
             <small>
               <i class="bi bi-stars"></i>
-              of your <?=$appreciation['content_type']?> by
+              <?=t('of your','of your')?> <?=t($appreciation['content_type'],$appreciation['content_type'])?> <?=t('by','by')?>
               <a
                 href="<?=$otherTeamPage->url()?>?teamId=<?=$appreciation['team_id']?>"><?=$appreciation['team_name']?></a>
             </small>
