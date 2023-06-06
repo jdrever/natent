@@ -46,6 +46,7 @@ return [
         'You don\'t have any appreciations yet' => 'You don\'t have any appreciations yet',
         'Skills' => 'Skills',
         'Team Profile' => 'Team Profile',
+        'Profile' => 'Profile',
         'Team Challenge' => 'Team Challenge',
         'Challenge Definition' => 'Challenge Definition',
         'Commons Resource' => 'Commons Resource',
