@@ -41,7 +41,7 @@ use carefulcollab\helpers as helpers;
         {
  ?>
 
-    <b><?=t("Upload your Design Solution (use an image file, e.g. JPG or PNG)","Upload your Design Solution (use an image file, e.g. JPG or PNG)") ?>:</b><img class="img-fluid" src="<?=$content['design_idea_file']?>"><br>
+    <b><?=t("Upload your Design Solution (use an image file, e.g. JPG or PNG)","Upload your Design Solution (use an image file, e.g. JPG or PNG)") ?>:</b><a href="<?=$content['design_idea_file']?>"><img class="img-fluid" src="<?=$content['design_idea_file']?>" alt="DOWNLOAD"></a><br>
     <?php
         }
         if (isset($content['design_idea_you_tube_id'])&&(!empty($content['design_idea_you_tube_id'])))
