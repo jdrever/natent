@@ -6,11 +6,11 @@
     <?php if ($measurePageUrl=getCollabUrl($collaborationPoints, 'task-measure')) :?>
   <a href="<?= $measurePageUrl ?>" class="btn btn-outline-primary"><?=t('EDIT MEASURE','EDIT MEASURE')?></a>
     <?php endif ?>
-  <?php snippet('show-appreciations', ['contentType'=>'Measures', 'contentId'=>$viewedTeam['team_measures_id']]) ?>
-  <?php snippet('show-comments',['contentType'=>'Measures', 'contentId'=>$viewedTeam['team_measures_id']]) ?>
+  <?php snippet('show-appreciations', ['contentType'=>'Measure', 'contentId'=>$viewedTeam['team_measures_id']]) ?>
+  <?php snippet('show-comments',['contentType'=>'Measure', 'contentId'=>$viewedTeam['team_measures_id']]) ?>
   <?php else : ?>
-  <?php snippet('show-appreciation-button',['contentType'=>'Measures', 'contentId'=>$viewedTeam['team_measures_id']]) ?>
-  <?php snippet('show-comment-box', ['contentType'=>'Measures', 'contentId'=>$viewedTeam['team_measures_id']])?>
+  <?php snippet('show-appreciation-button',['contentType'=>'Measure', 'contentId'=>$viewedTeam['team_measures_id']]) ?>
+  <?php snippet('show-comment-box', ['contentType'=>'Measure', 'contentId'=>$viewedTeam['team_measures_id']])?>
     <?php endif; 
     endif;
 else:
