@@ -44,7 +44,7 @@ use carefulcollab\helpers as helpers;
     <b><?=t("Upload your Design Solution (use an image file, e.g. JPG or PNG)","Upload your Design Solution (use an image file, e.g. JPG or PNG)") ?>:</b><img class="img-fluid" src="<?=$content['design_idea_file']?>"><br>
     <?php
         }
-        if (isset($content['design_idea_you_tube_id']))
+        if (isset($content['design_idea_you_tube_id']&&!empty($content['design_idea_you_tube_id']))
         {
     ?>
     <b><?=t("Upload your video presentation to our You Tube channel and share the link here","Upload your video presentation to our You Tube channel and share the link here") ?> :</b><br>    
