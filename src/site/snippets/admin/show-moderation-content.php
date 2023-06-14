@@ -63,6 +63,13 @@ use carefulcollab\helpers as helpers;
     {
  ?>
     <?php
+            if (isset($content['pitch_file']))
+            {
+     ?>
+    
+        <b><?=t('Upload your pitch document (use a PDF or image file, e.g. JPG or PNG)','Upload your pitch document (use a PDF or image file, e.g. JPG or PNG)') ?>:</b><a href="<?=$content['pitch_file']?>"><img class="img-fluid" src="<?=$content['pitch_file']?>" alt="DOWNLOAD"></a><br>
+        <?php
+            }
         if (isset($content['pitch_video_you_tube_id']))
         {
     ?>

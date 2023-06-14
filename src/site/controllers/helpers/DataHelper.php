@@ -468,7 +468,7 @@ class DataHelper
         return $result;
     } 
 
-    public static function updateTeamWithBusinessCanvas($wpUserId, $valueProposition, $customers, $supporters, $income, $happen, $pitchVideoUrl, $pitchVideoYouTubeId)
+    public static function updateTeamWithBusinessCanvas($wpUserId, $valueProposition, $customers, $supporters, $income, $happen, $pitchFile, $pitchVideoUrl, $pitchVideoYouTubeId)
     {
         $result=new DataResult();
         try
@@ -476,7 +476,7 @@ class DataHelper
             $pdo=self::getPDOConnection();
             $pdo->beginTransaction();
             $team=self::getTeamByWPUserIdUsingPDO($wpUserId,$pdo);
-            if ((!isset($team['pitch_video_url'])||empty($team['pitch_video_url']))&&!empty($pitchVideoUrl))
+            if ((!isset($team['pitch_video_url'])||empty($team['pitch_video_url']))&&!empty($pitchVideoUrl)||(!isset($team['pitch_file'])||empty($team['pitch_file']))&&!empty($pitchFile))
             {
                 $checkMax=self::addPointsToTeam($team['id'],'Sharing Pitch Deck', 20,$pdo);
                 $result->pointsAdded=20;
@@ -485,8 +485,8 @@ class DataHelper
 
             $approvalDetails=self::getApprovalDetails($wpUserId,$team['role']);
 
-            $sql=("INSERT INTO cc_team_business_canvas (team_id, challenge_id,value_proposition,customers, supporters, income, happen, pitch_video_url, pitch_video_you_tube_id,created_date,created_by, approved_date, approved_by) VALUES (?,?,?,?,?,?,?,?,?,now(),?,?,?)");       
-            $pdo->prepare($sql)->execute([$team["id"], $team['challenge_id'], $valueProposition, $customers, $supporters, $income, $happen, $pitchVideoUrl, $pitchVideoYouTubeId, $wpUserId,$approvalDetails->approvedDate,$approvalDetails->approvedBy] );
+            $sql=("INSERT INTO cc_team_business_canvas (team_id, challenge_id,value_proposition,customers, supporters, income, happen, pitch_file, pitch_video_url, pitch_video_you_tube_id,created_date,created_by, approved_date, approved_by) VALUES (?,?,?,?,?,?,?,?,?,?,now(),?,?,?)");       
+            $pdo->prepare($sql)->execute([$team["id"], $team['challenge_id'], $valueProposition, $customers, $supporters, $income, $happen, $pitchFile, $pitchVideoUrl, $pitchVideoYouTubeId, $wpUserId,$approvalDetails->approvedDate,$approvalDetails->approvedBy] );
             $pdo->commit();
             $result->wasSuccessful=true;
 

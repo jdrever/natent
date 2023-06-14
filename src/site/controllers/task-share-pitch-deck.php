@@ -9,25 +9,40 @@ return function($kirby, $pages, $page, $site) {
     
     if($kirby->request()->is('POST')) 
     {
-        $pitchVideoUrl = str_replace("https://", "", get('pitchVideoUrl')); 
-        if ($pitchVideoUrl)
+        $result = helpers\FileHelper::uploadFiletoS3('pitchFile');
+        if ($result->wasSuccessful)
         {
-            if (str_starts_with($pitchVideoUrl, "youtu.be/"))
+            //if no new file but is existing file use that
+            if (empty($result->fileURL) && isset($_POST['existingPitchFile']))
+                $pitchFileUrl = get('existingPitchFile');
+            else
+                $pitchFileUrl = $result->fileURL;
+        }
+    
+        $pitchVideoUrl="";
+        $pitchVideoYouTubeId="";
+        if (isset($_POST['pitchVideoUrl']) && !empty($_POST['pitchVideoUrl']))
+        {
+            $pitchVideoUrl = str_replace("https://", "", get('pitchVideoUrl')); 
+            if ($pitchVideoUrl)
             {
-                $pitchVideoYouTubeId = str_replace("youtu.be/", "", $pitchVideoUrl);
+                if (str_starts_with($pitchVideoUrl, "youtu.be/"))
+                {
+                    $pitchVideoYouTubeId = str_replace("youtu.be/", "", $pitchVideoUrl);
+                }
+                else
+                {
+                    parse_str(parse_url($pitchVideoUrl, PHP_URL_QUERY), $pitchVideoUrlVars);
+                    $pitchVideoYouTubeId = $pitchVideoUrlVars['v'];
+                }
             }
             else
             {
-                parse_str(parse_url($pitchVideoUrl, PHP_URL_QUERY), $pitchVideoUrlVars);
-                $pitchVideoYouTubeId = $pitchVideoUrlVars['v'];
+                $pitchVideoYouTubeId = "";
             }
         }
-        else
-        {
-            $pitchVideoYouTubeId = "";
-        }
 
-        $result = helpers\DataHelper::updateTeamWithBusinessCanvas($team['user_id'], "", "", "", "", "", $pitchVideoUrl, $pitchVideoYouTubeId);
+        $result = helpers\DataHelper::updateTeamWithBusinessCanvas($team['user_id'], "", "", "", "", "", $pitchFileUrl, $pitchVideoUrl, $pitchVideoYouTubeId);
 
         $userId=$platform['userId'];
         $phaseType=$platform['phaseType'];
@@ -39,6 +54,7 @@ return function($kirby, $pages, $page, $site) {
         if ($userLoggedIn)
         {
             $teamArea=$team['area'];
+            $teamPitchFile=$team['pitch_file'];
             $teamPitchVideoUrl=$team['pitch_video_url'];
             $teamPitchVideoYouTubeId=$team['pitch_video_you_tube_id'];
         }
@@ -46,9 +62,10 @@ return function($kirby, $pages, $page, $site) {
         {
             $exampleTeam=helpers\DataHelper::getTeamByTeamId($platform['exampleTeam']);
             $teamArea=$exampleTeam['area'];
+            $teamPitchFile=$exampleTeam['pitch_file'];
             $teamPitchVideoUrl=$exampleTeam['pitch_video_url'];
             $teamPitchVideoYouTubeId=$exampleTeam['pitch_video_you_tube_id'];
         }
-        return A::merge($platform, compact('teamArea','teamPitchVideoUrl','teamPitchVideoYouTubeId'));
+        return A::merge($platform, compact('teamArea','teamPitchFile','teamPitchVideoUrl','teamPitchVideoYouTubeId'));
     }
 };
