@@ -4,10 +4,12 @@
   </a>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
     <?php foreach($kirby->languages() as $language): ?>
+      <?php if (!$language->code()=='es') : ?>
     <a class="dropdown-item <?php e($kirby->language() == $language, ' active') ?>"
       href="<?php e($page->translation($language->code())->exists(), $page->url($language->code()), $language->url()) ?>" hreflang="<?php echo $language->code() ?>">
       <?=t($language->name(),$language->name()) ?>
     </a>
+        <?php endif ?>
     <?php endforeach ?>
   </div>
 </div>
