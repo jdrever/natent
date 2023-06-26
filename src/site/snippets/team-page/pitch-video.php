@@ -1,10 +1,12 @@
 <h3><?=t("Pitch", "Pitch")?></h3>
+
 <?php
 if ((isset($viewedTeam['pitch_file']))&&!empty($viewedTeam['pitch_file'])) :
     snippet('show-file',['fileUrl'=>$viewedTeam['pitch_file'],'altText'=>"Pitch" ]);
 else : ?>
     <p><?=t("Not yet uploaded")?>.</p>
 <?php endif ?>
+<h4><?=t("Pitch Video", "Pitch Video")?></h4>
 <?php
 if (isset($viewedTeam['pitch_video_you_tube_id'])&&!empty($viewedTeam['pitch_video_you_tube_id'])) :
 ?>
