@@ -276,6 +276,9 @@ return [
         'Netherlands' => 'Netherlands',
         'Hungary' => 'Hungary',
         'South Africa' => 'South Africa',
+        'India' => 'India', 
+        'Kenya' => 'Kenya', 
+        'Spain' => 'Spain',
         'Remove this Natural Strategy/Design Principle' => 'Remove this Natural Strategy/Design Principle',
         'Remove this Research Question and any associated Strategies and Principles'=> 'Remove this Research Question and any associated Strategies and Principles'
     ],
