@@ -7,7 +7,6 @@
     <br>
     <i class="bi bi-quote"></i>
     <i><?=$comment['comment']?></i>
-    <i class="bi bi-three-dots"></i>
   </small>
 </p>
 <?php endforeach ?>

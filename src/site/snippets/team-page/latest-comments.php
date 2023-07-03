@@ -21,8 +21,7 @@ if ($latestComments||$latestAppreciations) : ?>
               <a href="<?=$otherTeamPage->url()?>?teamId=<?=$comment['team_id']?>"><?=$comment['team_name']?></a>
               <br>
               <i class="bi bi-quote"></i>
-              <i><?=substr($comment['comment'],0,20)?></i>
-              <i class="bi bi-three-dots"></i>
+              <i><?=$comment['comment']?></i>
             </small>
           </p>
           <?php endforeach ?>
