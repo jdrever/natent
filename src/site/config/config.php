@@ -2,6 +2,9 @@
 return [
     'debug'  => ($_SERVER['HTTP_HOST']=='localhost:8085' or $_SERVER['HTTP_HOST']=='staging.natent.eu') ? true : false,
     'languages' =>true,
+    'auth' => [
+      'trials' => 500
+    ],
     'panel' =>
     [
       'install' => true,
