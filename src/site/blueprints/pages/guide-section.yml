@@ -1,18 +1,6 @@
 title: Phase Section
 
 columns:
-  info:
-    width: 1/1
-    sections:
-      info:
-        type: info
-        text: |
-          This is where you edit content for this phase.
-
-          <b>Where to go from here:</b>
-
-          <ul>
-            <li>You can
   main:
     width: 1/1
     sections:
