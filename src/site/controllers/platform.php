@@ -65,6 +65,9 @@ return function($kirby, $pages, $page, $site, $requiresLogin =false, $isNonLearn
 
     if (is_null($languagePage)) $languagePage=$platformPage->children()->filterBy('template','country')->filterBy('language','*=', 'en')->first();
 
+    echo($languagePage);
+
+
     $country=$languagePage->title();
     $exampleTeam=$languagePage->exampleTeam()->toInt();
 
