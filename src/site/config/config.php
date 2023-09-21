@@ -1,6 +1,6 @@
 <?php
 return [
-    'debug'  => ($_SERVER['HTTP_HOST']=='localhost:8085' or $_SERVER['HTTP_HOST']=='staging.natent.eu') ? true : false,
+    'debug'  => ($_SERVER['HTTP_HOST']=='localhost:8085' or $_SERVER['HTTP_HOST']=='staging.natent.eu') ? true : true,
     'languages' =>true,
     'auth' => [
       'trials' => 500
