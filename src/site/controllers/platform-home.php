@@ -24,6 +24,8 @@ return function ($kirby, $pages, $page, $site)
   
     $languagePage=$platform['languagePage'];
 
+    echo('lp='. $languagePage);
+
     foreach ($phases as $phase)
     {
 
