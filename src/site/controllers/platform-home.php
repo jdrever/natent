@@ -25,7 +25,6 @@ return function ($kirby, $pages, $page, $site)
     $languagePage=$platform['languagePage'];
 
     echo('lp='. $languagePage);
-    exit();
 
     foreach ($phases as $phase)
     {
@@ -54,6 +53,9 @@ return function ($kirby, $pages, $page, $site)
             $phaseNumber++;
         }
     }
+
+    echo(var_dump($languagePhases));
+    exit();
 
     return A::merge($platform, compact('languagePhases', 'latestComments', 'latestAppreciations'));
 };
