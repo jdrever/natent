@@ -18,7 +18,6 @@ return function ($kirby, $pages, $page, $site)
         $latestAppreciations = helpers\DataHelper::getLatestAppreciations($userId);
     }
     $phases = $site->index()->filterBy('template', 'phase');
-    echo(var_dump($phases));
     $languagePhases=[];
     $team=$platform['team'];
     $phaseNumber=0;
@@ -34,7 +33,6 @@ return function ($kirby, $pages, $page, $site)
 
         if ($phasePage)
         {
-            echo(var_dump($phasePage));
             
             
             $addPhase=new StdClass;
