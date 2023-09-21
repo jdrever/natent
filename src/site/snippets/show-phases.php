@@ -13,8 +13,10 @@
       <a href="<?=Cookie::get('resumePage')?>" class="btn btn-primary btn-lg m-2"><?=t('RESUME','RESUME')?> <i
           class="bi bi-arrow-right"></i></a>
       <?php else : ?>
+        <?php if (isset($languagePhases[0])) : ?>
       <a href="<?=$languagePhases[0]->url?>" class="btn btn-primary btn-lg m-2"><?=t('GET STARTED', 'GET STARTED')?>
         →</a>
+        <?php endif ?>
       <?php endif ?>
     </div>
   </div>
